@@ -34,8 +34,6 @@
 </div>
 <div class="row">
     <div col>
-
-
         <div class="card">
             <h5 class="card-header"><?=$e->razao_social?> - <?=$e->cnpj?></h5>
             <div class="card-body">
