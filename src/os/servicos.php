@@ -39,7 +39,7 @@
         <div class="card">
             <h5 class="card-header"><?=$e->razao_social?> - <?=$e->cnpj?></h5>
             <div class="card-body">
-                <h6 class="card-title">#<?=str_pad($e->codigo , 6 , '0' , STR_PAD_LEFT)?> : <?=$e->titulo?></h6>
+                <h6 class="card-title">Solicitação N°: <?=str_pad($e->codigo , 6 , '0' , STR_PAD_LEFT)?> <br> <?=$e->titulo?></h6>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><?=$e->descricao?></li>
