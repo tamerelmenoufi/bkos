@@ -14,6 +14,12 @@
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
+    $query = "select * from os where codigo = '{$d->vinculo}'";
+    $result = mysqli_query($con, $query);
+    $v = mysqli_fetch_object($result);
+
+
+
 $html = '<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,8 +34,9 @@ $html = '<!DOCTYPE html>
             clear:both;
         }
         .titulo_topo{
+            position:relative;
             width:100%;
-            height:520px;
+            height:510px;
             background-size:cover;
             background-position:center;
             background-repeat:no-repeat;
@@ -65,7 +72,13 @@ $html = '<!DOCTYPE html>
 </head>
 <body>
 
-    <div class="titulo_topo"></div>
+    <div class="titulo_topo">
+        <div style="position:absolute; color:#fff; font-size:12px;">
+            Serviço N°: <b>'.$v->codigo.'</b><br>
+            <b>'.$v->titulo.'</b><br>
+            '.$v->descricao.'
+        </div>
+    </div>
 
 
     <h2>'.$d->titulo.'</h2>
