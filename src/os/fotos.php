@@ -106,7 +106,7 @@
     }
 </style>
 
-<h4 class="Topo<?=$md5?>">Lista de fotos da OS #<?=$_POST['os']?></h4>
+<h4 class="Topo<?=$md5?>">Lista de fotos da OS #<?=str_pad($_POST['os'] , 6 , '0' , STR_PAD_LEFT)?></h4>
 <div class="row">
     <div class="col-md-4">
         <div class="Foto">
