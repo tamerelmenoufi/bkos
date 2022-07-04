@@ -68,14 +68,24 @@ $html = '<!DOCTYPE html>
             margin-top:5px;
             paddin:5px;
         }
+        .servico_descricao{
+            position:absolute;
+            color:#fff;
+            font-size:20px;
+            width:550px;
+            padding:20px;
+        }
+        .servico_descricao_titulo{
+            font-size:25px;
+        }
     </style>
 </head>
 <body>
 
     <div class="titulo_topo">
-        <div style="position:absolute; color:#fff; font-size:20px; width:550px; border:solid 1px red; padding:20px;">
-            <span style="font-size:25px;">Serviço N°: <b>'.$v->codigo.'</b></span><br><br>
-            <span style="font-size:25px;"><b>'.$v->titulo.'</b></span><br><br>
+        <div class="servico_descricao">
+            <span class="servico_descricao_titulo">Serviço N°: <b>'.$v->codigo.'</b></span><br><br>
+            <span class="servico_descricao_titulo"><b>'.$v->titulo.'</b></span><br><br>
             '.$v->descricao.''.$v->descricao.''.$v->descricao.''.$v->descricao.'
         </div>
     </div>
