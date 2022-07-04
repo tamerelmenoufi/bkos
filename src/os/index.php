@@ -34,7 +34,7 @@
 <table id="TableColaboradores" class="table table-hover" style="width:100%">
     <thead>
         <tr>
-            <th>#</th>
+            <th>N° Solicitação</th>
             <th>Título</th>
             <th>Empresa</th>
             <th>O.S. Vinculadas</th>
