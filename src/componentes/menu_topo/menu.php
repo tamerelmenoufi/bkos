@@ -8,7 +8,7 @@
   }
 </style>
 
-<nav class="navbar navbar-expand navbar-dark bg-dark">
+<nav class="navbar navbar-expand">
   <div class="container-fluid">
     <div data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
       <img src="img/logo_h60_fundo_escuro.png" style="height:40px; margin-right:20px;" alt="Sistema de Gestão QrAtivos">
