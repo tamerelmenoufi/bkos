@@ -1,5 +1,5 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     $query = "select *, if(situacao = '1', 'Liberado', 'Bloqueado') as situacao from os_status order by titulo";
     $result = mysqli_query($con, $query);
