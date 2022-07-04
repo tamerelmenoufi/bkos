@@ -59,9 +59,9 @@
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="acoesOs">
                         <li linha='<?=$d->codigo?>'><a class="dropdown-item" href="#">Editar</a></li>
                         <li servico='<?=$d->codigo?>'><a class="dropdown-item" href="#">Ordem de Serviços</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <!-- <li><a class="dropdown-item" href="#">Something else here</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li> -->
                     </ul>
                 </div>
 
