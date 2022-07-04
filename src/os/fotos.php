@@ -40,7 +40,12 @@
 
 ?>
 <style>
-
+    .Topo<?=$md5?> {
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
     .Foto{
         position:relative;
         width:100%;
@@ -101,6 +106,7 @@
     }
 </style>
 
+<h4 class="Topo<?=$md5?>">Lista de fotos da OS #<?=$_POST['os']?></h4>
 <div class="row">
     <div class="col-md-4">
         <div class="Foto">
