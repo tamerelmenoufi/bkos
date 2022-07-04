@@ -52,7 +52,7 @@
     }
 
 </style>
-<h2 class="Topo<?=$md5?>">Dados da O.S.</h2>
+<h2 class="Topo<?=$md5?>">Dados da Solicitação <?=(($d->codigo)?str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT):false)?></h2>
 <div class="row">
     <div class="col">
         <form id="form-<?= $md5 ?>">
