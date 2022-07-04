@@ -37,7 +37,7 @@
     }
 
 </style>
-<h4 class="Titulo<?=$md5?>">Lista de eventos da OS #<?=$_POST['os']?></h4>
+<h4 class="Titulo<?=$md5?>">Lista de eventos da OS #<?=str_pad($_POST['os'] , 6 , '0' , STR_PAD_LEFT)?></h4>
 <div class="row">
     <div class="col">
 
