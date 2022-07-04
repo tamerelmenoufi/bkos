@@ -19,7 +19,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="img/icone.png">
-    <title>ERP - QrAtivos</title>
+    <title>Gestão de Ordens de Serviços</title>
     <?php
     include("lib/header.php");
     ?>
