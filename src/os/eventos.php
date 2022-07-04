@@ -58,9 +58,25 @@
         </div>
 
         <div class="form-floating mb-3">
+            <select class="form-select" id="classificacao" name="classificacao" aria-label="Tipo de Classificação">
+                <?php
+                $q = "select * from os_classificacao where situacao = '1' and JSON_EXTRACT(deletado, \"$.usuario\") > 0";
+                $r = mysqli_query($con, $q);
+                while($s = mysqli_fetch_object($r)){
+                ?>
+                <option value="<?=$s->codigo?>" <?=(($d->classificacao == $s->codigo)?'selected':false)?> ><?=$s->titulo?></option>
+                <?php
+                }
+                ?>
+            </select>
+            <label for="classificacao">Classificação</label>
+        </div>
+
+        <!-- <div class="form-floating mb-3">
             <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>">
             <label for="titulo">Título</label>
-        </div>
+        </div> -->
+
         <div class="form-floating mb-3">
             <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"><?=$d->descricao?></textarea>
             <label for="descricao">Descricão</label>
