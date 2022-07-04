@@ -51,7 +51,7 @@
         z-index:0;
     }
 </style>
-<h2 class="Topo<?=$md5?>">Dados do Status</h2>
+<h4 class="Topo<?=$md5?>">Dados do Status</h4>
 <div class="row">
     <div class="col">
         <form id="form-<?= $md5 ?>">
