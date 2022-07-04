@@ -75,7 +75,7 @@ $html = '<!DOCTYPE html>
             width:550px;
             padding:20px;
             text-align:justify;
-            text-shadow: 0.1em 0.1em 0.1em #101010
+            text-shadow: 0 0 0.2em #101010
         }
         .servico_descricao_titulo{
             font-size:25px;
