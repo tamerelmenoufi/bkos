@@ -27,6 +27,14 @@ $html = '<!DOCTYPE html>
             width:100%;
             clear:both;
         }
+        .titulo_topo{
+            width:100%;
+            height:400px;
+            background-size:cover;
+            background-position:center;
+            background-repeat:no-repeat;
+            background-image:url(http://os.bkmanaus.com.br/img/titulo_relatorio.png);
+        }
         .divImg{
             position:relative;
             display: flex;
@@ -56,6 +64,10 @@ $html = '<!DOCTYPE html>
     </style>
 </head>
 <body>
+
+    <div class="titulo_topo"></div>
+
+
     <h2>'.$d->titulo.'</h2>
     <p>'.$d->descricao.'</p>
 
