@@ -72,7 +72,7 @@ $html = '<!DOCTYPE html>
             $html .= '<div style="page-break-before: always;"></div>';
         }
         $html .= '<div class="divImg">
-                    <div class="img" style="background-image:url(http://qrativoserp.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.')"></div>
+                    <div class="img" style="background-image:url(http://os.bkmanaus.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.')"></div>
                     <div class="titulo_imagem">'.$e->titulo.'</div>
                   </div>';
         $i++;
