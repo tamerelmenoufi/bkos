@@ -46,7 +46,12 @@
 
 ?>
 <style>
-
+    .Topo<?=$md5?> {
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
 
 </style>
 <h2 class="Topo">Dados da O.S.</h2>
