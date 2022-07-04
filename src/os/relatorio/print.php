@@ -91,11 +91,10 @@ $html = '<!DOCTYPE html>
             '.$v->descricao.''.$v->descricao.''.$v->descricao.''.$v->descricao.'
         </div>
     </div>
-
-
-    <h2>'.$d->titulo.'</h2>
-    <p>'.$d->descricao.'</p>
-
+    <div class="corpo">
+        <h2>'.$d->titulo.'</h2>
+        <p>'.$d->descricao.'</p>
+    </div>
     <div class="corpo">';
 
     $q = "select * from os_fotos where cod_os = '{$d->codigo}'";
