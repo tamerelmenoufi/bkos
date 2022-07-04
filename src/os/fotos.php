@@ -3,15 +3,15 @@
 
     if($_POST['acao'] == 'salvar'){
 
-        if($_POST['foto_nome'] and $_POST['foto_tipo'] and $_POST['foto_value']){
-            $img = base64_decode(str_replace("data:{$_POST['foto_tipo']};base64,", false, $_POST['foto_value']));
-            if(!is_dir("fotos/{$_POST['cod_os']}")) mkdir("fotos/{$_POST['cod_os']}");
-            $ext = substr($_POST['foto_nome'],strrpos($_POST['foto_nome'],'.'), strlen($_POST['foto_nome']));
-            $nome = md5("{$_POST['cod_os']}{$_POST['foto_nome']}{$_POST['foto_tipo']}".date("YmdHis"))."{$ext}";
-            file_put_contents("fotos/{$_POST['cod_os']}/{$nome}", $img);
-        }else{
-            $nome = $_POST['foto_nome'];
-        }
+        // if($_POST['foto_nome'] and $_POST['foto_tipo'] and $_POST['foto_value']){
+        //     $img = base64_decode(str_replace("data:{$_POST['foto_tipo']};base64,", false, $_POST['foto_value']));
+        //     if(!is_dir("fotos/{$_POST['cod_os']}")) mkdir("fotos/{$_POST['cod_os']}");
+        //     $ext = substr($_POST['foto_nome'],strrpos($_POST['foto_nome'],'.'), strlen($_POST['foto_nome']));
+        //     $nome = md5("{$_POST['cod_os']}{$_POST['foto_nome']}{$_POST['foto_tipo']}".date("YmdHis"))."{$ext}";
+        //     file_put_contents("fotos/{$_POST['cod_os']}/{$nome}", $img);
+        // }else{
+        //     $nome = $_POST['foto_nome'];
+        // }
 
         $query = "insert into os_fotos set
                                             cod_os = '{$_POST['cod_os']}',
