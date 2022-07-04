@@ -102,7 +102,7 @@
 </style>
 
 <div class="row">
-    <div class="col-4">
+    <div class="col-md-4">
         <div class="Foto">
             <div>
                 <i class="fa-solid fa-image iconeImagem"></i>
@@ -124,7 +124,7 @@
 
         <p msg>Selecione a imagem</p>
     </div>
-    <div class="col-8">
+    <div class="col-md-8">
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>">
             <label for="titulo">Título</label>
