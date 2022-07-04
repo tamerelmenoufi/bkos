@@ -47,7 +47,7 @@
         while($d = mysqli_fetch_object($result)){
         ?>
         <tr>
-            <td>#<?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?></td>
+            <td><?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?></td>
             <td><?=$d->titulo?></td>
             <td><?=$d->nome_empresa?></td>
             <td><?=$d->quantidade?> OS</td>
