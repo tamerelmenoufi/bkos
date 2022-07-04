@@ -76,7 +76,7 @@ $html = '<!DOCTYPE html>
         <div style="position:absolute; color:#fff; font-size:20px; width:550px; border:solid 1px red; padding:20px;">
             <span style="font-size:25px;">Serviço N°: <b>'.$v->codigo.'</b></span><br><br>
             <span style="font-size:25px;"><b>'.$v->titulo.'</b></span><br><br>
-            '.$v->descricao.'
+            '.$v->descricao.''.$v->descricao.''.$v->descricao.''.$v->descricao.'
         </div>
     </div>
 
