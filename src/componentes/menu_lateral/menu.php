@@ -7,7 +7,7 @@
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-    <h5>Sistema de Gestão QrAtivos</h5>
+    <h5>Sistema de Gestão de O.S.</h5>
 
     <div class="row mb-1">
       <div class="col">
@@ -17,13 +17,13 @@
       </div>
     </div>
 
-    <div class="row mb-1">
+    <!-- <div class="row mb-1">
       <div class="col">
         <a url="src/os/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-clipboard-list"></i> Ordem de Serviços
         </a>
       </div>
-    </div>
+    </div> -->
 
     <div class="row mb-1">
       <div class="col">
@@ -51,11 +51,11 @@
     </div>
 
 
-    <div class="row mb-1">
+    <!-- <div class="row mb-1">
       <div class="col">
         <i class="fa-solid fa-clipboard-list"></i> Abertura de processos
       </div>
-    </div>
+    </div> -->
 
   </div>
 </div>
