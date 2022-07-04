@@ -261,8 +261,11 @@
                                 $(".ListarFotos").html(dados);
                             }
                         });
-
+                        $.alert('Processou com erros!');
                     // }
+                },
+                error:function(){
+                    $.alert('Ocorreu um erro!');
                 }
             });
 
