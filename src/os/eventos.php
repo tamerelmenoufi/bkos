@@ -29,10 +29,15 @@
 
 ?>
 <style>
-
+    .Titulo<?=$md5?>{
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
 
 </style>
-
+<h4 class="Titulo<?=$md5?>">Lista de eventos da OS #<?=$_POST['os']?></h4>
 <div class="row">
     <div class="col">
 

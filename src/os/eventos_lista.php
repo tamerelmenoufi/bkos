@@ -20,7 +20,6 @@
 
 <div class="row">
     <div class="col">
-    <h4>Lista de eventos da OS #<?=$_POST['os']?></h4>
     <?php
     $query = "select a.*, b.nome as colaborador from os_registros a left join usuarios b on a.colaborador = b.codigo where a.cod_os = '{$_POST['os']}' and JSON_EXTRACT(deletado,\"$.usuario\") = ''";
     $result = mysqli_query($con, $query);
