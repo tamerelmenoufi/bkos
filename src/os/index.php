@@ -34,6 +34,7 @@
 <table id="TableColaboradores" class="table table-hover" style="width:100%">
     <thead>
         <tr>
+            <th>#</th>
             <th>Título</th>
             <th>Empresa</th>
             <th>O.S. Vinculadas</th>
@@ -46,6 +47,7 @@
         while($d = mysqli_fetch_object($result)){
         ?>
         <tr>
+            <td>#<?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?></td>
             <td><?=$d->titulo?></td>
             <td><?=$d->nome_empresa?></td>
             <td><?=$d->quantidade?></td>
