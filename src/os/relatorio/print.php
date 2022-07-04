@@ -73,7 +73,7 @@ $html = '<!DOCTYPE html>
 <body>
 
     <div class="titulo_topo">
-        <div style="position:absolute; color:#fff; font-size:16px; width:500px; border:solid 1px red; padding:20px;">
+        <div style="position:absolute; color:#fff; font-size:20px; width:550px; border:solid 1px red; padding:20px;">
             Serviço N°: <b>'.$v->codigo.'</b><br>
             <b>'.$v->titulo.'</b><br>
             '.$v->descricao.'
