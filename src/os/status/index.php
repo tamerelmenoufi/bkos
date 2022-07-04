@@ -8,8 +8,8 @@
 
 <div class="col-12">
     <div class="col d-flex justify-content-between">
-        <div class="p-2"><h5>Status da OS</h5></div>
-        <div class="p-2">
+        <div class="p-3"><h5>Status da OS</h5></div>
+        <div class="p-3">
             <button
                 class="btn btn-primary"
                 data-bs-toggle="offcanvas"
@@ -26,40 +26,43 @@
 </div>
 
 <div class="col-12">
-    <table id="TableStatus" class="table table-hover" style="width:100%">
-        <thead>
-            <tr>
-                <th>Título</th>
-                <th>Situação</th>
-                <!-- <th>Ações</th> -->
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            while($d = mysqli_fetch_object($result)){
-            ?>
-            <tr linha='<?=$d->codigo?>'>
-                <td><?=$d->titulo?></td>
-                <td><?=$d->situacao?></td>
-                <!-- <td>
-                    <button
-                        editar="<?=$d->codigo?>"
-                        class="btn btn-success btn-xs"
-                        data-bs-toggle="offcanvas"
-                        href="#offcanvasDireita"
-                        role="button"
-                        aria-controls="offcanvasDireita"
-                    >
-                        Ed
-                    </button>
-                    <button excluir="<?=$codigo?>" class="btn btn-danger btn-xs">ex</button>
-                </td> -->
-            </tr>
-            <?php
-            }
-            ?>
-        </tbody>
-    </table>
+    <div class="p-3">
+        <table id="TableStatus" class="table table-hover" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Situação</th>
+                    <!-- <th>Ações</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                while($d = mysqli_fetch_object($result)){
+                ?>
+                <tr linha='<?=$d->codigo?>'>
+                    <td><?=$d->titulo?></td>
+                    <td><?=$d->situacao?></td>
+                    <!-- <td>
+                        <button
+                            editar="<?=$d->codigo?>"
+                            class="btn btn-success btn-xs"
+                            data-bs-toggle="offcanvas"
+                            href="#offcanvasDireita"
+                            role="button"
+                            aria-controls="offcanvasDireita"
+                        >
+                            Ed
+                        </button>
+                        <button excluir="<?=$codigo?>" class="btn btn-danger btn-xs">ex</button>
+                    </td> -->
+                </tr>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+
 </div>
 
 <script>
