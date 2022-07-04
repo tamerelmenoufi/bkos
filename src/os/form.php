@@ -44,10 +44,15 @@
 
 ?>
 <style>
-
+    #topo<?=$md5?> {
+        position:absolute;
+        left:60px;
+        top:8px;
+        z-index:0;
+    }
 
 </style>
-<h2 class="Topo">Dados da O.S.</h2>
+<h2 class="Topo<?=$md5?>">Dados da O.S.</h2>
 <div class="row">
     <div class="col">
         <form id="form-<?= $md5 ?>">
