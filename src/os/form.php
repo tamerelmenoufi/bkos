@@ -109,7 +109,7 @@
             </div>
 
 
-            <div class="form-floating mb-3">
+            <!-- <div class="form-floating mb-3">
                 <select class="form-select" name="executor" id="executor">
                     <option value="">::Selecione::</option>
                     <?php
@@ -123,7 +123,7 @@
                     ?>
                 </select>
                 <label for="executor">Executor da Solicitação</label>
-            </div>
+            </div> -->
 
             <div class="form-floating mb-3">
                 <select class="form-select" id="situacao" name="situacao" aria-label="Situação">
