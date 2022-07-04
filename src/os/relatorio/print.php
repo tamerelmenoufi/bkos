@@ -29,7 +29,7 @@ $html = '<!DOCTYPE html>
         }
         .titulo_topo{
             width:100%;
-            height:500px;
+            height:510px;
             background-size:cover;
             background-position:center;
             background-repeat:no-repeat;
