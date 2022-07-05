@@ -117,7 +117,7 @@
 
             cod_os = $("#cod_os").val();
             status = $("#status").val();
-             = $("#classificacao").val();
+            classificacao = $("#classificacao").val();
             titulo = $("#titulo").val();
             descricao = $("#descricao").val();
 
