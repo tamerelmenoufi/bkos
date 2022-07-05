@@ -76,7 +76,7 @@
         bottom:0;
         width:100%;
         background:#eee;
-        opacity:0;
+        opacity:1;
         z-index:2;
         border:solid 1px;
     }
