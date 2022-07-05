@@ -95,7 +95,7 @@
         color:#fff;
         font-size:10px;
         cursor:pointer;
-        display:none;
+        opacity:0;
     }
     .iconeImagem{
         position:absolute;
@@ -186,6 +186,7 @@
             $("#encode_file").attr("tipo", '');
             $(".Foto").css("background-image",'');
             $(".Foto div i").css("opacity","1");
+            $(".Apagar span").css("opacity","0");
 
         });
 
@@ -210,6 +211,7 @@
 
                                 $(".Foto").css("background-image",`url(${Base64})`);
                                 $(".Foto div i").css("opacity","0");
+                                $(".Apagar span").css("opacity","1");
 
                             };
                             fileReader.readAsDataURL(file);
