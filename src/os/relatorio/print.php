@@ -112,7 +112,7 @@ $html = '<!DOCTYPE html>
             padding:5px;
             text-align:center;
             text-shadow: 0 0 0.2em #333
-            width:400px;
+            width:800px;
             border:solid 1px red;
         }
     </style>
