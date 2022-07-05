@@ -92,7 +92,7 @@ $html = '<!DOCTYPE html>
             text-align:justify;
             text-shadow: 0 0 0.2em #101010
         }
-        .servico_dados_os{
+        .servico_dados{
             position:absolute;
             left:30px;
             bottom:0px;
@@ -103,6 +103,17 @@ $html = '<!DOCTYPE html>
             text-align:justify;
             text-shadow: 0 0 0.2em #fff
         }
+        .servico_dados_os{
+            position:absolute;
+            right:0px;
+            top:50px;
+            color:#fff;
+            font-size:12px;
+            width:auto;
+            padding:5px;
+            text-align:center;
+            text-shadow: 0 0 0.2em #333
+        }
     </style>
 </head>
 <body>
@@ -110,6 +121,7 @@ $html = '<!DOCTYPE html>
     <div class="titulo_topo">
         <div class="servico_numero_os">O.S. #'.str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT).'</div>
         <div class="servico_dados_os">Responsável: '.$v->responsavel.' - Em: '.$v->data_cadastro.'</div>
+        <div class="servico_dados">Executor: '.$d->executor.'<br>Em: '.$d->data_cadastro.'</div>
 
         <div class="servico_descricao">
             <span class="servico_descricao_titulo">Serviço N°: <b>'.str_pad($v->codigo , 6 , '0' , STR_PAD_LEFT).'</b></span><br><br>
