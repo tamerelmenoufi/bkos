@@ -110,9 +110,9 @@ $html = '<!DOCTYPE html>
             color:#fff;
             font-size:12px;
             padding:5px;
-            text-align:center;
+            text-align:right;
             text-shadow: 0 0 0.2em #333
-            width:800px;
+            width:auto;
             border:solid 1px red;
         }
     </style>
@@ -121,8 +121,8 @@ $html = '<!DOCTYPE html>
 
     <div class="titulo_topo">
         <div class="servico_numero_os">O.S. #'.str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT).'</div>
-        <div class="servico_dados_os">Responsável: '.$d->executor.'<br>Em: '.$d->data_cadastro.'</div>
-        <div class="servico_dados">Executor: '.$v->responsavel.' - Em: '.$v->data_cadastro.'</div>
+        <div class="servico_dados_os">Executor: '.$d->executor.'<br>Em: '.$d->data_cadastro.'</div>
+        <div class="servico_dados">Responsável: '.$v->responsavel.' - Em: '.$v->data_cadastro.'</div>
 
         <div class="servico_descricao">
             <span class="servico_descricao_titulo">Serviço N°: <b>'.str_pad($v->codigo , 6 , '0' , STR_PAD_LEFT).'</b></span><br><br>
