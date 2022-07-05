@@ -55,7 +55,7 @@
                 }
                 ?>
             </select>
-            <label for="status">Situação</label>
+            <label for="status">Situação*</label>
         </div>
 
         <div class="form-floating mb-3">
@@ -70,7 +70,7 @@
                 }
                 ?>
             </select>
-            <label for="classificacao">Classificação</label>
+            <label for="classificacao">Classificação*</label>
         </div>
 
         <!-- <div class="form-floating mb-3">
@@ -80,7 +80,7 @@
 
         <div class="form-floating mb-3">
             <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"><?=$d->descricao?></textarea>
-            <label for="descricao">Descricão</label>
+            <label for="descricao">Descricão*</label>
         </div>
     </div>
 </div>
@@ -117,9 +117,15 @@
 
             cod_os = $("#cod_os").val();
             status = $("#status").val();
-            classificacao = $("#classificacao").val();
+             = $("#classificacao").val();
             titulo = $("#titulo").val();
             descricao = $("#descricao").val();
+
+            if(!status || !classificacao || !descricao){
+                $.alert('Favor preencher os campos obrigatórios (*)');
+                return false;
+            }
+
 
             $("#titulo").val('');
             $("#descricao").val('');
