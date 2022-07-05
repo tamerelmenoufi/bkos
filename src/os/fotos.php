@@ -95,7 +95,7 @@
         color:#fff;
         font-size:10px;
         cursor:pointer;
-
+        display:none;
     }
     .iconeImagem{
         position:absolute;
@@ -185,7 +185,7 @@
             $("#encode_file").attr("nome", '');
             $("#encode_file").attr("tipo", '');
             $(".Foto").css("background-image",'');
-            $(".Foto div i").css("opacity","1");
+            $(".iconeImagem").css("display","none");
 
         });
 
@@ -209,7 +209,7 @@
                                 $("#encode_file").attr("tipo", type);
 
                                 $(".Foto").css("background-image",`url(${Base64})`);
-                                $(".Foto div i").css("opacity","0");
+                                $(".iconeImagem").css("display","block");
 
                             };
                             fileReader.readAsDataURL(file);
