@@ -28,7 +28,7 @@
                 from os_registros a
                 left join usuarios b on a.colaborador = b.codigo
                 left join os_classificacao c on a.classificacao = c.codigo
-            where a.cod_os = '{$_POST['os']}' and JSON_EXTRACT(deletado,\"$.usuario\") = ''";
+            where a.cod_os = '{$_POST['os']}' and JSON_EXTRACT(a.deletado,\"$.usuario\") = ''";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
     ?>
