@@ -230,6 +230,19 @@
             titulo = $("#titulo").val();
             descricao = $("#descricao").val();
 
+            if(
+                !cod_os ||
+                !foto_nome ||
+                !foto_tipo ||
+                !foto_value ||
+                !titulo ||
+                !descricao
+            ){
+                $.alert('Registro fotográfico não pode ser inserido<br>Dados Obrigatórios incompletos!');
+                return false;
+            }
+
+
 
             $("#encode_file").attr('nome','');
             $("#encode_file").attr('tipo','');
