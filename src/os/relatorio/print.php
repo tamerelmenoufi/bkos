@@ -14,7 +14,7 @@
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
-    $query = "select * from os where codigo = '{$d->vinculo}'";
+    $query = "select a.*, b.nome from os a left join colaboradores b on a.responsavel = b.codigo where a.codigo = '{$d->vinculo}'";
     $result = mysqli_query($con, $query);
     $v = mysqli_fetch_object($result);
 
@@ -92,12 +92,25 @@ $html = '<!DOCTYPE html>
             text-align:justify;
             text-shadow: 0 0 0.2em #101010
         }
+        .servico_dados_os{
+            position:absolute;
+            left:0px;
+            bottom:0px;
+            color:#fff;
+            font-size:12px;
+            width:auto;
+            padding:20px;
+            text-align:justify;
+            text-shadow: 0 0 0.2em #101010
+        }
     </style>
 </head>
 <body>
 
     <div class="titulo_topo">
-        <div class="servico_numero_os">#'.str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT).'</div>
+        <div class="servico_numero_os">O.S. #'.str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT).'</div>
+        <div class="servico_dados_os">Responsável: '.$v->responsavel.' - Criada em: '.$v->data_cadastro.'</div>
+
         <div class="servico_descricao">
             <span class="servico_descricao_titulo">Serviço N°: <b>'.str_pad($v->codigo , 6 , '0' , STR_PAD_LEFT).'</b></span><br><br>
             <span class="servico_descricao_titulo"><b>'.$v->titulo.'</b></span><br><br>
