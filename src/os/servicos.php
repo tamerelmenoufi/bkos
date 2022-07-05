@@ -8,9 +8,11 @@
     $query = "select
                     a.*,
                     if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
-                    b.razao_social as nome_empresa
+                    b.razao_social as nome_empresa,
+                    c.nome as responsavel
                 from os a
                 left join empresas b on a.empresa = b.codigo
+                left join colaboradores c on a.responsavel = c.codigo
                 where vinculo = '{$_SESSION['servico']}'
                 order by a.titulo";
     $result = mysqli_query($con, $query);
@@ -43,6 +45,7 @@
                 <li class="list-group-item"><?=$e->descricao?></li>
                 <li class="list-group-item"><?=$e->situacao?></li>
                 <li class="list-group-item">Criada em <?=$e->data_cadastro?></li>
+                <li class="list-group-item">Responsável: <?=$e->responsavel?></li>
             </ul>
         </div>
 
