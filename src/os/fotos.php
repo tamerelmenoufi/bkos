@@ -70,7 +70,7 @@
         text-align:center;
     }
     .FileFoto{
-        position:relative;
+        position:absolute;
         left:0;
         top:0;
         bottom:0;
