@@ -14,7 +14,7 @@
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
-    $query = "select a.*, b.nome from os a left join colaboradores b on a.responsavel = b.codigo where a.codigo = '{$d->vinculo}'";
+    $query = "select a.*, b.nome as responsavel from os a left join colaboradores b on a.responsavel = b.codigo where a.codigo = '{$d->vinculo}'";
     $result = mysqli_query($con, $query);
     $v = mysqli_fetch_object($result);
 
@@ -96,12 +96,12 @@ $html = '<!DOCTYPE html>
             position:absolute;
             left:0px;
             bottom:0px;
-            color:#fff;
+            color:#333;
             font-size:12px;
             width:auto;
-            padding:20px;
+            padding:10px;
             text-align:justify;
-            text-shadow: 0 0 0.2em #101010
+            text-shadow: 0 0 0.2em #fff
         }
     </style>
 </head>
