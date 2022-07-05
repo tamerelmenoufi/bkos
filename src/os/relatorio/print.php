@@ -26,7 +26,7 @@ $html = '<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório O.S. #'.$d->codigo.'</title>
+    <title>Relatório O.S. #'.str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT).'</title>
     <style>
         .corpo{
             position:relative;
@@ -80,13 +80,26 @@ $html = '<!DOCTYPE html>
         .servico_descricao_titulo{
             font-size:25px;
         }
+
+        .servico_numero_os{
+            position:absolute;
+            right:0px;
+            top:0px;
+            color:#fff;
+            font-size:40px;
+            width:auto;
+            padding:20px;
+            text-align:justify;
+            text-shadow: 0 0 0.2em #101010
+        }
     </style>
 </head>
 <body>
 
     <div class="titulo_topo">
+        <div class="servico_numero_os">#'.str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT).'</div>
         <div class="servico_descricao">
-            <span class="servico_descricao_titulo">Serviço N°: <b>'.$v->codigo.'</b></span><br><br>
+            <span class="servico_descricao_titulo">Serviço N°: <b>'.str_pad($v->codigo , 6 , '0' , STR_PAD_LEFT).'</b></span><br><br>
             <span class="servico_descricao_titulo"><b>'.$v->titulo.'</b></span><br><br>
             '.$v->descricao.''.$v->descricao.''.$v->descricao.''.$v->descricao.'
         </div>
