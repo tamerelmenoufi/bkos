@@ -83,7 +83,7 @@
     .Apagar{
         position:relative;
         text-align:center;
-        margin-top:-45px;
+        margin-top:0px;
         width:100%;
         opacity:1;
         z-index:3;
