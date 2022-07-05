@@ -51,7 +51,7 @@
             <div class="row g-0">
                 <div class="col">
                 <div class="card-body">
-                    <h5 class="card-title"><?=$d->classificacao?> <small style="color:#ccc; font-size:12px;"><?=$d->status?></small></h5>
+                    <h5 class="card-title"><?=$d->classificacao?> <small style="color:#DDD; font-size:12px;"><?=$d->status?></small></h5>
                     <p class="card-text"><?=$d->descricao?></p>
                     <p class="card-text" style="font-size:10px;"><small class="text-muted"><?="{$d->colaborador} em {$d->data_cadastro}"?></small></p>
                 </div>
