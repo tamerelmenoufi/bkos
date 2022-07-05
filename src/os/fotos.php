@@ -128,16 +128,16 @@
             </span>
         </div>
 
-        <p msg>Selecione a imagem</p>
+        <p msg>Selecione a imagem*</p>
     </div>
     <div class="col-md-8">
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>">
-            <label for="titulo">Título</label>
+            <label for="titulo">Título*</label>
         </div>
         <div class="form-floating mb-3">
             <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"><?=$d->descricao?></textarea>
-            <label for="descricao">Descricão</label>
+            <label for="descricao">Descricão*</label>
         </div>
     </div>
 </div>
