@@ -109,7 +109,7 @@ $html = '<!DOCTYPE html>
 
     <div class="titulo_topo">
         <div class="servico_numero_os">O.S. #'.str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT).'</div>
-        <div class="servico_dados_os">Responsável: '.$v->responsavel.' - Criada em: '.$v->data_cadastro.'</div>
+        <div class="servico_dados_os">Responsável: '.$v->responsavel.' - Em: '.$v->data_cadastro.'</div>
 
         <div class="servico_descricao">
             <span class="servico_descricao_titulo">Serviço N°: <b>'.str_pad($v->codigo , 6 , '0' , STR_PAD_LEFT).'</b></span><br><br>
