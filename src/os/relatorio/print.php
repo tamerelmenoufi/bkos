@@ -106,13 +106,15 @@ $html = '<!DOCTYPE html>
         .servico_dados_os{
             position:absolute;
             right:0px;
-            top:50px;
+            top:60px;
             color:#fff;
             font-size:12px;
             width:auto;
             padding:5px;
             text-align:center;
             text-shadow: 0 0 0.2em #333
+            width:400px;
+            border:solid 1px red;
         }
     </style>
 </head>
