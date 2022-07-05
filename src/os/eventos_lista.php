@@ -21,7 +21,14 @@
 <div class="row">
     <div class="col">
     <?php
-    $query = "select a.*, b.nome as colaborador from os_registros a left join usuarios b on a.colaborador = b.codigo where a.cod_os = '{$_POST['os']}' and JSON_EXTRACT(deletado,\"$.usuario\") = ''";
+    $query = "select
+                    a.*,
+                    b.nome as colaborador,
+                    c.titulo
+                from os_registros a
+                left join usuarios b on a.colaborador = b.codigo
+                left join os_classificacao c on a.classificacao = c.codigo
+            where a.cod_os = '{$_POST['os']}' and JSON_EXTRACT(deletado,\"$.usuario\") = ''";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
     ?>
