@@ -94,12 +94,12 @@ $html = '<!DOCTYPE html>
         }
         .servico_dados_os{
             position:absolute;
-            left:25px;
+            left:30px;
             bottom:0px;
             color:#333;
             font-size:12px;
             width:auto;
-            padding:10px;
+            padding:5px;
             text-align:justify;
             text-shadow: 0 0 0.2em #fff
         }
