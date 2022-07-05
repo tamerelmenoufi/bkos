@@ -24,7 +24,7 @@
     $query = "select
                     a.*,
                     b.nome as colaborador,
-                    c.titulo
+                    c.titulo as classificacao
                 from os_registros a
                 left join usuarios b on a.colaborador = b.codigo
                 left join os_classificacao c on a.classificacao = c.codigo
@@ -49,7 +49,7 @@
             <div class="row g-0">
                 <div class="col">
                 <div class="card-body">
-                    <h5 class="card-title"><?=$d->titulo?></h5>
+                    <h5 class="card-title"><?=$d->classificacao?></h5>
                     <p class="card-text"><?=$d->descricao?></p>
                     <p class="card-text" style="font-size:10px;"><small class="text-muted"><?="{$d->colaborador} em {$d->data_cadastro}"?></small></p>
                 </div>
