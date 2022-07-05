@@ -77,9 +77,8 @@
         bottom:0;
         width:100%;
         background:#eee;
-        opacity:1;
+        opacity:0;
         z-index:2;
-        border:solid 1px;
     }
     .Apagar{
         position:relative;
