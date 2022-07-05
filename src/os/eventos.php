@@ -6,6 +6,7 @@
         $query = "insert into os_registros set
                                             cod_os = '{$_POST['cod_os']}',
                                             status = '{$_POST['status']}',
+                                            classificacao = '{$_POST['classificacao']}',
                                             titulo = '{$_POST['titulo']}',
                                             descricao = '{$_POST['descricao']}',
                                             colaborador = '{$_SESSION['QrAtivosLogin']}',
@@ -116,6 +117,7 @@
 
             cod_os = $("#cod_os").val();
             status = $("#status").val();
+            classificacao = $("#classificacao").val();
             titulo = $("#titulo").val();
             descricao = $("#descricao").val();
 
@@ -129,6 +131,7 @@
                 data:{
                     cod_os,
                     status,
+                    classificacao,
                     titulo,
                     descricao,
                     acao:'salvar'
