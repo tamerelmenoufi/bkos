@@ -24,10 +24,12 @@
     $query = "select
                     a.*,
                     b.nome as colaborador,
-                    c.titulo as classificacao
+                    c.titulo as classificacao,
+                    d.titulo as status
                 from os_registros a
                 left join usuarios b on a.colaborador = b.codigo
                 left join os_classificacao c on a.classificacao = c.codigo
+                left join os_status d on a.status = d.codigo
             where a.cod_os = '{$_POST['os']}' and JSON_EXTRACT(a.deletado,\"$.usuario\") = ''";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
@@ -49,7 +51,7 @@
             <div class="row g-0">
                 <div class="col">
                 <div class="card-body">
-                    <h5 class="card-title"><?=$d->classificacao?></h5>
+                    <h5 class="card-title"><?=$d->classificacao?> <small><?=$d->status?></small> </h5>
                     <p class="card-text"><?=$d->descricao?></p>
                     <p class="card-text" style="font-size:10px;"><small class="text-muted"><?="{$d->colaborador} em {$d->data_cadastro}"?></small></p>
                 </div>
