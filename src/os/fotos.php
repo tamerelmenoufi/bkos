@@ -38,6 +38,11 @@
         exit();
     }
 
+
+    $query = "select * from os where codigo = '{$_POST['os']}'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
 ?>
 <style>
     .Topo<?=$md5?> {
@@ -108,6 +113,11 @@
 </style>
 
 <h4 class="Topo<?=$md5?>">Lista de fotos da OS #<?=str_pad($_POST['os'] , 6 , '0' , STR_PAD_LEFT)?></h4>
+<div class="row">
+    <div class="col">
+        <h5><?=$d->titulo?></h5>
+    </div>
+</div>
 <div class="row">
     <div class="col-md-4">
         <div class="Foto">
