@@ -10,7 +10,7 @@
     // header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');
     // header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
 
-    $query = "select a.*, b.nome as responsavel from os a left join colaboradores b on a.executor = b.codigo where a.codigo = '{$_GET['os']}'";
+    $query = "select a.*, b.nome as executor from os a left join colaboradores b on a.executor = b.codigo where a.codigo = '{$_GET['os']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
