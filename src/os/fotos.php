@@ -281,9 +281,9 @@
                             },
                             success:function(dados){
                                 $(".ListarFotos").html(dados);
+                                $.alert('Registro inserido com sucesso!');
                             }
                         });
-                        $.alert('Processou com erros!');
                     // }
                 },
                 error:function(){
