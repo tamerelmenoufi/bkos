@@ -78,6 +78,7 @@
         background:#eee;
         opacity:0;
         z-index:2;
+        border:solid 1px;
     }
     .Apagar{
         position:relative;
@@ -94,7 +95,7 @@
         color:#fff;
         font-size:10px;
         cursor:pointer;
-        opacity:0;
+
     }
     .iconeImagem{
         position:absolute;
@@ -170,13 +171,13 @@
             }
         });
 
-        $(".Foto, .Apagar").mouseover(function(){
-            if($("#encode_file").attr("nome")){
-                $(".Apagar span").css("opacity","1");
-            }
-        }).mouseout(function(){
-            $(".Apagar span").css("opacity","0");
-        });
+        // $(".Foto, .Apagar").mouseover(function(){
+        //     if($("#encode_file").attr("nome")){
+        //         $(".Apagar span").css("opacity","1");
+        //     }
+        // }).mouseout(function(){
+        //     $(".Apagar span").css("opacity","0");
+        // });
 
         $(".Apagar span").click(function(){
 
