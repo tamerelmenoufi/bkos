@@ -109,7 +109,6 @@ $html = '<!DOCTYPE html>
             top:60px;
             color:#fff;
             font-size:12px;
-            width:auto;
             padding:5px;
             text-align:center;
             text-shadow: 0 0 0.2em #333
