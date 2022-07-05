@@ -107,11 +107,11 @@ $html = '<!DOCTYPE html>
             position:absolute;
             right:20px;
             top:60px;
-            color:#fff;
+            color:#000;
             font-size:12px;
             padding:5px;
             text-align:right;
-            text-shadow: 0 0 0.1em #000
+            text-shadow: 0 0 0.5em #fff
             width:auto;
         }
     </style>
