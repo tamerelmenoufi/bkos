@@ -73,7 +73,7 @@
         <tr>
             <th>O.S.</th>
             <th>Título</th>
-            <th>Empresa</th>
+            <th>Data</th>
             <th>Situação</th>
             <th>Ações</th>
         </tr>
@@ -85,7 +85,7 @@
         <tr>
             <td>#<?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?></td>
             <td><?=$d->titulo?></td>
-            <td><?=$d->nome_empresa?></td>
+            <td><?=$d->data_cadastro?></td>
             <td><?=$d->situacao?></td>
             <td>
 
