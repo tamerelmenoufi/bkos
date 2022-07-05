@@ -111,8 +111,9 @@ $html = '<!DOCTYPE html>
             font-size:12px;
             padding:5px;
             text-align:right;
-            text-shadow: 0 0 0.2em #fff
             width:auto;
+            background-color:#fff;
+            opacity:0.8;
         }
     </style>
 </head>
