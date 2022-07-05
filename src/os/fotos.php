@@ -103,7 +103,7 @@
         color:#eee;
         left:50%;
         margin-left:-50px;
-        top:-40px;
+        top:7px;
     }
 </style>
 
