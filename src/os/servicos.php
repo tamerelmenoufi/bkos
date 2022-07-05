@@ -42,6 +42,7 @@
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><?=$e->descricao?></li>
                 <li class="list-group-item"><?=$e->situacao?></li>
+                <li class="list-group-item">Criada em <?=$e->data_cadastro?></li>
             </ul>
         </div>
 
