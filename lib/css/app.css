@@ -1,4 +1,4 @@
-#Carregando{
+.Carregando{
     position:fixed;
     left:0;
     bottom:0;
@@ -11,7 +11,7 @@
     align-items: center;
     /* display:none; */
 }
-#Carregando span{
+.Carregando span{
     color:#fff;
     font-size: 70px;
 }

@@ -26,7 +26,7 @@
   </head>
   <body>
 
-    <div id="Carregando">
+    <div class="Carregando">
         <span><i class="fa-solid fa-spinner"></i></span>
     </div>
 
