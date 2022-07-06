@@ -31,19 +31,19 @@
                 </a>
                 <a
                     empresa=""
-                    opc="os"
-                    url="src/os/index.php"
-                    class="nav-link"
-                >
-                    <i class="fa-solid fa-list-check"></i> Solicitações de Serviços
-                </a>
-                <a
-                    empresa=""
                     opc="visualizar"
                     url="src/empresas/visualizar.php"
                     class="nav-link"
                 >
                     <i class="fa-solid fa-list-check"></i> Dados da empresa
+                </a>
+                <a
+                    empresa=""
+                    opc="os"
+                    url="src/os/index.php"
+                    class="nav-link"
+                >
+                    <i class="fa-solid fa-list-check"></i> Solicitações de Serviços
                 </a>
                 <a
                     empresa=""
