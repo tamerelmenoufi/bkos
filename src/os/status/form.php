@@ -56,7 +56,7 @@
     <div class="col">
         <form id="form-<?= $md5 ?>">
         <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>">
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>" required>
                 <label for="titulo">Título</label>
             </div>
 
