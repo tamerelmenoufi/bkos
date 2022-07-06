@@ -52,15 +52,15 @@
     <div class="col">
         <form id="form-<?= $md5 ?>">
         <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="<?=$d->nome?>">
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="<?=$d->nome?>" required>
                 <label for="cnpj">Nome</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" value="<?=$d->cpf?>">
+                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" value="<?=$d->cpf?>" required>
                 <label for="cpf">CPF</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" value="<?=$d->telefone?>">
+                <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" value="<?=$d->telefone?>" required>
                 <label for="telefone">Telefone</label>
             </div>
             <div class="form-floating mb-3">
@@ -68,11 +68,11 @@
                 <label for="email">E-mail</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Departamento" value="<?=$d->departamento?>">
+                <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Departamento" value="<?=$d->departamento?>" required>
                 <label for="departamento">Departamento</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Cargo" value="<?=$d->cargo?>">
+                <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Cargo" value="<?=$d->cargo?>" required>
                 <label for="cargo">Cargo</label>
             </div>
 
