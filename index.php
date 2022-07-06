@@ -25,6 +25,11 @@
     ?>
   </head>
   <body>
+
+    <div id="Carregando">
+        <span><i class="fa-solid fa-spinner"></i></span>
+    </div>
+
     <div class="CorpoApp"></div>
 
     <?php

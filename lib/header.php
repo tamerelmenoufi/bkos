@@ -9,4 +9,5 @@
 
 <script src="lib/vendor/jQuery-Mask/jquery.mask.min.js" ></script>
 
-
+<script src="lib/css/app.css" ></script>
+<script src="lib/js/app.js" ></script>
