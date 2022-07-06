@@ -67,8 +67,10 @@
 
 <script>
     $(document).ready(function () {
+        Carregando('none');
 
         $("button[offcanvasDireita]").click(function(){
+            Carregando();
             $.ajax({
                 url:"src/os/classificacao/form.php",
                 success:function(dados){
@@ -80,7 +82,7 @@
 
         $("tr[linha]").click(function(){
             status = $(this).attr("linha");
-
+            Carregando();
             $.ajax({
                 url:"src/os/classificacao/form.php",
                 type:"POST",

@@ -115,7 +115,7 @@
     $(function(){
         $("#telefone").mask("(99) 9 9999-9999");
         $("#cpf").mask("999.999.999-99");
-
+        Carregando('none');
         $('#form-<?=$md5?>').submit(function (e) {
             e.preventDefault();
 
@@ -130,6 +130,7 @@
             }
 
             campos.push({name: 'acao', value: 'salvar'})
+            Carregando();
             $.ajax({
                 url: 'src/empresas/contatos_form.php',
                 type:"POST",

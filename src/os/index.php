@@ -88,8 +88,9 @@
 
 <script>
     $(document).ready(function () {
-
+        Carregando('none');
         $("button[offcanvasDireita]").click(function(){
+            Carregando();
             $.ajax({
                 url:"src/os/form.php",
                 success:function(dados){
@@ -100,6 +101,7 @@
 
 
         $("li[linha]").click(function(){
+            Carregando();
             os = $(this).attr("linha");
             $.ajax({
                 url:"src/os/form.php",
@@ -119,6 +121,7 @@
 
 
         $("li[servico]").click(function(){
+            Carregando();
             servico = $(this).attr("servico");
             $.ajax({
                 url:"src/os/servicos.php",

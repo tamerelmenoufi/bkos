@@ -62,7 +62,7 @@
 
 <script>
     $(document).ready(function () {
-
+        Carregando('none');
         $("button[offcanvasDireita]").click(function(){
             $.ajax({
                 url:"src/empresas/empresa_form.php",
@@ -79,7 +79,7 @@
             $("a[empresa]").attr("empresa",empresa);
             $("a[empresa]").removeClass("active");
             $('a[opc="visualizar"]').addClass("active");
-
+            Carregando();
             $.ajax({
                 url:"src/empresas/visualizar.php",
                 type:"POST",

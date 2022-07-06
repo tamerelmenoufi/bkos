@@ -170,6 +170,7 @@
 
 <script>
     $(function(){
+
         $.ajax({
             url:"src/os/fotos_lista.php",
             type:"POST",
@@ -177,6 +178,7 @@
                 os:'<?=$_POST['os']?>'
             },
             success:function(dados){
+                Carregando('none');
                 $(".ListarFotos").html(dados);
             }
         });
@@ -266,7 +268,7 @@
             $(".Foto").css("background-image",'');
             $(".Foto div i").css("opacity","1");
 
-
+            Carregando();
             $.ajax({
                 url:"src/os/fotos.php",
                 type:"POST",

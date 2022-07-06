@@ -121,6 +121,7 @@
 
 <script>
     $(function(){
+        Carregando('none');
         $("#cep").mask("99.999-999");
 
         $('#form-<?=$md5?>').submit(function (e) {
@@ -137,6 +138,7 @@
             }
 
             campos.push({name: 'acao', value: 'salvar'})
+            Carregando();
             $.ajax({
                 url: 'src/empresas/enderecos_form.php',
                 type:"POST",

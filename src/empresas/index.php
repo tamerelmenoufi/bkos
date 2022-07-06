@@ -79,6 +79,7 @@
                 opc:''
             },
             success:function(dados){
+                Carregando('none');
                 $(".tab-pane").html(dados);
             }
         });
@@ -94,7 +95,7 @@
                 $(".nav-link").removeClass("active");
                 $(this).addClass("active");
                 if(opc == 'lista') $("a[empresa]").attr("empresa",'');
-
+                Carregando();
                 $.ajax({
                     url,
                     type:"POST",

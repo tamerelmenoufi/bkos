@@ -58,7 +58,7 @@
 
 
     <script>
-
+        Carregando('none');
         //endereco = "Rua Monsenhor Coutinho, 600, Centro, Manaus, Amazonas";
         coordenadas<?=$md5?> = '<?="{$coordenadas}"?>';
         endereco<?=$md5?> = "<?=$endereco?>";
@@ -137,7 +137,7 @@
 
         $(".ConfirmaCoordenadas").click(function(){
             coordenadas = $(this).attr("coordenadas");
-
+            Carregando();
             $.ajax({
                 url:"src/empresas/editar_endereco.php",
                 type:"POST",

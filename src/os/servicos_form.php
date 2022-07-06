@@ -142,7 +142,7 @@
 
 <script>
     $(function(){
-
+        Carregando('none');
         $('#form-<?=$md5?>').submit(function (e) {
             e.preventDefault();
 
@@ -154,6 +154,8 @@
             }
 
             campos.push({name: 'acao', value: 'salvar'})
+
+            Carregando();
             $.ajax({
                 url: 'src/os/servicos_form.php',
                 type:"POST",

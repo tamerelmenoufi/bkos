@@ -8,10 +8,12 @@
 <script>
 
     function Abrir(u, l){
+        Carregando();
         $.ajax({
             url:u,
             success:function(dados){
                 $(`#${l}`).html(dados);
+                Carregando('none');
             }
         });
     }

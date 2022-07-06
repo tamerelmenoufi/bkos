@@ -53,7 +53,9 @@
 
 <script>
     $(function(){
+        Carregando('none');
         $("button[novoContatoEmpresa]").click(function(){
+            Carregando();
             $.ajax({
                 url:"src/empresas/contatos_form.php",
                 type:"POST",
@@ -68,6 +70,7 @@
 
         $("a[editar]").click(function(){
             codigo = $(this).attr("editar");
+            Carregando();
             $.ajax({
                 url:"src/empresas/contatos_form.php",
                 type:"POST",

@@ -38,7 +38,7 @@
 
     <script>
         $(function(){
-
+            Carregando();
             $.ajax({
                 url:"<?=$url?>",
                 success:function(dados){

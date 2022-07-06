@@ -113,6 +113,7 @@
 
 <script>
     $(function(){
+
         $.ajax({
             url:"src/os/eventos_lista.php",
             type:"POST",
@@ -120,6 +121,7 @@
                 os:'<?=$_POST['os']?>'
             },
             success:function(dados){
+                Carregando('none');
                 $(".ListarRegistros").html(dados);
             }
         });
@@ -140,7 +142,7 @@
 
             $("#titulo").val('');
             $("#descricao").val('');
-
+            Carregando();
             $.ajax({
                 url:"src/os/eventos.php",
                 type:"POST",

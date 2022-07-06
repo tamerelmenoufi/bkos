@@ -128,8 +128,10 @@
 
 <script>
     $(document).ready(function () {
+        Carregando('none');
 
         $("button[voltar]").click(function(){
+            Carregando();
             $.ajax({
                 url:"src/os/index.php",
                 success:function(dados){
@@ -140,6 +142,7 @@
         });
 
         $("button[offcanvasDireita]").click(function(){
+            Carregando();
             $.ajax({
                 url:"src/os/servicos_form.php",
                 success:function(dados){
@@ -152,6 +155,7 @@
         $("li[os]").click(function(){
             os = $(this).attr("os");
             url = $(this).attr("url");
+            Carregando();
             $.ajax({
                 url,
                 type:"POST",

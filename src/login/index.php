@@ -187,9 +187,11 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
 <script>
     $(function(){
+        Carregando('none');
         AcaoBotao = ()=>{
             login = $("#login").val();
             senha = $("#senha").val();
+            Carregando();
             $.ajax({
                 url:"src/login/index.php",
                 type:"POST",
@@ -207,6 +209,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
                         window.location.href='./';
                     }else{
                         $.alert('Ocorreu um erro.<br>Favor confira os dados do login.')
+                        Carregando('none');
                     }
 
                 }

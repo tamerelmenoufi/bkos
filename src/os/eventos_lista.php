@@ -68,6 +68,7 @@
 
 <script>
     $(function(){
+        Carregando('none');
         $("input[status]").change(function(){
             os = $(this).attr("status");
             if($(this).prop("checked") == true){
@@ -75,6 +76,7 @@
             }else{
                 situacao = '0';
             }
+            Carregando();
             $.ajax({
                 url:"src/os/eventos_lista.php",
                 type:"POST",
@@ -98,7 +100,7 @@
                 buttons:{
                     'SIM':function(){
                         $(`div[bloco${os}]`).remove();
-
+                        Carregando();
                         $.ajax({
                             url:"src/os/eventos_lista.php",
                             type:"POST",

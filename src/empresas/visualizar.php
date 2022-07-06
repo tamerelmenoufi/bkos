@@ -29,9 +29,10 @@
 
 <script>
   $(function(){
-
+    Carregando('none');
     $("a[editar]").click(function(){
         codigo = $(this).attr("editar");
+        Carregando();
         $.ajax({
             url:"src/empresas/empresa_form.php",
             type:"POST",

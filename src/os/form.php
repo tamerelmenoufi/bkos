@@ -168,6 +168,7 @@
 
 <script>
     $(function(){
+        Carregando('none');
         $("#telefone").mask("(99) 9 9999-9999");
         $("#cpf").mask("999.999.999-99");
 
@@ -182,6 +183,7 @@
             }
 
             campos.push({name: 'acao', value: 'salvar'})
+            Carregando();
             $.ajax({
                 url: 'src/os/form.php',
                 type:"POST",
