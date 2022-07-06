@@ -10,6 +10,7 @@
     justify-content: center;
     align-items: center;
     /* display:none; */
+    z-index: 9999;
 }
 .Carregando span{
     color:#fff;
