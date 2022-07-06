@@ -52,31 +52,31 @@
     <div class="col">
         <form id="form-<?= $md5 ?>">
         <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="<?=$d->nome?>">
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="<?=$d->nome?>" required>
                 <label for="nome">Nome</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="estado" name="estado" placeholder="Estado" value="<?=$d->estado?>">
+                <input type="text" class="form-control" id="estado" name="estado" placeholder="Estado" value="<?=$d->estado?>" required>
                 <label for="estado">Estado</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" value="<?=$d->cidade?>">
+                <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" value="<?=$d->cidade?>" required>
                 <label for="cidade">Cidade</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" value="<?=$d->bairro?>">
+                <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" value="<?=$d->bairro?>" required>
                 <label for="bairro">Bairro</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP" value="<?=$d->cep?>">
+                <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP" value="<?=$d->cep?>" required>
                 <label for="cep">CEP</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" value="<?=$d->rua?>">
+                <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" value="<?=$d->rua?>" required>
                 <label for="rua">Rua</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="numero" name="numero" placeholder="Número" value="<?=$d->numero?>">
+                <input type="text" class="form-control" id="numero" name="numero" placeholder="Número" value="<?=$d->numero?>" required>
                 <label for="numero">Número</label>
             </div>
             <div class="form-floating mb-3">
