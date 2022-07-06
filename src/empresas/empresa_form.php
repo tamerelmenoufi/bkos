@@ -52,11 +52,11 @@
     <div class="col">
         <form id="form-<?= $md5 ?>">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="CNPJ" value="<?=$d->cnpj?>">
+                <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="CNPJ" value="<?=$d->cnpj?>" required>
                 <label for="cnpj">CNPJ</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="razao_social" name="razao_social" placeholder="Razão Social" value="<?=$d->razao_social?>">
+                <input type="text" class="form-control" id="razao_social" name="razao_social" placeholder="Razão Social" value="<?=$d->razao_social?>" required>
                 <label for="razao_social">Razão Social</label>
             </div>
             <div class="form-floating mb-3">

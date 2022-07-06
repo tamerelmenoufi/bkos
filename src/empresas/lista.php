@@ -7,7 +7,7 @@
 ?>
 <div class="col">
     <div class="col d-flex justify-content-between">
-        <div class="p-2">Dados da tabel de Empresas (<?=$_POST['opc']?>)</div>
+        <div class="p-2">Empresas</div>
         <div class="p-2">
             <button
                 class="btn btn-primary"
