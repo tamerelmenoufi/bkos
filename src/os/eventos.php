@@ -64,7 +64,7 @@
                 $r = mysqli_query($con, $q);
                 while($s = mysqli_fetch_object($r)){
                 ?>
-                <option value="<?=$s->codigo?>" <?=(($d->status == $s->codigo)?'selected':false)?> ><?=$s->titulo?></option>
+                <option value="<?=$s->codigo?>"><?=$s->titulo?></option>
                 <?php
                 }
                 ?>
@@ -79,7 +79,7 @@
                 $r = mysqli_query($con, $q);
                 while($s = mysqli_fetch_object($r)){
                 ?>
-                <option value="<?=$s->codigo?>" <?=(($d->classificacao == $s->codigo)?'selected':false)?> ><?=$s->titulo?></option>
+                <option value="<?=$s->codigo?>"><?=$s->titulo?></option>
                 <?php
                 }
                 ?>
@@ -88,12 +88,12 @@
         </div>
 
         <!-- <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>">
+            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="">
             <label for="titulo">Título</label>
         </div> -->
 
         <div class="form-floating mb-3">
-            <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"><?=$d->descricao?></textarea>
+            <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"></textarea>
             <label for="descricao">Descricão*</label>
         </div>
     </div>
