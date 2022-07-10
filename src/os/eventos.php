@@ -46,7 +46,10 @@
 
 <div class="row">
     <div class="col">
-        <h5><?=$d->titulo?></h5>
+        <div class="card mb-3 mt-3 p-3">
+            <h5><?=$d->titulo?></h5>
+            <p><?=$d->descricao?></p>
+        </div>
     </div>
 </div>
 
