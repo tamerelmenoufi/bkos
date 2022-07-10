@@ -116,6 +116,7 @@
 <div class="row">
     <div class="col">
         <div class="card mb-3 mt-3 p-3">
+            <small>Esta O.S. está vinculada a solicitação:</small>
             <h5><?=$d->titulo?></h5>
             <p><?=$d->descricao?></p>
         </div>
