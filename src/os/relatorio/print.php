@@ -87,8 +87,7 @@ $html = '<!DOCTYPE html>
             border:solid 1px #ccc;
             border-radius:20px;
             padding:20px;
-            align-items: center;
-            align-content: center;
+            margin-left:50px;
         }
         .descricao_registro{
             width:100%;
