@@ -42,6 +42,7 @@ $html = '<!DOCTYPE html>
         .descricao{
             font-size:20px;
             text-align:justify;
+            padding:40px;
         }
         .titulo_topo{
             position:relative;
