@@ -155,9 +155,11 @@ $html = '<!DOCTYPE html>
     while($e = mysqli_fetch_object($r)){
         if($i%2 == 0){
             $html .= '<div class="corpo"></div>';
+            $html .= '<h2 class="titulo">REGISTRO FOTOGRÁFICO</h2>';
         }
         if($i%6 == 0 and $i > 0){
             $html .= '<div style="page-break-before: always;"></div>';
+            $html .= '<h2 class="titulo">REGISTRO FOTOGRÁFICO</h2>';
         }
         $html .= '<div class="divImg">
                     <div class="img" style="background-image:url(http://os.bkmanaus.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.')"></div>
