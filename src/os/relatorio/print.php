@@ -36,7 +36,8 @@ $html = '<!DOCTYPE html>
         .titulo{
             font-size:40px;
             text-align:center;
-            margin:30px;
+            margin-top:60px;
+            margin-bottom:60px;
         }
         .descricao{
             font-size:20px;
