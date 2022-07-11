@@ -213,7 +213,7 @@ $html = '<!DOCTYPE html>
                 left join os_classificacao c on a.classificacao = c.codigo
                 left join colaboradores d on a.colaborador = d.codigo
 
-            where a.cod_os = '{$d->codigo}' order by a.data_registro asc";
+            where a.cod_os = '{$d->codigo}' order by a.data_cadastro asc";
     $r = mysqli_query($con, $q);
     $i=0;
     while($e = mysqli_fetch_object($r)){
