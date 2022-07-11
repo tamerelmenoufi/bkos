@@ -203,7 +203,17 @@ $html = '<!DOCTYPE html>
     $html .= '<div style="page-break-before: always;"></div>
     <div class="corpo">';
 
-    $q = "select * from os_registros where cod_os = '{$d->codigo}'";
+    $q = "select
+                a.*,
+                b.titulo as status,
+                c.titulo as classificacao,
+                d.nome as colaborador
+            from os_registros a
+                left join os_status b on a.status = b.codigo
+                left join os_classificacao c on a.classificacao = c.codigo
+                left join colaboradores d on a.colaborador = d.codigo
+
+            where a.cod_os = '{$d->codigo}'";
     $r = mysqli_query($con, $q);
     $i=0;
     while($e = mysqli_fetch_object($r)){
@@ -221,7 +231,7 @@ $html = '<!DOCTYPE html>
         $html .= '<div class="divReg">
                     <div class="descricao_registro">'.$e->descricao.'</div>
                     <div class="descricao_registro">'.$e->status.'</div>
-                    <div class="descricao_registro">'.$e->descricao.'</div>
+                    <div class="descricao_registro">'.$e->classificacao.'</div>
                     <div class="descricao_registro">'.$e->colaborador.'</div>
                     <div class="descricao_registro">'.$e->data_cadastro.'</div>
                   </div>';
