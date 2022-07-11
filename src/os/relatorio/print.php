@@ -146,6 +146,8 @@ $html = '<!DOCTYPE html>
         <h2 class="titulo">'.$d->titulo.'</h2>
         <p class="descricao">'.$d->descricao.'</p>
     </div>';
+
+    //Registros Fotográficos
     $html .= '<div style="page-break-before: always;"></div>
     <div class="corpo">';
 
@@ -173,11 +175,11 @@ $html = '<!DOCTYPE html>
 
     $html .= '</div>';
 
-
+    //Registro de Ocorrências
     $html .= '<div style="page-break-before: always;"></div>
     <div class="corpo">';
 
-    $q = "select * from os_fotos where cod_os = '{$d->codigo}'";
+    $q = "select * from os_registros where cod_os = '{$d->codigo}'";
     $r = mysqli_query($con, $q);
     $i=0;
     while($e = mysqli_fetch_object($r)){
@@ -187,9 +189,9 @@ $html = '<!DOCTYPE html>
         }
         if($i%6 == 0 and $i > 0){
             $html .= '<div style="page-break-before: always;"></div>';
-            $html .= '<h2 class="titulo">REGISTRO FOTOGRÁFICO</h2>';
+            $html .= '<h2 class="titulo">REGISTRO DE OCORRÊNCIAS</h2>';
         }else if($i == 0){
-            $html .= '<h2 class="titulo">REGISTRO FOTOGRÁFICO</h2>';
+            $html .= '<h2 class="titulo">REGISTRO DE OCORRÊNCIAS</h2>';
         }
 
         $html .= '<div class="divImg">
