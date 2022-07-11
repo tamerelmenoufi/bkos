@@ -85,7 +85,7 @@ $html = '<!DOCTYPE html>
             float:none;
             margin-bottom:20px;
             border:solid 1px #ccc;
-            border-radius:20px;
+            border-radius:5px;
             padding:20px;
             margin-left:75px;
         }
