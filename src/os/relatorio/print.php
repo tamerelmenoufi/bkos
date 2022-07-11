@@ -85,7 +85,7 @@ $html = '<!DOCTYPE html>
             float:none;
             margin-bottom:20px;
             border:solid 1px #ccc;
-            border-radius:5px;
+            border-radius:10px;
             padding:20px;
             margin-left:75px;
         }
@@ -220,6 +220,10 @@ $html = '<!DOCTYPE html>
 
         $html .= '<div class="divReg">
                     <div class="descricao_registro">'.$e->descricao.'</div>
+                    <div class="descricao_registro">'.$e->status.'</div>
+                    <div class="descricao_registro">'.$e->descricao.'</div>
+                    <div class="descricao_registro">'.$e->colaborador.'</div>
+                    <div class="descricao_registro">'.$e->data_cadastro.'</div>
                   </div>';
         $i++;
     }
