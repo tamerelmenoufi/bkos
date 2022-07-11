@@ -73,6 +73,22 @@ $html = '<!DOCTYPE html>
             background-position:center;
             background-repeat:no-repeat;
         }
+
+
+        .divReg{
+            position:relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width:100%;
+            float:none;
+            margin-bottom:20px;
+            border:solid 2 #333;
+        }
+
+
+
         .titulo_imagem{
             width:100%;
             text-align:center;
@@ -195,8 +211,7 @@ $html = '<!DOCTYPE html>
         }
 
         $html .= '<div class="divImg">
-                    <div class="img" style="background-image:url(http://os.bkmanaus.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.')"></div>
-                    <div class="titulo_imagem">'.$e->titulo.'</div>
+                    <div class="titulo_imagem">'.$e->descricao.'</div>
                   </div>';
         $i++;
     }
