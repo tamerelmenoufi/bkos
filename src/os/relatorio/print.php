@@ -134,7 +134,8 @@ $html = '<!DOCTYPE html>
     <div class="corpo">
         <h2>'.$d->titulo.'</h2>
         <p>'.$d->descricao.'</p>
-    </div>
+    </div>';
+    $html .= '<div style="page-break-before: always;"></div>
     <div class="corpo">';
 
     $q = "select * from os_fotos where cod_os = '{$d->codigo}'";
