@@ -230,9 +230,9 @@ $html = '<!DOCTYPE html>
         }
         if($i%6 == 0 and $i > 0){
             $html .= '<div style="page-break-before: always;"></div>';
-            $html .= '<h2 class="titulo">REGISTRO DE OCORRÊNCIAS</h2>';
+            $html .= '<h2 class="titulo">REGISTRO DE EVENTOS</h2>';
         }else if($i == 0){
-            $html .= '<h2 class="titulo">REGISTRO DE OCORRÊNCIAS</h2>';
+            $html .= '<h2 class="titulo">REGISTRO DE EVENTOS</h2>';
         }
 
         $html .= '<div class="divReg">
