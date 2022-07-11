@@ -229,11 +229,10 @@ $html = '<!DOCTYPE html>
         }
 
         $html .= '<div class="divReg">
+
+                    <div class="descricao_registro"><h2>'.$e->classificacao.'</h2> - '.$e->status.'</div>
                     <div class="descricao_registro">'.$e->descricao.'</div>
-                    <div class="descricao_registro">'.$e->status.'</div>
-                    <div class="descricao_registro">'.$e->classificacao.'</div>
-                    <div class="descricao_registro">'.$e->colaborador.'</div>
-                    <div class="descricao_registro">'.$e->data_cadastro.'</div>
+                    <div class="descricao_registro">'.$e->colaborador.' em <small>'.$e->data_cadastro.'</small></div>
                   </div>';
         $i++;
     }
