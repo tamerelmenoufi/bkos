@@ -236,8 +236,7 @@ $html = '<!DOCTYPE html>
         }
 
         $html .= '<div class="divReg">
-
-                    <div class="descricao_registro"><h2>'.$e->classificacao.'</h2> - '.$e->status.'</div>
+                    <div class="descricao_registro"><h2>'.$e->classificacao.'<small>'.$e->status.'</small></h2></div>
                     <div class="descricao_registro">'.$e->descricao.'</div>
                     <div class="descricao_registro_usuario">'.$e->colaborador.' <small> em: '.$e->data_cadastro.'</small></div>
                   </div>';
