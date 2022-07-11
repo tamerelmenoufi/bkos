@@ -96,6 +96,13 @@ $html = '<!DOCTYPE html>
             paddin:5px;
         }
 
+        .descricao_registro_usuario{
+            width:100%;
+            text-align:right;
+            margin-top:5px;
+            paddin:5px;
+        }
+
 
         .titulo_imagem{
             width:100%;
@@ -232,7 +239,7 @@ $html = '<!DOCTYPE html>
 
                     <div class="descricao_registro"><h2>'.$e->classificacao.'</h2> - '.$e->status.'</div>
                     <div class="descricao_registro">'.$e->descricao.'</div>
-                    <div class="descricao_registro">'.$e->colaborador.' em <small>'.$e->data_cadastro.'</small></div>
+                    <div class="descricao_registro_usuario">'.$e->colaborador.' <small> em: '.$e->data_cadastro.'</small></div>
                   </div>';
         $i++;
     }
