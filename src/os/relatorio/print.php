@@ -33,6 +33,14 @@ $html = '<!DOCTYPE html>
             width:100%;
             clear:both;
         }
+        .titulo{
+            font-size:20px;
+            text-align:center;
+        }
+        .descricao{
+            font-size:14px;
+            text-align:justify;
+        }
         .titulo_topo{
             position:relative;
             width:100%;
@@ -132,8 +140,8 @@ $html = '<!DOCTYPE html>
         </div>
     </div>
     <div class="corpo">
-        <h2>'.$d->titulo.'</h2>
-        <p>'.$d->descricao.'</p>
+        <h2 class="titulo">'.$d->titulo.'</h2>
+        <p class="descricao">'.$d->descricao.'</p>
     </div>';
     $html .= '<div style="page-break-before: always;"></div>
     <div class="corpo">';
