@@ -160,7 +160,10 @@ $html = '<!DOCTYPE html>
         if($i%6 == 0 and $i > 0){
             $html .= '<div style="page-break-before: always;"></div>';
             $html .= '<h2 class="titulo">REGISTRO FOTOGRÁFICO</h2>';
+        }else if($i == 0){
+            $html .= '<h2 class="titulo">REGISTRO FOTOGRÁFICO</h2>';
         }
+
         $html .= '<div class="divImg">
                     <div class="img" style="background-image:url(http://os.bkmanaus.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto.')"></div>
                     <div class="titulo_imagem">'.$e->titulo.'</div>
