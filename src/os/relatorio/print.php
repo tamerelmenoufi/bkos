@@ -84,7 +84,10 @@ $html = '<!DOCTYPE html>
             width:80%;
             float:none;
             margin-bottom:20px;
-            border:solid 2px #333;
+            border:solid 1px #ccc;
+            border-radius:20px;
+            padding:20px;
+            align-items: center;
         }
         .descricao_registro{
             width:100%;
