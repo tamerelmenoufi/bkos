@@ -34,11 +34,12 @@ $html = '<!DOCTYPE html>
             clear:both;
         }
         .titulo{
-            font-size:20px;
+            font-size:40px;
             text-align:center;
+            margin:30px;
         }
         .descricao{
-            font-size:14px;
+            font-size:20px;
             text-align:justify;
         }
         .titulo_topo{
