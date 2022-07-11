@@ -86,7 +86,12 @@ $html = '<!DOCTYPE html>
             margin-bottom:20px;
             border:solid 2 #333;
         }
-
+        .descricao_registro{
+            width:100%;
+            text-align:justify;
+            margin-top:5px;
+            paddin:5px;
+        }
 
 
         .titulo_imagem{
@@ -210,8 +215,8 @@ $html = '<!DOCTYPE html>
             $html .= '<h2 class="titulo">REGISTRO DE OCORRÊNCIAS</h2>';
         }
 
-        $html .= '<div class="divImg">
-                    <div class="titulo_imagem">'.$e->descricao.'</div>
+        $html .= '<div class="divReg">
+                    <div class="descricao_registro">'.$e->descricao.'</div>
                   </div>';
         $i++;
     }
