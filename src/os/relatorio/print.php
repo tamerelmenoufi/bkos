@@ -81,10 +81,10 @@ $html = '<!DOCTYPE html>
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width:100%;
+            width:80%;
             float:none;
             margin-bottom:20px;
-            border:solid 2 #333;
+            border:solid 2px #333;
         }
         .descricao_registro{
             width:100%;
