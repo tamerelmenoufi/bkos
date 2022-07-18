@@ -9,7 +9,7 @@
     display: flex !important;
     justify-content: center;
     align-items: center;
-    display:block;
+    display:none;
     z-index: 9999;
 }
 .Carregando div{
