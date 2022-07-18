@@ -28,11 +28,34 @@
         exit();
     }
 
-    $query = "select * from os where codigo = '{$_POST['os']}'";
+    // $query = "select * from os where codigo = '{$_POST['os']}'";
+    $query = "select
+            a.*,
+            if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
+            b.razao_social as nome_empresa,
+            c.nome as executor
+        from os a
+        left join empresas b on a.empresa = b.codigo
+        left join colaboradores c on a.executor = c.codigo
+        where a.codigo = '{$_POST['os']}'
+        order by a.titulo";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
-    $e = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj, c.nome as responsavel from os a left join empresas b on a.empresa = b.codigo left join colaboradores c on a.responsavel = c.codigo where (a.codigo = '{$d->vinculo}')"));
+
+
+    $query = "select
+                a.*,
+                if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
+                b.razao_social as nome_empresa,
+                c.nome as responsavel
+            from os a
+            left join empresas b on a.empresa = b.codigo
+            left join colaboradores c on a.responsavel = c.codigo
+            where a.codigo = '{$d->vinculo}'
+            order by a.titulo";
+            // "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj, c.nome as responsavel from os a left join empresas b on a.empresa = b.codigo left join colaboradores c on a.responsavel = c.codigo where (a.codigo = '{$d->vinculo}')"
+    $e = mysqli_fetch_object(mysqli_query($con, $query));
 
 
 ?>
@@ -53,11 +76,19 @@
             <small>Esta O.S. está vinculada a solicitação:</small>
             <h5><?=$d->titulo?></h5>
             <p><?=$d->descricao?></p>
+            <p style="font-size:10px; color:#a1a1a1">
+                <b>Responsavel</b>: <?=$e->responsavel?><br>
+                <?=$e->data_cadastro?><br>
+            </p>
         </div>
         <div class="card mb-3 mt-3 p-3">
             <small>Informações da O.S.:</small>
             <h5><?=$d->titulo?></h5>
             <p><?=$d->descricao?></p>
+            <p style="font-size:10px; color:#a1a1a1">
+                <b>Executor</b>: <?=$d->executor?><br>
+                <?=$d->data_cadastro?><br>
+            </p>
         </div>
     </div>
 </div>
