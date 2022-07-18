@@ -141,7 +141,7 @@
     $(function(){
         Carregando('none');
 
-        $("div[acessar]").click(function(){
+        $("div[acesso]").click(function(){
 
             url = $(this).attr("acesso");
 
