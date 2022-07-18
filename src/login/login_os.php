@@ -186,7 +186,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
                 Esqueceu a senha?
             </a>
 
-            <a href="./" class="w-100 p-3">
+            <a href="./" style="width:100%; text-align:center; padding:3px;">
                 Cancelar
             </a>
 
