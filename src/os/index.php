@@ -53,7 +53,7 @@
         ?>
 
 
-    <div class="row p-2">
+    <div class="row p-2 tb-b">
         <div class="col-md-2"><?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?></div>
         <div class="col-md-2"><?=$d->titulo?></div>
         <div class="col-md-2"><?=$d->nome_empresa?></div>
