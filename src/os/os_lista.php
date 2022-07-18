@@ -49,6 +49,7 @@
 
     </div>
 </div> -->
+<div class="col">
 <div class="row">
     <div class="col">
         <div class="col d-flex justify-content-between">
@@ -113,7 +114,7 @@
         }
         ?>
     </div>
-
+</div>
 <script>
     $(document).ready(function () {
         Carregando('none');
