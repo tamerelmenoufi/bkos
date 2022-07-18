@@ -74,7 +74,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 }
 
 .profile-img-card {
-    width: 200px;
+    width: 100px;
     height: auto;
     margin: 0 auto 10px;
     display: block;
