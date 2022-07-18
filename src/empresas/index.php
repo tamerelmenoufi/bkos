@@ -16,7 +16,8 @@
     }
     .palco_dados_empresa{
         padding:20px;
-        border: 0px 1px 1px 1px solid red;
+        border:1px solid red;
+        border-top:0;
     }
 </style>
 <div class="col">
