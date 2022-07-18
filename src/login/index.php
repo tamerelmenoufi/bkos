@@ -42,7 +42,7 @@
 }
 
 .profile-img-card {
-    width: 200px;
+    width: 100px;
     height: auto;
     margin: 0 auto 10px;
     display: block;
