@@ -10,45 +10,47 @@
 
         <div class="col-md-2">
           <button class="btn btn-danger btn-block">
-            <h2>600</h2>
+            <h2>15</h2>
             Empresas
           </button>
         </div>
 
         <div class="col-md-2">
-          <button class="btn btn-danger btn-block">
-            <h2>600</h2>
-            Empresas
+          <button class="btn btn-primary btn-block">
+            <h2>1679</h2>
+            Solicitaçõs
+          </button>
+        </div>
+
+        <div class="col-md-2">
+          <button class="btn btn-warning btn-block">
+            <h2>7</h2>
+            Solicitações em andamento
+          </button>
+        </div>
+
+        <div class="col-md-2">
+          <button class="btn btn-secondary btn-block">
+            <h2>19</h2>
+            O.S. Pendentes
+          </button>
+        </div>
+
+        <div class="col-md-2">
+          <button class="btn btn-success btn-block">
+            <h2>3422</h2>
+            O.S. Concluídas
           </button>
         </div>
 
         <div class="col-md-2">
           <button class="btn btn-danger btn-block">
-            <h2>600</h2>
-            Empresas
+            <h2>34</h2>
+            Colaboradores
           </button>
         </div>
 
-        <div class="col-md-2">
-          <button class="btn btn-danger btn-block">
-            <h2>600</h2>
-            Empresas
-          </button>
-        </div>
 
-        <div class="col-md-2">
-          <button class="btn btn-danger btn-block">
-            <h2>600</h2>
-            Empresas
-          </button>
-        </div>
-
-        <div class="col-md-2">
-          <button class="btn btn-danger btn-block">
-            <h2>600</h2>
-            Empresas
-          </button>
-        </div>
 
       </div>
     </div>
