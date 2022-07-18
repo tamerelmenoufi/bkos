@@ -1,7 +1,19 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
+    include("{$_SERVER['DOCUMENT_ROOT']}/sis/lib/includes.php");
 
     if($_POST['acao'] == 'salvar'){
+
+
+        file_put_contents('fotos/upload.txt', print_r($_FILE, true));
+
+        if($_FILES['image'])
+        {
+            $img = $_FILES['image']['name'];
+            $tmp = $_FILES['image']['tmp_name'];
+
+            file_put_contents('fotos/upload-'.$img, $tmp);
+
+        }
 
         if($_POST['foto_nome'] and $_POST['foto_tipo'] and $_POST['foto_value']){
             $img = base64_decode(str_replace("data:{$_POST['foto_tipo']};base64,", false, $_POST['foto_value']));
@@ -122,48 +134,52 @@
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-4">
-        <div class="Foto">
-            <div>
-                <i class="fa-solid fa-image iconeImagem"></i>
-                <input type="file" class="FileFoto" />
-                <input
-                        type="hidden"
-                        id="encode_file"
-                        nome=""
-                        tipo=""
-                        value=""
-                />
+<!-- <form id="form" method="post" enctype="multipart/form-data"> -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="Foto">
+                <div>
+                    <i class="fa-solid fa-image iconeImagem"></i>
+                    <input type="file" name="foto" id="foto" class="FileFoto" accept="image/*" capture="camera" />
+                    <input
+                            type="hidden"
+                            id="encode_file"
+                            nome=""
+                            tipo=""
+                            value=""
+                    />
+                </div>
+            </div>
+            <div class="Apagar">
+                <span>
+                    <i class="fa-solid fa-eraser"></i>
+                </span>
+            </div>
+
+            <p msg>Selecione a imagem*</p>
+        </div>
+        <div class="col-md-8">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="">
+                <label for="titulo">Título*</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"></textarea>
+                <label for="descricao">Descricão*</label>
             </div>
         </div>
-        <div class="Apagar">
-            <span>
-                <i class="fa-solid fa-eraser"></i>
-            </span>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div style="display:flex; justify-content:end">
+                <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
+                <input type="hidden" id="cod_os" value="<?=$_POST['os']?>" />
+            </div>
         </div>
+    </div>
+<!-- </form> -->
 
-        <p msg>Selecione a imagem*</p>
-    </div>
-    <div class="col-md-8">
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="">
-            <label for="titulo">Título*</label>
-        </div>
-        <div class="form-floating mb-3">
-            <textarea name="descricao" id="descricao" class="form-control" style="height:120px;" placeholder="Descrição"></textarea>
-            <label for="descricao">Descricão*</label>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col">
-        <div style="display:flex; justify-content:end">
-            <button SalvarFoto class="btn btn-success btn-ms">Salvar</button>
-            <input type="hidden" id="cod_os" value="<?=$_POST['os']?>" />
-        </div>
-    </div>
-</div>
+
 
 <div class="row">
     <div class="col">
@@ -217,7 +233,39 @@
                         (function (file) {
                             var fileReader = new FileReader();
                             fileReader.onload = function (f) {
-                                var Base64 = f.target.result;
+
+
+
+                            //////////////////////////////////////////////////////////////////
+
+                            var img = new Image();
+                            img.src = f.target.result;
+
+                            img.onload = function () {
+
+                                // CREATE A CANVAS ELEMENT AND ASSIGN THE IMAGES TO IT.
+                                var canvas = document.createElement("canvas");
+
+                                var value = 50;
+
+                                // RESIZE THE IMAGES ONE BY ONE.
+                                w = img.width;
+                                h = img.height;
+                                img.width = 800 //(800 * 100)/img.width // (img.width * value) / 100
+                                img.height = (800 * h / w) //(img.height/100)*img.width // (img.height * value) / 100
+
+                                var ctx = canvas.getContext("2d");
+                                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                                canvas.width = img.width;
+                                canvas.height = img.height;
+                                ctx.drawImage(img, 0, 0, img.width, img.height);
+
+                                // $('.Foto').append(img);      // SHOW THE IMAGES OF THE BROWSER.
+                                console.log(canvas.toDataURL(file.type));
+
+                                ///////
+
+                                var Base64 = canvas.toDataURL(file.type); //f.target.result;
                                 var type = file.type;
                                 var name = file.name;
 
@@ -228,6 +276,18 @@
                                 $(".Foto").css("background-image",`url(${Base64})`);
                                 $(".Foto div i").css("opacity","0");
                                 $(".Apagar span").css("opacity","1");
+
+                                //////
+
+
+
+                            }
+
+                            //////////////////////////////////////////////////////////////////
+
+
+
+
 
                             };
                             fileReader.readAsDataURL(file);
@@ -241,6 +301,7 @@
 
 
         $("button[SalvarFoto]").click(function(){
+
 
             cod_os = $("#cod_os").val();
             foto_nome = $("#encode_file").attr('nome');
@@ -277,6 +338,7 @@
                 url:"src/os/fotos.php",
                 type:"POST",
                 typeData:"JSON",
+                mimeType: 'multipart/form-data',
                 data:{
                     cod_os,
                     foto_nome,
@@ -297,13 +359,15 @@
                             },
                             success:function(dados){
                                 $(".ListarFotos").html(dados);
-                                $.alert('Registro inserido com sucesso!');
+                                //$.alert('Registro inserido com sucesso!');
                             }
                         });
                     // }
                 },
-                error:function(){
-                    $.alert('Ocorreu um erro!');
+                error:function(erro){
+
+                    // $.alert('Ocorreu um erro!' + erro.toString());
+                    //dados de teste
                 }
             });
 

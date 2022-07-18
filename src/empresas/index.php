@@ -20,7 +20,9 @@
     <div class="m-3">
         <h5>Gerenciamento de Empresas</h5>
         <div class="d-flex align-items-start">
-            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <!-- <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical"> -->
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
                 <a
                     empresa=""
                     opc="lista"
@@ -29,6 +31,8 @@
                 >
                     <i class="fa-solid fa-building"></i> Emresas
                 </a>
+                </li>
+                <li class="nav-item">
                 <a
                     empresa=""
                     opc="visualizar"
@@ -37,6 +41,8 @@
                 >
                     <i class="fa-solid fa-list-check"></i> Dados da empresa
                 </a>
+                </li>
+                <li class="nav-item">
                 <a
                     empresa=""
                     opc="os"
@@ -45,6 +51,8 @@
                 >
                     <i class="fa-solid fa-list-check"></i> Solicitações de Serviços
                 </a>
+                </li>
+                <li class="nav-item">
                 <a
                     empresa=""
                     opc="contatos"
@@ -53,6 +61,8 @@
                 >
                     <i class="fa-solid fa-id-badge"></i> Contatos / Representantes
                 </a>
+                </li>
+                <li class="nav-item">
                 <a
                     empresa=""
                     opc="enderecos"
@@ -61,6 +71,7 @@
                 >
                     <i class="fa-solid fa-location-dot"></i> Endereços / Filiais
                 </a>
+                </li>
             </div>
             <div class="tab-content">
                 <div class="tab-pane fade show active">...</div>
