@@ -34,7 +34,7 @@
                     url="src/empresas/lista.php"
                     class="nav-link active"
                 >
-                    <i class="fa-solid fa-building"></i> Emresas
+                    <i class="fa-solid fa-building"></i> Empresas
                 </a>
                 </li>
                 <li class="nav-item">
