@@ -73,8 +73,8 @@
 
     <div class="col">
 
-        <div class="d-none d-md-block">
-            <div class="row p-2 tb-b">
+        <div class="p-2 tb-b d-none d-md-block">
+            <div class="row">
                 <h5 class="col-md-2">O.S.</h5>
                 <h5 class="col-md-2">Título</h5>
                 <h5 class="col-md-2">Data</h5>
@@ -86,8 +86,8 @@
         <?php
         while($d = mysqli_fetch_object($result)){
         ?>
-
-        <div class="row p-2 tb-b">
+        <div class="p-2 tb-b">
+        <div class="row">
             <div class="col-md-2">#<?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?></div>
             <div class="col-md-2"><?=$d->titulo?></div>
             <div class="col-md-2"><?=$d->data_cadastro?></div>
@@ -109,6 +109,7 @@
                 </div>
 
             </div>
+        </div>
         </div>
         <?php
         }
