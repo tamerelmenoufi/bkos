@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
-    $e = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj, c.nome as responsavel from os a left join empresas b on a.empresa = b.codigo left join colaboradores c on a.responsavel = c.codigo where (a.executor = '{$_SESSION['QrAtivosLogin']}')"));
+    // $e = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj, c.nome as responsavel from os a left join empresas b on a.empresa = b.codigo left join colaboradores c on a.responsavel = c.codigo where (a.executor = '{$_SESSION['QrAtivosLogin']}')"));
 
     $query = "select
                     a.*,
@@ -16,11 +16,11 @@
     $result = mysqli_query($con, $query);
 
 ?>
-<div class="row">
+<!-- <div class="row">
     <div class="col">
         <div class="col d-flex justify-content-between">
             <div class="p-2"><h5>OS - Solicitação de Serviços</h5></div>
-            <!-- <div class="p-2">
+            <div class="p-2">
                 <button
                     class="btn btn-secondary"
                     voltar
@@ -28,11 +28,11 @@
                     <i class="fa-solid fa-plus"></i>
                     Voltar
                 </button>
-            </div> -->
+            </div>
         </div>
     </div>
-</div>
-<div class="row">
+</div> -->
+<!-- <div class="row">
     <div col>
         <div class="card">
             <h5 class="card-header"><?=$e->razao_social?> - <?=$e->cnpj?></h5>
@@ -48,7 +48,7 @@
         </div>
 
     </div>
-</div>
+</div> -->
 <div class="row">
     <div class="col">
         <div class="col d-flex justify-content-between">
