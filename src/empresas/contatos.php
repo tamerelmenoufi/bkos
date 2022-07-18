@@ -2,11 +2,13 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     if($_POST['empresa']) $_SESSION['empresa'] = $_POST['empresa'];
+
+    $e = mysqli_fetch_object(mysqli_query($con, "select * from empresas where codigo = '{$_SESSION['empresa']}'"));
 ?>
 
 <div class="col">
     <div class="col d-flex justify-content-between">
-        <div class="p-2">Dados da tabel de Empresas (<?=$_SESSION['empresa']?>)</div>
+        <div class="p-2">Contatos da Empresa (<?=$e->nome?>)</div>
         <div class="p-2">
             <button
                 class="btn btn-primary"
