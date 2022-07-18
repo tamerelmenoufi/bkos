@@ -8,11 +8,19 @@
 
         unset($data['codigo']);
         unset($data['acao']);
+        unset($data['senha']);
 
         foreach ($data as $name => $value) {
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
+
+        if($_POST['senha']){
+            $attr[] = "senha = '" . md5($_POST['senha']) . "'";
+        }
+
         $attr = implode(', ', $attr);
+
+
 
         if($_POST['codigo']){
             $query = "update colaboradores set {$attr} where codigo = '{$_POST['codigo']}'";
@@ -86,7 +94,7 @@
             </div>
 
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="senha" name="senha" placeholder="Senha" value="<?=$d->senha?>" required>
+                <input type="text" class="form-control" id="senha" name="senha" placeholder="Senha" value="" required>
                 <label for="senha">Senha*</label>
             </div>
 
