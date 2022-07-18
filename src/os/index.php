@@ -35,7 +35,7 @@
 <div class="col">
 
 
-    <div class="row p-2">
+    <div class="row p-2 card">
         <div class="col-md-2">N° Solicitação</div>
         <div class="col-md-2">Título</div>
         <div class="col-md-2">Empresa</div>
