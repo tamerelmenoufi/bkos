@@ -18,7 +18,7 @@
         padding:20px;
         border:1px solid #dee2e6;
         border-top:0;
-        border-radius:0 0 10px 10px;
+        border-radius:0 0 5px 5px;
     }
 </style>
 <div class="col">
