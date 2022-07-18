@@ -9,5 +9,5 @@
 
 <script src="lib/vendor/jQuery-Mask/jquery.mask.min.js" ></script>
 
-<link href="lib/css/app.css" rel="stylesheet">
-<script src="lib/js/app.js" ></script>
+<link href="lib/css/app.css?<?=date("YmdHis")?>" rel="stylesheet">
+<script src="lib/js/app.js?<?=date("YmdHis")?>" ></script>
