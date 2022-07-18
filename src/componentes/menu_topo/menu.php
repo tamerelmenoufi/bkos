@@ -40,7 +40,7 @@
                 <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
                     <li class="MenuLogin">
                       <ul class="list-group  list-group-flush">
-                        <li class="list-group-item" aria-disabled="true">
+                        <!-- <li class="list-group-item" aria-disabled="true">
                           <i class="fa-solid fa-user"></i> Dados Pessoais
                         </li>
                         <a class="list-group-item" href='#'>
@@ -48,7 +48,7 @@
                         </a>
                         <li class="list-group-item">
                           <i class="fa-solid fa-calendar-check"></i> Atividades
-                        </li>
+                        </li> -->
                         <a class="list-group-item" href='?s=1'>
                           <i class="fa-solid fa-right-from-bracket"></i> Sair
                         </a>
