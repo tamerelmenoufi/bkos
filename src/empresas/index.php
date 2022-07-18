@@ -14,7 +14,10 @@
     a[empresa=""]:hover{
         color:#eee;
     }
-
+    .palco_dados_empresa{
+        padding:20px;
+        border: 0px 1px 1px 1px solid red;
+    }
 </style>
 <div class="col">
     <div class="m-3">
@@ -74,7 +77,7 @@
                 </li>
             </div>
             <div class="tab-content">
-                <div class="tab-pane fade show active">...</div>
+                <div class="tab-pane fade show active palco_dados_empresa">...</div>
             </div>
         </div>
     </div>
