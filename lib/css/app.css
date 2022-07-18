@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    display:none;
+    display:block;
     z-index: 9999;
 }
 .Carregando span{
