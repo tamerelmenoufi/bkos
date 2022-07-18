@@ -28,7 +28,9 @@
         <div bloco<?=$d->codigo?> class="card mt-3">
             <div class="row">
                 <div class="col d-flex justify-content-end">
-
+                    <?php
+                    if($_SESSION['QrAtivosPerfil'] == 'adm'){
+                    ?>
                     <div class="form-check form-switch m-3">
                         <input status="<?=$d->codigo?>" <?=(($d->situacao == '1')?'checked':false)?> class="form-check-input" type="checkbox" role="switch" id="status<?=$d->codigo?>">
                         <label class="form-check-label" for="status<?=$d->codigo?>">Ativar a Imagem para exibição nos relatórios</label>
@@ -37,6 +39,9 @@
                     <button excluir_foto="<?=$d->codigo?>" class="btn btn-danger btn-sm m-3">
                         <i class="fa-solid fa-trash"></i>
                     </button>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
             <div class="row g-0">
