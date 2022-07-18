@@ -35,7 +35,7 @@
 <div class="col">
 
 
-    <div class="row">
+    <div class="row p-2">
         <div class="col-md-2">N° Solicitação</div>
         <div class="col-md-2">Título</div>
         <div class="col-md-2">Empresa</div>
@@ -47,24 +47,12 @@
 
 
 
-<!-- <table id="TableColaboradores" class="table table-hover" style="width:100%">
-    <thead>
-        <tr>
-            <th>N° Solicitação</th>
-            <th>Título</th>
-            <th>Empresa</th>
-            <th>O.S. Vinculadas</th>
-            <th>Situação</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
-    <tbody> -->
         <?php
         while($d = mysqli_fetch_object($result)){
         ?>
 
 
-    <div class="row">
+    <div class="row p-2">
         <div class="col-md-2"><?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?></div>
         <div class="col-md-2"><?=$d->titulo?></div>
         <div class="col-md-2"><?=$d->nome_empresa?></div>
@@ -88,45 +76,10 @@
         </div>
     </div>
 
-        <!-- <tr>
-            <td><?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?></td>
-            <td><?=$d->titulo?></td>
-            <td><?=$d->nome_empresa?></td>
-            <td><?=$d->quantidade?> OS</td>
-            <td><?=$d->situacao?></td>
-            <td>
 
-                <div class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="acoesOs" data-bs-toggle="dropdown" aria-expanded="false">
-                        Ações
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="acoesOs">
-                        <li linha='<?=$d->codigo?>'><a class="dropdown-item" href="#">Editar</a></li>
-                        <li servico='<?=$d->codigo?>'><a class="dropdown-item" href="#">Ordem de Serviços</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Separated link</a></li>
-                    </ul>
-                </div>
-
-                <button
-                    editar="<?=$d->codigo?>"
-                    class="btn btn-success btn-xs"
-                    data-bs-toggle="offcanvas"
-                    href="#offcanvasDireita"
-                    role="button"
-                    aria-controls="offcanvasDireita"
-                >
-                    Ed
-                </button>
-                <button excluir="<?=$codigo?>" class="btn btn-danger btn-xs">ex</button>
-            </td>
-        </tr> -->
         <?php
         }
         ?>
-    <!-- </tbody>
-</table> -->
 </div>
 <script>
     $(document).ready(function () {
