@@ -1,6 +1,13 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 ?>
+
+<style>
+  .btn-block{
+    width:100%;
+  }
+</style>
+
 <div class="col">
 
   <div class="row">
