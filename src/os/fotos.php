@@ -51,7 +51,17 @@
     }
 
 
-    $query = "select * from os where codigo = '{$_POST['os']}'";
+    // $query = "select * from os where codigo = '{$_POST['os']}'";
+    $query = "select
+            a.*,
+            if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
+            b.razao_social as nome_empresa,
+            c.nome as responsavel
+        from os a
+        left join empresas b on a.empresa = b.codigo
+        left join colaboradores c on a.responsavel = c.codigo
+        where a.codigo = '{$_POST['os']}'
+        order by a.titulo";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
