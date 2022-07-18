@@ -36,7 +36,7 @@
 <div class="col">
 
 
-    <div class="row p-2 tb-b">
+    <div class="row p-2 tb-b d-none d-md-block">
         <h5 class="col-md-2">N° Solicitação</h5>
         <h5 class="col-md-2">Título</h5>
         <h5 class="col-md-2">Empresa</h5>
