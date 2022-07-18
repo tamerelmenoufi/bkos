@@ -6,8 +6,8 @@
     top:0;
     background-color:#333;
     opacity: 0.7;
-    display: flex;
-    justify-items: center;
+    display: flex !important;
+    justify-content: center;
     align-items: center;
     display:block;
     z-index: 9999;
