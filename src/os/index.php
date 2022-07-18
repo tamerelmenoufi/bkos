@@ -13,6 +13,7 @@
     $result = mysqli_query($con, $query);
 
 ?>
+
 <div class="col">
     <div class="col d-flex justify-content-between">
         <div class="p-2"><h5>Ordem de Serviços</h5></div>
@@ -35,7 +36,7 @@
 <div class="col">
 
 
-    <div class="row p-2">
+    <div class="row p-2 BordaTabela">
         <h5 class="col-md-2">N° Solicitação</h5>
         <h5 class="col-md-2">Título</h5>
         <h5 class="col-md-2">Empresa</h5>
@@ -52,7 +53,7 @@
         ?>
 
 
-    <div class="row p-2">
+    <div class="row p-2 BordaTabela">
         <div class="col-md-2"><?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?></div>
         <div class="col-md-2"><?=$d->titulo?></div>
         <div class="col-md-2"><?=$d->nome_empresa?></div>
