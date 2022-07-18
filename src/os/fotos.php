@@ -56,7 +56,18 @@
     $d = mysqli_fetch_object($result);
 
 
-    $e = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj, c.nome as responsavel from os a left join empresas b on a.empresa = b.codigo left join colaboradores c on a.responsavel = c.codigo where (a.codigo = '{$d->vinculo}')"));
+    $query = "select
+                a.*,
+                if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
+                b.razao_social as nome_empresa,
+                c.nome as responsavel
+            from os a
+            left join empresas b on a.empresa = b.codigo
+            left join colaboradores c on a.responsavel = c.codigo
+            where a.codigo = '{$d->vinculo}'
+            order by a.titulo";
+            // "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj, c.nome as responsavel from os a left join empresas b on a.empresa = b.codigo left join colaboradores c on a.responsavel = c.codigo where (a.codigo = '{$d->vinculo}')"
+    $e = mysqli_fetch_object(mysqli_query($con, $query));
 
 
 ?>
