@@ -98,7 +98,7 @@
         }
         ?>
     </div>
-</div>
+
 <script>
     $(document).ready(function () {
         Carregando('none');
