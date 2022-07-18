@@ -25,7 +25,7 @@
         <h5>Gerenciamento de Empresas</h5>
         <div class="d-flex align-items-start">
             <!-- <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical"> -->
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-tabs" style="width:100%;">
                 <li class="nav-item">
                 <a
                     empresa=""
