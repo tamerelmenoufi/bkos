@@ -50,8 +50,8 @@
     </div>
 </div> -->
 
-
-    <h5 class="m-3">Ordem de Serviços</h5>
+<div class="m-3">
+    <h5>Ordem de Serviços</h5>
 
 
     <div class="col">
@@ -98,7 +98,7 @@
         }
         ?>
     </div>
-
+</div>
 <script>
     $(document).ready(function () {
         Carregando('none');
