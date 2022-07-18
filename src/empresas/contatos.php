@@ -8,7 +8,7 @@
 
 <div class="col">
     <div class="col d-flex justify-content-between">
-        <div class="p-2">Contatos da Empresa (<?=$e->razo_social?>)</div>
+        <div class="p-2">Contatos da Empresa (<?=$e->razao_social?>)</div>
         <div class="p-2">
             <button
                 class="btn btn-primary"
