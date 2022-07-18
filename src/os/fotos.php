@@ -156,7 +156,7 @@
             <small>Esta O.S. está vinculada a solicitação:</small>
             <h5><?=$e->titulo?></h5>
             <p><?=$e->descricao?></p>
-            <p style="font-seze:10px; color:#a1a1a1">
+            <p style="font-size:10px; color:#a1a1a1">
                 <?=$e->responsavel?><br>
                 <?=$e->data_cadastro?><br>
             </p>
