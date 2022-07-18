@@ -70,10 +70,10 @@
                 a.*,
                 if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
                 b.razao_social as nome_empresa,
-                c.nome as responsavel
+                c.nome as executor
             from os a
             left join empresas b on a.empresa = b.codigo
-            left join colaboradores c on a.responsavel = c.codigo
+            left join colaboradores c on a.executor = c.codigo
             where a.codigo = '{$d->vinculo}'
             order by a.titulo";
             // "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj, c.nome as responsavel from os a left join empresas b on a.empresa = b.codigo left join colaboradores c on a.responsavel = c.codigo where (a.codigo = '{$d->vinculo}')"
