@@ -6,10 +6,9 @@
     top:0;
     background-color:#333;
     opacity: 0.7;
-    display: flex !important;
     justify-content: center;
     align-items: center;
-    display:none;
+    display: none;
     z-index: 9999;
 }
 .Carregando div{
