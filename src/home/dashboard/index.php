@@ -14,42 +14,42 @@
       <h4>Título da página</h4>
       <div class="row">
 
-        <div class="col-md-2">
+        <div class="col-md-2 mb-3">
           <button class="btn btn-danger btn-block">
             <h2>15</h2>
             Empresas
           </button>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 mb-3">
           <button class="btn btn-primary btn-block">
             <h2>1679</h2>
             Solicitaçõs
           </button>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 mb-3">
           <button class="btn btn-warning btn-block">
             <h2>7</h2>
             Produção
           </button>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 mb-3">
           <button class="btn btn-secondary btn-block">
             <h2>19</h2>
             O.S. Pendentes
           </button>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 mb-3">
           <button class="btn btn-success btn-block">
             <h2>3422</h2>
             O.S. Concluídas
           </button>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 mb-3">
           <button class="btn btn-danger btn-block">
             <h2>34</h2>
             Colaboradores
