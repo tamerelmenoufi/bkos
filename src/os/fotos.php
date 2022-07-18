@@ -157,7 +157,7 @@
             <h5><?=$e->titulo?></h5>
             <p><?=$e->descricao?></p>
             <p style="font-size:10px; color:#a1a1a1">
-                <?=$e->responsavel?><br>
+                <b>Responsavel</b>: <?=$e->responsavel?><br>
                 <?=$e->data_cadastro?><br>
             </p>
         </div>
@@ -165,6 +165,10 @@
             <small>Informações da O.S.:</small>
             <h5><?=$d->titulo?></h5>
             <p><?=$d->descricao?></p>
+            <p style="font-size:10px; color:#a1a1a1">
+                <b>Executor</b>: <?=$d->executor?><br>
+                <?=$d->data_cadastro?><br>
+            </p>
         </div>
     </div>
 </div>
