@@ -136,6 +136,11 @@
             <h5><?=$e->titulo?></h5>
             <p><?=$e->descricao?></p>
         </div>
+        <div class="card mb-3 mt-3 p-3">
+            <small>Informações da O.S.:</small>
+            <h5><?=$d->titulo?></h5>
+            <p><?=$d->descricao?></p>
+        </div>
     </div>
 </div>
 <!-- <form id="form" method="post" enctype="multipart/form-data"> -->
