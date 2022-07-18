@@ -156,6 +156,10 @@
             <small>Esta O.S. está vinculada a solicitação:</small>
             <h5><?=$e->titulo?></h5>
             <p><?=$e->descricao?></p>
+            <p style="font-seze:10px; color:#a1a1a1">
+                <?=$e->responsavel?><br>
+                <?=$e->data_cadastro?><br>
+            </p>
         </div>
         <div class="card mb-3 mt-3 p-3">
             <small>Informações da O.S.:</small>
