@@ -1,36 +1,5 @@
 <?php
-include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
-
-    if($_POST['acao'] == 'login'){
-        $login = $_POST['login'];
-        $senha = md5($_POST['senha']);
-
-        // $login = 'tamer';
-        // $senha = md5('Mf6t1y76');
-
-        $query = "select * from usuarios where login = '{$login}' and senha = '{$senha}'";
-        $result = mysqli_query($con, $query);
-
-        if(mysqli_num_rows($result)){
-            $d = mysqli_fetch_object($result);
-            $_SESSION['QrAtivosLogin'] = $d->codigo;
-            $retorno = [
-                'sucesso' => true,
-                'QrAtivosLogin' => $d->codigo,
-                'MaterConnectado' => $_POST['MaterConnectado'],
-                'msg' => 'Login Realizado com sucesso',
-            ];
-        }else{
-            $retorno = [
-                'sucesso' => false,
-                'QrAtivosLogin' => false,
-                'MaterConnectado' => false,
-                'msg' => 'Ocorreu um erro no seu login',
-            ];
-        }
-        echo json_encode($retorno);
-        exit();
-    }
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 ?>
 <style>
 .pagina{
@@ -151,36 +120,19 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
             <img id="profile-img" class="profile-img-card" src="img/logo.png" />
             <p id="profile-name" class="profile-name-card"></p>
 
-            <div class="form-floating mb-2">
-                <input type="text" class="form-control" id="login" placeholder="Digite seu login" required autofocus>
-                <label for="login">Login</label>
+            <div acesso="src/login/login_os.php" class="card p-3 mb-2">
+                <center>
+                    <h4>ACESSO O.S.</h4>
+                </center>
             </div>
 
-            <div class="form-floating mb-2">
-                <input type="password" class="form-control" id="senha" placeholder="Digite sua Senha" required>
-                <label for="senha">Senha</label>
+            <div acesso="src/login/login_adm.php" class="card p-3 mb-2">
+                <center>
+                    <h4>PAINEL DE GESTÃO</h4>
+                </center>
             </div>
-            <div id="remember" class="checkbox mb-2 mt-2">
-                <label>
-                    <input type="checkbox" value="remember-me"> Manter-me sempre conectado
-                </label>
-            </div>
-            <button id="Acessar" class="btn btn-lg btn-primary btn-block btn-signinXX" type="submit">Entrar</button>
 
-            <!-- <div class="form-signin">
-                <span id="reauth-email" class="reauth-email"></span>
-                <input type="text" id="login" class="form-control" placeholder="Login">
-                <input type="password" id="senha" class="form-control" placeholder="Senha" required>
-                <div id="remember" class="checkbox mb-1 mt-1">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Manter-me sempre conectado
-                    </label>
-                </div>
 
-            </div> -->
-            <a href="#" class="forgot-password">
-                Esqueceu a senha?
-            </a>
         </div><!-- /card-container -->
     </div><!-- /container -->
 </div>
@@ -188,47 +140,21 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 <script>
     $(function(){
         Carregando('none');
-        AcaoBotao = ()=>{
-            login = $("#login").val();
-            senha = $("#senha").val();
+
+        $("div[acessar]").click(function(){
+
+            url = $(this).attr("acesso");
+
             Carregando();
             $.ajax({
-                url:"src/login/index.php",
-                type:"POST",
-                dataType:"json",
-                data:{
-                    acao:'login',
-                    login,
-                    senha
-                },
+                url,
                 success:function(dados){
-                    // let retorno = JSON.parse(dados);
-                    // $.alert(dados.sucesso);
-                    console.log(dados.QrAtivosLogin);
-                    if(dados.QrAtivosLogin > 0){
-                        window.location.href='./';
-                    }else{
-                        $.alert('Ocorreu um erro.<br>Favor confira os dados do login.')
-                        Carregando('none');
-                    }
-
+                    $(".CorpoApp").html(dados);
                 }
             });
-        };
-
-        $("#Acessar").click(function(){
-            AcaoBotao();
-        });
-
-        $(document).on('keypress', function(e){
-
-            var key = e.which || e.keyCode;
-            if (key == 13) { // codigo da tecla enter
-                AcaoBotao();
-            }
-
 
         });
+
 
     })
 </script>
