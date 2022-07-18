@@ -71,7 +71,7 @@
         ?>
         <div class="p-2 tb-b">
             <div class="row">
-                <div class="col-md-2">#<?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?></div>
+                <div class="col-md-2">#<?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?><br><?=$d->nome_empresa?></div>
                 <div class="col-md-2"><?=$d->titulo?></div>
                 <div class="col-md-2"><?=$d->data_cadastro?></div>
                 <div class="col-md-2"><?=$d->situacao?></div>
