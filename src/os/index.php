@@ -46,8 +46,6 @@
         </div>
     </div>
 
-
-
         <?php
         while($d = mysqli_fetch_object($result)){
         ?>

@@ -71,37 +71,30 @@
         </div>
     </div>
 </div>
-<table id="TableColaboradores" class="table table-hover" style="width:100%">
-    <thead>
-        <tr>
-            <th>O.S.</th>
-            <th>Título</th>
-            <th>Data</th>
-            <th>Situação</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
-    <tbody>
+
+    <div class="col">
+
+        <div class="d-none d-md-block">
+            <div class="row p-2 tb-b">
+                <h5 class="col-md-2">O.S.</h5>
+                <h5 class="col-md-2">Título</h5>
+                <h5 class="col-md-2">Data</h5>
+                <h5 class="col-md-2">Situação</h5>
+                <h5 class="col-md-2">Ações</h5>
+            </div>
+        </div>
+
         <?php
         while($d = mysqli_fetch_object($result)){
         ?>
-        <tr>
-            <td>#<?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?></td>
-            <td><?=$d->titulo?></td>
-            <td><?=$d->data_cadastro?></td>
-            <td><?=$d->situacao?></td>
-            <td>
 
-                <!-- <button
-                    editar="<?=$d->codigo?>"
-                    class="btn btn-success btn-xs"
-                    data-bs-toggle="offcanvas"
-                    href="#offcanvasDireita"
-                    role="button"
-                    aria-controls="offcanvasDireita"
-                >
-                    Ed
-                </button> -->
+        <div class="row p-2 tb-b">
+            <div class="col-md-2">#<?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?></div>
+            <div class="col-md-2"><?=$d->titulo?></div>
+            <div class="col-md-2"><?=$d->data_cadastro?></div>
+            <div class="col-md-2"><?=$d->situacao?></div>
+            <div class="col-md-2">
+
 
                 <div class="dropdown">
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="acoesOs" data-bs-toggle="dropdown" aria-expanded="false">
@@ -116,15 +109,12 @@
                     </ul>
                 </div>
 
-
-                <!-- <button excluir="<?=$codigo?>" class="btn btn-danger btn-xs">ex</button> -->
-            </td>
-        </tr>
+            </div>
+        </div>
         <?php
         }
         ?>
-    </tbody>
-</table>
+    </div>
 
 <script>
     $(document).ready(function () {
