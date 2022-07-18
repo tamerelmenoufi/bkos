@@ -27,7 +27,7 @@
   <body>
 
     <div class="Carregando">
-        <span><i class="fa-solid fa-spinner"></i></span>
+        <div><i class="fa-solid fa-spinner"></i></div>
     </div>
 
     <div class="CorpoApp"></div>
