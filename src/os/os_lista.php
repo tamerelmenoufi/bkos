@@ -49,7 +49,7 @@
 
     </div>
 </div> -->
-<div class="col">
+<div style="width:100%">
 <div class="row">
     <div class="col">
         <div class="col d-flex justify-content-between">
