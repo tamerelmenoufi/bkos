@@ -4,7 +4,7 @@
 
 <style>
   .btn-block{
-    width:100%;
+    width:90%;
   }
 </style>
 
