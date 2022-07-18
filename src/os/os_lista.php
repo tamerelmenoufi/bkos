@@ -20,7 +20,7 @@
     <div class="col">
         <div class="col d-flex justify-content-between">
             <div class="p-2"><h5>OS - Solicitação de Serviços</h5></div>
-            <div class="p-2">
+            <!-- <div class="p-2">
                 <button
                     class="btn btn-secondary"
                     voltar
@@ -28,7 +28,7 @@
                     <i class="fa-solid fa-plus"></i>
                     Voltar
                 </button>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
