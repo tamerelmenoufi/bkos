@@ -7,8 +7,10 @@
         exit();
     }
 
-    if($_SESSION['QrAtivosLogin']){
+    if($_SESSION['QrAtivosPerfil'] == 'adm'){
         $url = "src/home/index.php";
+    }else if($_SESSION['QrAtivosPerfil'] == 'os'){
+        $url = "src/home/os.php";
     }else{
         $url = "src/login/index.php";
     }

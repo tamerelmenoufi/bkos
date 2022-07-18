@@ -14,6 +14,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
         if(mysqli_num_rows($result)){
             $d = mysqli_fetch_object($result);
             $_SESSION['QrAtivosLogin'] = $d->codigo;
+            $_SESSION['QrAtivosPerfil'] = 'adm';
             $retorno = [
                 'sucesso' => true,
                 'QrAtivosLogin' => $d->codigo,

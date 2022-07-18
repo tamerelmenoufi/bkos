@@ -8,12 +8,13 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
         // $login = 'tamer';
         // $senha = md5('Mf6t1y76');
 
-        $query = "select * from usuarios where login = '{$login}' and senha = '{$senha}'";
+        $query = "select * from cloaboradores where login = '{$login}' and senha = '{$senha}'";
         $result = mysqli_query($con, $query);
 
         if(mysqli_num_rows($result)){
             $d = mysqli_fetch_object($result);
             $_SESSION['QrAtivosLogin'] = $d->codigo;
+            $_SESSION['QrAtivosPerfil'] = 'os';
             $retorno = [
                 'sucesso' => true,
                 'QrAtivosLogin' => $d->codigo,
