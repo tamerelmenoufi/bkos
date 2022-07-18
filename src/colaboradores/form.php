@@ -81,6 +81,17 @@
             </div>
 
             <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="login" name="login" placeholder="Login" value="<?=$d->login?>" required>
+                <label for="login">Login*</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="senha" name="senha" placeholder="Senha" value="<?=$d->senha?>" required>
+                <label for="senha">Senha*</label>
+            </div>
+
+
+            <div class="form-floating mb-3">
                 <select class="form-select" id="situacao" name="situacao" aria-label="Situação">
                     <option value="1" <?=(($d->situacao == '1')?'selected':false)?> >Liberado</option>
                     <option value="0" <?=(($d->situacao == '0')?'selected':false)?>>Bloqueado</option>
