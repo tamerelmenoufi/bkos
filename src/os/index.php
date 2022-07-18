@@ -36,12 +36,12 @@
 
 
     <div class="row p-2">
-        <h4 class="col-md-2">N° Solicitação</h4>
-        <h4 class="col-md-2">Título</h4>
-        <h4 class="col-md-2">Empresa</h4>
-        <h4 class="col-md-2">O.S. Vinculadas</h4>
-        <h4 class="col-md-2">Situação</h4>
-        <div class="col-md-2">Ações</h4>
+        <h5 class="col-md-2">N° Solicitação</h5>
+        <h5 class="col-md-2">Título</h5>
+        <h5 class="col-md-2">Empresa</h5>
+        <h5 class="col-md-2">O.S. Vinculadas</h5>
+        <h5 class="col-md-2">Situação</h5>
+        <h5 class="col-md-2">Ações</h5>
     </div>
 
 
