@@ -53,7 +53,7 @@
     <div class="col">
         <div class="col d-flex justify-content-between">
             <div class="p-2"><h5>Ordem de Serviços</h5></div>
-            <div class="p-2">
+            <!-- <div class="p-2">
                 <button
                     class="btn btn-primary"
                     data-bs-toggle="offcanvas"
@@ -65,7 +65,7 @@
                     <i class="fa-solid fa-plus"></i>
                     Novo
                 </button>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -99,7 +99,7 @@
                         Ações
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="acoesOs">
-                        <li os="<?=$d->codigo?>" url="src/os/servicos_form.php"><a class="dropdown-item" href="#">Editar</a></li>
+                        <!-- <li os="<?=$d->codigo?>" url="src/os/servicos_form.php"><a class="dropdown-item" href="#">Editar</a></li> -->
                         <li os='<?=$d->codigo?>' url="src/os/fotos.php"><a class="dropdown-item" href="#">Registro Fotográfico</a></li>
                         <li os='<?=$d->codigo?>' url="src/os/eventos.php"><a class="dropdown-item" href="#">Registro de Eventos</a></li>
                         <li><hr class="dropdown-divider"></li>
@@ -118,26 +118,26 @@
     $(document).ready(function () {
         Carregando('none');
 
-        $("button[voltar]").click(function(){
-            Carregando();
-            $.ajax({
-                url:"src/os/index.php",
-                success:function(dados){
-                    // $(".LateralDireita").html(dados);
-                    $(".tab-pane").html(dados);
-                }
-            });
-        });
+        // $("button[voltar]").click(function(){
+        //     Carregando();
+        //     $.ajax({
+        //         url:"src/os/index.php",
+        //         success:function(dados){
+        //             // $(".LateralDireita").html(dados);
+        //             $(".tab-pane").html(dados);
+        //         }
+        //     });
+        // });
 
-        $("button[offcanvasDireita]").click(function(){
-            Carregando();
-            $.ajax({
-                url:"src/os/servicos_form.php",
-                success:function(dados){
-                    $(".LateralDireita").html(dados);
-                }
-            });
-        });
+        // $("button[offcanvasDireita]").click(function(){
+        //     Carregando();
+        //     $.ajax({
+        //         url:"src/os/servicos_form.php",
+        //         success:function(dados){
+        //             $(".LateralDireita").html(dados);
+        //         }
+        //     });
+        // });
 
 
         $("li[os]").click(function(){
