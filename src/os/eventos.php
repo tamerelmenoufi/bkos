@@ -32,6 +32,9 @@
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
+    $e = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj, c.nome as responsavel from os a left join empresas b on a.empresa = b.codigo left join colaboradores c on a.responsavel = c.codigo where (a.codigo = '{$d->vinculo}')"));
+
+
 ?>
 <style>
     .Titulo<?=$md5?>{
@@ -42,12 +45,17 @@
     }
 
 </style>
-<h4 class="Titulo<?=$md5?>">Lista de eventos da OS #<?=str_pad($_POST['os'] , 6 , '0' , STR_PAD_LEFT)?></h4>
+<h4 class="Titulo<?=$md5?>">Eventos da OS #<?=str_pad($_POST['os'] , 6 , '0' , STR_PAD_LEFT)?></h4>
 
 <div class="row">
     <div class="col">
         <div class="card mb-3 mt-3 p-3">
             <small>Esta O.S. está vinculada a solicitação:</small>
+            <h5><?=$d->titulo?></h5>
+            <p><?=$d->descricao?></p>
+        </div>
+        <div class="card mb-3 mt-3 p-3">
+            <small>Informações da O.S.:</small>
             <h5><?=$d->titulo?></h5>
             <p><?=$d->descricao?></p>
         </div>
