@@ -193,7 +193,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
             senha = $("#senha").val();
             Carregando();
             $.ajax({
-                url:"src/login/index.php",
+                url:"src/login/login_adm.php",
                 type:"POST",
                 dataType:"json",
                 data:{
