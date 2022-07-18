@@ -50,7 +50,6 @@
     </div>
 </div> -->
 <div style="width:100%">
-<div class="row">
     <div class="col">
         <div class="col d-flex justify-content-between">
             <div class="p-2"><h5>Ordem de Serviços</h5></div>
