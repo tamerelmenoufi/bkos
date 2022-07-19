@@ -9,7 +9,7 @@
                 from os a
                 left join empresas b on a.empresa = b.codigo
                 where empresa = '{$_SESSION['empresa']}' /*and vinculo = '0'*/
-                order by a.codigo asc";
+                order by a.codigo desc";
     $result = mysqli_query($con, $query);
 
 ?>
