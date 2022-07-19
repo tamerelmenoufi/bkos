@@ -99,12 +99,21 @@
             </div>
 
             <div class="form-floating mb-3">
+                <select class="form-select" id="cria_os" name="cria_os" aria-label="Cria O.S.?">
+                    <option value="1" <?=(($d->cria_os == '1')?'selected':false)?> >Não</option>
+                    <option value="0" <?=(($d->cria_os == '0')?'selected':false)?>>Sim</option>
+                </select>
+                <label for="cria_os">Colaborador pode Criar O.S.?*</label>
+            </div>
+
+            <div class="form-floating mb-3">
                 <select class="form-select" id="situacao" name="situacao" aria-label="Situação">
                     <option value="1" <?=(($d->situacao == '1')?'selected':false)?> >Liberado</option>
                     <option value="0" <?=(($d->situacao == '0')?'selected':false)?>>Bloqueado</option>
                 </select>
                 <label for="situacao">Situação*</label>
             </div>
+
             <input type="hidden" name="codigo" id="codigo" value="<?=$d->codigo?>">
             <button
                 salvar
