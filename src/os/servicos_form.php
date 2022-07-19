@@ -70,7 +70,6 @@
 
             <div class="form-floating mb-3">
                 <select class="form-select" name="empresa_endereco" id="empresa_endereco" required>
-                    <option value="">::Selecione::</option>
                     <?php
                     $q = "select * from empresas_enderecos where situacao = '1' and empresa = '{$_SESSION['empresa']}' order by nome";
                     $r = mysqli_query($con, $q);
