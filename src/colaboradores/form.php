@@ -98,7 +98,6 @@
                 <label for="senha">Senha*</label>
             </div>
 
-
             <div class="form-floating mb-3">
                 <select class="form-select" id="situacao" name="situacao" aria-label="Situação">
                     <option value="1" <?=(($d->situacao == '1')?'selected':false)?> >Liberado</option>
