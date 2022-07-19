@@ -64,7 +64,7 @@
                 <select class="form-select" name="tipo" id="tipo" required>
                     <option value="">::Selecione::</option>
                     <?php
-                    $q = "select * from tipos where situacao = '1' order by titulo";
+                    $q = "select * from os_tipos where situacao = '1' order by titulo";
                     $r = mysqli_query($con, $q);
                     while($e = mysqli_fetch_object($r)){
                     ?>
