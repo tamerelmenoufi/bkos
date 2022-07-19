@@ -162,7 +162,7 @@
                 data: campos,
                 success: function (dados) {
                     $.ajax({
-                        url:"src/os/servicos.php",
+                        url:"src/os/index.php",
                         type:"POST",
                         success:function(dados){
                             // $("#paginaHome").html(dados);
