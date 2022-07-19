@@ -58,6 +58,24 @@
 <div class="row">
     <div class="col">
         <form id="form-<?= $md5 ?>">
+
+
+            <div class="form-floating mb-3">
+                <select class="form-select" name="tipo" id="tipo" required>
+                    <option value="">::Selecione::</option>
+                    <?php
+                    $q = "select * from tipos where situacao = '1' order by titulo";
+                    $r = mysqli_query($con, $q);
+                    while($e = mysqli_fetch_object($r)){
+                    ?>
+                    <option value="<?=$e->codigo?>" <?=(($e->codigo == $d->tipo)?'selected':false)?>><?=$e->titulo?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+                <label for="tipo">tipo da Solicitação</label>
+            </div>
+
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título" value="<?=$d->titulo?>" required>
                 <label for="titulo">Título</label>
@@ -112,7 +130,6 @@
             <input type="hidden" name="empresa" id="empresa" value="<?=$em->empresa?>">
             <input type="hidden" name="empresa_responsavel" id="empresa_responsavel" value="<?=$em->empresa_responsavel?>">
             <input type="hidden" name="responsavel" id="responsavel" value="<?=$em->responsavel?>">
-            <input type="hidden" name="tipo" id="tipo" value="servico">
             <button
                 salvar
                 class="btn btn-primary"
