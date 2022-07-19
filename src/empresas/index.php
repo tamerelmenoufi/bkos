@@ -57,7 +57,7 @@
                     <i class="fa-solid fa-list-check"></i> Solicitações de Serviços
                 </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                 <a
                     empresa=""
                     opc="contatos"
@@ -66,7 +66,7 @@
                 >
                     <i class="fa-solid fa-id-badge"></i> Contatos / Representantes
                 </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                 <a
                     empresa=""
