@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 ?>
 <div class="row p-3">
-    <h5>Lista das Empresas</h5>
+    <h5>Lista das Empresas X</h5>
     <?php
         $query = "select * from empresas where situacao = '1' order by razao_social";
         $result = mysqli_query($con, $query);
