@@ -1,6 +1,8 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
+    if($_GET['empresa']) $_SESSION['empresa'] = $_GET['empresa'];
+
     // $e = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj, c.nome as responsavel from os a left join empresas b on a.empresa = b.codigo left join colaboradores c on a.responsavel = c.codigo where (a.executor = '{$_SESSION['BkOsLogin']}')"));
 
     $query = "select
@@ -11,7 +13,7 @@
                 from os a
                 left join empresas b on a.empresa = b.codigo
                 left join colaboradores c on a.responsavel = c.codigo
-                where a.executor = '{$_SESSION['BkOsLogin']->codigo}'
+                where a.executor = '{$_SESSION['BkOsLogin']->codigo}' and empresa = '{$_SESSION['empresa']}'
                 order by a.titulo";
     $result = mysqli_query($con, $query);
 

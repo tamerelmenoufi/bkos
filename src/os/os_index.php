@@ -4,7 +4,7 @@
 
 <div class="p-3">
     <div class="row">
-        <h5>Lista das Empresas X</h5>
+        <h5>Lista das Empresas</h5>
         <?php
             $query = "select * from empresas where situacao = '1' order by razao_social";
             $result = mysqli_query($con, $query);
@@ -12,7 +12,7 @@
                 for($i=0;$i<10;$i++){
         ?>
         <div class="col-3 mt-3">
-            <button class="btn btn-primary btn-block btn-lg">
+            <button empresa="<?=$d->codigo?>" class="btn btn-primary btn-block btn-lg">
                 <h2><i class="fa-solid fa-building"></i></h2>
                 <?=$d->razao_social?>
             </button>
@@ -23,3 +23,25 @@
         ?>
     </div>
 </div>
+
+
+<script>
+    $(function(){
+        $("button[empresa]").click(function(){
+            empresa = $(this).attr("empresa");
+
+            Carregando();
+            $.ajax({
+                url:"src/os/os_lista.php",
+                data:{
+                    empresa
+                },
+                success:function(dados){
+                    $(".paginaHome").html(dados);
+                }
+            });
+
+
+        });
+    })
+</script>
