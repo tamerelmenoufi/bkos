@@ -182,8 +182,7 @@ $html = '<!DOCTYPE html>
         </div>
     </div>
     <div class="corpo">
-        <h2 class="titulo">'.$d->titulo.'</h2>
-        <h4 class="titulo">'.$d->tipo.'</h4>
+        <h2 class="titulo">'.$d->titulo.' <small style="font-size:12px">'.$d->tipo.'</small></h2>
         <p class="descricao">'.$d->descricao.'</p>
     </div>';
 
