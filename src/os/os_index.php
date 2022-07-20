@@ -10,7 +10,7 @@
     ?>
     <div class="col-3">
         <button class="btn btn-primary btn-block btn-lg">
-            <p><i class="fa-solid fa-building"></i></p>
+            <h2><i class="fa-solid fa-building"></i></h2>
             <?=$d->razao_social?>
         </button>
     </div>
