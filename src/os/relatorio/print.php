@@ -190,7 +190,7 @@ $html = '<!DOCTYPE html>
     $html .= '<div style="page-break-before: always;"></div>
     <div class="corpo">';
 
-    $q = "select * from os_fotos where cod_os = '{$d->codigo}'";
+    $q = "select * from os_fotos where cod_os = '{$d->codigo}' and situacao = '1' and JSON_EXTRACT(deletado,\"$.usuario\") = ''";
     $r = mysqli_query($con, $q);
     $i=0;
     while($e = mysqli_fetch_object($r)){
@@ -228,7 +228,7 @@ $html = '<!DOCTYPE html>
                 left join os_classificacao c on a.classificacao = c.codigo
                 left join colaboradores d on a.colaborador = d.codigo
 
-            where a.cod_os = '{$d->codigo}' order by a.data_cadastro asc";
+            where a.cod_os = '{$d->codigo}' and a.situacao = '1' and JSON_EXTRACT(a.deletado,\"$.usuario\") = '' order by a.data_cadastro asc";
     $r = mysqli_query($con, $q);
     $i=0;
     while($e = mysqli_fetch_object($r)){
