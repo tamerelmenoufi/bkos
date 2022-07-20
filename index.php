@@ -29,7 +29,7 @@
   <body>
 
     <div class="Carregando">
-        <div><i class="fa-solid fa-spinner"></i></div>
+        <div><i class="fas fa-spinner fa-pulse"></i></div>
     </div>
 
     <div class="CorpoApp"></div>
