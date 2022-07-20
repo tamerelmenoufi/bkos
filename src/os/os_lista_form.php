@@ -101,7 +101,7 @@
                 <label for="empresa_endereco">Localização da Empresa</label>
             </div>
 
-
+            <!--
             <div class="form-floating mb-3">
                 <select class="form-select" name="executor" id="executor" required>
                     <option value="">::Selecione::</option>
@@ -118,7 +118,7 @@
                 <label for="executor">Executor da Solicitação</label>
             </div>
 
-            <!-- <div class="form-floating mb-3">
+            <div class="form-floating mb-3">
                 <select class="form-select" id="situacao" name="situacao" aria-label="Situação">
                     <option value="1" <?=(($d->situacao == '1')?'selected':false)?> >Liberado</option>
                     <option value="0" <?=(($d->situacao == '0')?'selected':false)?>>Bloqueado</option>
