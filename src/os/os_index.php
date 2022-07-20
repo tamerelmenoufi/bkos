@@ -37,8 +37,7 @@
                     empresa
                 },
                 success:function(dados){
-                    $(".paginaHome").html(dados);
-                    alert('ok');
+                    $("#paginaHome").html(dados);
                 }
             });
 
