@@ -9,7 +9,7 @@
                                             classificacao = '{$_POST['classificacao']}',
                                             titulo = '{$_POST['titulo']}',
                                             descricao = '{$_POST['descricao']}',
-                                            colaborador = '{$_SESSION['QrAtivosLogin']}',
+                                            colaborador = '{$_SESSION['BkOsLogin']}',
                                             data_cadastro = NOW(),
                                             situacao = '1',
                                             deletado = '{\"usuario\":\"\", \"data\":\"\"}'";

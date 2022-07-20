@@ -31,7 +31,7 @@
                                             titulo = '{$_POST['titulo']}',
                                             descricao = '{$_POST['descricao']}',
                                             ordem = '{$_POST['ordem']}',
-                                            colaborador = '{$_SESSION['QrAtivosLogin']}',
+                                            colaborador = '{$_SESSION['BkOsLogin']}',
                                             data_cadastro = NOW(),
                                             situacao = '1',
                                             deletado = '{\"usuario\":\"\", \"data\":\"\"}'";

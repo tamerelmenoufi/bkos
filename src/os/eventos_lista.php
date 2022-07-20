@@ -8,7 +8,7 @@
     }
 
     if($_POST['acao'] == 'deletar'){
-        $q = "update os_registros set deletado = '{\"usuario\":\"{$_SESSION['QrAtivosLogin']}\",\"data\":\"".date("Y-m-d H:i:s")."\"}' where codigo = '{$_POST['os']}'";
+        $q = "update os_registros set deletado = '{\"usuario\":\"{$_SESSION['BkOsLogin']}\",\"data\":\"".date("Y-m-d H:i:s")."\"}' where codigo = '{$_POST['os']}'";
         mysqli_query($con, $q);
         exit();
     }
@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col d-flex justify-content-end">
                     <?php
-                    if($_SESSION['QrAtivosPerfil'] == 'adm'){
+                    if($_SESSION['BkOsPerfil'] == 'adm'){
                     ?>
                     <div class="form-check form-switch m-3">
                         <input status="<?=$d->codigo?>" <?=(($d->situacao == '1')?'checked':false)?> class="form-check-input" type="checkbox" role="switch" id="status<?=$d->codigo?>">

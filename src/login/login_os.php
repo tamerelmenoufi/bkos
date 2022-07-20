@@ -13,18 +13,19 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
         if(mysqli_num_rows($result)){
             $d = mysqli_fetch_object($result);
-            $_SESSION['QrAtivosLogin'] = $d->codigo;
-            $_SESSION['QrAtivosPerfil'] = 'os';
+            $_SESSION['BkOsLogin'] = $d->codigo;
+            $_SESSION['BkOsPerfil'] = 'os';
+            $_SESSION['BkOsCriar'] = $d->cria_os;
             $retorno = [
                 'sucesso' => true,
-                'QrAtivosLogin' => $d->codigo,
+                'BkOsLogin' => $d->codigo,
                 'MaterConnectado' => $_POST['MaterConnectado'],
                 'msg' => 'Login Realizado com sucesso',
             ];
         }else{
             $retorno = [
                 'sucesso' => false,
-                'QrAtivosLogin' => false,
+                'BkOsLogin' => false,
                 'MaterConnectado' => false,
                 'msg' => 'Ocorreu um erro no seu login',
             ];
@@ -214,8 +215,8 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
                 success:function(dados){
                     // let retorno = JSON.parse(dados);
                     // $.alert(dados.sucesso);
-                    console.log(dados.QrAtivosLogin);
-                    if(dados.QrAtivosLogin > 0){
+                    console.log(dados.BkOsLogin);
+                    if(dados.BkOsLogin > 0){
                         window.location.href='./';
                     }else{
                         $.alert('Ocorreu um erro.<br>Favor confira os dados do login.')

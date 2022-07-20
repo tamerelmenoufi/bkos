@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
-    // $e = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj, c.nome as responsavel from os a left join empresas b on a.empresa = b.codigo left join colaboradores c on a.responsavel = c.codigo where (a.executor = '{$_SESSION['QrAtivosLogin']}')"));
+    // $e = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj, c.nome as responsavel from os a left join empresas b on a.empresa = b.codigo left join colaboradores c on a.responsavel = c.codigo where (a.executor = '{$_SESSION['BkOsLogin']}')"));
 
     $query = "select
                     a.*,
@@ -11,7 +11,7 @@
                 from os a
                 left join empresas b on a.empresa = b.codigo
                 left join colaboradores c on a.responsavel = c.codigo
-                where a.executor = '{$_SESSION['QrAtivosLogin']}'
+                where a.executor = '{$_SESSION['BkOsLogin']}'
                 order by a.titulo";
     $result = mysqli_query($con, $query);
 
@@ -50,8 +50,33 @@
     </div>
 </div> -->
 
-<div class="m-3">
-    <h5>Ordem de Serviços</h5>
+    <div class="m-3">
+        <div class="row">
+        <div class="col">
+            <div class="col d-flex justify-content-between">
+                <div class="p-2"><h5>Ordem de Serviços</h5></div>
+                <?php
+                    if($_SESSION['BkOsCriar'] == '1'){
+                ?>
+                <div class="p-2">
+                    <button
+                        class="btn btn-primary"
+                        data-bs-toggle="offcanvas"
+                        href="#offcanvasDireita"
+                        role="button"
+                        aria-controls="offcanvasDireita"
+                        offcanvasDireita
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                        Novo
+                    </button>
+                </div>
+                <?php
+                    }
+                ?>
+            </div>
+        </div>
+    </div>
 
 
     <div class="col">
@@ -116,15 +141,15 @@
         //     });
         // });
 
-        // $("button[offcanvasDireita]").click(function(){
-        //     Carregando();
-        //     $.ajax({
-        //         url:"src/os/servicos_form.php",
-        //         success:function(dados){
-        //             $(".LateralDireita").html(dados);
-        //         }
-        //     });
-        // });
+        $("button[offcanvasDireita]").click(function(){
+            Carregando();
+            $.ajax({
+                url:"src/os/os_lista.php",
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
+        });
 
 
         $("li[os]").click(function(){
