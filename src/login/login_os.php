@@ -13,9 +13,9 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
         if(mysqli_num_rows($result)){
             $d = mysqli_fetch_object($result);
-            $_SESSION['BkOsLogin'] = $d->codigo;
+            $_SESSION['BkOsLogin'] = $d;
             $_SESSION['BkOsPerfil'] = 'os';
-            $_SESSION['BkOsCriar'] = $d->cria_os;
+            // $_SESSION['BkOsCriar'] = $d->cria_os;
             $retorno = [
                 'sucesso' => true,
                 'BkOsLogin' => $d->codigo,
