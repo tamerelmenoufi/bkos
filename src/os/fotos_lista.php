@@ -21,7 +21,7 @@
 <div class="row">
     <div class="col">
     <?php
-    $query = "select a.*, b.nome as colaborador from os_fotos a left join usuarios b on a.colaborador = b.codigo where a.cod_os = '{$_POST['os']}' and JSON_EXTRACT(deletado,\"$.usuario\") = '' order by a.data_cadastro desc";
+    $query = "select a.*, b.nome as colaborador from os_fotos a left join colaboradores b on a.colaborador = b.codigo where a.cod_os = '{$_POST['os']}' and JSON_EXTRACT(deletado,\"$.usuario\") = '' order by a.data_cadastro desc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
     ?>
