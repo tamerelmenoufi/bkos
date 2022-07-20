@@ -27,6 +27,7 @@
 
 <script>
     $(function(){
+        Carregando('none');
         $("button[empresa]").click(function(){
             empresa = $(this).attr("empresa");
 

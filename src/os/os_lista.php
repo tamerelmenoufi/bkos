@@ -72,6 +72,15 @@
                         <i class="fa-solid fa-plus"></i>
                         Novo
                     </button>
+
+                    <button
+                    class="btn btn-secondary"
+                    voltar
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                        Voltar
+                    </button>
+
                 </div>
                 <?php
                     }
@@ -132,16 +141,15 @@
     $(document).ready(function () {
         Carregando('none');
 
-        // $("button[voltar]").click(function(){
-        //     Carregando();
-        //     $.ajax({
-        //         url:"src/os/index.php",
-        //         success:function(dados){
-        //             // $(".LateralDireita").html(dados);
-        //             $(".tab-pane").html(dados);
-        //         }
-        //     });
-        // });
+        $("button[voltar]").click(function(){
+            Carregando();
+            $.ajax({
+                url:"src/os/os_index.php",
+                success:function(dados){
+                    $("#paginaHome").html(dados);
+                }
+            });
+        });
 
         $("button[offcanvasDireita]").click(function(){
             Carregando();
