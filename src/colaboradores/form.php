@@ -99,6 +99,14 @@
             </div>
 
             <div class="form-floating mb-3">
+                <select class="form-select" id="adm" name="adm" aria-label="Administrador?">
+                    <option value="0" <?=(($d->adm == '0')?'selected':false)?> >Não</option>
+                    <option value="1" <?=(($d->adm == '1')?'selected':false)?>>Sim</option>
+                </select>
+                <label for="cria_os">Colaborador Administrador?*</label>
+            </div>
+
+            <div class="form-floating mb-3">
                 <select class="form-select" id="cria_os" name="cria_os" aria-label="Cria O.S.?">
                     <option value="0" <?=(($d->cria_os == '0')?'selected':false)?> >Não</option>
                     <option value="1" <?=(($d->cria_os == '1')?'selected':false)?>>Sim</option>

@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
-    $em = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj from os a left join empresas b on a.empresa = b.codigo where a.codigo = '{$_SESSION['servico']}'"));
+    // $em = mysqli_fetch_object(mysqli_query($con, "select a.*, if(a.situacao = '1', 'Ativa','Desativada') as situacao, b.razao_social, b.cnpj from os a left join empresas b on a.empresa = b.codigo where a.codigo = '{$_SESSION['servico']}'"));
 
     if($_POST['acao'] == 'salvar'){
 
@@ -127,10 +127,10 @@
             </div> -->
             <input type="hidden" name="situacao" id="situacao" value="1">
             <input type="hidden" name="codigo" id="codigo" value="<?=$d->codigo?>">
-            <input type="hidden" name="vinculo" id="vinculo" value="<?=$em->codigo?>">
-            <input type="hidden" name="empresa" id="empresa" value="<?=$em->empresa?>">
-            <input type="hidden" name="empresa_responsavel" id="empresa_responsavel" value="<?=$em->empresa_responsavel?>">
-            <input type="hidden" name="responsavel" id="responsavel" value="<?=$em->responsavel?>">
+            <!-- <input type="hidden" name="vinculo" id="vinculo" value="<?=$em->codigo?>"> -->
+            <input type="hidden" name="empresa" id="empresa" value="<?=(($d->empresa)?:$_SESSION['empresa'])?>">
+            <!-- <input type="hidden" name="empresa_responsavel" id="empresa_responsavel" value="<?=$em->empresa_responsavel?>"> -->
+            <input type="hidden" name="responsavel" id="responsavel" value="<?=(($d->responsavel)?:$_SESSION['BkOsLogin']->codigo)?><?=$d->responsavel?>">
             <button
                 salvar
                 class="btn btn-primary"
