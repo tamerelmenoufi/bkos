@@ -144,7 +144,7 @@
         $("button[offcanvasDireita]").click(function(){
             Carregando();
             $.ajax({
-                url:"src/os/os_lista.php",
+                url:"src/os/os_lista_form.php",
                 success:function(dados){
                     $(".LateralDireita").html(dados);
                 }
