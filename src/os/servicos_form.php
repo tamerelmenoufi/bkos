@@ -103,7 +103,7 @@
 
 
             <div class="form-floating mb-3">
-                <select class="form-select" name="executor" id="executor" required>
+                <select class="form-select" name="executor" id="executor" >
                     <option value="">::Selecione::</option>
                     <?php
                     $q = "select * from colaboradores where situacao = '1' order by nome";
