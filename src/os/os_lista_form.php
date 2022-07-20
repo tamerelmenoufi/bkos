@@ -183,8 +183,8 @@
                         url:"src/os/os_lista.php",
                         type:"POST",
                         success:function(dados){
-                            // $("#paginaHome").html(dados);
-                            $(".tab-pane").html(dados);
+                            $("#paginaHome").html(dados);
+                            // $(".tab-pane").html(dados);
                         }
                     });
 
