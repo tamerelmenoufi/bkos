@@ -10,13 +10,21 @@
     // header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');
     // header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
 
-    $query = "select a.*, b.nome as executor from os a left join colaboradores b on a.executor = b.codigo where a.codigo = '{$_GET['os']}'";
+    $query = "select a.*,
+                     b.nome as executor,
+                     c.nome as responsavel,
+                     d.titulo as tipo
+                from os a
+                left join colaboradores b on a.executor = b.codigo
+                left join colaboradores c on a.responsavel = c.codigo
+                left join os_tipos d on a.tipo = d.codigo
+                where a.codigo = '{$_GET['os']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
-    $query = "select a.*, b.nome as responsavel from os a left join colaboradores b on a.responsavel = b.codigo where a.codigo = '{$d->vinculo}'";
-    $result = mysqli_query($con, $query);
-    $v = mysqli_fetch_object($result);
+    // $query = "select a.*, b.nome as responsavel from os a left join colaboradores b on a.responsavel = b.codigo where a.codigo = '{$d->vinculo}'";
+    // $result = mysqli_query($con, $query);
+    // $v = mysqli_fetch_object($result);
 
 
 
@@ -165,16 +173,17 @@ $html = '<!DOCTYPE html>
     <div class="titulo_topo">
         <div class="servico_numero_os">O.S. #'.str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT).'</div>
         <div class="servico_dados_os">Executor: '.$d->executor.'<br>Em: '.$d->data_cadastro.'</div>
-        <div class="servico_dados">Responsável: '.$v->responsavel.' - Em: '.$v->data_cadastro.'</div>
+        <div class="servico_dados">Responsável: '.$d->responsavel.'</div>
 
         <div class="servico_descricao">
-            <span class="servico_descricao_titulo">Serviço N°: <b>'.str_pad($v->codigo , 6 , '0' , STR_PAD_LEFT).'</b></span><br><br>
-            <span class="servico_descricao_titulo"><b>'.$v->titulo.'</b></span><br><br>
-            '.$v->descricao.''.$v->descricao.''.$v->descricao.''.$v->descricao.'
+            <!--<span class="servico_descricao_titulo">Serviço N°: <b>'.str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT).'</b></span><br><br>-->
+            <span class="servico_descricao_titulo"><b>'.$d->titulo.'</b></span><br><br>
+            '.$d->descricao.'
         </div>
     </div>
     <div class="corpo">
         <h2 class="titulo">'.$d->titulo.'</h2>
+        <h4 class="titulo">'.$d->tipo.'</h4>
         <p class="descricao">'.$d->descricao.'</p>
     </div>';
 
