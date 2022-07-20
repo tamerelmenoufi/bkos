@@ -86,6 +86,7 @@
                 },
                 success:function(dados){
                     // console.log(dados);
+                    Carregando('none');
                 }
             });
         });
@@ -109,6 +110,7 @@
                             },
                             success:function(dados){
                                 // console.log(dados);
+                                Carregando('none');
                             }
                         });
 
