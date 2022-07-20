@@ -8,7 +8,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
         // $login = 'tamer';
         // $senha = md5('Mf6t1y76');
 
-        $query = "select * from usuarios where login = '{$login}' and senha = '{$senha}'";
+        $query = "select * from colaboradores where login = '{$login}' and senha = '{$senha}' and adm = '1'";
         $result = mysqli_query($con, $query);
 
         if(mysqli_num_rows($result)){
