@@ -74,7 +74,7 @@ $html = '<!DOCTYPE html>
         .img{
             position:relative;
             width:80%;
-            border:solid 1px green;
+            border:solid 1px #ccc;
             border-radius:5px;
             height:250px;
             background-size:cover;
