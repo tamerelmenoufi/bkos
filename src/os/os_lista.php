@@ -77,7 +77,7 @@
                     class="btn btn-secondary"
                     voltar
                     >
-                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-solid fa-circle-chevron-left"></i>
                         Voltar
                     </button>
 
