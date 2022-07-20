@@ -1,7 +1,7 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 ?>
-<div class="p-3">
+<div class="row p-3">
     <h5>Lista das Empresas</h5>
     <?php
         $query = "select * from empresas where situacao = '1' order by razao_social";
