@@ -177,7 +177,7 @@ $html = '<!DOCTYPE html>
 
         <div class="servico_descricao">
             <!--<span class="servico_descricao_titulo">Serviço N°: <b>'.str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT).'</b></span><br><br>-->
-            <span class="servico_descricao_titulo"><b>'.$d->titulo.'</b></span><br><br>
+            <span class="servico_descricao_titulo"><b>'.$d->titulo.'<small>'.$d->tipo.'</small></b></span><br><br>
             '.$d->descricao.'
         </div>
     </div>
