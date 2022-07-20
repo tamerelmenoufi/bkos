@@ -27,7 +27,7 @@
                     c.titulo as classificacao,
                     d.titulo as status
                 from os_registros a
-                left join usuarios b on a.colaborador = b.codigo
+                left join colaboradores b on a.colaborador = b.codigo
                 left join os_classificacao c on a.classificacao = c.codigo
                 left join os_status d on a.status = d.codigo
             where a.cod_os = '{$_POST['os']}' and JSON_EXTRACT(a.deletado,\"$.usuario\") = '' order by a.data_cadastro desc";
