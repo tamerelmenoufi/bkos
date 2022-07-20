@@ -9,7 +9,7 @@
                                             classificacao = '{$_POST['classificacao']}',
                                             titulo = '{$_POST['titulo']}',
                                             descricao = '{$_POST['descricao']}',
-                                            colaborador = '{$_SESSION['BkOsLogin']}',
+                                            colaborador = '{$_SESSION['BkOsLogin']->codigo}',
                                             data_cadastro = NOW(),
                                             situacao = '1',
                                             deletado = '{\"usuario\":\"\", \"data\":\"\"}'";
@@ -72,7 +72,7 @@
 
 <div class="row">
     <div class="col">
-        <div class="card mb-3 mt-3 p-3">
+        <!-- <div class="card mb-3 mt-3 p-3">
             <small>Esta O.S. está vinculada a solicitação:</small>
             <h5><?=$d->titulo?></h5>
             <p><?=$d->descricao?></p>
@@ -80,7 +80,7 @@
                 <b>Responsavel</b>: <?=$e->responsavel?><br>
                 <?=$e->data_cadastro?><br>
             </p>
-        </div>
+        </div> -->
         <div class="card mb-3 mt-3 p-3">
             <small>Informações da O.S.:</small>
             <h5><?=$d->titulo?></h5>

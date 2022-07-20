@@ -31,7 +31,7 @@
                                             titulo = '{$_POST['titulo']}',
                                             descricao = '{$_POST['descricao']}',
                                             ordem = '{$_POST['ordem']}',
-                                            colaborador = '{$_SESSION['BkOsLogin']}',
+                                            colaborador = '{$_SESSION['BkOsLogin']->codigo}',
                                             data_cadastro = NOW(),
                                             situacao = '1',
                                             deletado = '{\"usuario\":\"\", \"data\":\"\"}'";
@@ -152,7 +152,7 @@
 <h4 class="Topo<?=$md5?>">Lista de fotos da OS #<?=str_pad($_POST['os'] , 6 , '0' , STR_PAD_LEFT)?></h4>
 <div class="row">
     <div class="col">
-        <div class="card mb-3 mt-3 p-3">
+        <!-- <div class="card mb-3 mt-3 p-3">
             <small>Esta O.S. está vinculada a solicitação:</small>
             <h5><?=$e->titulo?></h5>
             <p><?=$e->descricao?></p>
@@ -160,7 +160,7 @@
                 <b>Responsavel</b>: <?=$e->responsavel?><br>
                 <?=$e->data_cadastro?><br>
             </p>
-        </div>
+        </div> -->
         <div class="card mb-3 mt-3 p-3">
             <small>Informações da O.S.:</small>
             <h5><?=$d->titulo?></h5>
