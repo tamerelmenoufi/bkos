@@ -13,7 +13,7 @@
                 from os a
                 left join empresas b on a.empresa = b.codigo
                 left join colaboradores c on a.responsavel = c.codigo
-                where a.executor = '{$_SESSION['BkOsLogin']->codigo}' and empresa = '{$_SESSION['empresa']}'
+                where (a.executor = '{$_SESSION['BkOsLogin']->codigo}' or a.responsavel = '{$_SESSION['BkOsLogin']->codigo}') and empresa = '{$_SESSION['empresa']}'
                 order by a.titulo";
     $result = mysqli_query($con, $query);
 
