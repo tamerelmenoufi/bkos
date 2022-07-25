@@ -204,7 +204,7 @@
     </div>
 </div>
 
-<div class="disabled" style="display:<?=(($d->data_finalizacao == 'disabled')?'none':'block')?>"><div>FINALIZADA</div></div>
+<div class="disabled" style="display:<?=(($d->data_finalizacao == 'disabled')?'none':'none')?>"><div>FINALIZADA</div></div>
 
 <div class="row">
     <div class="col">
