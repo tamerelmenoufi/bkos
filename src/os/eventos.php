@@ -86,6 +86,17 @@
     .ListarRegistros{
         margin-bottom:50px;
     }
+    .disabled{
+        position:absolute;
+        left:0px;
+        bottom:0px;
+        right:0px;
+        top:0;
+        z-index:9;
+        background-color:#333;
+        opacity:0.5;
+        display:block;
+    }
 </style>
 <h4 class="Titulo<?=$md5?>">Eventos da OS #<?=str_pad($_POST['os'] , 6 , '0' , STR_PAD_LEFT)?></h4>
 
@@ -178,11 +189,13 @@
             ?>
         </div>
         <div class="p-2">
-            <button type="submit" SalvarRegistro class="btn btn-success btn-ms">Salvar</button>
+            <button type="submit" <?=(($d->data_finalizacao == 'disabled')?false:'SalvarRegistro')?> class="btn btn-success btn-ms">Salvar</button>
             <input type="hidden" id="cod_os" value="<?=$_POST['os']?>" />
         </div>
     </div>
 </div>
+
+<div class="disabled" style="display:<?=(($d->data_finalizacao == 'disabled')?'none':'block')?>"></div>
 
 <div class="row">
     <div class="col">
