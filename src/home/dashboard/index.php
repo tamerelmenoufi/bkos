@@ -23,7 +23,7 @@
   }
 </style>
 
-<div class="col">
+<div class="col-12">
 
     <div class="m-3">
       <h4>Título da página</h4>
@@ -89,8 +89,8 @@
 
 </div>
 
-<div class="row">
-  <div class="col">
+
+  <div class="col-6">
     <div class="card">
       <div class="card-header">
         Gráfico por Situação
@@ -101,7 +101,7 @@
     </div>
   </div>
 
-  <div class="col">
+  <div class="col-6">
     <div class="card">
       <div class="card-header">
       Gráfico por Tipos
@@ -111,7 +111,6 @@
     </div>
     </div>
   </div>
-</div>
 
 
 <script>
