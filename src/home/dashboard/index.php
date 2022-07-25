@@ -122,7 +122,7 @@
       $Rotulos[] = $d->titulo;
       $Quantidade[] = $d->qt;
     }
-    $R = (($Rotulos)?implode(",",$Rotulos):0);
+    $R = (($Rotulos)?"'".implode("','",$Rotulos)."'":0);
     $Q = (($Quantidade)?implode(",",$Quantidade):0);
 
 ?>
