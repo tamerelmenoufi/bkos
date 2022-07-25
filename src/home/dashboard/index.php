@@ -127,8 +127,8 @@
 
 ?>
 
-    const ctx<?=$md5?> = document.getElementById('Registros<?=$md5?>');
-    const myChart<?=$md5?> = new Chart(ctx<?=$md5?>,
+    const RegistrosCtx<?=$md5?> = document.getElementById('Registros<?=$md5?>');
+    const Registros<?=$md5?> = new Chart(RegistrosCtx<?=$md5?>,
         {
             type: 'bar',
             data: {
@@ -218,8 +218,8 @@
 
 ?>
 
-    const ctx<?=$md5?> = document.getElementById('Tipos<?=$md5?>');
-    const myChart<?=$md5?> = new Chart(ctx<?=$md5?>,
+    const TiposCtx<?=$md5?> = document.getElementById('Tipos<?=$md5?>');
+    const Tipos<?=$md5?> = new Chart(TiposCtx<?=$md5?>,
         {
             type: 'bar',
             data: {
