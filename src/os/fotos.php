@@ -209,7 +209,7 @@
     </div>
     <div class="row">
         <div class="col" >
-            <div style="position:fixed; bottom:0; left:0; right:0; background-color:yellow;">
+            <div style="position:fixed; bottom:0; left:0; right:0; background-color:yellow; z-index:10; padding:10px;">
                 <div style="display:flex; justify-content:end" >
                     <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar X</button>
                     <input type="hidden" id="cod_os" value="<?=$_POST['os']?>" />
