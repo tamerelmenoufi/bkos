@@ -91,8 +91,8 @@
     .Rodape<?=$md5?> {
         position:absolute;
         left:0px;
-        bottom:20px;
-        right:0px;
+        bottom:0px;
+        right:20px;
         z-index:10;
         background-color:#fff;
     }
