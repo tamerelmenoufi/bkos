@@ -270,7 +270,7 @@
                 success:function(dados){
                     alert('Ação da Finalização foi confirmada com sucesso!');
                 },
-                error:{
+                error:function(){
                     alert('erro!');
                 }
             })
