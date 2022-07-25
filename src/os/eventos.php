@@ -268,10 +268,10 @@
                     cod:'<?=$_POST['os']?>'
                 },
                 success:function(dados){
-                    alert('Ação da Finalização foi confirmada com sucesso!');
+                    $.alert('Ação da Finalização foi confirmada com sucesso!');
                 },
                 error:function(){
-                    alert('erro!');
+                    $.alert('erro!');
                 }
             })
         });
