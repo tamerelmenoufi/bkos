@@ -94,6 +94,7 @@
         bottom:0px;
         right:20px;
         z-index:10;
+        height:60px;
         background-color:#fff;
     }
     .Foto{
