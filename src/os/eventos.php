@@ -253,7 +253,7 @@
 
         });
 
-        if("#data_finalizacao").click(function(){
+        $("#data_finalizacao").click(function(){
             if($(this).prop("checked") == true){
                 data_finalizacao = date("Y-m-d H:i:s");
             }else{
