@@ -96,9 +96,6 @@
   <div class="col">
     <canvas id="myChart<?= $md5 ?>" width="400" height="400"></canvas>
   </div>
-  <div class="col">
-    <canvas id="myChart<?= $md5 ?>" width="400" height="400"></canvas>
-  </div>
 </div>
 
 
@@ -106,7 +103,6 @@
   $(function(){
     Carregando('none');
   })
-
 
 
 
