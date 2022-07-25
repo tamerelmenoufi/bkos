@@ -39,7 +39,8 @@
             a.*,
             if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
             b.razao_social as nome_empresa,
-            c.nome as executor
+            c.nome as executor,
+            if(a.data_finalizacao > 0,'checked','') as data_finalizacao
         from os a
         left join empresas b on a.empresa = b.codigo
         left join colaboradores c on a.executor = c.codigo
@@ -269,8 +270,7 @@
                     cod:'<?=$_POST['os']?>'
                 },
                 success:function(dados){
-                    // $.alert('Ação da Finalização foi confirmada com sucesso!');
-                    $.alert(dados);
+                    $.alert('Ação da Finalização foi confirmada com sucesso!');
                 },
                 error:function(){
                     $.alert('erro!');
