@@ -95,7 +95,7 @@
         top:0;
         z-index:11;
         background-color:#333;
-        opacity:0.7;
+        opacity:0.3;
     }
     .disabled div{
         display:flex;
@@ -103,7 +103,7 @@
         justify-content:center;
         align-items:center;
         font-size:60px;
-        color:#fff;
+        color:#eee;
         height:100%;
     }
 </style>
