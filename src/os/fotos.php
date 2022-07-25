@@ -156,6 +156,9 @@
         margin-left:-50px;
         top:7px;
     }
+    .ListarFotos{
+        margin-bottom:50px;
+    }
 </style>
 
 <h4 class="Topo<?=$md5?>">Lista de fotos da OS #<?=str_pad($_POST['os'] , 6 , '0' , STR_PAD_LEFT)?></h4>
