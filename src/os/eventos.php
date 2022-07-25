@@ -158,10 +158,16 @@
 <div class="Rodape<?=$md5?>">
     <div class="d-flex justify-content-between" >
         <div class="p-4">
+            <?php
+                if($_SESSION['BkOsPerfil'] == 'adm' or $_SESSION['BkOsLogin']->cria_os == '1'){
+            ?>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">OS. Concluída?</label>
             </div>
+            <?php
+                }
+            ?>
         </div>
         <div class="p-2">
             <button type="submit" SalvarRegistro class="btn btn-success btn-ms">Salvar</button>
