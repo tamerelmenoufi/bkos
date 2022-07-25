@@ -87,12 +87,17 @@
         margin-bottom:50px;
     }
     .disabled{
+        display:flex;
+        justify-items:center;
+        align-content:center;
+        font-size:60px;
+        color:red;
         position:absolute;
         left:0px;
         bottom:0px;
         right:0px;
         top:0;
-        z-index:9;
+        z-index:11;
         background-color:#333;
         opacity:0.5;
         display:block;
@@ -199,7 +204,7 @@
 
 <div class="row">
     <div class="col">
-        <div class="ListarRegistros"></div>
+        <div class="ListarRegistros">FINALIZADA</div>
     </div>
 </div>
 
