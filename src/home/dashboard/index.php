@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
 
-    echo $query = "SLELECT
+    $query = "SELECT
               (select count(*) from empresas) as empresas,
               (select count(*) from colaboradores where cria_os = '1') as gestores,
               (select count(*) from colaboradores where cria_os != '1') as colaboradores,
