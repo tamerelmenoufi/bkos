@@ -171,7 +171,7 @@
             ?>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="data_finalizacao" <?=$d->data_finalizacao?>>
-                <label class="form-check-label" for="data_finalizacao">OS. Concluída?</label>
+                <label class="form-check-label" for="data_finalizacao">O.S. Concluída.</label>
             </div>
             <?php
                 }
