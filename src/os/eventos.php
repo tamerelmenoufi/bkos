@@ -1,6 +1,11 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
+    if($_POST['acao'] == 'data_finalizacao'){
+        mysqli_query($con, "update os set data_finalizacao = '{$_POST['data_finalizacao']}' where codigo = '{$_POST['cod']}'");
+        exit();
+    }
+
     if($_POST['acao'] == 'salvar'){
 
         $query = "insert into os_registros set
@@ -48,7 +53,8 @@
                 a.*,
                 if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
                 b.razao_social as nome_empresa,
-                c.nome as responsavel
+                c.nome as responsavel,
+                if(a.data_finalizacao > 0,'checked','') as data_finalizacao
             from os a
             left join empresas b on a.empresa = b.codigo
             left join colaboradores c on a.responsavel = c.codigo
@@ -162,8 +168,8 @@
                 if($_SESSION['BkOsPerfil'] == 'adm' or $_SESSION['BkOsLogin']->cria_os == '1'){
             ?>
             <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">OS. Concluída?</label>
+                <input type="checkbox" class="form-check-input" id="data_finalizacao" <?=$d->data_finalizacao?>>
+                <label class="form-check-label" for="data_finalizacao">OS. Concluída?</label>
             </div>
             <?php
                 }
@@ -245,6 +251,26 @@
                 }
             });
 
+        });
+
+        if("#data_finalizacao").click(function(){
+            if($(this).prop("checked") == true){
+                data_finalizacao = date("Y-m-d H:i:s");
+            }else{
+                data_finalizacao = '0';
+            }
+            $.ajax({
+                url:"src/os/eventos.php",
+                type:"POST",
+                data:{
+                    acao:'data_finalizacao',
+                    data_finalizacao,
+                    cod:'<?=$_POST['os']?>'
+                },
+                success:function(dados){
+                    $.alert('Ação da Finalização foi confirmada com sucesso!');
+                }
+            })
         });
 
 
