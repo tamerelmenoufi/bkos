@@ -66,7 +66,18 @@
         top:8px;
         z-index:0;
     }
-
+    .Rodape<?=$md5?> {
+        position:absolute;
+        left:0px;
+        bottom:0px;
+        right:20px;
+        z-index:10;
+        height:50px;
+        background-color:#fff;
+    }
+    .ListarRegistros{
+        margin-bottom:50px;
+    }
 </style>
 <h4 class="Titulo<?=$md5?>">Eventos da OS #<?=str_pad($_POST['os'] , 6 , '0' , STR_PAD_LEFT)?></h4>
 
@@ -140,8 +151,20 @@
 </div>
 <div class="row">
     <div class="col">
-        <div style="display:flex; justify-content:end">
-            <button SalvarRegistro class="btn btn-success btn-ms">Salvar</button>
+
+    </div>
+</div>
+
+<div class="Rodape<?=$md5?>">
+    <div class="d-flex justify-content-between" >
+        <div class="p-4">
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">OS. Concluída?</label>
+            </div>
+        </div>
+        <div class="p-2">
+            <button type="submit" SalvarRegistro class="btn btn-success btn-ms">Salvar</button>
             <input type="hidden" id="cod_os" value="<?=$_POST['os']?>" />
         </div>
     </div>
