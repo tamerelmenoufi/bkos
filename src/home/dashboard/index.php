@@ -112,7 +112,7 @@
     $query = "
         select
               a.titulo,
-              (select count(b.*) from os_registros b where b.status = a.codigo) as qt
+              (select count(*) from os_registros b where b.status = a.codigo) as qt
         from os_status a where a.situacao = '1'
     ";
     $result = mysqli_query($con, $query);
