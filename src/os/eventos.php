@@ -2,7 +2,8 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     if($_POST['acao'] == 'data_finalizacao'){
-        mysqli_query($con, "update os set data_finalizacao = '{$_POST['data_finalizacao']}' where codigo = '{$_POST['cod']}'");
+        echo $q = "update os set data_finalizacao = '{$_POST['data_finalizacao']}' where codigo = '{$_POST['cod']}'";
+        mysqli_query($con, $q);
         exit();
     }
 
@@ -268,7 +269,8 @@
                     cod:'<?=$_POST['os']?>'
                 },
                 success:function(dados){
-                    $.alert('Ação da Finalização foi confirmada com sucesso!');
+                    // $.alert('Ação da Finalização foi confirmada com sucesso!');
+                    $.alert(dados);
                 },
                 error:function(){
                     $.alert('erro!');
