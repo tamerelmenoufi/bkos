@@ -92,9 +92,9 @@
         position:absolute;
         left:0px;
         bottom:0px;
-        right:20px;
+        right:0px;
         z-index:10;
-        background-color:#eee;
+        background-color:#fff;
     }
     .Foto{
         position:relative;
@@ -223,15 +223,17 @@
 
 
     <div class="Rodape<?=$md5?>">
-        <div style="display:flex; justify-content:end" >
-
-            <div class="mb-3 form-check" style="margin-top:10px; margin-right:70px;">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">OS. Concluída?</label>
+        <div style="display:flex; justify-content:between" >
+            <div class="p-10">
+                <div class="mb-3 form-check" style="margin-top:10px; margin-right:70px;">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">OS. Concluída?</label>
+                </div>
             </div>
-
-            <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
-            <input type="hidden" id="cod_os" value="<?=$_POST['os']?>" />
+            <div class="p-2">
+                <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
+                <input type="hidden" id="cod_os" value="<?=$_POST['os']?>" />
+            </div>
         </div>
     </div>
 <!-- </form> -->
