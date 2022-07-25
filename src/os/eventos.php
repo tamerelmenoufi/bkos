@@ -87,7 +87,7 @@
         margin-bottom:50px;
     }
     .disabled{
-        display:block;
+        display:none;
         position:absolute;
         left:0px;
         bottom:0px;
