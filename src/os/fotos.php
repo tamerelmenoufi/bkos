@@ -209,10 +209,10 @@
     </div>
     <div class="row">
         <div class="col" >
-            <div style="position:fixed; bottom:0; right:20px; background-color:yellow; z-index:10; padding:10px;">
+            <div style="position:fixed; bottom:0; right:20px; z-index:10; padding:10px;">
                 <div style="display:flex; justify-content:end" >
 
-                    <div class="mb-3 form-check" style="margin-top:15px; margin-right:50px;">
+                    <div class="mb-3 form-check" style="margin-top:10px; margin-right:70px;">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">OS. Concluída?</label>
                     </div>
