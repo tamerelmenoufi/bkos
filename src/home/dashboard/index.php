@@ -112,8 +112,8 @@
     $query = "
         select
               a.titulo,
-              count(*) as qt
-        from os_status a left join os_registros b on b.status = a.codigo where a.situacao = '1'
+              (select count(*) from os_registros where status = a.codigo) as qt
+        from os_status a where a.situacao = '1'
     ";
     $result = mysqli_query($con, $query);
     $Rotulos = [];
