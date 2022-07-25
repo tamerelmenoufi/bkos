@@ -101,7 +101,6 @@
         z-index:11;
         background-color:#333;
         opacity:0.5;
-        display:block;
     }
 </style>
 <h4 class="Titulo<?=$md5?>">Eventos da OS #<?=str_pad($_POST['os'] , 6 , '0' , STR_PAD_LEFT)?></h4>
