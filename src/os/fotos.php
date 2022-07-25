@@ -93,7 +93,7 @@
         left:0px;
         bottom:0px;
         right:20px;
-        z-index:0;
+        z-index:10;
         background-color:#eee;
     }
     .Foto{
