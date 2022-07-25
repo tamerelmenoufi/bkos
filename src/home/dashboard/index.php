@@ -29,50 +29,50 @@
       <h4>Título da página</h4>
       <div class="row">
 
-        <div class="col-md-2 mb-3">
-          <button class="btn btn-danger btn-block">
+        <div class="col-md-3 mb-3">
+          <button class="btn btn-warning btn-block">
             <h2><?=$d->empresas?></h2>
             Empresas
           </button>
         </div>
 
-        <div class="col-md-2 mb-3">
-          <button class="btn btn-danger btn-block">
+        <div class="col-md-3 mb-3">
+          <button class="btn btn-warning btn-block">
             <h2><?=$d->colaboradores?></h2>
             Colaboradores
           </button>
         </div>
 
-        <div class="col-md-2 mb-3">
-          <button class="btn btn-danger btn-block">
+        <div class="col-md-3 mb-3">
+          <button class="btn btn-warning btn-block">
             <h2><?=$d->gestores?></h2>
             Gestores
           </button>
         </div>
 
-        <div class="col-md-2 mb-3">
-          <button class="btn btn-danger btn-block">
+        <div class="col-md-3 mb-3">
+          <button class="btn btn-warning btn-block">
             <h2><?=$d->administradores?></h2>
             Administradores
           </button>
         </div>
 
 
-        <div class="col-md-2 mb-3">
+        <div class="col-md-4 mb-3">
           <button class="btn btn-primary btn-block">
             <h2><?=$d->os_geral?></h2>
             Total de O.S.
           </button>
         </div>
 
-        <div class="col-md-2 mb-3">
-          <button class="btn btn-warning btn-block">
+        <div class="col-md-4 mb-3">
+          <button class="btn btn-danger btn-block">
             <h2><?=$d->os_pendentes?></h2>
             O.S. Pendentes
           </button>
         </div>
 
-        <div class="col-md-2 mb-3">
+        <div class="col-md-4 mb-3">
           <button class="btn btn-secondary btn-block">
             <h2><?=$d->os_concluidadas?></h2>
             O.S. Concluídas
