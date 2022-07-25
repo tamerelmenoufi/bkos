@@ -106,15 +106,36 @@
 
 
 
+
+<?php
+
+    $query = "
+        select
+              a.titulo,
+              count(*) as qt
+        from os_status a left join os_registros b on a.status = b.codigo where a.situacao = '1'
+    ";
+    $result = mysqli_query($con, $query);
+    $Rotulos = [];
+    $Quantidade = [];
+    while($d = mysqli_fetch_object($result)){
+      $Rotulos[] = $d->titulo;
+      $Quantidade[] = $d->qt;
+    }
+    $R = (($Rotulos)?implode(",",$Rotulos):0);
+    $Q = (($Quantidade)?implode(",",$Quantidade):0);
+
+?>
+
     const ctx<?=$md5?> = document.getElementById('myChart<?=$md5?>');
     const myChart<?=$md5?> = new Chart(ctx<?=$md5?>,
         {
             type: 'bar',
             data: {
-                labels: ['A','B','C'],
+                labels: [<?=$R?>],
                 datasets: [{
-                    label: ['A','B','C'],
-                    data: ['12','18','15'],
+                    label: [<?=$R?>],
+                    data: [<?=$Q?>],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -126,7 +147,7 @@
                         'rgba(255, 206, 86, 1)',
                     ],
                     borderWidth: 1,
-                    rotulos: ['A','B','C']
+                    rotulos: [<?=$R?>]
                 }]
             },
             options: {
