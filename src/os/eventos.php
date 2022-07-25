@@ -88,8 +88,9 @@
     }
     .disabled{
         display:flex;
-        justify-items:center;
-        align-content:center;
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
         font-size:60px;
         color:red;
         position:absolute;
