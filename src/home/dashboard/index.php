@@ -91,10 +91,25 @@
 
 <div class="row">
   <div class="col">
-    <canvas id="Registros<?= $md5 ?>" width="400" height="400"></canvas>
+    <div class="card">
+      <div class="card-header">
+        Gráfico por Situação
+      </div>
+    <div class="card-body">
+      <canvas id="Registros<?= $md5 ?>" width="400" height="400"></canvas>
+    </div>
+    </div>
   </div>
+
   <div class="col">
-    <canvas id="Tipos<?= $md5 ?>" width="400" height="400"></canvas>
+    <div class="card">
+      <div class="card-header">
+      Gráfico por Tipos
+      </div>
+    <div class="card-body">
+      <canvas id="Tipos<?= $md5 ?>" width="400" height="400"></canvas>
+    </div>
+    </div>
   </div>
 </div>
 
