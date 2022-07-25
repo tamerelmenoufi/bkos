@@ -212,7 +212,7 @@
             <div style="position:fixed; bottom:0; right:20px; background-color:yellow; z-index:10; padding:10px;">
                 <div style="display:flex; justify-content:end" >
 
-                    <div class="mb-3 form-check">
+                    <div class="mb-3 form-check" style="margin:20px; margin-right:40px;">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">OS. Concluída?</label>
                     </div>
