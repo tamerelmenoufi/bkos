@@ -200,11 +200,11 @@
     </div>
 </div>
 
-<div class="disabled" style="display:<?=(($d->data_finalizacao == 'disabled')?'none':'block')?>"></div>
+<div class="disabled" style="display:<?=(($d->data_finalizacao == 'disabled')?'none':'block')?>">FINALIZADA</div>
 
 <div class="row">
     <div class="col">
-        <div class="ListarRegistros">FINALIZADA</div>
+        <div class="ListarRegistros"></div>
     </div>
 </div>
 
