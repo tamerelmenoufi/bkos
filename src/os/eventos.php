@@ -103,7 +103,7 @@
         justify-content:center;
         align-items:center;
         font-size:60px;
-        color:red;
+        color:#fff;
         height:100%;
     }
 </style>
