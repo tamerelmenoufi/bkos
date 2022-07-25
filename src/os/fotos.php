@@ -211,7 +211,13 @@
         <div class="col" >
             <div style="position:fixed; bottom:0; right:20px; background-color:yellow; z-index:10; padding:10px;">
                 <div style="display:flex; justify-content:end" >
-                    <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar X</button>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">OS. Concluída?</label>
+                    </div>
+
+                    <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
                     <input type="hidden" id="cod_os" value="<?=$_POST['os']?>" />
                 </div>
             </div>
