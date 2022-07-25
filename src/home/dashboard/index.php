@@ -1,5 +1,20 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
+
+
+    $query = "SLELECT
+              (select count(*) from empresas) as empresas,
+              (select count(*) from colaboradores where cria_os = '1') as gestores,
+              (select count(*) from colaboradores where cria_os != '1') as colaboradores,
+              (select count(*) from colaboradores where adm = '1') as administradores,
+              (select count(*) from os) as os_geral,
+              (select count(*) from os where data_finalizacao > 0 ) as os_concluidadas,
+              (select count(*) from os where data_finalizacao = 0 ) as os_pendentes
+    ";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
+
 ?>
 
 <style>
@@ -16,46 +31,53 @@
 
         <div class="col-md-2 mb-3">
           <button class="btn btn-danger btn-block">
-            <h2>15</h2>
+            <h2><?=$d->empresas?></h2>
             Empresas
           </button>
         </div>
 
         <div class="col-md-2 mb-3">
-          <button class="btn btn-primary btn-block">
-            <h2>1679</h2>
-            Solicitaçõs
-          </button>
-        </div>
-
-        <div class="col-md-2 mb-3">
-          <button class="btn btn-warning btn-block">
-            <h2>7</h2>
-            Produção
-          </button>
-        </div>
-
-        <div class="col-md-2 mb-3">
-          <button class="btn btn-secondary btn-block">
-            <h2>19</h2>
-            O.S. Pendentes
-          </button>
-        </div>
-
-        <div class="col-md-2 mb-3">
-          <button class="btn btn-success btn-block">
-            <h2>3422</h2>
-            O.S. Concluídas
+          <button class="btn btn-danger btn-block">
+            <h2><?=$d->colaboradores?></h2>
+            Colaboradores
           </button>
         </div>
 
         <div class="col-md-2 mb-3">
           <button class="btn btn-danger btn-block">
-            <h2>34</h2>
-            Colaboradores
+            <h2><?=$d->gestores?></h2>
+            Gestores
           </button>
         </div>
 
+        <div class="col-md-2 mb-3">
+          <button class="btn btn-danger btn-block">
+            <h2><?=$d->administradores?></h2>
+            Administradores
+          </button>
+        </div>
+
+
+        <div class="col-md-2 mb-3">
+          <button class="btn btn-primary btn-block">
+            <h2><?=$d->os_geral?></h2>
+            Total de O.S.
+          </button>
+        </div>
+
+        <div class="col-md-2 mb-3">
+          <button class="btn btn-warning btn-block">
+            <h2><?=$d->os_pendentes?></h2>
+            O.S. Pendentes
+          </button>
+        </div>
+
+        <div class="col-md-2 mb-3">
+          <button class="btn btn-secondary btn-block">
+            <h2><?=$d->os_concluidadas?></h2>
+            O.S. Concluídas
+          </button>
+        </div>
 
 
       </div>
