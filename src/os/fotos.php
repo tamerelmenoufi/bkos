@@ -224,7 +224,7 @@
 
     <div class="Rodape<?=$md5?>">
         <div class="d-flex justify-content-between" >
-            <div class="p-10">
+            <div class="p-4">
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">OS. Concluída?</label>
