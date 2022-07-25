@@ -1,6 +1,13 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
+
+    if($_POST['acao'] == 'data_finalizacao'){
+        echo $q = "update os set data_finalizacao = '{$_POST['data_finalizacao']}' where codigo = '{$_POST['cod']}'";
+        mysqli_query($con, $q);
+        exit();
+    }
+
     if($_POST['acao'] == 'salvar'){
 
 
@@ -56,7 +63,8 @@
             a.*,
             if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
             b.razao_social as nome_empresa,
-            c.nome as executor
+            c.nome as executor,
+            if(a.data_finalizacao > 0,'checked','') as data_finalizacao
         from os a
         left join empresas b on a.empresa = b.codigo
         left join colaboradores c on a.executor = c.codigo
@@ -229,16 +237,16 @@
     <div class="Rodape<?=$md5?>">
         <div class="d-flex justify-content-between" >
             <div class="p-4">
-                <?php
+            <?php
                 if($_SESSION['BkOsPerfil'] == 'adm' or $_SESSION['BkOsLogin']->cria_os == '1'){
-                ?>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">OS. Concluída?</label>
-                </div>
-                <?php
+            ?>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="data_finalizacao" <?=$d->data_finalizacao?>>
+                <label class="form-check-label" for="data_finalizacao">OS. Concluída?</label>
+            </div>
+            <?php
                 }
-                ?>
+            ?>
             </div>
             <div class="p-2">
                 <button type="submit" SalvarFoto class="btn btn-success btn-ms">Salvar</button>
@@ -440,6 +448,29 @@
                 }
             });
 
+        });
+
+        $("#data_finalizacao").click(function(){
+            if($(this).prop("checked") == true){
+                data_finalizacao = '<?=date("Y-m-d H:i:s")?>';
+            }else{
+                data_finalizacao = '0';
+            }
+            $.ajax({
+                url:"src/os/fotos.php",
+                type:"POST",
+                data:{
+                    acao:'data_finalizacao',
+                    data_finalizacao,
+                    cod:'<?=$_POST['os']?>'
+                },
+                success:function(dados){
+                    $.alert('Ação da Finalização foi confirmada com sucesso!');
+                },
+                error:function(){
+                    $.alert('erro!');
+                }
+            })
         });
 
 
