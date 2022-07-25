@@ -90,27 +90,33 @@
 </div>
 
 
-  <div class="col-6">
-    <div class="card">
-      <div class="card-header">
-        Gráfico por Situação
-      </div>
-    <div class="card-body">
-      <canvas id="Registros<?= $md5 ?>" width="400" height="400"></canvas>
-    </div>
-    </div>
-  </div>
+<div class="col-12">
 
-  <div class="col-6">
-    <div class="card">
-      <div class="card-header">
-      Gráfico por Tipos
+    <div class="m-3">
+
+      <div class="col-6">
+        <div class="card">
+          <div class="card-header">
+            Gráfico por Situação
+          </div>
+        <div class="card-body">
+          <canvas id="Registros<?= $md5 ?>" width="400" height="400"></canvas>
+        </div>
+        </div>
       </div>
-    <div class="card-body">
-      <canvas id="Tipos<?= $md5 ?>" width="400" height="400"></canvas>
-    </div>
-    </div>
+
+      <div class="col-6">
+        <div class="card">
+          <div class="card-header">
+          Gráfico por Tipos
+          </div>
+        <div class="card-body">
+          <canvas id="Tipos<?= $md5 ?>" width="400" height="400"></canvas>
+        </div>
+        </div>
+      </div>
   </div>
+</div>
 
 
 <script>
