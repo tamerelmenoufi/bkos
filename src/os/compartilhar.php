@@ -6,15 +6,12 @@
         exit();
     }
 
-
-    if($_POST['os']) $os = $_POST['os'];
-    if($_POST['responsavel']) $responsavel = $_POST['responsavel'];
-
     $query = "select * from os where codigo = '{$os}'";
     $result = mysqli_query($con, $query);
     $o = mysqli_fetch_object($result);
 
-
+    $os = $o->os;
+    $responsavel = $o->responsavel;
 
 ?>
 <style>

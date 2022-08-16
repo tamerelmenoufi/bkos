@@ -68,7 +68,7 @@ while($d = mysqli_fetch_object($result)){
                 <li os='<?=$d->codigo?>' url="src/os/fotos.php"><a class="dropdown-item" href="#">Registro Fotográfico</a></li>
                 <li os='<?=$d->codigo?>' url="src/os/eventos.php"><a class="dropdown-item" href="#">Registro de Eventos</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li os='<?=$d->codigo?>' responsavel="<?=$d->responsavel?>" url="src/os/compartilhar.php"><a class="dropdown-item" href="#">Compartilhar</a></li>
+                <li os='<?=$d->codigo?>' url="src/os/compartilhar.php"><a class="dropdown-item" href="#">Compartilhar</a></li>
                 <li><a class="dropdown-item" href="src/os/relatorio/print.php?os=<?=$d->codigo?>" target="_blank">Relatório</a></li>
             </ul>
         </div>
@@ -209,14 +209,12 @@ while($d = mysqli_fetch_object($result)){
         $("li[os]").click(function(){
             os = $(this).attr("os");
             url = $(this).attr("url");
-            responsavel = $(this).attr("responsavel");
             Carregando();
             $.ajax({
                 url,
                 type:"POST",
                 data:{
                     os,
-                    responsavel,
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
