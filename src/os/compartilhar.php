@@ -19,7 +19,7 @@
     while($d = mysqli_fetch_object($result)){
     ?>
     <div class="form-check">
-    <input responsavel="<?=$d->codigo?>" class="form-check-input" type="radio" name="responsavel" id="responsavel<?=$d->codigo?>" <?=(($responsavel)?'checked':false)?>>
+    <input responsavel="<?=$d->codigo?>" class="form-check-input" type="radio" name="responsavel" id="responsavel<?=$d->codigo?>" <?=(($responsavel == $d->codigo)?'checked':false)?>>
     <label class="form-check-label" for="responsavel<?=$d->codigo?>">
         <?=$d->nome?>
     </label>
