@@ -34,6 +34,8 @@
 
 <script>
     $(function(){
+
+        Carregando('none')
         $("imput[responsavel]").change(function(){
             responsavel = $(this).attr("responsavel");
             os = '<?=$os?>';
