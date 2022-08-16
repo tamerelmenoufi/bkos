@@ -2,7 +2,8 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     if($_POST['acao'] == 'compartilhar'){
-        mysqli_query($con, "update os SET responsavel = '{$_POST['responsavel']}' where codigo = '{$_POST['os']}'");
+        $q = "update os SET responsavel = '{$_POST['responsavel']}' where codigo = '{$_POST['os']}'";
+        mysqli_query($con, $q);
         exit();
     }
 
@@ -64,8 +65,8 @@
                                 responsavel,
                                 acao:'compartilhar'
                             },
-                            success:function(){
-                                $.alert('Dados atualizados com sucesso!');
+                            success:function(dados){
+                                $.alert('Dados atualizados com sucesso!'+dados);
                                 Carregando('none')
                             }
                         });
