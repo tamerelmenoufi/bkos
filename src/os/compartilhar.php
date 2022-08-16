@@ -64,7 +64,8 @@
                             type:"POST",
                             data:{
                                 os,
-                                responsavel
+                                responsavel,
+                                acao:'compartilhar'
                             },
                             success:function(){
                                 $.alert('Dados atualizados com sucesso!');
@@ -73,7 +74,8 @@
                         });
                     },
                     'NÃO':function(){
-
+                        $("input[responsavel]").prop("checked", false);
+                        $('input[responsavel="<?=$responsavel?>"]').prop("checked", true);
                     }
                 }
             });
