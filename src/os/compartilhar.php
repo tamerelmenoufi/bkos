@@ -36,7 +36,7 @@
     $(function(){
 
         Carregando('none')
-        $("imput[responsavel]").change(function(){
+        $("input[responsavel]").change(function(){
             responsavel = $(this).attr("responsavel");
             os = '<?=$os?>';
             $.alert(`A Os ${os} foi para o usuário ${responsavel}`);
