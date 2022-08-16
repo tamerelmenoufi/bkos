@@ -22,7 +22,7 @@
 <div class="row">
     <div class="col">
         <h4>O.S. #<?=str_pad($o->codigo , 6 , '0' , STR_PAD_LEFT)?></h4>
-        <p><?=$d->titulo?></p>
+        <p><?=$o->titulo?></p>
         <hr>
     <?php
     $query = "select * from colaboradores where (cria_os = '1' or adm = '1') and situacao = '1'";
