@@ -6,7 +6,7 @@
         exit();
     }
 
-    $query = "select * from os where codigo = '{$os}'";
+    $query = "select * from os where codigo = '{$_POST['os']}'";
     $result = mysqli_query($con, $query);
     $o = mysqli_fetch_object($result);
 
