@@ -4,6 +4,7 @@
     if($_POST['acao'] == 'compartilhar'){
         $q = "update os SET responsavel = '{$_POST['responsavel']}' where codigo = '{$_POST['os']}'";
         mysqli_query($con, $q);
+        SendWapp('92991886570', "A O.S. de Código #{$_POST['os']} Sofreu alterações.");
         exit();
     }
 
