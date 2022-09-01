@@ -164,7 +164,7 @@ while($d = mysqli_fetch_object($result)){
             });
             if(opc.length){
                 console.log(opc)
-                $.alert(opc.length);
+                alert(opc.length);
             }else{
                 $.alert('Nenhuma O.S. Selecionada para compartilhamento!');
             }
