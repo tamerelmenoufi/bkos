@@ -39,7 +39,10 @@
 
 <div class="d-none d-md-block">
     <div class="row p-2 tb-b">
-        <h5 class="col-md-2">O.S.</h5>
+        <h5 class="col-md-2">
+            <input type="checkbox" class="compartilha_todos" value="" />
+            O.S.
+        </h5>
         <h5 class="col-md-4">Título</h5>
         <h5 class="col-md-2">Data</h5>
         <h5 class="col-md-2">Situação</h5>
