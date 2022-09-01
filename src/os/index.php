@@ -13,7 +13,11 @@
     $result = mysqli_query($con, $query);
 
 ?>
-
+<style>
+    .compartilha_transfere{
+        cursor:pointer;
+    }
+</style>
 <div class="col">
     <div class="col d-flex justify-content-between">
         <div class="p-2"><h5>Ordem de Serviços</h5></div>
