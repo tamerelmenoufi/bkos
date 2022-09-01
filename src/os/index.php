@@ -139,6 +139,17 @@ while($d = mysqli_fetch_object($result)){
 
 <script>
     $(document).ready(function () {
+
+        $(".compartilha_todos").click(function(){
+
+            if($(this).prop("checked") == true){
+                $(".compartilha").prop("checked") = false;
+            }else{
+                $(".compartilha").prop("checked") = true;
+            }
+
+        });
+
         // Carregando('none');
         // $("button[offcanvasDireita]").click(function(){
         //     Carregando();
