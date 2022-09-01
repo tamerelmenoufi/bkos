@@ -156,13 +156,13 @@ while($d = mysqli_fetch_object($result)){
         });
 
         $(".compartilha_transfere").click(function(){
-            var opc = false;
+            var opc = [];
             $(".compartilha").each(function(){
                 if($(this).prop("checked") == true){
-                    opc = true;
+                    opc.push($(this).val());
                 }
             });
-            if(opc == true){
+            if(opc.length){
 
             }else{
                 $.alert('Nenhuma O.S. Selecionada para compartilhamento!');
