@@ -52,7 +52,10 @@ while($d = mysqli_fetch_object($result)){
 ?>
 
 <div class="row p-2 tb-b">
-    <div class="col-md-2">#<?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?></div>
+    <div class="col-md-2">
+        <input type="checkbox" class="compartilha" value="<?=$d->codigo?>" />
+        #<?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?>
+    </div>
     <div class="col-md-4"><?=$d->titulo?></div>
     <div class="col-md-2"><?=$d->data_cadastro?></div>
     <div class="col-md-2"><?=$d->situacao?></div>
