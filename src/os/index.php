@@ -143,9 +143,9 @@ while($d = mysqli_fetch_object($result)){
         $(".compartilha_todos").click(function(){
 
             if($(this).prop("checked") == true){
-                $(".compartilha").prop("checked", false);
-            }else{
                 $(".compartilha").prop("checked", true);
+            }else{
+                $(".compartilha").prop("checked", false);
             }
 
         });
