@@ -42,6 +42,7 @@
         <h5 class="col-md-2">
             <input type="checkbox" class="compartilha_todos" value="" />
             O.S.
+            <i class="fa-solid fa-square-share-nodes compartilha_transfere"></i>
         </h5>
         <h5 class="col-md-4">Título</h5>
         <h5 class="col-md-2">Data</h5>
@@ -148,6 +149,20 @@ while($d = mysqli_fetch_object($result)){
                 $(".compartilha").prop("checked", false);
             }
 
+        });
+
+        $(".compartilha_transfere").click(function(){
+            var opc = false;
+            $(".compartilha").each(function(){
+                if($(this).prop("checked") == true){
+                    opc = true;
+                }
+            });
+            if(opc == true){
+
+            }else{
+                $.alert('Nenhuma O.S. Selecionada para compartilhamento!');
+            }
         });
 
         // Carregando('none');
