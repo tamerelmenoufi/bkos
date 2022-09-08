@@ -7,7 +7,7 @@
         $os = str_pad($_POST['os'] , 6 , '0' , STR_PAD_LEFT);
         $MsgWapp = "Olá  {$_POST['nome']}, a O.S. #{$os} foi direcionada para você. Acesse o endereço https://os.bkmanaus.com.br para mais informações.";
         SendWapp('92991886570', "A O.S. de Código #{$os} foi trasferida de {$_POST['nome_atual']} para {$_POST['nome']}");
-        exit();
+        // exit();
     }
 
     if($_POST['os']){
@@ -108,7 +108,7 @@
                             },
                             success:function(dados){
                                 $.alert('Dados atualizados com sucesso!');
-                                $(".LateralDireita").load("src/os/compartilhar.php");
+                                $(".LateralDireita").html(dados);
                                 Carregando('none')
                             }
                         });
