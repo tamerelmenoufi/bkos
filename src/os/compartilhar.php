@@ -95,9 +95,6 @@
                     'SIM':function(){
                         Carregando()
 
-                        $("input[responsavel_atual]").attr("responsavel_atual", responsavel_atual);
-                        $("input[nome_atual]").attr("nome_atual", nome_atual);
-
                         $.ajax({
                             url:"src/os/compartilhar.php",
                             type:"POST",
@@ -111,6 +108,7 @@
                             },
                             success:function(dados){
                                 $.alert('Dados atualizados com sucesso!');
+                                $(".LateralDireita").load("src/os/compartilhar.php");
                                 Carregando('none')
                             }
                         });
