@@ -5,19 +5,22 @@
         $q = "update os SET responsavel = '{$_POST['responsavel']}' where codigo = '{$_POST['os']}'";
         mysqli_query($con, $q);
         $os = str_pad($_POST['os'] , 6 , '0' , STR_PAD_LEFT);
-        $MsgWapp = "Olá  {$_POST['nome']}, a O.S. #{$os} foi direcionada para você. Acesse o endereço https://os.bkmanaus.com.br para mais informações.";
+        //Mensagem Wapp para o Gestor
         SendWapp($_SESSION['BkOsLogin']->telefone, "A O.S. de Código #{$os} foi trasferida de {$_POST['nome_atual']} para {$_POST['nome']}");
+        //Mensagem Wapp para o novo colaborador
+        SendWapp($_POST['telefone'], "Olá  {$_POST['nome']}, a O.S. #{$os} foi direcionada para você. Acesse o endereço https://os.bkmanaus.com.br para mais informações.");
         // exit();
     }
 
     if($_POST['os']){
-        $query = "select a.*, b.nome as nome_responsavel from os a left join colaboradores b on a.responsavel = b.codigo where a.codigo = '{$_POST['os']}'";
+        $query = "select a.*, b.nome as nome_responsavel, b.telefone as telefone_atual from os a left join colaboradores b on a.responsavel = b.codigo where a.codigo = '{$_POST['os']}'";
         $result = mysqli_query($con, $query);
         $o = mysqli_fetch_object($result);
 
         $os = $o->codigo;
         $responsavel = $o->responsavel;
         $nome = $o->nome_responsavel;
+        $telefone = $o->telefone_atual;
     }
 
     if($_POST['oss']){
@@ -33,7 +36,12 @@
 
 </style>
 
-<div class="row">
+<div class="row"
+    atual
+    responsavel="<?=$responsavel?>"
+    nome="<?=$nome?>"
+    telefone="<?=$telefone?>"
+>
     <div class="col">
         <?php
         if($_POST['os']){
@@ -59,10 +67,7 @@
     <input
         responsavel="<?=$d->codigo?>"
         nome="<?=$d->nome?>"
-
-        responsavel_atual="<?=$responsavel?>"
-        nome_atual="<?=$nome?>"
-
+        telefone="<?=$d->telefone?>"
         class="form-check-input"
         type="radio"
         name="responsavel"
@@ -86,8 +91,11 @@
         $("input[responsavel]").change(function(){
             responsavel = $(this).attr("responsavel");
             nome = $(this).attr("nome");
-            responsavel_atual = $(this).attr("responsavel_atual");
-            nome_atual = $(this).attr("nome_atual");
+            telefone = $(this).attr("telefone");
+
+            responsavel_atual = $("div[atual]").attr("responsavel");
+            nome_atual = $("div[atual]").attr("nome");
+            telefone_atual = $("div[atual]").attr("telefone");
             os = '<?=$os?>';
             $.confirm({
                 content:`Confirma o compartilhamento da <b>OS #<?=str_pad($o->codigo , 6 , '0' , STR_PAD_LEFT)?></b> com o colaborador <b>${nome}?</b>`,
@@ -103,8 +111,10 @@
                                 os,
                                 responsavel,
                                 nome,
+                                telefone,
                                 responsavel_atual,
                                 nome_atual,
+                                telefone_atual,
                                 acao:'compartilhar'
                             },
                             success:function(dados){
