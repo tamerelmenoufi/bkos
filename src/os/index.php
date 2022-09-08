@@ -163,8 +163,27 @@ while($d = mysqli_fetch_object($result)){
                 }
             });
             if(opc.length){
-                console.log(opc)
-                alert(opc.length);
+
+                Carregando();
+                $.ajax({
+                    url:'src/os/compartilhar.php',
+                    type:"POST",
+                    data:{
+                        oss:opc,
+                    },
+                    success:function(dados){
+                        $(".LateralDireita").html(dados);
+
+                        let myOffCanvas = document.getElementById('offcanvasDireita');
+                        let openedCanvas = new bootstrap.Offcanvas(myOffCanvas);
+                        // let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
+                        openedCanvas.show();
+
+                    }
+                });
+
+
+
             }else{
                 $.alert('Nenhuma O.S. Selecionada para compartilhamento!');
             }

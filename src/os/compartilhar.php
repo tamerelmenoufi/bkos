@@ -8,13 +8,24 @@
         exit();
     }
 
-    $query = "select * from os where codigo = '{$_POST['os']}'";
-    $result = mysqli_query($con, $query);
-    $o = mysqli_fetch_object($result);
+    if($_POST['os']){
+        $query = "select a.*, b.nome as nome_responsavel from os a left join colaboradores b on a.responsavel = b.codigo where a.codigo = '{$_POST['os']}'";
+        $result = mysqli_query($con, $query);
+        $o = mysqli_fetch_object($result);
 
-    $os = $o->codigo;
-    $responsavel = $o->responsavel;
+        $os = $o->codigo;
+        $responsavel = $o->responsavel;
+        $nome = $o->nome_responsavel;
+    }
 
+    if($_POST['oss']){
+        $query = "select * from os where codigo IN (".implode(",",$_POST['oss']).")";
+        $result = mysqli_query($con, $query);
+        while($o = mysqli_fetch_object($result)){
+            $oss['codigo'][] = $o->codigo;
+            $oss['responsavel'][] = $o->responsavel;
+        }
+    }
 ?>
 <style>
 
@@ -22,16 +33,37 @@
 
 <div class="row">
     <div class="col">
+        <?php
+        if($_POST['os']){
+        ?>
         <h4>O.S. #<?=str_pad($o->codigo , 6 , '0' , STR_PAD_LEFT)?></h4>
         <p><?=$o->titulo?></p>
         <hr>
+        <?php
+        }
+        if($_POST['oss']){
+        ?>
+
+        <?php
+        }
+        ?>
     <?php
     $query = "select * from colaboradores where (cria_os = '1' or adm = '1') and situacao = '1' order by nome asc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
     ?>
     <div class="form-check">
-    <input responsavel="<?=$d->codigo?>" nome="<?=$d->nome?>" class="form-check-input" type="radio" name="responsavel" id="responsavel<?=$d->codigo?>" <?=(($responsavel == $d->codigo)?'checked':false)?>>
+    <input
+        responsavel="<?=$d->codigo?>"
+        nome="<?=$d->nome?>"
+
+        responsavel_atual="<?=$responsavel?>"
+        nome_atual="<?=$nome?>"
+
+        class="form-check-input"
+        type="radio"
+        name="responsavel"
+        id="responsavel<?=$d->codigo?>" <?=(($responsavel == $d->codigo)?'checked':false)?>>
     <label class="form-check-label" for="responsavel<?=$d->codigo?>">
         <?=$d->nome?>
     </label>
