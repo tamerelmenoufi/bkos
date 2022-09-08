@@ -4,7 +4,8 @@
     if($_POST['acao'] == 'compartilhar'){
         $q = "update os SET responsavel = '{$_POST['responsavel']}' where codigo = '{$_POST['os']}'";
         mysqli_query($con, $q);
-        SendWapp('92991886570', "A O.S. de Código #{$_POST['os']} Sofreu alterações.");
+        $MsgWapp = "Olá  {$_POST['nome']}, a O.S. #{$_POST['os']} foi direcionada para você. Acesse o endereço https://os.bkmanaus.com.br para mais informações.";
+        SendWapp('92991886570', "A O.S. de Código #{$_POST['os']} foi trasferida de {$_POST['nome_atual']} para {$_POST['nome']}");
         exit();
     }
 
@@ -83,6 +84,8 @@
         $("input[responsavel]").change(function(){
             responsavel = $(this).attr("responsavel");
             nome = $(this).attr("nome");
+            responsavel_atual = $(this).attr("responsavel_atual");
+            nome_atual = $(this).attr("nome_atual");
             os = '<?=$os?>';
             $.confirm({
                 content:`Confirma o compartilhamento da <b>OS #<?=str_pad($o->codigo , 6 , '0' , STR_PAD_LEFT)?></b> com o colaborador <b>${nome}?</b>`,
@@ -96,6 +99,9 @@
                             data:{
                                 os,
                                 responsavel,
+                                nome,
+                                responsavel_atual,
+                                nome_atual,
                                 acao:'compartilhar'
                             },
                             success:function(dados){
