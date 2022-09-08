@@ -51,8 +51,6 @@
         ?>
     <?php
 
-    echo "Telefone: ".$_SESSION['BkOsLogin']->telefone;
-
     $query = "select * from colaboradores where (cria_os = '1' or adm = '1') and situacao = '1' order by nome asc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
