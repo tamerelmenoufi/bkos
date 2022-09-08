@@ -4,8 +4,9 @@
     if($_POST['acao'] == 'compartilhar'){
         $q = "update os SET responsavel = '{$_POST['responsavel']}' where codigo = '{$_POST['os']}'";
         mysqli_query($con, $q);
-        $MsgWapp = "Olá  {$_POST['nome']}, a O.S. #{$_POST['os']} foi direcionada para você. Acesse o endereço https://os.bkmanaus.com.br para mais informações.";
-        SendWapp('92991886570', "A O.S. de Código #{$_POST['os']} foi trasferida de {$_POST['nome_atual']} para {$_POST['nome']}");
+        $os = str_pad($_POST['os'] , 6 , '0' , STR_PAD_LEFT);
+        $MsgWapp = "Olá  {$_POST['nome']}, a O.S. #{$os} foi direcionada para você. Acesse o endereço https://os.bkmanaus.com.br para mais informações.";
+        SendWapp('92991886570', "A O.S. de Código #{$os} foi trasferida de {$_POST['nome_atual']} para {$_POST['nome']}");
         exit();
     }
 
@@ -93,6 +94,10 @@
                 buttons:{
                     'SIM':function(){
                         Carregando()
+
+                        $("input[responsavel_atual]").attr("responsavel_atual", responsavel_atual);
+                        $("input[nome_atual]").attr("nome_atual", nome_atual);
+
                         $.ajax({
                             url:"src/os/compartilhar.php",
                             type:"POST",
