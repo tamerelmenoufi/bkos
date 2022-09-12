@@ -11,7 +11,7 @@
             while($d = mysqli_fetch_object($result)){
         ?>
         <div class="col-md-3 mt-3">
-            <button empresa="<?=$d->codigo?>" class="btn btn-primary btn-block btn-lg">
+            <button empresa="<?=$d->codigo?>" class="btn btn-primary btn-lg" style="100%">
                 <h2><i class="fa-solid fa-building"></i></h2>
                 <?=$d->razao_social?>
             </button>
