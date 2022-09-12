@@ -93,7 +93,7 @@
   <div class="col-12">
       <div class="m-3">
         <div class="row">
-          <div class="col-6">
+          <div class="col-md-6">
             <div class="card">
               <div class="card-header">
                 Gráfico por Situação
@@ -104,7 +104,7 @@
             </div>
           </div>
 
-          <div class="col-6">
+          <div class="col-md-6">
             <div class="card">
               <div class="card-header">
               Gráfico por Tipos
