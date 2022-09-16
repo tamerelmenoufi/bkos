@@ -6,7 +6,9 @@
     <img src="img/logo_h60.png" style="height:60px;" alt="Sistema de Gestão BkOs">
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
+  <div
+      class="offcanvas-body"
+  >
     <h5>Sistema de Gestão de O.S.</h5>
 
     <div class="row mb-1">
@@ -83,9 +85,6 @@
         url,
         success:function(dados){
           $("#paginaHome").html(dados);
-          let myOffCanvas = document.getElementById('offcanvasDireita');
-          let openedCanvas = bootstrap.Offcanvas.getInstance(myOffCanvas);
-          openedCanvas.show();
         }
       });
     });
