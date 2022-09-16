@@ -39,7 +39,13 @@
                 <?php
                 while($d = mysqli_fetch_object($result)){
                 ?>
-                <tr linha='<?=$d->codigo?>'>
+                <tr
+                    linha='<?=$d->codigo?>'
+                    data-bs-toggle="offcanvas"
+                    href="#offcanvasDireita"
+                    role="button"
+                    aria-controls="offcanvasDireita"
+                >
                     <td><?=$d->titulo?></td>
                     <td><?=$d->situacao?></td>
                     <!-- <td>
