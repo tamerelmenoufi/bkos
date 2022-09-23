@@ -85,7 +85,7 @@
 
 
         <div class="col-md-4 mb-3">
-          <button class="btn btn-primary btn-block acessos" opc="os_geral">
+          <button class="btn btn-primary btn-block acessos" opc="os-geral">
             <h2><?=$d->os_geral?></h2>
             Total de O.S.
             <div>
@@ -97,7 +97,7 @@
         </div>
 
         <div class="col-md-4 mb-3">
-          <button class="btn btn-danger btn-block acessos" opc="os_pendente">
+          <button class="btn btn-danger btn-block acessos" opc="os-pendente">
             <h2><?=$d->os_pendentes?></h2>
             O.S. Pendentes
             <div>
@@ -109,7 +109,7 @@
         </div>
 
         <div class="col-md-4 mb-3">
-          <button class="btn btn-secondary btn-block acessos" opc="os_concluidas">
+          <button class="btn btn-secondary btn-block acessos" opc="os-concluidas">
             <h2><?=$d->os_concluidadas?></h2>
             O.S. Concluídas
             <div>
