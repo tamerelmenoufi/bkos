@@ -361,7 +361,7 @@
       opc = opc.split("-");
 
       $.ajax({
-        url:`home/dashboard/listas/${opc[0]}.php`,
+        url:`src/home/dashboard/listas/${opc[0]}.php`,
         type:"POST",
         data:{
           opc:opc[0],
