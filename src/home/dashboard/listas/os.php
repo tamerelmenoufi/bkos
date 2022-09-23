@@ -26,7 +26,6 @@
     }
     .detalhes title{
         width:100%;
-        float:none;
         padding:0;
         margin:0;
         font-size:9px;
