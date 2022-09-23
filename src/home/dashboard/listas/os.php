@@ -24,7 +24,7 @@
     .detalhes{
         width:100%;
     }
-    .detalhes title{
+    .detalhes span{
         width:100%;
         padding:0;
         margin:0;
@@ -52,7 +52,7 @@
         <h6 class="card-subtitle mb-2 text-muted"><?=$d->descricao?></h6>
         <p class="card-text">
             <div class="detalhes">
-                <title>Responsável</title>
+                <span>Responsável</span>
                 <p>Fulano de Tal</p>
             </div>
         </p>
