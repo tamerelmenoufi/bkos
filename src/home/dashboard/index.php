@@ -18,8 +18,14 @@
 ?>
 
 <style>
-  .btn-block{
+  .acessos{
     width:100%;
+  }
+  .acessos div{
+    text-align:right;
+    opacity:0;
+    color:#fff;
+    cursor:pointer;
   }
 </style>
 
@@ -30,9 +36,14 @@
       <div class="row">
 
         <div class="col-md-3 mb-3">
-          <button class="btn btn-warning btn-block">
+          <button class="btn btn-warning btn-block acessos">
             <h2><?=$d->empresas?></h2>
             Empresas
+            <div>
+              <span>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </span>
+            </div>
           </button>
         </div>
 
@@ -122,6 +133,12 @@
 <script>
   $(function(){
     Carregando('none');
+    $(".acessos").mouseover(function(){
+      $(this).children("div").css("opacity","1");
+    })
+    $(".acessos").mouseout(function(){
+      $(".acessos").children("div").css("opacity","0");
+    })
   })
 
 
