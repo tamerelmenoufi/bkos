@@ -48,45 +48,75 @@
         </div>
 
         <div class="col-md-3 mb-3">
-          <button class="btn btn-warning btn-block">
+          <button class="btn btn-warning btn-block acessos">
             <h2><?=$d->colaboradores?></h2>
             Colaboradores
+            <div>
+              <span>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </span>
+            </div>
           </button>
         </div>
 
         <div class="col-md-3 mb-3">
-          <button class="btn btn-warning btn-block">
+          <button class="btn btn-warning btn-block acessos">
             <h2><?=$d->gestores?></h2>
             Gestores
+            <div>
+              <span>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </span>
+            </div>
           </button>
         </div>
 
         <div class="col-md-3 mb-3">
-          <button class="btn btn-warning btn-block">
+          <button class="btn btn-warning btn-block acessos">
             <h2><?=$d->administradores?></h2>
             Administradores
+            <div>
+              <span>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </span>
+            </div>
           </button>
         </div>
 
 
         <div class="col-md-4 mb-3">
-          <button class="btn btn-primary btn-block">
+          <button class="btn btn-primary btn-block acessos">
             <h2><?=$d->os_geral?></h2>
             Total de O.S.
+            <div>
+              <span>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </span>
+            </div>
           </button>
         </div>
 
         <div class="col-md-4 mb-3">
-          <button class="btn btn-danger btn-block">
+          <button class="btn btn-danger btn-block acessos">
             <h2><?=$d->os_pendentes?></h2>
             O.S. Pendentes
+            <div>
+              <span>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </span>
+            </div>
           </button>
         </div>
 
         <div class="col-md-4 mb-3">
-          <button class="btn btn-secondary btn-block">
+          <button class="btn btn-secondary btn-block acessos">
             <h2><?=$d->os_concluidadas?></h2>
             O.S. Concluídas
+            <div>
+              <span>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </span>
+            </div>
           </button>
         </div>
 
