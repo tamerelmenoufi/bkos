@@ -36,7 +36,7 @@
       <div class="row">
 
         <div class="col-md-3 mb-3">
-          <button class="btn btn-warning btn-block acessos">
+          <button class="btn btn-warning btn-block acessos" opc="empresas">
             <h2><?=$d->empresas?></h2>
             Empresas
             <div>
@@ -48,7 +48,7 @@
         </div>
 
         <div class="col-md-3 mb-3">
-          <button class="btn btn-warning btn-block acessos">
+          <button class="btn btn-warning btn-block acessos" opc="colaboradores">
             <h2><?=$d->colaboradores?></h2>
             Colaboradores
             <div>
@@ -60,7 +60,7 @@
         </div>
 
         <div class="col-md-3 mb-3">
-          <button class="btn btn-warning btn-block acessos">
+          <button class="btn btn-warning btn-block acessos" opc="gestores">
             <h2><?=$d->gestores?></h2>
             Gestores
             <div>
@@ -72,7 +72,7 @@
         </div>
 
         <div class="col-md-3 mb-3">
-          <button class="btn btn-warning btn-block acessos">
+          <button class="btn btn-warning btn-block acessos" opc="empresas">
             <h2><?=$d->administradores?></h2>
             Administradores
             <div>
@@ -85,7 +85,7 @@
 
 
         <div class="col-md-4 mb-3">
-          <button class="btn btn-primary btn-block acessos">
+          <button class="btn btn-primary btn-block acessos" opc="os_geral">
             <h2><?=$d->os_geral?></h2>
             Total de O.S.
             <div>
@@ -97,7 +97,7 @@
         </div>
 
         <div class="col-md-4 mb-3">
-          <button class="btn btn-danger btn-block acessos">
+          <button class="btn btn-danger btn-block acessos" opc="os_pendente">
             <h2><?=$d->os_pendentes?></h2>
             O.S. Pendentes
             <div>
@@ -109,7 +109,7 @@
         </div>
 
         <div class="col-md-4 mb-3">
-          <button class="btn btn-secondary btn-block acessos">
+          <button class="btn btn-secondary btn-block acessos" opc="os_concluidas">
             <h2><?=$d->os_concluidadas?></h2>
             O.S. Concluídas
             <div>
@@ -354,6 +354,28 @@
         }
     );
 
+
+    $(".acessos").click(function(){
+
+      opc = $(this).attr("opc");
+      opc = opc.split("-");
+
+      $.ajax({
+        url:`home/dashboard/listas/${opc[0]}.php`,
+        type:"POST",
+        data:{
+          opc:opc[0],
+        },
+        success:function(dados){
+          $.dialog({
+            title:`${opc[0]}`,
+            content:dados,
+            columnClass:'col-md-offset-1 col-md-10'
+          });
+        }
+      })
+
+    });
 
 
 </script>
