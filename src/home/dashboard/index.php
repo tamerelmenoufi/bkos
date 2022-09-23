@@ -38,7 +38,7 @@
         <div class="col-md-3 mb-3">
           <button class="btn btn-warning btn-block acessos" opc="empresas">
             <h2><?=$d->empresas?></h2>
-            Empresas
+            <span>Empresas</span>
             <div>
               <span>
                 <i class="fa-solid fa-up-right-from-square"></i>
@@ -50,7 +50,7 @@
         <div class="col-md-3 mb-3">
           <button class="btn btn-warning btn-block acessos" opc="colaboradores">
             <h2><?=$d->colaboradores?></h2>
-            Colaboradores
+            <span>Colaboradores</span>
             <div>
               <span>
                 <i class="fa-solid fa-up-right-from-square"></i>
@@ -62,7 +62,7 @@
         <div class="col-md-3 mb-3">
           <button class="btn btn-warning btn-block acessos" opc="gestores">
             <h2><?=$d->gestores?></h2>
-            Gestores
+            <span>Gestores</span>
             <div>
               <span>
                 <i class="fa-solid fa-up-right-from-square"></i>
@@ -72,9 +72,9 @@
         </div>
 
         <div class="col-md-3 mb-3">
-          <button class="btn btn-warning btn-block acessos" opc="empresas">
+          <button class="btn btn-warning btn-block acessos" opc="administradores">
             <h2><?=$d->administradores?></h2>
-            Administradores
+            <span>Administradores</span>
             <div>
               <span>
                 <i class="fa-solid fa-up-right-from-square"></i>
@@ -87,7 +87,7 @@
         <div class="col-md-4 mb-3">
           <button class="btn btn-primary btn-block acessos" opc="os-geral">
             <h2><?=$d->os_geral?></h2>
-            Total de O.S.
+            <span>Total de O.S.</span>
             <div>
               <span>
                 <i class="fa-solid fa-up-right-from-square"></i>
@@ -99,7 +99,7 @@
         <div class="col-md-4 mb-3">
           <button class="btn btn-danger btn-block acessos" opc="os-pendente">
             <h2><?=$d->os_pendentes?></h2>
-            O.S. Pendentes
+            <span>O.S. Pendentes</span>
             <div>
               <span>
                 <i class="fa-solid fa-up-right-from-square"></i>
@@ -111,7 +111,7 @@
         <div class="col-md-4 mb-3">
           <button class="btn btn-secondary btn-block acessos" opc="os-concluidas">
             <h2><?=$d->os_concluidadas?></h2>
-            O.S. Concluídas
+            <span>O.S. Concluídas</span>
             <div>
               <span>
                 <i class="fa-solid fa-up-right-from-square"></i>
@@ -359,16 +359,17 @@
 
       opc = $(this).attr("opc");
       opc = opc.split("-");
+      tit = $(this).children("span").text();
 
       $.ajax({
         url:`src/home/dashboard/listas/${opc[0]}.php`,
         type:"POST",
         data:{
-          opc:opc[0],
+          opc:((opc[1])?opc[1]:''),
         },
         success:function(dados){
           $.dialog({
-            title:`${opc[0]}`,
+            title:`${tit}`,
             content:dados,
             columnClass:'col-md-offset-1 col-md-10'
           });
