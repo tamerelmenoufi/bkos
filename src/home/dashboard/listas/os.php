@@ -42,7 +42,7 @@
     }
     .busca{
         position:fixed;
-        top:60px;
+        top:55px;
         left:30px;
         right:40px;
         height:70px;
