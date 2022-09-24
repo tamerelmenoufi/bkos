@@ -41,7 +41,7 @@
         width:100%;
     }
 </style>
-<div style="position:fixed; top:0; left:0; width:100%;height:70px; background:#ccc; opacity:0.6; border:solid 1px green;">
+<div style="position:fixed; top:60px; left:0; width:100%;height:70px; background:#ccc; opacity:0.6; border:solid 1px green;">
 
 </div>
 
