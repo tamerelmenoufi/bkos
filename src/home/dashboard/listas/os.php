@@ -3,15 +3,15 @@
 
     switch($_POST['opc']){
         case 'concluidas':{
-            $query = "select * from os where data_finalizacao > 0";
+            $query = "select a.* from os a where a.data_finalizacao > 0";
             break;
         }
         case 'pendentes':{
-            $query = "select * from os where data_finalizacao = 0";
+            $query = "select a.* from os a where a.data_finalizacao = 0";
             break;
         }
         case 'geral':{
-            $query = "select * from os limit 100";
+            $query = "select a.* from os a limit 100";
             break;
         }
         default:{

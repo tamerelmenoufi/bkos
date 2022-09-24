@@ -97,7 +97,7 @@
         </div>
 
         <div class="col-md-4 mb-3">
-          <button class="btn btn-danger btn-block acessos" opc="os-pendente">
+          <button class="btn btn-danger btn-block acessos" opc="os-pendentes">
             <h2><?=$d->os_pendentes?></h2>
             <span>O.S. Pendentes</span>
             <div>
