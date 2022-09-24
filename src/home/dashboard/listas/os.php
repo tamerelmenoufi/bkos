@@ -41,6 +41,11 @@
         width:100%;
     }
 </style>
+<div style="position:absolute; top:0; left:0; width:100%;height:70px; background:#ccc; opacity:0.6">
+
+</div>
+
+<div style="margin-top:70px; border-top:1px solid red">
 <?php
     if($query){
         $result = mysqli_query($con, $query);
@@ -61,3 +66,5 @@
 <?php
         }
     }
+?>
+</div>
