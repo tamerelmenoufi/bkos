@@ -46,18 +46,18 @@
         left:30px;
         right:40px;
         height:70px;
+        background:#fff;
         z-index:10;
-
-        background:#ccc;
-        opacity:0.6;
-        border:solid 1px green;
+    }
+    .relatorio-body{
+        margin-top:70px;
     }
 </style>
 <div class="busca">
 
 </div>
 
-<div style="margin-top:70px; border-top:1px solid red">
+<div class="relatorio-body">
 <?php
     if($query){
         $result = mysqli_query($con, $query);
