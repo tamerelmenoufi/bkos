@@ -40,8 +40,20 @@
         color:#000;
         width:100%;
     }
+    .busca{
+        position:fixed;
+        top:60px;
+        left:30px;
+        right:40px;
+        height:70px;
+        z-index:10;
+
+        background:#ccc;
+        opacity:0.6;
+        border:solid 1px green;
+    }
 </style>
-<div style="position:fixed; top:60px; left:30px; right:40px; height:70px; background:#ccc; opacity:0.6; border:solid 1px green;">
+<div class="busca">
 
 </div>
 
