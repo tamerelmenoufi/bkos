@@ -179,7 +179,9 @@
 
 
                             <div class="progress">
-                                <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" aria-valuenow="<?=$p->dias?>" style="width: <?=$p->dias?>px"></div>
+                                <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" aria-valuenow="<?=$p->dias?>" style="width: <?=$p->dias?>px">
+                                    <?=$p->dias?> dia(s)
+                                </div>
                             </div>
 
 
