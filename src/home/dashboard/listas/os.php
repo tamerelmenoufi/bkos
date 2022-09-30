@@ -6,7 +6,7 @@
             $query = "
                         select a.*,
                                b.titulo as tipo,
-                               c.empresas as empresa,
+                               c.razao_social as empresa,
                                concat(
                                         d.nome,', ',
                                         d.rua,', ',
@@ -36,7 +36,7 @@
             $query = "
             select a.*,
                    b.titulo as tipo,
-                   c.empresas as empresa,
+                   c.razao_social as empresa,
                    concat(
                             d.nome,', ',
                             d.rua,', ',
@@ -66,7 +66,7 @@
             $query = "
             select a.*,
                    b.titulo as tipo,
-                   c.empresas as empresa,
+                   c.razao_social as empresa,
                    concat(
                             d.nome,', ',
                             d.rua,', ',
