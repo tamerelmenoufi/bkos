@@ -139,15 +139,22 @@
     // Lista dos itens pendentes
     if($_POST['opc'] == 'pendentes'){
 ?>
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>Data da Solicitação</th>
-            <th>Dias em atraso</th>
-            <th>Quantidade de O.S.</th>
-        </tr>
-    </thead>
-    <tbody>
+
+<div class="card m-3">
+    <div class="card-body">
+        <h5 class="card-title">Quadro Crítico</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Lista de OS em atraso</h6>
+        <p class="card-text">
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Data da Solicitação</th>
+                        <th>Dias em atraso</th>
+                        <th>Quantidade de O.S.</th>
+                    </tr>
+                </thead>
+                <tbody>
 <?php
         $q = "SELECT
 
@@ -162,20 +169,23 @@
         $r = mysqli_query($con, $q);
         while($p = mysqli_fetch_object($r)){
 ?>
-        <tr>
-            <td><?=$p->data_cadastro?></td>
-            <td>
-                <div style="background-color:red; color:#fff; padding:3px; width:<?=($p->dias*2)?>px; border-radius:5px;">
-                    <?=$p->dias?>
-                </div>
-            </td>
-            <td><?=$p->quantidade?></td>
-        </tr>
+                    <tr>
+                        <td><?=$p->data_cadastro?></td>
+                        <td>
+                            <div style="background-color:red; color:#fff; padding:3px; width:<?=($p->dias*2)?>px; border-radius:5px;">
+                                <?=$p->dias?>
+                            </div>
+                        </td>
+                        <td><?=$p->quantidade?></td>
+                    </tr>
 <?php
         }
 ?>
-    </tbody>
-</table>
+                </tbody>
+            </table>
+        </p>
+    </div>
+</div>
 <?php
     }
     // FIM Lista dos itens pendentes
