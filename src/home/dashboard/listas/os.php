@@ -170,7 +170,7 @@
 
             WHERE a.data_finalizacao = 0 group by dias";
 
-        $r = mysqli_query($con, $query);
+        $r = mysqli_query($con, $q);
         while($p = mysqli_fetch_object($r)){
 ?>
         <tr>
