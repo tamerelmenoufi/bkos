@@ -142,10 +142,9 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>Dados da OS</th>
             <th>Data da Solicitação</th>
             <th>Dias em atraso</th>
-            <th>Ação</th>
+            <th>Quantidade de O.S.</th>
         </tr>
     </thead>
     <tbody>
@@ -154,19 +153,9 @@
 
                     a.data_cadastro,
                     DATEDIFF(CURDATE(), a.data_cadastro) as dias,
-                    count(*) as quantidade,
-                    b.titulo as tipo,
-                    c.razao_social as empresa,
-                    e.nome as responsavel,
-                    f.nome as executor
+                    count(*) as quantidade
 
             from os a
-
-            left join os_tipos b on a.tipo = b.codigo
-            left join empresas c on a.empresa = c.codigo
-            left join empresas_enderecos d on a.empresa_endereco = d.codigo
-            left join colaboradores e on a.responsavel = e.codigo
-            left join colaboradores f on a.executor = f.codigo
 
             WHERE a.data_finalizacao = 0 group by dias";
 
@@ -174,13 +163,6 @@
         while($p = mysqli_fetch_object($r)){
 ?>
         <tr>
-            <td>
-                <h4><?=$p->empresa?></h4>
-                <p><?=$p->tipo?><br>
-                <?=$p->tipo?><br>
-                Responsável: <?=$p->responsavel?><br>
-                Executor: <?=$p->executor?></p>
-            </td>
             <td><?=$p->data_cadastro?></td>
             <td>
             <?=$p->dias?>
@@ -188,7 +170,7 @@
                     <?=$p->dias?>
                 </div>
             </td>
-            <td>Ação</td>
+            <td><?=$p->quantidade?></td>
         </tr>
 <?php
         }
