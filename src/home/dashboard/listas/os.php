@@ -157,7 +157,7 @@
 
             from os a
 
-            WHERE a.data_finalizacao = 0 group by dias";
+            WHERE a.data_finalizacao = 0 group by dias desc";
 
         $r = mysqli_query($con, $q);
         while($p = mysqli_fetch_object($r)){
