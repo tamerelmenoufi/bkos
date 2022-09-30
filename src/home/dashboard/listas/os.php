@@ -151,7 +151,7 @@
                     <tr>
                         <th>Data da Solicitação</th>
                         <th>Dias em atraso</th>
-                        <th>Quantidade de O.S.</th>
+                        <th>Qt. de O.S.</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -170,7 +170,7 @@
         while($p = mysqli_fetch_object($r)){
 ?>
                     <tr>
-                        <td><?=$p->data_cadastro?></td>
+                        <td><?=($p->data_cadastro)?></td>
                         <td>
                             <div style="background-color:red; color:#fff; padding:3px; width:<?=($p->dias*5)?>px; border-radius:5px;">
                                 <?=$p->dias?>
