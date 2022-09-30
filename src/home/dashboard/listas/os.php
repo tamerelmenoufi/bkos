@@ -185,7 +185,7 @@
 
 
                         </td>
-                        <td><?=$p->quantidade?> O.S.</td>
+                        <td><?=$p->quantidade?> <span style="margin-left:5px; font-size:6px; color:#e1e1e1">O.S.</span></td>
                     </tr>
 <?php
         }
