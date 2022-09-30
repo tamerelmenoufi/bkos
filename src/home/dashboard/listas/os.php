@@ -180,7 +180,7 @@
 
                             <div class="progress">
                                 <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" aria-valuenow="<?=$p->dias?>" style="width: <?=$p->dias?>px"></div>
-                                <?=$p->dias?> dia(s)
+                                <span style="margin-left:5px; font-size:10px;"><?=$p->dias?> dia(s)</span>
                             </div>
 
 
