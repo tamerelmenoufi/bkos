@@ -147,7 +147,7 @@
         <p class="card-text">
             <div class="detalhes">
                 <span>Responsável</span>
-                <p>Fulano de Tal</p>
+                <p><?=$d->responsavel?></p>
             </div>
         </p>
     </div>
