@@ -185,7 +185,7 @@
 
 
                         </td>
-                        <td><?=$p->quantidade?></td>
+                        <td><?=$p->quantidade?> O.S.</td>
                     </tr>
 <?php
         }
