@@ -160,7 +160,8 @@
 
                     a.data_cadastro,
                     DATEDIFF(CURDATE(), a.data_cadastro) as dias,
-                    count(*) as quantidade
+                    count(*) as quantidade,
+                    max(DATEDIFF(CURDATE(), a.data_cadastro)) as limite
 
             from os a
 
@@ -172,9 +173,17 @@
                     <tr>
                         <td><?=($p->data_cadastro)?></td>
                         <td>
-                            <div style="background-color:red; color:#fff; padding:3px; width:<?=($p->dias*5)?>px; border-radius:5px;">
+                            <!-- <div style="background-color:red; color:#fff; padding:3px; width:<?=($p->dias*5)?>px; border-radius:5px;">
                                 <?=$p->dias?>
+                            </div> -->
+
+
+
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" aria-valuenow="<?=$p->dias?>" aria-valuemin="0" aria-valuemax="<?=$p->limite?>" style="width: <?=$p->dias?>px"></div>
                             </div>
+
+
                         </td>
                         <td><?=$p->quantidade?></td>
                     </tr>
