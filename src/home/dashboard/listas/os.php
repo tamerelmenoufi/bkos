@@ -158,7 +158,7 @@
 <?php
         $q = "SELECT
 
-                    a.data_cadastro,
+                    concat(day(a.data_cadastro),'/',month(a.data_cadastro),'/',year(a.data_cadastro)) as data_cadastro,
                     DATEDIFF(CURDATE(), a.data_cadastro) as dias,
                     count(*) as quantidade
 
@@ -185,7 +185,7 @@
 
 
                         </td>
-                        <td><?=$p->quantidade?> <span style="margin-left:5px; font-size:10px; color:#a1a1a1">O.S.</span></td>
+                        <td><?=$p->quantidade?> <span style="margin-left:3px; font-size:10px; color:#a1a1a1">O.S.</span></td>
                     </tr>
 <?php
         }
