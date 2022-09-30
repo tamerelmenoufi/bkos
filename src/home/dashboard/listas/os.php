@@ -176,13 +176,14 @@
         <tr>
             <td>
                 <h4><?=$p->empresa?></h4>
-                <p><?=$p->tipo?></p>
-                <p><?=$p->tipo?></p>
-                <p>Responsável: <?=$p->responsavel?></p>
-                <p>Executor: <?=$p->executor?></p>
+                <p><?=$p->tipo?><br>
+                <?=$p->tipo?><br>
+                Responsável: <?=$p->responsavel?><br>
+                Executor: <?=$p->executor?></p>
             </td>
             <td><?=$p->data_cadastro?></td>
             <td>
+            <?=$p->dias?>
                 <div style="background-color:red; color:#fff; padding:3px; width:<?=($p->dias*2)?>px;">
                     <?=$p->dias?>
                 </div>
