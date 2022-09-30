@@ -20,13 +20,14 @@
                                 e.nome as responsavel,
                                 f.nome as executor
 
+
+                            from os a
+
                             left join os_tipos b on a.tipo = b.codigo
                             left join empresas c on a.empresa = c.codigo
                             left join empresas_enderecos d on a.empresa_endereco = d.codigo
                             left join colaboradores e on a.responsavel = e.codigo
                             left join colaboradores f on a.executor = f.codigo
-
-                            from os a
 
                         where a.data_finalizacao > 0";
             break;
@@ -49,13 +50,14 @@
                     e.nome as responsavel,
                     f.nome as executor
 
+                from os a
+
                 left join os_tipos b on a.tipo = b.codigo
                 left join empresas c on a.empresa = c.codigo
                 left join empresas_enderecos d on a.empresa_endereco = d.codigo
                 left join colaboradores e on a.responsavel = e.codigo
                 left join colaboradores f on a.executor = f.codigo
 
-                from os a
 
             where a.data_finalizacao = 0";
             break;
@@ -78,13 +80,13 @@
                     e.nome as responsavel,
                     f.nome as executor
 
+                from os a
+
                 left join os_tipos b on a.tipo = b.codigo
                 left join empresas c on a.empresa = c.codigo
                 left join empresas_enderecos d on a.empresa_endereco = d.codigo
                 left join colaboradores e on a.responsavel = e.codigo
                 left join colaboradores f on a.executor = f.codigo
-
-                from os a
 
             limit 100";
             break;
