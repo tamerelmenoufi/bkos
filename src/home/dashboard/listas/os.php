@@ -165,8 +165,7 @@
         <tr>
             <td><?=$p->data_cadastro?></td>
             <td>
-            <?=$p->dias?>
-                <div style="background-color:red; color:#fff; padding:3px; width:<?=($p->dias*2)?>px;">
+                <div style="background-color:red; color:#fff; padding:3px; width:<?=($p->dias*2)?>px; border-radius:5px;">
                     <?=$p->dias?>
                 </div>
             </td>
