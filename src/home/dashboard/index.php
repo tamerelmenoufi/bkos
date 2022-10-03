@@ -253,9 +253,9 @@
       });
     });
 
-    $(document).on("click",".tdExpandir", function(){
+    $(document).off("click").on("click",".tdExpandir", function(){
       data = $(this).data();
-      alert(data.titulo);
+      console.log(data.titulo);
     })
 
 
