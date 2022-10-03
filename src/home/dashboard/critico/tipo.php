@@ -4,43 +4,54 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>Data da Solicitação</th>
-            <th>Dias em atraso</th>
+            <th>Tipo</th>
             <th>Qt. de O.S.</th>
         </tr>
     </thead>
     <tbody>
 <?php
-$q = "SELECT
+    $q = "SELECT
 
-        concat(day(a.data_cadastro),'/',month(a.data_cadastro),'/',year(a.data_cadastro)) as data_cadastro,
-        DATEDIFF(CURDATE(), a.data_cadastro) as dias,
-        count(*) as quantidade
+                a.*,
+                b.titulo as tipo,
+                c.razao_social as empresa,
+                concat(
+                            d.nome,', ',
+                            d.rua,', ',
+                            d.numero,', ',
+                            d.bairro,', ',
+                            d.cidade,', ',
+                            d.estado,', ',
+                            d.cep,', ',
+                            d.complemento
+                        ) as empresa_endereco,
+                    IF(e.nome != '',e.nome,'INDEFINIDO') as responsavel,
+                    IF(f.nome != '',f.nome,'INDEFINIDO') as executor,
+                    count(*) as quantidade
 
-from os a
+        from os a
 
-WHERE a.data_finalizacao = 0 group by dias desc";
+            left join os_tipos b on a.tipo = b.codigo
+            left join empresas c on a.empresa = c.codigo
+            left join empresas_enderecos d on a.empresa_endereco = d.codigo
+            left join colaboradores e on a.responsavel = e.codigo
+            left join colaboradores f on a.executor = f.codigo
+
+        WHERE a.data_finalizacao = 0 group by b.codigo order by quantidade desc";
 
 $r = mysqli_query($con, $q);
 while($p = mysqli_fetch_object($r)){
 ?>
         <tr>
-            <td><?=($p->data_cadastro)?></td>
             <td>
-                <!-- <div style="background-color:red; color:#fff; padding:3px; width:<?=($p->dias*5)?>px; border-radius:5px;">
-                    <?=$p->dias?>
-                </div> -->
-
-
-
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" aria-valuenow="<?=$p->dias?>" style="width: <?=$p->dias?>px"></div>
-                    <span style="margin-left:5px; font-size:10px;"><?=$p->dias?> dia(s)</span>
-                </div>
-
-
+                <?=($p->tipo)?>
             </td>
-            <td><?=$p->quantidade?> <span style="margin-left:3px; font-size:10px; color:#a1a1a1">O.S.</span></td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" aria-valuenow="<?=$p->quantidade?>" style="width: <?=$p->quantidade?>px"></div>
+                    <span style="margin-left:5px; font-size:10px;"><?=$p->quantidade?> O.S.</span>
+                </div>
+            </td>
         </tr>
 <?php
 }
