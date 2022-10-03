@@ -149,109 +149,39 @@
             <h6 class="card-subtitle mb-2 text-muted">Lista de OS em atraso</h6>
             <p class="card-text">
 
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active painelCritico" id="visao_geral" data-bs-toggle="tab" data-bs-target="#painelCritico" type="button" role="tab" aria-controls="visaGeral" aria-selected="true">Visão Geral</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link painelCritico" id="responsavel" data-bs-toggle="tab" data-bs-target="#painelCritico" type="button" role="tab" aria-controls="responsavel" aria-selected="false">Responsável</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link painelCritico" id="executor" data-bs-toggle="tab" data-bs-target="#painelCritico" type="button" role="tab" aria-controls="executor" aria-selected="false">Executor</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link painelCritico" id="tipo" data-bs-toggle="tab" data-bs-target="#painelCritico" type="button" role="tab" aria-controls="tipo" aria-selected="false" >Tipo</button>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div
+                    class="tab-pane fade show active"
+                    id="painelCritico"
+                    role="tabpanel"
+                    aria-labelledby="home-tab"
+                    tabindex="0"
+                    style="
+                            border-left:1px solid #dee2e6;
+                            border-right:1px solid #dee2e6;
+                            border-bottom:1px solid #dee2e6;
+                            padding:10px;
+                          "
+                >...</div>
+                <!-- <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div> -->
+              </div>
 
-
-
-
-
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-              <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="visaGeral" data-bs-toggle="tab" data-bs-target="#painelCritico" type="button" role="tab" aria-controls="visaGeral" aria-selected="true">Visão Geral</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="responsavel" data-bs-toggle="tab" data-bs-target="#painelCritico" type="button" role="tab" aria-controls="responsavel" aria-selected="false">Responsável</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="executor" data-bs-toggle="tab" data-bs-target="#painelCritico" type="button" role="tab" aria-controls="executor" aria-selected="false">Executor</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="tipo" data-bs-toggle="tab" data-bs-target="#painelCritico" type="button" role="tab" aria-controls="tipo" aria-selected="false" >Tipo</button>
-              </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-              <div
-                  class="tab-pane fade show active"
-                  id="painelCritico"
-                  role="tabpanel"
-                  aria-labelledby="home-tab"
-                  tabindex="0"
-                  style="
-                          border-left:1px solid #dee2e6;
-                          border-right:1px solid #dee2e6;
-                          border-bottom:1px solid #dee2e6;
-                          padding:10px;
-                        "
-              >...</div>
-              <!-- <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
-              <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
-              <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div> -->
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Data da Solicitação</th>
-                            <th>Dias em atraso</th>
-                            <th>Qt. de O.S.</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-    <?php
-            $q = "SELECT
-
-                        concat(day(a.data_cadastro),'/',month(a.data_cadastro),'/',year(a.data_cadastro)) as data_cadastro,
-                        DATEDIFF(CURDATE(), a.data_cadastro) as dias,
-                        count(*) as quantidade
-
-                from os a
-
-                WHERE a.data_finalizacao = 0 group by dias desc";
-
-            $r = mysqli_query($con, $q);
-            while($p = mysqli_fetch_object($r)){
-    ?>
-                        <tr>
-                            <td><?=($p->data_cadastro)?></td>
-                            <td>
-                                <!-- <div style="background-color:red; color:#fff; padding:3px; width:<?=($p->dias*5)?>px; border-radius:5px;">
-                                    <?=$p->dias?>
-                                </div> -->
-
-
-
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" aria-valuenow="<?=$p->dias?>" style="width: <?=$p->dias?>px"></div>
-                                    <span style="margin-left:5px; font-size:10px;"><?=$p->dias?> dia(s)</span>
-                                </div>
-
-
-                            </td>
-                            <td><?=$p->quantidade?> <span style="margin-left:3px; font-size:10px; color:#a1a1a1">O.S.</span></td>
-                        </tr>
-    <?php
-            }
-    ?>
-                    </tbody>
-                </table>
             </p>
         </div>
     </div>
@@ -300,6 +230,26 @@
     $(".acessos").mouseout(function(){
       $(".acessos").children("div").css("opacity","0");
     })
+
+
+    $.ajax({
+      url:"home/dashboard/critico/visao_geral.php",
+      success:function(dados){
+        $("#painelCritico").html(dados);
+      }
+    });
+
+    $(".painelCritico").click(function(){
+      opc = $(this).attr("id");
+      $.ajax({
+        url:`home/dashboard/critico/${opc}.php`,
+        success:function(dados){
+          $("#painelCritico").html(dados);
+        }
+      });
+    });
+
+
   })
 
 
