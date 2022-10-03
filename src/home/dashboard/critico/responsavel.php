@@ -51,7 +51,7 @@ while($p = mysqli_fetch_object($r)){
                     <span style="margin-left:5px; font-size:10px;"><?=$p->quantidade?> O.S.</span>
                 </div>
             </td>
-            <td>
+            <td class="tdExpandir">
                 <i class="fa-solid fa-up-right-from-square"></i>
             </td>
         </tr>

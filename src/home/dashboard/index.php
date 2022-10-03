@@ -32,6 +32,10 @@
     border-right:1px solid #ccc;
     border-bottom:1px solid #ccc;
   }
+  .tdExpandir{
+    width:30px;
+    cursor:pointer;
+  }
 </style>
 
 <div class="col-12">
