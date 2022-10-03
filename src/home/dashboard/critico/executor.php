@@ -4,7 +4,7 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>Executor</th>
+            <th>Executor <span style="font-size:10px; color:#a1a1a1;">Responsável</span></th>
             <th>Qt. de O.S.</th>
         </tr>
     </thead>
