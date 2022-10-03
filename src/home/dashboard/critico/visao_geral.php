@@ -7,6 +7,7 @@
             <th>Data da Solicitação</th>
             <th>Dias em atraso</th>
             <th>Qt. de O.S.</th>
+            <th>#</th>
         </tr>
     </thead>
     <tbody>
@@ -41,6 +42,9 @@ while($p = mysqli_fetch_object($r)){
 
             </td>
             <td><?=$p->quantidade?> <span style="margin-left:3px; font-size:10px; color:#a1a1a1">O.S.</span></td>
+            <td>
+                <i class="fa-solid fa-up-right-from-square"></i>
+            </td>
         </tr>
 <?php
 }

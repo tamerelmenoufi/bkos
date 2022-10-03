@@ -6,6 +6,7 @@
         <tr>
             <th>Responsável</th>
             <th>Qt. de O.S.</th>
+            <th>#</th>
         </tr>
     </thead>
     <tbody>
@@ -49,6 +50,9 @@ while($p = mysqli_fetch_object($r)){
                     <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" aria-valuenow="<?=$p->quantidade?>" style="width: <?=$p->quantidade?>px"></div>
                     <span style="margin-left:5px; font-size:10px;"><?=$p->quantidade?> O.S.</span>
                 </div>
+            </td>
+            <td>
+                <i class="fa-solid fa-up-right-from-square"></i>
             </td>
         </tr>
 <?php
