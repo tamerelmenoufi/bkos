@@ -26,6 +26,11 @@
     opacity:0;
     color:#fff;
     cursor:pointer;
+  },
+  .moldura{
+    border-left:1px solid #ccc;
+    border-right:1px solid #ccc;
+    border-bottom:1px solid #ccc;
   }
 </style>
 
@@ -128,6 +133,10 @@
 
 
 
+
+
+
+
 </div>
   <div class="col-12">
       <div class="row">
@@ -139,6 +148,51 @@
             <h5 class="card-title">Quadro Crítico</h5>
             <h6 class="card-subtitle mb-2 text-muted">Lista de OS em atraso</h6>
             <p class="card-text">
+
+
+
+
+
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="visaGeral" data-bs-toggle="tab" data-bs-target="#painelCritico" type="button" role="tab" aria-controls="visaGeral" aria-selected="true">Visão Geral</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="responsavel" data-bs-toggle="tab" data-bs-target="#painelCritico" type="button" role="tab" aria-controls="responsavel" aria-selected="false">Responsável</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="executor" data-bs-toggle="tab" data-bs-target="#painelCritico" type="button" role="tab" aria-controls="executor" aria-selected="false">Executor</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tipo" data-bs-toggle="tab" data-bs-target="#painelCritico" type="button" role="tab" aria-controls="tipo" aria-selected="false" >Tipo</button>
+              </li>
+            </ul>
+            <div class="tab-content moldura" id="myTabContent">
+              <div class="tab-pane fade show active" id="painelCritico" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
+              <!-- <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
+              <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
+              <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div> -->
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 <table class="table table-hover">
                     <thead>
