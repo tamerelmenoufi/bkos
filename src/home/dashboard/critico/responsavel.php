@@ -25,8 +25,8 @@
                             d.cep,', ',
                             d.complemento
                         ) as empresa_endereco,
-                    e.nome as responsavel,
-                    f.nome as executor,
+                    IF(e.nome != '',e.nome,'INDEFINIDO') as responsavel,
+                    IF(f.nome != '',f.nome,'INDEFINIDO') as executor,
                     count(*) as quantidade
 
         from os a
