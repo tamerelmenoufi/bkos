@@ -37,14 +37,19 @@
             left join colaboradores e on a.responsavel = e.codigo
             left join colaboradores f on a.executor = f.codigo
 
-        WHERE a.data_finalizacao = 0 group by e.codigo order by e.nome asc";
+        WHERE a.data_finalizacao = 0 group by e.codigo order by quantidade desc";
 
 $r = mysqli_query($con, $q);
 while($p = mysqli_fetch_object($r)){
 ?>
         <tr>
             <td><?=($p->responsavel)?></td>
-            <td><?=$p->quantidade?> <span style="margin-left:3px; font-size:10px; color:#a1a1a1">O.S.</span></td>
+            <td>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" aria-valuenow="<?=$p->quantidade?>" style="width: <?=$p->quantidade?>px"></div>
+                    <span style="margin-left:5px; font-size:10px;"><?=$p->quantidade?> O.S.</span>
+                </div>
+            </td>
         </tr>
 <?php
 }
