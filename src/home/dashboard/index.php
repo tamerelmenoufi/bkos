@@ -233,7 +233,7 @@
 
 
     $.ajax({
-      url:"home/dashboard/critico/visao_geral.php",
+      url:"src/home/dashboard/critico/visao_geral.php",
       success:function(dados){
         $("#painelCritico").html(dados);
       }
@@ -242,7 +242,7 @@
     $(".painelCritico").click(function(){
       opc = $(this).attr("id");
       $.ajax({
-        url:`home/dashboard/critico/${opc}.php`,
+        url:`src/home/dashboard/critico/${opc}.php`,
         success:function(dados){
           $("#painelCritico").html(dados);
         }
