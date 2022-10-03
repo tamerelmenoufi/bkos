@@ -253,6 +253,11 @@
       });
     });
 
+    $(documento).on("click",".tdExpandir", function(){
+      dados = $(this).data();
+      console.log(dados);
+    })
+
 
   })
 
