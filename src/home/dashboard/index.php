@@ -176,9 +176,9 @@
                   aria-labelledby="home-tab"
                   tabindex="0"
                   style="
-                          border-left:1px solid #eee;
-                          border-right:1px solid #eee;
-                          border-bottom:1px solid #eee;
+                          border-left:1px solid #dee2e6;
+                          border-right:1px solid #dee2e6;
+                          border-bottom:1px solid #dee2e6;
                           padding:10px;
                         "
               >...</div>
