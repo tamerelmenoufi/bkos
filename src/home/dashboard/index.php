@@ -254,8 +254,8 @@
     });
 
     $(document).on("click",".tdExpandir", function(){
-      dados = $(this).data();
-      console.log(dados);
+      data = $(this).data();
+      alert(data.titulo);
     })
 
 
