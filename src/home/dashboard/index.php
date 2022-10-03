@@ -253,7 +253,7 @@
       });
     });
 
-    $(documento).on("click",".tdExpandir", function(){
+    $(document).on("click",".tdExpandir", function(){
       dados = $(this).data();
       console.log(dados);
     })
