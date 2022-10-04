@@ -127,12 +127,12 @@
         top:0px;
         left:0px;
         right:0px;
-        height:80px;
+        height:70px;
         background:#fff;
         z-index:10;
     }
     .relatorio-body{
-        margin-top:100px;
+        margin-top:110px;
         margin-top:0px;
     }
 </style>
