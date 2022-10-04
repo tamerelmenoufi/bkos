@@ -141,6 +141,7 @@
 </div> -->
 
 <div class="relatorio-body">
+    <h2><?=$_POST['titulo']?></h2>
 <?php
     if($query){
         $result = mysqli_query($con, $query);
