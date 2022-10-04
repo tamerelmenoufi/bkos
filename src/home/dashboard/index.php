@@ -46,7 +46,7 @@
     z-index:999;
     display:none;
   }
-  .close{
+  .closeOs{
     position:fixed;
     right:10px;
     top:10px;
@@ -56,7 +56,7 @@
     cursor: pointer;
   }
 
-  .data{
+  .dataOs{
     position:fixed;
     left:0;
     right:0;
@@ -249,8 +249,8 @@
 
 
 <div class="popupOs">
-  <span class="close">Fechar</span>
-  <div class="data"></div>
+  <span class="closeOs">Fechar</span>
+  <div class="dataOs"></div>
 </div>
 
 
@@ -295,14 +295,14 @@
           //   columnClass:'col-md-offset-1 col-md-10'
           // });
           $(".popupOs").css("display","block");
-          $(".popupOs .data").html(dados);
+          $(".popupOs .dataOs").html(dados);
         }
       });
     });
 
-    $(".popupOs .close").click(function(){
+    $(".popupOs .closeOs").click(function(){
       $(".popupOs").css("display","none");
-      $(".popupOs .data").html("");
+      $(".popupOs .dataOs").html("");
     });
 
 
