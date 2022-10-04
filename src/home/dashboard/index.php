@@ -296,6 +296,7 @@
           // });
           $(".popupOs").css("display","block");
           $(".popupOs .dataOs").html(dados);
+          $("body").css("overflow","hidden");
         }
       });
     });
@@ -303,6 +304,7 @@
     $(".popupOs .closeOs").click(function(){
       $(".popupOs").css("display","none");
       $(".popupOs .dataOs").html("");
+      $("body").css("overflow","scroll");
     });
 
 
