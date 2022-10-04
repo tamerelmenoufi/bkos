@@ -136,7 +136,7 @@
         margin-top:0px;
     }
 </style>
-<div class="busca">
+<div class="barraTitulo">
 <h2 class="m-3"><?=$_POST['titulo']?></h2>
 </div>
 
