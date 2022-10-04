@@ -152,15 +152,17 @@
         <h6 class="card-subtitle mb-2 text-muted">
             <?=$d->descricao?>
         </h6>
-        <p class="card-text d-flex justify-content-between">
-            <div class="detalhes">
-                <span>Responsável</span>
-                <p><?=$d->responsavel?></p>
-                <span>Executor</span>
-                <p><?=$d->executor?></p>
-            </div>
-            <div>
-                XXX
+        <p class="card-text">
+            <div class="d-flex justify-content-between">
+                <div class="detalhes">
+                    <span>Responsável</span>
+                    <p><?=$d->responsavel?></p>
+                    <span>Executor</span>
+                    <p><?=$d->executor?></p>
+                </div>
+                <div>
+                    XXX
+                </div>
             </div>
         </p>
     </div>
