@@ -161,7 +161,14 @@
                     <p><?=$d->executor?></p>
                 </div>
                 <div class="d-flex align-items-start">
-                    <button class="btn btn-success btn-xs" style="opacity:0;">
+                    <button
+                        class="btn btn-success btn-xs"
+                        style="opacity:0;"
+                        data-bs-toggle="offcanvas"
+                        href="#offcanvasDireita"
+                        role="button"
+                        aria-controls="offcanvasDireita"
+                    >
                         <i class="fa-solid fa-file-pen"></i>
                     </button>
                 </div>
