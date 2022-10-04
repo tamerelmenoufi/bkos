@@ -160,8 +160,10 @@
                     <span>Executor</span>
                     <p><?=$d->executor?></p>
                 </div>
-                <div>
-                    XXX
+                <div class="d-flex align-items-start">
+                    <button class="btn btn-success btn-xs">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </button>
                 </div>
             </div>
         </p>
