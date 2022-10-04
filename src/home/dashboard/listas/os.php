@@ -70,7 +70,7 @@
         case 'geral':{
             $query = "
             select a.*,
-                   b.titulo as tipo,
+                   IF(b.titulo != '', b.titulo, 'INDEFINIDO') as tipo,
                    c.razao_social as empresa,
                    concat(
                             d.nome,', ',
@@ -82,8 +82,8 @@
                             d.cep,', ',
                             d.complemento
                         ) as empresa_endereco,
-                    e.nome as responsavel,
-                    f.nome as executor
+                    IF(e.nome != '', e.nome, 'INDEFINIDO') as responsavel,
+                    IF(f.nome != '', f.nome, 'INDEFINIDO') as executor
 
                 from os a
 
@@ -148,9 +148,8 @@
 ?>
     <div class="card m-3">
     <div class="card-body">
-        <h5 class="card-title">#<?=str_pad($d->codigo , 5 , '0' , STR_PAD_LEFT)?> - <?=$d->titulo?></h5>
+        <h5 class="card-title">O.S. #<?=str_pad($d->codigo , 5 , '0' , STR_PAD_LEFT)?> - <?=$d->titulo?> (<?=$d->tipo?>)</h5>
         <h6 class="card-subtitle mb-2 text-muted">
-            <?=$d->tipo?><br>
             <?=$d->descricao?>
         </h6>
         <p class="card-text">
