@@ -127,16 +127,16 @@
         z-index:10;
     }
     .relatorio-body{
-        margin-top:70px;
+        /* margin-top:70px; */
+        margin-top:0px;
     }
 </style>
-<div class="busca">
+<!-- <div class="busca">
 
-</div>
+</div> -->
 
 <div class="relatorio-body">
 <?php
-    echo "DATA:".$_POST['data'];
     if($query){
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
