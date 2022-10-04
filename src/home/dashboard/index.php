@@ -48,7 +48,7 @@
   }
   .closeOs{
     position:fixed;
-    right:10px;
+    right:30px;
     top:10px;
     color:#333;
     font-size:30px;
@@ -249,7 +249,9 @@
 
 
 <div class="popupOs">
-  <span class="closeOs">Fechar</span>
+  <span class="closeOs">
+    <i class="fa-solid fa-xmark"></i>
+  </span>
   <div class="dataOs"></div>
 </div>
 
