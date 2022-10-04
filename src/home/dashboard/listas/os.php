@@ -59,7 +59,7 @@
                 left join colaboradores f on a.executor = f.codigo
 
 
-            where a.data_finalizacao = 0";
+            where a.data_finalizacao = 0".(($_POST['data'])?" and data_registro like '%{$_POST['data']}%'":false);
             break;
         }
         case 'geral':{
