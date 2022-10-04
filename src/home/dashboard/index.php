@@ -142,12 +142,10 @@
 
 
 </div>
-  <div class="col-12">
-      <div class="row">
-        <div class="col-md-12">
 
 
-        <div class="card m-3">
+    <div class="col-md-12">
+      <div class="card m-3">
         <div class="card-body">
             <h5 class="card-title">Quadro Crítico</h5>
             <h6 class="card-subtitle mb-2 text-muted">Lista de OS em atraso</h6>
@@ -185,15 +183,11 @@
                 <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
                 <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div> -->
               </div>
-
             </p>
-        </div>
-    </div>
-
-
+          </div>
         </div>
       </div>
-  </div>
+
 
 
   <div class="col-12">
