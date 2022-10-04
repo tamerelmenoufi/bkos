@@ -36,6 +36,35 @@
     width:30px;
     cursor:pointer;
   }
+  .popupOs{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background-color:#fff;
+    z-index:999;
+    display:none;
+  }
+  .popupOs span{
+    position:fixed;
+    right:10px;
+    top:10px;
+    color:#333;
+    font-size:30px;
+    z-index:992;
+    cursor: pointer;
+  }
+
+  .popupOs div{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:991;
+    overflow:auto;
+  }
 </style>
 
 <div class="col-12">
@@ -219,6 +248,12 @@
   </div>
 
 
+<div class="popupOs">
+  <span>Fechar</span>
+  <div></div>
+</div>
+
+
 <script>
   $(function(){
     Carregando('none');
@@ -254,14 +289,21 @@
         type:"POST",
         data,
         success:function(dados){
-          $.dialog({
-            title:data.titulo,
-            content:dados,
-            columnClass:'col-md-offset-1 col-md-10'
-          });
+          // $.dialog({
+          //   title:data.titulo,
+          //   content:dados,
+          //   columnClass:'col-md-offset-1 col-md-10'
+          // });
+          $(".popupOs").css("display","block");
+          $(".popupOs div").html(dados);
         }
       });
-    })
+    });
+
+    $(".popupOs span").click(function(){
+      $(".popupOs").css("display","none");
+      $(".popupOs div").html("");
+    });
 
 
   })
