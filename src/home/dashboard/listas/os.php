@@ -132,8 +132,7 @@
         z-index:10;
     }
     .relatorio-body{
-        margin-top:110px;
-        margin-top:0px;
+        margin-top:80px;
     }
 </style>
 <div class="barraTitulo">
