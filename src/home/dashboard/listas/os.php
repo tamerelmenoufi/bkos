@@ -70,7 +70,7 @@
         case 'geral':{
             $query = "
             select a.*,
-                   IF(b.titulo != '', b.titulo, 'INDEFINIDO') as tipo,
+                   IF(b.titulo != '' and b.titulo != null, b.titulo, 'INDEFINIDO') as tipo,
                    c.razao_social as empresa,
                    concat(
                             d.nome,', ',
@@ -82,8 +82,8 @@
                             d.cep,', ',
                             d.complemento
                         ) as empresa_endereco,
-                    IF(e.nome != '', e.nome, 'INDEFINIDO') as responsavel,
-                    IF(f.nome != '', f.nome, 'INDEFINIDO') as executor
+                    IF(e.nome != '' and e.nome != null, e.nome, 'INDEFINIDO') as responsavel,
+                    IF(f.nome != '' and f.nome != null, f.nome, 'INDEFINIDO') as executor
 
                 from os a
 
