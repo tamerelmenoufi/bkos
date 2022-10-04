@@ -148,12 +148,17 @@
 ?>
     <div class="card m-3">
     <div class="card-body">
-        <h5 class="card-title"><?=$d->titulo?></h5>
-        <h6 class="card-subtitle mb-2 text-muted"><?=$d->descricao?></h6>
+        <h5 class="card-title">#<?=str_pad($d->codigo , 5 , '0' , STR_PAD_LEFT)?> - <?=$d->titulo?></h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+            <?=$d->tipo?><br>
+            <?=$d->descricao?>
+        </h6>
         <p class="card-text">
             <div class="detalhes">
                 <span>Responsável</span>
                 <p><?=$d->responsavel?></p>
+                <span>Executor</span>
+                <p><?=$d->executor?></p>
             </div>
         </p>
     </div>
