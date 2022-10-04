@@ -122,26 +122,25 @@
         color:#000;
         width:100%;
     }
-    .busca{
+    .barraTitulo{
         position:fixed;
-        top:50px;
-        left:30px;
-        right:40px;
-        height:70px;
+        top:0px;
+        left:0px;
+        right:0px;
+        height:50px;
         background:#fff;
         z-index:10;
     }
     .relatorio-body{
-        /* margin-top:70px; */
+        margin-top:50px;
         margin-top:0px;
     }
 </style>
-<!-- <div class="busca">
-
-</div> -->
+<div class="busca">
+<h2 class="m-3"><?=$_POST['titulo']?></h2>
+</div>
 
 <div class="relatorio-body">
-    <h2 class="m-3"><?=$_POST['titulo']?></h2>
 <?php
     if($query){
         $result = mysqli_query($con, $query);
