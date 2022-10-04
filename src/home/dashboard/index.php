@@ -46,7 +46,7 @@
     z-index:999;
     display:none;
   }
-  .popupOs.close{
+  .close{
     position:fixed;
     right:10px;
     top:10px;
@@ -56,7 +56,7 @@
     cursor: pointer;
   }
 
-  .popupOs.data{
+  .data{
     position:fixed;
     left:0;
     right:0;
@@ -295,14 +295,14 @@
           //   columnClass:'col-md-offset-1 col-md-10'
           // });
           $(".popupOs").css("display","block");
-          $(".popupOs.data").html(dados);
+          $(".popupOs .data").html(dados);
         }
       });
     });
 
-    $(".popupOs.close").click(function(){
+    $(".popupOs .close").click(function(){
       $(".popupOs").css("display","none");
-      $(".popupOs.data").html("");
+      $(".popupOs .data").html("");
     });
 
 
