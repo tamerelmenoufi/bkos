@@ -161,9 +161,9 @@
                     <p><?=$d->executor?></p>
                 </div>
                 <div class="d-flex align-items-start">
-                    <!-- <button class="btn btn-success btn-xs">
+                    <button class="btn btn-success btn-xs" style="opacity:0;">
                         <i class="fa-solid fa-file-pen"></i>
-                    </button> -->
+                    </button>
                 </div>
             </div>
         </p>
