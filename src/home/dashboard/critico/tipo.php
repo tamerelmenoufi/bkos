@@ -14,7 +14,7 @@
     $q = "SELECT
 
                 a.*,
-                b.titulo as tipo,
+                b.titulo as tipo_nome,
                 c.razao_social as empresa,
                 concat(
                             d.nome,', ',
@@ -45,7 +45,7 @@ while($p = mysqli_fetch_object($r)){
 ?>
         <tr>
             <td>
-                <?=($p->tipo)?>
+                <?=($p->tipo_nome)?>
             </td>
             <td>
                 <div class="progress">
@@ -53,7 +53,12 @@ while($p = mysqli_fetch_object($r)){
                     <span style="margin-left:5px; font-size:10px;"><?=$p->quantidade?> O.S.</span>
                 </div>
             </td>
-            <td class="tdExpandir">
+            <td
+                class="tdExpandir"
+                data-titulo="Pendentes - Tipos"
+                data-tipo="<?=substr($p->tipo,0,10)?>"
+                data-opc="pendentes"
+            >
                 <i class="fa-solid fa-up-right-from-square"></i>
             </td>
         </tr>

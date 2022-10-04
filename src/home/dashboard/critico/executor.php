@@ -26,8 +26,8 @@
                             d.cep,', ',
                             d.complemento
                         ) as empresa_endereco,
-                    IF(e.nome != '',e.nome,'INDEFINIDO') as responsavel,
-                    IF(f.nome != '',f.nome,'INDEFINIDO') as executor,
+                    IF(e.nome != '',e.nome,'INDEFINIDO') as responsavel_nome,
+                    IF(f.nome != '',f.nome,'INDEFINIDO') as executor_nome,
                     count(*) as quantidade
 
         from os a
@@ -45,8 +45,8 @@ while($p = mysqli_fetch_object($r)){
 ?>
         <tr>
             <td>
-                <?=($p->executor)?><br>
-                <span style="font-size:10px; color:#a1a1a1;"><?=($p->responsavel)?></span>
+                <?=($p->executor_nome)?><br>
+                <span style="font-size:10px; color:#a1a1a1;"><?=($p->responsavel_nome)?></span>
             </td>
             <td>
                 <div class="progress">
@@ -54,7 +54,12 @@ while($p = mysqli_fetch_object($r)){
                     <span style="margin-left:5px; font-size:10px;"><?=$p->quantidade?> O.S.</span>
                 </div>
             </td>
-            <td class="tdExpandir">
+            <td
+                class="tdExpandir"
+                data-titulo="Pendentes - Executor"
+                data-executor="<?=substr($p->executor,0,10)?>"
+                data-opc="pendentes"
+            >
                 <i class="fa-solid fa-up-right-from-square"></i>
             </td>
         </tr>

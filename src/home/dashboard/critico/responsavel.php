@@ -26,8 +26,8 @@
                             d.cep,', ',
                             d.complemento
                         ) as empresa_endereco,
-                    IF(e.nome != '',e.nome,'INDEFINIDO') as responsavel,
-                    IF(f.nome != '',f.nome,'INDEFINIDO') as executor,
+                    IF(e.nome != '',e.nome,'INDEFINIDO') as responsavel_nome,
+                    IF(f.nome != '',f.nome,'INDEFINIDO') as executor_nome,
                     count(*) as quantidade
 
         from os a
@@ -44,14 +44,19 @@ $r = mysqli_query($con, $q);
 while($p = mysqli_fetch_object($r)){
 ?>
         <tr>
-            <td><?=($p->responsavel)?></td>
+            <td><?=($p->responsavel_nome)?></td>
             <td>
                 <div class="progress">
                     <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" aria-valuenow="<?=$p->quantidade?>" style="width: <?=$p->quantidade?>px"></div>
                     <span style="margin-left:5px; font-size:10px;"><?=$p->quantidade?> O.S.</span>
                 </div>
             </td>
-            <td class="tdExpandir">
+            <td
+                class="tdExpandir"
+                data-titulo="Pendentes - Responsável"
+                data-responsavel="<?=substr($p->responsavel,0,10)?>"
+                data-opc="pendentes"
+            >
                 <i class="fa-solid fa-up-right-from-square"></i>
             </td>
         </tr>

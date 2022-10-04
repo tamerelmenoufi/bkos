@@ -59,7 +59,12 @@
                 left join colaboradores f on a.executor = f.codigo
 
 
-            where a.data_finalizacao = 0".(($_POST['data'])?" and a.data_cadastro like '%{$_POST['data']}%'":false);
+            where a.data_finalizacao = 0".
+            (($_POST['data'])?" and a.data_cadastro like '%{$_POST['data']}%'":false).
+            (($_POST['responsavel'])?" and a.responsavel = '{$_POST['responsavel']}'":false).
+            (($_POST['executor'])?" and a.executor = '{$_POST['executor']}'":false).
+            (($_POST['tipo'])?" and a.tipo = '{$_POST['tipo']}'":false)
+            ;
             break;
         }
         case 'geral':{
