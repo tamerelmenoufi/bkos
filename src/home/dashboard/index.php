@@ -255,7 +255,18 @@
 
     $(document).off("click").on("click",".tdExpandir", function(){
       data = $(this).data();
-      console.log(data.titulo);
+      $.ajax({
+        url:`src/home/dashboard/listas/os.php`,
+        type:"POST",
+        data,
+        success:function(dados){
+          $.dialog({
+            title:data.titulo,
+            content:dados,
+            columnClass:'col-md-offset-1 col-md-10'
+          });
+        }
+      });
     })
 
 

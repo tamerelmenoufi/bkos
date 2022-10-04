@@ -13,8 +13,8 @@
     <tbody>
 <?php
 $q = "SELECT
-
-        concat(day(a.data_cadastro),'/',month(a.data_cadastro),'/',year(a.data_cadastro)) as data_cadastro,
+        a.data_cadastro,
+        concat(day(a.data_cadastro),'/',month(a.data_cadastro),'/',year(a.data_cadastro)) as data_cadastro_br,
         DATEDIFF(CURDATE(), a.data_cadastro) as dias,
         count(*) as quantidade
 
@@ -26,7 +26,7 @@ $r = mysqli_query($con, $q);
 while($p = mysqli_fetch_object($r)){
 ?>
         <tr>
-            <td><?=($p->data_cadastro)?></td>
+            <td><?=($p->data_cadastro_br)?></td>
             <td>
                 <!-- <div style="background-color:red; color:#fff; padding:3px; width:<?=($p->dias*5)?>px; border-radius:5px;">
                     <?=$p->dias?>
@@ -44,8 +44,9 @@ while($p = mysqli_fetch_object($r)){
             <td><?=$p->quantidade?> <span style="margin-left:3px; font-size:10px; color:#a1a1a1">O.S.</span></td>
             <td
                 class="tdExpandir"
-                data-titulo="Este é o valor do título"
-                data-data="2022-09-12"
+                data-titulo="Pendentes - Visão Geral"
+                data-data="<?=$p->data_cadastro?>"
+                data-opc="pendentes"
             >
                 <i class="fa-solid fa-up-right-from-square"></i>
             </td>
