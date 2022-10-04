@@ -141,13 +141,14 @@
 </div> -->
 
 <div class="relatorio-body">
-    <h2><?=$_POST['titulo']?></h2>
+    <h2 class="m-3"><?=$_POST['titulo']?></h2>
 <?php
     if($query){
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
 ?>
     <div class="card m-3">
+
     <div class="card-body">
         <h5 class="card-title">O.S. #<?=str_pad($d->codigo , 5 , '0' , STR_PAD_LEFT)?> - <?=$d->titulo?> (<?=$d->tipo?>)</h5>
         <h6 class="card-subtitle mb-2 text-muted">
