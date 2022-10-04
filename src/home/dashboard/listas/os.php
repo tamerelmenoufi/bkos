@@ -136,7 +136,7 @@
 
 <div class="relatorio-body">
 <?php
-
+    echo "DATA:".$_POST['data'];
     if($query){
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
