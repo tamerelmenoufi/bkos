@@ -45,7 +45,7 @@ while($p = mysqli_fetch_object($r)){
             <td
                 class="tdExpandir"
                 data-titulo="Pendentes - Visão Geral"
-                data-data="<?=substr($p->data_cadastro,0,9)?>"
+                data-data="<?=substr($p->data_cadastro,0,10)?>"
                 data-opc="pendentes"
             >
                 <i class="fa-solid fa-up-right-from-square"></i>
