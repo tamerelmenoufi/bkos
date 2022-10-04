@@ -132,11 +132,16 @@
         z-index:10;
     }
     .relatorio-body{
-        margin-top:80px;
+        position:fixed;
+        top:80px;
+        left:0;
+        right:0;
+        bottom:0;
+        overflow:auto;
     }
 </style>
 <div class="barraTitulo">
-<h2 class="m-3"><?=$_POST['titulo']?></h2>
+    <h2 class="m-3"><?=$_POST['titulo']?></h2>
 </div>
 
 <div class="relatorio-body">

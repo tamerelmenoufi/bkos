@@ -63,7 +63,7 @@
     top:0;
     bottom:0;
     z-index:991;
-    overflow:auto;
+    /* overflow:auto; */
   }
 </style>
 
