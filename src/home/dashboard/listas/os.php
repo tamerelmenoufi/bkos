@@ -179,7 +179,7 @@
                     </button>
 
                     <button
-                        class="btn btn-primary btn-xs"
+                        class="btn btn-primary btn-xs ml-2"
                         data-bs-toggle="offcanvas"
                         href="#offcanvasDireita"
                         role="button"
