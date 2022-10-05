@@ -167,7 +167,7 @@
                 </div>
                 <div class="d-flex align-items-start">
                     <button
-                        class="btn btn-success btn-xs"
+                        class="btn btn-success btn-xs m-1"
                         data-bs-toggle="offcanvas"
                         href="#offcanvasDireita"
                         role="button"
@@ -179,7 +179,7 @@
                     </button>
 
                     <button
-                        class="btn btn-primary btn-xs ml-2"
+                        class="btn btn-primary btn-xs m-1"
                         data-bs-toggle="offcanvas"
                         href="#offcanvasDireita"
                         role="button"
