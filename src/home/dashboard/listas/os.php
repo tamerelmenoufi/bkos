@@ -179,7 +179,7 @@
                     </button>
 
                     <button
-                        class="btn btn-success btn-xs"
+                        class="btn btn-primary btn-xs"
                         data-bs-toggle="offcanvas"
                         href="#offcanvasDireita"
                         role="button"
