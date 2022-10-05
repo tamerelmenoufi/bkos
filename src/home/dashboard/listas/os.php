@@ -191,20 +191,20 @@
                     </button>
 
                 </div>
-
-                <button
-                    class="btn btn-secondary btn-xs m-1"
-                    data-bs-toggle="offcanvas"
-                    href="#offcanvasDireita"
-                    role="button"
-                    aria-controls="offcanvasDireita"
-                    os="<?=$d->codigo?>"
-                    destino="fotos"
-                >
-                    <i class="fa-solid fa-camera"></i>
-                </button>
-
             </div>
+
+            <button
+                class="btn btn-secondary btn-xs m-1"
+                data-bs-toggle="offcanvas"
+                href="#offcanvasDireita"
+                role="button"
+                aria-controls="offcanvasDireita"
+                os="<?=$d->codigo?>"
+                destino="fotos"
+            >
+                <i class="fa-solid fa-camera"></i>
+            </button>
+
         </p>
     </div>
     </div>
