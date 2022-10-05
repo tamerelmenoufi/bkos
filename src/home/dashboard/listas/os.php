@@ -187,7 +187,7 @@
                         os="<?=$d->codigo?>"
                         destino="fotos"
                     >
-                        <i class="fa-solid fa-file-pen"></i>
+                        <i class="fa-solid fa-camera"></i>
                     </button>
 
                 </div>
