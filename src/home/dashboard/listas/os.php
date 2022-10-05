@@ -153,8 +153,8 @@
     <div class="card m-3">
 
     <div class="card-body">
-        <h2 class="card-title"><?=$d->empresa?></h2>
-        <h5 class="card-title">O.S. #<?=str_pad($d->codigo , 5 , '0' , STR_PAD_LEFT)?> - <?=$d->titulo?> (<?=$d->tipo?>)</h5>
+        <h2 class="card-title">O.S. #<?=str_pad($d->codigo , 5 , '0' , STR_PAD_LEFT)?> - <?=$d->titulo?> (<?=$d->tipo?>)</h2>
+        <h5 class="card-title"><?=$d->empresa?></h5>
         <h6 class="card-subtitle mb-2 text-muted">
             <?=$d->descricao?>
         </h6>
