@@ -202,7 +202,7 @@
                 os="<?=$d->codigo?>"
                 destino="fotos"
             >
-                <i class="fa-solid fa-camera"></i>
+                <i class="fa-solid fa-gear"></i> Editar O.S.
             </button>
 
         </p>
