@@ -200,7 +200,7 @@
                 role="button"
                 aria-controls="offcanvasDireita"
                 os="<?=$d->codigo?>"
-                destino="fotos"
+                destino="servicos_form"
             >
                 <i class="fa-solid fa-gear"></i> Editar O.S.
             </button>
