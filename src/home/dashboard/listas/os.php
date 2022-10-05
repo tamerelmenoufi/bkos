@@ -168,15 +168,28 @@
                 <div class="d-flex align-items-start">
                     <button
                         class="btn btn-success btn-xs"
-                        style="opacity:0;"
                         data-bs-toggle="offcanvas"
                         href="#offcanvasDireita"
                         role="button"
                         aria-controls="offcanvasDireita"
                         os="<?=$d->codigo?>"
+                        destino="eventos"
                     >
                         <i class="fa-solid fa-file-pen"></i>
                     </button>
+
+                    <button
+                        class="btn btn-success btn-xs"
+                        data-bs-toggle="offcanvas"
+                        href="#offcanvasDireita"
+                        role="button"
+                        aria-controls="offcanvasDireita"
+                        os="<?=$d->codigo?>"
+                        destino="fotos"
+                    >
+                        <i class="fa-solid fa-file-pen"></i>
+                    </button>
+
                 </div>
             </div>
         </p>
@@ -191,8 +204,9 @@
     $(function(){
         $("button[os]").click(function(){
             os = $(this).attr("os");
+            destino = $(this).attr("destino");
             $.ajax({
-                url:"src/os/eventos.php",
+                url:`src/os/${destino}.php`,
                 type:"POST",
                 data:{
                     os
