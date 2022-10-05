@@ -173,6 +173,7 @@
                         href="#offcanvasDireita"
                         role="button"
                         aria-controls="offcanvasDireita"
+                        os="<?=$d->codigo?>"
                     >
                         <i class="fa-solid fa-file-pen"></i>
                     </button>
@@ -186,3 +187,20 @@
     }
 ?>
 </div>
+<script>
+    $(function(){
+        $("button[os]").click(function(){
+            os = $(this).attr("os");
+            $.ajax({
+                url:"src/os/eventos.php",
+                type:"POST",
+                data:{
+                    os
+                },
+                success:function(dados){
+                    $(".LateralDireita").html(dados);
+                }
+            });
+        });
+    })
+</script>
