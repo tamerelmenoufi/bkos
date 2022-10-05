@@ -509,11 +509,16 @@
           opc:((opc[1])?opc[1]:''),
         },
         success:function(dados){
-          $.dialog({
-            title:`${tit}`,
-            content:dados,
-            columnClass:'col-md-offset-1 col-md-10'
-          });
+          // $.dialog({
+          //   title:`${tit}`,
+          //   content:dados,
+          //   columnClass:'col-md-offset-1 col-md-10'
+          // });
+
+          $(".popupOs").css("display","block");
+          $(".popupOs .dataOs").html(dados);
+          $("body").css("overflow","hidden");
+
         }
       })
 
