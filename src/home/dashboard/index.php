@@ -193,6 +193,9 @@
                 <li class="nav-item" role="presentation">
                   <button class="nav-link painelCritico" id="tipo" data-bs-toggle="tab" data-bs-target="#painelCritico" type="button" role="tab" aria-controls="tipo" aria-selected="false" >Tipo</button>
                 </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link painelCritico" id="loja" data-bs-toggle="tab" data-bs-target="#painelCritico" type="button" role="tab" aria-controls="loja" aria-selected="false" >Loja</button>
+                </li>
               </ul>
               <div class="tab-content" id="myTabContent">
                 <div
