@@ -218,6 +218,7 @@
         $("button[os]").click(function(){
             os = $(this).attr("os");
             destino = $(this).attr("destino");
+            Carregando();
             $.ajax({
                 url:`src/os/${destino}.php`,
                 type:"POST",
@@ -226,6 +227,7 @@
                 },
                 success:function(dados){
                     $(".LateralDireita").html(dados);
+                    Carregando('none');
                 }
             });
         });
