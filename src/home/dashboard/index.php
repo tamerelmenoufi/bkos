@@ -501,7 +501,7 @@
       opc = $(this).attr("opc");
       opc = opc.split("-");
       tit = $(this).children("span").text();
-
+      Carregando();
       $.ajax({
         url:`src/home/dashboard/listas/${opc[0]}.php`,
         type:"POST",
@@ -518,6 +518,7 @@
           $(".popupOs").css("display","block");
           $(".popupOs .dataOs").html(dados);
           $("body").css("overflow","hidden");
+          Carregando('none');
 
         }
       })
