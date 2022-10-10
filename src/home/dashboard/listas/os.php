@@ -63,7 +63,8 @@
             (($_POST['data'])?" and a.data_cadastro like '%{$_POST['data']}%'":false).
             (($_POST['responsavel'])?" and a.responsavel = '{$_POST['responsavel']}'":false).
             (($_POST['executor'])?" and a.executor = '{$_POST['executor']}'":false).
-            (($_POST['tipo'])?" and a.tipo = '{$_POST['tipo']}'":false)
+            (($_POST['tipo'])?" and a.tipo = '{$_POST['tipo']}'":false).
+            (($_POST['loja'])?" and a.empresa = '{$_POST['loja']}'":false)
             ;
             break;
         }

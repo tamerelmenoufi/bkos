@@ -15,7 +15,7 @@
 
                 a.*,
                 b.titulo as tipo_nome,
-                c.razao_social as empresa,
+                c.razao_social as empresa_nome,
                 concat(
                             d.nome,', ',
                             d.rua,', ',
@@ -45,7 +45,7 @@ while($p = mysqli_fetch_object($r)){
 ?>
         <tr>
             <td>
-                <?=($p->empresa)?>
+                <?=($p->empresa_nome)?>
             </td>
             <td>
                 <div class="progress">
@@ -55,8 +55,8 @@ while($p = mysqli_fetch_object($r)){
             </td>
             <td
                 class="tdExpandir"
-                data-titulo="Pendentes - Tipos"
-                data-tipo="<?=substr($p->tipo,0,10)?>"
+                data-titulo="Pendentes - Loja"
+                data-loja="<?=$p->empresa?>"
                 data-opc="pendentes"
             >
                 <i class="fa-solid fa-up-right-from-square"></i>
