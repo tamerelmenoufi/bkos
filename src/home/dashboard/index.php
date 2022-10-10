@@ -276,16 +276,19 @@
 
     $(".painelCritico").click(function(){
       opc = $(this).attr("id");
+      Carregando();
       $.ajax({
         url:`src/home/dashboard/critico/${opc}.php`,
         success:function(dados){
           $("#painelCritico").html(dados);
+          Carregando('none');
         }
       });
     });
 
     $(document).off("click").on("click",".tdExpandir", function(){
       data = $(this).data();
+      Carregando();
       $.ajax({
         url:`src/home/dashboard/listas/os.php`,
         type:"POST",
@@ -299,6 +302,7 @@
           $(".popupOs").css("display","block");
           $(".popupOs .dataOs").html(dados);
           $("body").css("overflow","hidden");
+          Carregando('none');
         }
       });
     });
