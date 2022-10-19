@@ -91,7 +91,7 @@
             $html = str_replace('{{os_fotos}}',implode("",$AddF),$html);
         }
 
-        file_put_contents('./tamplates/modelo.txt', $html);
+        // file_put_contents('./tamplates/modelo.txt', $html);
 
         return $html;
     }
