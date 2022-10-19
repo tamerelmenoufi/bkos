@@ -14,11 +14,14 @@
                         b.nome as executor,
                         c.nome as responsavel,
                         d.titulo as tipo,
-                        date_format(a.data_cadastro,'%d/%m/%Y %H:%i:%s') as data_formatada
+                        date_format(a.data_cadastro,'%d/%m/%Y %H:%i:%s') as data_formatada,
+                        e.razao_social,
+                        e.cnpj
                     from os a
                     left join colaboradores b on a.executor = b.codigo
                     left join colaboradores c on a.responsavel = c.codigo
                     left join os_tipos d on a.tipo = d.codigo
+                    left join empresas e on a.empresa = e.codigo
                     where a.codigo = '{$cod}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
@@ -32,6 +35,7 @@
         $Str['os']['titulo'] = $d->titulo;
         $Str['os']['descricao'] = $d->descricao;
         $Str['os']['tipo'] = $d->tipo;
+        $Str['os']['empresa'] = "{$d->razao_social} ({$d->cnpj})";
 
 
         $q = "select a.*, b.nome as colaborador, date_format(a.data_cadastro,'%d/%m/%Y %H:%i:%s') as data_formatada from os_fotos a left join colaboradores b on a.colaborador = b.codigo where a.cod_os = '{$d->codigo}' and a.situacao = '1' and JSON_EXTRACT(a.deletado,\"$.usuario\") = ''";
