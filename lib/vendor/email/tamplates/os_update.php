@@ -27,11 +27,14 @@
         .item_foto{
             width:100%;
             padding:0px;
-            margin:0;
+            margin:10px;
             margin-top:5px;
             font-family:'verdana';
             font-size:12px;
             color:#333;
+            border-radius:7px;
+            border:solid #ccc 2px;
+            background-color:#eee;
         }
         .item_foto p{
             width:100%;
