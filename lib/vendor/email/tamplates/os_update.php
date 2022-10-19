@@ -94,7 +94,7 @@
         <tr>
             <td colspan="2" style="width:600px; padding:20px;">
                 <div class="item_foto">
-                    <img src="{{os_fotos-foto}}"  />
+                    <img src="cid:{{os_fotos-foto}}" style="width:600px;"  />
                     <p>{{os_fotos-titulo}}</p>
                     <p>{{os_fotos-descricao}}</p>
                     <p>{{os_fotos-colaborador}}</p>
