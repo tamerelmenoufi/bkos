@@ -34,12 +34,13 @@
         $i=0;
         while($e = mysqli_fetch_object($r)){
             //////////////////////////////////////////////////////////////////////////////
-            $Str['os_fotos'][]['foto'] = 'http://os.bkmanaus.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto;
-            $Str['os_fotos'][]['titulo'] = $e->titulo;
-            $Str['os_fotos'][]['descricao'] = $e->descricao;
-            $Str['os_fotos'][]['colaborador'] = $e->colaborador;
-            $Str['os_fotos'][]['data_cadastro'] = $e->data_cadastro;
+            $Str['os_fotos'][$i]['foto'] = 'http://os.bkmanaus.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto;
+            $Str['os_fotos'][$i]['titulo'] = $e->titulo;
+            $Str['os_fotos'][$i]['descricao'] = $e->descricao;
+            $Str['os_fotos'][$i]['colaborador'] = $e->colaborador;
+            $Str['os_fotos'][$i]['data_cadastro'] = $e->data_cadastro;
             //////////////////////////////////////////////////////////////////////////////
+            $i++;
         }
 
 
