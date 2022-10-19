@@ -78,7 +78,7 @@
         $AddFotos = $fotos;
         $AddF = [];
         foreach($Str['os_fotos'] as $i => $v){
-            $AddFotos = str_replace("{{os_fotos-foto}}", $v['foto'], $fotos);
+            $AddFotos = str_replace("{{os_fotos-foto}}", $v['foto'], $AddFotos);
             $AddFotos = str_replace("{{os_fotos-titulo}}", $v['titulo'], $AddFotos);
             $AddFotos = str_replace("{{os_fotos-descricao}}", $v['descricao'], $AddFotos);
             $AddFotos = str_replace("{{os_fotos-colaborador}}", $v['colaborador'], $AddFotos);
@@ -91,7 +91,7 @@
             $html = str_replace('{{os_fotos}}',implode("",$AddF),$html);
         }
 
-        file_put_contents("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/vendor/email/tamplates/modelo.txt", $html);
+        file_put_contents("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/vendor/email/tamplates/modelo.txt", $fotos."\n\n\n\n\n\n\n\n".$html);
 
         return $html;
     }
