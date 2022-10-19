@@ -5,7 +5,8 @@
     <style>
         .item{
             width:100%;
-            padding:10px;
+            padding:0px;
+            margin:0;
             font-family:'verdana';
             font-size:12px;
             color:#333;
@@ -13,9 +14,13 @@
         .item span{
             font-size:10px;
             color:#a1a1a1;
+            padding:0px;
+            margin:0;
         }
         .item p{
             width:100%;
+            padding:0px;
+            margin:0;
         }
     </style>
 </head>
@@ -25,13 +30,13 @@
             <td style="width:120px">
                 <img src="cid:logo.png" style="width:120px" >
             </td>
-            <td>
+            <td style="padding:10px;">
                 <h2>Atualização da O.S. #{{numero_os}}</h2>
             </td>
         </tr>
 
         <tr>
-            <td style="width:600px">
+            <td colspan="2" style="width:600px; padding:20px;">
                 <p>
                     Uma nova atualização foi realizada em {{data_atual}}, com as seguintes informações:
                 </p>
