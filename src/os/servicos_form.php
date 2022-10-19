@@ -36,7 +36,7 @@
         $dados = [
             'from_name' => 'SP Sistema',
             'from_email' => 'mailgun@moh1.com.br',
-            'subject' => 'Atualização O.S. #'.$_POST['os'],
+            'subject' => 'Atualização O.S. #' . $cod,
             'html' => '<html><h2>Atualização no sistema de O.S.</h2><p>O sistema de registro e gestão das ordens de serviços.<br><br>Para mais detalhes e informações acesse:<br><a href="https://os.bkmanaus.com.br" target="_blank">https://os.bkmanaus.com.br</a></p></html>',
             // 'attachment' => [
             //     './img_bk.png',
