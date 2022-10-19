@@ -67,14 +67,6 @@
             //////////////////////////////////////////////////////////////////////////////
         }
 
-        $Str['os']['codigo'] = str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT);
-        $Str['os']['executor'] = $d->executor;
-        $Str['os']['data_cadastro'] = $d->data_cadastro;
-        $Str['os']['responsavel'] = $d->responsavel;
-        $Str['os']['titulo'] = $d->titulo;
-        $Str['os']['descricao'] = $d->descricao;
-        $Str['os']['tipo'] = $d->tipo;
-
         foreach($Str['os'] as $i => $v){
             $html = str_replace("{{os-{$i}}}", $v, $html);
         }
@@ -83,18 +75,20 @@
         $html = str_replace($fotos,'{{os_fotos}}',$html);
         $fotos = str_replace('{{os_fotos}}', false, $fotos);
 
-        $AddFotos = [];
+        $AddFotos = $fotos;
+        $AddF = [];
         foreach($Str['os_fotos'] as $i => $v){
-            $AddFotos[$i] = str_replace("{{os_fotos-foto}}", $v['foto'], $fotos);
-            $AddFotos[$i] = str_replace("{{os_fotos-titulo}}", $v['titulo'], $AddFotos[$i]);
-            $AddFotos[$i] = str_replace("{{os_fotos-descricao}}", $v['descricao'], $AddFotos[$i]);
-            $AddFotos[$i] = str_replace("{{os_fotos-colaborador}}", $v['colaborador'], $AddFotos[$i]);
-            $AddFotos[$i] = str_replace("{{os_fotos-data_cadastro}}", $v['data_cadastro'], $AddFotos[$i]);
-            $AddFotos[$i] = str_replace("{{os_fotos-titulo}}", $v['titulo'], $AddFotos[$i]);
+            $AddFotos = str_replace("{{os_fotos-foto}}", $v['foto'], $fotos);
+            $AddFotos = str_replace("{{os_fotos-titulo}}", $v['titulo'], $AddFotos);
+            $AddFotos = str_replace("{{os_fotos-descricao}}", $v['descricao'], $AddFotos);
+            $AddFotos = str_replace("{{os_fotos-colaborador}}", $v['colaborador'], $AddFotos);
+            $AddFotos = str_replace("{{os_fotos-data_cadastro}}", $v['data_cadastro'], $AddFotos);
+            $AddFotos = str_replace("{{os_fotos-titulo}}", $v['titulo'], $AddFotos);
+            $AddF[] = $AddFotos;
         }
 
-        if($AddFotos){
-            $html = str_replace('{{os_fotos}}',implode("\n",$AddFotos),$html);
+        if($AddF){
+            $html = str_replace('{{os_fotos}}',implode("",$AddF),$html);
         }
 
         return $html;
