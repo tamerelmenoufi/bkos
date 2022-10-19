@@ -95,10 +95,10 @@
             <td colspan="2" style="width:600px; padding:20px;">
                 <div class="item_foto">
                     <img src="cid:{{os_fotos-foto}}" style="width:600px;"  />
-                    <p>{{os_fotos-titulo}}</p>
+                    <p><b>{{os_fotos-titulo}}</b></p>
                     <p>{{os_fotos-descricao}}</p>
-                    <p>{{os_fotos-colaborador}}</p>
-                    <p>{{os_fotos-data_cadastro}}</p>
+                    <p>POR: {{os_fotos-colaborador}}</p>
+                    <p>EM: {{os_fotos-data_cadastro}}</p>
                 </div>
             </td>
         </tr>
