@@ -72,7 +72,9 @@
         }
 
         $posocoes = "P1: ".stripos($html, '{{os_fotos}}')."\nP2:".strripos($html, '{{os_fotos}}')."\n\n";
-        $fotos = substr($html, stripos($html, '{{os_fotos}}'), strripos($html, '{{os_fotos}}'));
+        $p1 = stripos($html, '{{os_fotos}}');
+        $p2 = (strripos($html, '{{os_fotos}}') - $p1);
+        $fotos = substr($html, $p1, $p2);
         $html = str_replace($fotos,'{{os_fotos}}',$html);
         $fotos = str_replace('{{os_fotos}}', false, $fotos);
 
