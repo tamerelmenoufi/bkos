@@ -43,32 +43,6 @@
 </head>
 <body>
 
-    <?php
-    /*
-    ?>
-    $Str['os']['codigo'] = str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT);
-    $Str['os']['executor'] = $d->executor;
-    $Str['os']['data_cadastro'] = $d->data_cadastro;
-    $Str['os']['responsavel'] = $d->responsavel;
-    $Str['os']['titulo'] = $d->titulo;
-    $Str['os']['descricao'] = $d->descricao;
-    $Str['os']['tipo'] = $d->tipo;
-
-    $Str['os_fotos']['foto'][] = 'http://os.bkmanaus.com.br/src/os/fotos/'.$d->codigo.'/'.$e->foto;
-    $Str['os_fotos']['titulo'][] = $e->titulo;
-    $Str['os_fotos']['descricao'][] = $e->descricao;
-    $Str['os_fotos']['colaborador'][] = $e->colaborador;
-    $Str['os_fotos']['data_cadastro'][] = $e->data_cadastro;
-
-    $Str['os_registros']['classificacao'][] = $e->classificacao;
-    $Str['os_registros']['status'][] = $e->status;
-    $Str['os_registros']['descricao'][] = $e->descricao;
-    $Str['os_registros']['colaborador'][] = $e->colaborador;
-    $Str['os_registros']['data_cadastro'][] = $e->data_cadastro;
-    <?php
-    //*/
-    ?>
-
     <table cellspacing="0" cellpadding="0" style="border:1px #ccc solid; width:600px;">
         <tr>
             <td style="width:120px">

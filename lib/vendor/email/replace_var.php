@@ -79,25 +79,23 @@
             $html = str_replace("{{os-{$i}}}", $v, $html);
         }
 
-        $fotos = substr($html, stripos($html, '{{os-fotos}}'), strripos($html, '{{os-fotos}}'));
-        $html = str_replace($fotos,'{{os-fotos}}',$html);
-        $fotos = str_replace('{{os-fotos}}', false, $fotos);
+        $fotos = substr($html, stripos($html, '{{os_fotos}}'), strripos($html, '{{os_fotos}}'));
+        $html = str_replace($fotos,'{{os_fotos}}',$html);
+        $fotos = str_replace('{{os_fotos}}', false, $fotos);
 
         $AddFotos = [];
-        foreach($Str['os-fotos'] as $i => $v){
-            $AddFotos[$i] .= str_replace("{{os-fotos-foto}}", $v['foto'], $fotos);
-            $AddFotos[$i] .= str_replace("{{os-fotos-titulo}}", $v['titulo'], $fotos);
-            $AddFotos[$i] .= str_replace("{{os-fotos-descricao}}", $v['descricao'], $fotos);
-            $AddFotos[$i] .= str_replace("{{os-fotos-colaborador}}", $v['colaborador'], $fotos);
-            $AddFotos[$i] .= str_replace("{{os-fotos-data_cadastro}}", $v['data_cadastro'], $fotos);
-            $AddFotos[$i] .= str_replace("{{os-fotos-titulo}}", $v['titulo'], $fotos);
+        foreach($Str['os_fotos'] as $i => $v){
+            $AddFotos[$i] .= str_replace("{{os_fotos-foto}}", $v['foto'], $fotos);
+            $AddFotos[$i] .= str_replace("{{os_fotos-titulo}}", $v['titulo'], $fotos);
+            $AddFotos[$i] .= str_replace("{{os_fotos-descricao}}", $v['descricao'], $fotos);
+            $AddFotos[$i] .= str_replace("{{os_fotos-colaborador}}", $v['colaborador'], $fotos);
+            $AddFotos[$i] .= str_replace("{{os_fotos-data_cadastro}}", $v['data_cadastro'], $fotos);
+            $AddFotos[$i] .= str_replace("{{os_fotos-titulo}}", $v['titulo'], $fotos);
         }
 
         if($AddFotos){
-            $html = str_replace('{{os-fotos}}',implode("\n",$AddFotos),$html);
+            $html = str_replace('{{os_fotos}}',implode("\n",$AddFotos),$html);
         }
-
-
 
         return $html;
     }
