@@ -71,6 +71,7 @@
             $html = str_replace("{{os-{$i}}}", $v, $html);
         }
 
+        $posocoes = "P1: ".stripos($html, '{{os_fotos}}')."\nP2:".strripos($html, '{{os_fotos}}')."\n\n";
         $fotos = substr($html, stripos($html, '{{os_fotos}}'), strripos($html, '{{os_fotos}}'));
         $html = str_replace($fotos,'{{os_fotos}}',$html);
         $fotos = str_replace('{{os_fotos}}', false, $fotos);
@@ -91,7 +92,7 @@
             $html = str_replace('{{os_fotos}}',implode("",$AddF),$html);
         }
 
-        file_put_contents("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/vendor/email/tamplates/modelo.txt", $fotos."\n\n\n\n\n\n\n\n".$html);
+        file_put_contents("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/vendor/email/tamplates/modelo.txt", $posocoes. $fotos."\n\n\n\n\n\n\n\n".$html);
 
         return $html;
     }
