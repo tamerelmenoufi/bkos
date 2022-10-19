@@ -31,6 +31,34 @@
             'codigo' => $cod
         ];
 
+        ///////////////////////////////////////////////////////
+
+        $dados = [
+            'from_name' => 'SP Sistema',
+            'from_email' => 'mailgun@moh1.com.br',
+            'subject' => 'Atualização O.S. #'.$_POST['os'],
+            'html' => '<html><h2>Atualização no sistema de O.S.</h2><p>O sistema de registro e gestão das ordens de serviços.<br><br>Para mais detalhes e informações acesse:<br><a href="https://os.bkmanaus.com.br" target="_blank">https://os.bkmanaus.com.br</a></p></html>',
+            // 'attachment' => [
+            //     './img_bk.png',
+            //     './cliente-mohatron.xls',
+            //     './formulario_prato_cheio.pdf',
+            //     'https://os.bkmanaus.com.br/img/logo.png',
+            // ],
+            // 'inline' => [
+            //     './img_bk.png',
+            //     'https://os.bkmanaus.com.br/img/logo.png',
+            // ],
+            'to' => [
+                ['to_name' => 'Tamer Mohamed', 'to_email' => 'tamer.menoufi@gmail.com'],
+                // ['to_name' => 'Tamer Elmenoufi', 'to_email' => 'tamer@mohatron.com.br'],
+            ]
+        ];
+
+        SendMail($dados);
+
+        ///////////////////////////////////////////////////////
+
+
         echo json_encode($retorno);
 
         exit();
