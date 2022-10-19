@@ -35,7 +35,9 @@
             border-radius:7px;
             border:solid #ccc 2px;
             background-color:#eee;
+            text-align:center;
         }
+
         .item_foto p{
             width:100%;
             padding:0px;
