@@ -1,6 +1,6 @@
 <?php
 
-    function ReplaceVar($html){
+    function ReplaceVar($html, $cod){
 
         global $con;
 
@@ -14,7 +14,7 @@
                     left join colaboradores b on a.executor = b.codigo
                     left join colaboradores c on a.responsavel = c.codigo
                     left join os_tipos d on a.tipo = d.codigo
-                    where a.codigo = '{$_GET['os']}'";
+                    where a.codigo = '{$cod}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 

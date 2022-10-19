@@ -34,7 +34,7 @@
         ///////////////////////////////////////////////////////
         $html = file_get_contents("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/vendor/email/tamplates/os_update.php");
 
-        $html = ReplaceVar($html);
+        $html = ReplaceVar($html, $cod);
 
         $dados = [
             'from_name' => 'SP Sistema',
