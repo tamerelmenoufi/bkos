@@ -33,6 +33,9 @@
 
         ///////////////////////////////////////////////////////
         $html = file_get_contents("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/vendor/email/tamplates/os_update.php");
+
+        $html = ReplaceVar($html);
+
         $dados = [
             'from_name' => 'SP Sistema',
             'from_email' => 'mailgun@moh1.com.br',
