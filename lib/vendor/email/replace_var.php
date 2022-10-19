@@ -1,5 +1,4 @@
 <?php
-    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
     function ReplaceVar($html){
 
