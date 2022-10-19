@@ -95,7 +95,7 @@
             $html = str_replace('{{os_fotos}}',implode("",$AddF),$html);
         }
 
-        file_put_contents("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/vendor/email/tamplates/modelo.txt", $posocoes. $fotos."\n\n\n\n\n\n\n\n".$html);
-
+        // file_put_contents("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/vendor/email/tamplates/modelo.txt", $posocoes. $fotos."\n\n\n\n\n\n\n\n".$html);
+        unlink("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/vendor/email/tamplates/modelo.txt");
         return $html;
     }
