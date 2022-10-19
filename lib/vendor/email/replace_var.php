@@ -4,6 +4,10 @@
 
         global $con;
 
+        global $_SESSION;
+
+        $_SESSION['MailFotosInline'] = [];
+
         $Str = [];
 
         $query = "select a.*,
@@ -87,6 +91,7 @@
 
             $foto = explode("/", $v['foto']);
             $foto = $foto[count($foto) - 1];
+            $_SESSION['MailFotosInline'][] = $v['foto'];
 
             $AddFotos = str_replace("{{os_fotos-foto}}", $foto, $fotos);
             $AddFotos = str_replace("{{os_fotos-titulo}}", $v['titulo'], $AddFotos);

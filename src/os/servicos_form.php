@@ -36,6 +36,8 @@
 
         $html = ReplaceVar($html, $cod);
 
+        $_SESSION['MailFotosInline'][] = 'https://os.bkmanaus.com.br/img/logo.png';
+
         $dados = [
             'from_name' => 'SP Sistema',
             'from_email' => 'mailgun@moh1.com.br',
@@ -47,10 +49,11 @@
             //     './formulario_prato_cheio.pdf',
             //     'https://os.bkmanaus.com.br/img/logo.png',
             // ],
-            'inline' => [
-                // './img_bk.png',
-                'https://os.bkmanaus.com.br/img/logo.png',
-            ],
+            'inline' => $_SESSION['MailFotosInline'],
+            // [
+            //     // './img_bk.png',
+            //     'https://os.bkmanaus.com.br/img/logo.png',
+            // ],
             'to' => [
                 ['to_name' => 'Tamer Mohamed', 'to_email' => 'tamer.menoufi@gmail.com'],
                 // ['to_name' => 'Tamer Elmenoufi', 'to_email' => 'tamer@mohatron.com.br'],
