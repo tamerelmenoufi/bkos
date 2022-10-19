@@ -59,19 +59,19 @@
         $i=0;
         while($e = mysqli_fetch_object($r)){
             //////////////////////////////////////////////////////////////////////////////
-            $Str['os_registros'][]['classificacao'] = $e->classificacao;
-            $Str['os_registros'][]['status'] = $e->status;
-            $Str['os_registros'][]['descricao'] = $e->descricao;
-            $Str['os_registros'][]['colaborador'] = $e->colaborador;
-            $Str['os_registros'][]['data_cadastro'] = $e->data_cadastro;
+            $Str['os_registros'][$i]['classificacao'] = $e->classificacao;
+            $Str['os_registros'][$i]['status'] = $e->status;
+            $Str['os_registros'][$i]['descricao'] = $e->descricao;
+            $Str['os_registros'][$i]['colaborador'] = $e->colaborador;
+            $Str['os_registros'][$i]['data_cadastro'] = $e->data_cadastro;
             //////////////////////////////////////////////////////////////////////////////
+            $i++;
         }
 
         foreach($Str['os'] as $i => $v){
             $html = str_replace("{{os-{$i}}}", $v, $html);
         }
 
-        $posocoes = "P1: ".stripos($html, '{{os_fotos}}')."\nP2:".strripos($html, '{{os_fotos}}')."\n\n";
         $p1 = stripos($html, '{{os_fotos}}');
         $p2 = (strripos($html, '{{os_fotos}}') - $p1);
         $fotos = substr($html, $p1, $p2);
