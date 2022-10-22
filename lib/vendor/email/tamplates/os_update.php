@@ -61,7 +61,7 @@
         <tr>
             <td colspan="2" style="width:600px; padding:20px;">
                 <p>
-                    Uma nova atualização foi realizada em {{os-data_atual}}, com as seguintes informações:
+                    Uma nova atualização foi realizada em {{os-data_atual}} por {{os-nome_usuario}}, com as seguintes informações:
                 </p>
                 <div class="item">
                     <span>Tipo da Solicitação</span>

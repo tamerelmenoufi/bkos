@@ -37,6 +37,8 @@
         $Str['os']['tipo'] = (($d->tipo)?:'Não Informado');
         $Str['os']['empresa'] = "{$d->razao_social} ({$d->cnpj})";
         $Str['os']['data_atual'] = date("d/m/Y H:i:s");
+        $Str['os']['nome_usuario'] = $_SESSION['BkOsLogin']->nome;
+
 
 
         $q = "select a.*, b.nome as colaborador, date_format(a.data_cadastro,'%d/%m/%Y %H:%i:%s') as data_formatada from os_fotos a left join colaboradores b on a.colaborador = b.codigo where a.cod_os = '{$d->codigo}' and a.situacao = '1' and JSON_EXTRACT(a.deletado,\"$.usuario\") = ''";
