@@ -90,25 +90,27 @@
         $html = str_replace($fotos,'{{os_fotos}}',$html);
         $fotos = str_replace('{{os_fotos}}', false, $fotos);
 
-        $AddFotos = $fotos;
-        $AddF = [];
-        foreach($Str['os_fotos'] as $i => $v){
+        if($Str['os_fotos']){
+            $AddFotos = $fotos;
+            $AddF = [];
+            foreach($Str['os_fotos'] as $i => $v){
 
-            $foto = explode("/", $v['foto']);
-            $foto = $foto[count($foto) - 1];
-            $_SESSION['MailFotosInline'][] = $v['foto'];
+                $foto = explode("/", $v['foto']);
+                $foto = $foto[count($foto) - 1];
+                $_SESSION['MailFotosInline'][] = $v['foto'];
 
-            $AddFotos = str_replace("{{os_fotos-foto}}", $foto, $fotos);
-            $AddFotos = str_replace("{{os_fotos-titulo}}", $v['titulo'], $AddFotos);
-            $AddFotos = str_replace("{{os_fotos-descricao}}", $v['descricao'], $AddFotos);
-            $AddFotos = str_replace("{{os_fotos-colaborador}}", $v['colaborador'], $AddFotos);
-            $AddFotos = str_replace("{{os_fotos-data_cadastro}}", $v['data_cadastro'], $AddFotos);
-            $AddFotos = str_replace("{{os_fotos-titulo}}", $v['titulo'], $AddFotos);
-            $AddF[] = $AddFotos;
-        }
+                $AddFotos = str_replace("{{os_fotos-foto}}", $foto, $fotos);
+                $AddFotos = str_replace("{{os_fotos-titulo}}", $v['titulo'], $AddFotos);
+                $AddFotos = str_replace("{{os_fotos-descricao}}", $v['descricao'], $AddFotos);
+                $AddFotos = str_replace("{{os_fotos-colaborador}}", $v['colaborador'], $AddFotos);
+                $AddFotos = str_replace("{{os_fotos-data_cadastro}}", $v['data_cadastro'], $AddFotos);
+                $AddFotos = str_replace("{{os_fotos-titulo}}", $v['titulo'], $AddFotos);
+                $AddF[] = $AddFotos;
+            }
 
-        if($AddF){
-            $html = str_replace('{{os_fotos}}',implode("",$AddF),$html);
+            if($AddF){
+                $html = str_replace('{{os_fotos}}',implode("",$AddF),$html);
+            }
         }
 
         return $html;
