@@ -29,12 +29,12 @@
     //////////////////////////////////////////////////////////////////////////////
 
         $Str['os']['codigo'] = str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT);
-        $Str['os']['executor'] = $d->executor;
-        $Str['os']['data_cadastro'] = $d->data_formatada;
-        $Str['os']['responsavel'] = $d->responsavel;
-        $Str['os']['titulo'] = $d->titulo;
-        $Str['os']['descricao'] = $d->descricao;
-        $Str['os']['tipo'] = $d->tipo;
+        $Str['os']['executor'] = (($d->executor)?:'Não Informado');
+        $Str['os']['data_cadastro'] = (($d->data_formatada)?:'Não Informado');
+        $Str['os']['responsavel'] = (($d->responsavel)?:'Não Informado');
+        $Str['os']['titulo'] = (($d->titulo)?:'Não Informado');
+        $Str['os']['descricao'] = (($d->descricao)?:'Não Informado');
+        $Str['os']['tipo'] = (($d->tipo)?:'Não Informado');
         $Str['os']['empresa'] = "{$d->razao_social} ({$d->cnpj})";
         $Str['os']['data_atual'] = date("d/m/Y H:i:s");
 
