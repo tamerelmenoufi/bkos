@@ -111,6 +111,8 @@
             if($AddF){
                 $html = str_replace('{{os_fotos}}',implode("",$AddF),$html);
             }
+        }else{
+            $html = str_replace('{{os_fotos}}',false,$html);
         }
 
         return $html;
