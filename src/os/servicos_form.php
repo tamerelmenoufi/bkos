@@ -7,6 +7,7 @@
 
         $data = $_POST;
         $attr = [];
+        $email = false;
 
         unset($data['codigo']);
         unset($data['acao']);
@@ -20,10 +21,12 @@
             $query = "update os set {$attr} where codigo = '{$_POST['codigo']}'";
             mysqli_query($con, $query);
             $cod = $_POST['codigo'];
+            $email = mysqli_affected_rows($con);
         }else{
             $query = "insert into os set data_cadastro = NOW(), {$attr}";
             mysqli_query($con, $query);
             $cod = mysqli_insert_id($con);
+            $email = mysqli_affected_rows($con);
         }
 
         $retorno = [
@@ -31,37 +34,38 @@
             'codigo' => $cod
         ];
 
-        ///////////////////////////////////////////////////////
-        $html = file_get_contents("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/vendor/email/tamplates/os_update.php");
-        $html = ReplaceVar($html, $cod);
+        if($email){
+            ///////////////////////////////////////////////////////
+            $html = file_get_contents("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/vendor/email/tamplates/os_update.php");
+            $html = ReplaceVar($html, $cod);
 
-        $_SESSION['MailFotosInline'][] = 'https://os.bkmanaus.com.br/img/logo.png';
+            $_SESSION['MailFotosInline'][] = 'https://os.bkmanaus.com.br/img/logo.png';
 
-        $dados = [
-            'from_name' => 'SP Sistema',
-            'from_email' => 'mailgun@moh1.com.br',
-            'subject' => 'Atualização O.S. #' . str_pad($cod , 5 , '0' , STR_PAD_LEFT),
-            'html' => $html,
-            // 'attachment' => [
-            //     './img_bk.png',
-            //     './cliente-mohatron.xls',
-            //     './formulario_prato_cheio.pdf',
-            //     'https://os.bkmanaus.com.br/img/logo.png',
-            // ],
-            'inline' => $_SESSION['MailFotosInline'],
-            // [
-            //     // './img_bk.png',
-            //     'https://os.bkmanaus.com.br/img/logo.png',
-            // ],
-            'to' => [
-                ['to_name' => 'Tamer Mohamed', 'to_email' => 'tamer.menoufi@gmail.com'],
-                // ['to_name' => 'Tamer Elmenoufi', 'to_email' => 'tamer@mohatron.com.br'],
-            ]
-        ];
+            $dados = [
+                'from_name' => 'SP Sistema',
+                'from_email' => 'mailgun@moh1.com.br',
+                'subject' => 'Atualização O.S. #' . str_pad($cod , 5 , '0' , STR_PAD_LEFT),
+                'html' => $html,
+                // 'attachment' => [
+                //     './img_bk.png',
+                //     './cliente-mohatron.xls',
+                //     './formulario_prato_cheio.pdf',
+                //     'https://os.bkmanaus.com.br/img/logo.png',
+                // ],
+                'inline' => $_SESSION['MailFotosInline'],
+                // [
+                //     // './img_bk.png',
+                //     'https://os.bkmanaus.com.br/img/logo.png',
+                // ],
+                'to' => [
+                    ['to_name' => 'Tamer Mohamed', 'to_email' => 'tamer.menoufi@gmail.com'],
+                    // ['to_name' => 'Tamer Elmenoufi', 'to_email' => 'tamer@mohatron.com.br'],
+                ]
+            ];
 
-        SendMail($dados);
-        ///////////////////////////////////////////////////////
-
+            SendMail($dados);
+            ///////////////////////////////////////////////////////
+        }
 
         echo json_encode($retorno);
 
