@@ -209,18 +209,24 @@
         $d = mysqli_fetch_object($result);
 
 
-        return [
-            'to' => [
+        $to = [
                 ['to_name' => 'Tamer Mohamed', 'to_email' => 'tamer.menoufi@gmail.com'],
                 (($d->executor and $d->executor_email)?['to_name' => $d->executor, 'to_email' => $d->executor_email]:false),
                 (($d->responsavel and $d->responsavel_email)?['to_name' => $d->responsavel, 'to_email' => $d->responsavel_email]:false),
-            ],
+        ];
+        $to = array_filter($to);
 
-            'wapp' => [
+        $wapp = [
                 ['nome' => 'Tamer Mohamed', 'telefone' => '92991886570'],
                 (($d->executor and $d->executor_telefone)?['nome' => $d->executor, 'telefone' => $d->executor_telefone]:false),
                 (($d->responsavel and $d->responsavel_telefone)?['nome' => $d->responsavel, 'telefone' => $d->responsavel_telefone]:false),
-            ],
+        ];
+        $wapp = array_filter($wapp);
+
+        return [
+            'to' => $to,
+
+            'wapp' => $wapp,
         ];
 
 
