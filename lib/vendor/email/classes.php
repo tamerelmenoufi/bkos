@@ -189,3 +189,36 @@
 
         return $html;
     }
+
+
+    function sendContatos($cod){
+        $query = "select a.*,
+                        b.nome as executor,
+                        b.telefone as executor_telefone,
+                        b.email as executor_email,
+                        c.nome as responsavel,
+                        c.telefone as responsavel_telefone,
+                        c.email as responsavel_email
+                    from os a
+                    left join colaboradores b on a.executor = b.codigo
+                    left join colaboradores c on a.responsavel = c.codigo
+                    where a.codigo = '{$cod}'";
+        $result = mysqli_query($con, $query);
+        $d = mysqli_fetch_object($result);
+
+        return [
+            'to' => [
+                ['to_name' => 'Tamer Mohamed', 'to_email' => 'tamer.menoufi@gmail.com'],
+                (($d->executor and $d->executor_email)?['to_name' => $d->executor, 'to_email' => $d->executor_email]:false),
+                (($d->responsavel and $d->responsavel_email)?['to_name' => $d->responsavel, 'to_email' => $d->responsavel_email]:false),
+            ],
+
+            'wapp' => [
+                ['nome' => 'Tamer Mohamed', 'telefone' => '92991886570'],
+                (($d->executor and $d->executor_telefone)?['nome' => $d->executor, 'telefone' => $d->executor_telefone]:false),
+                (($d->responsavel and $d->responsavel_telefone)?['nome' => $d->responsavel, 'telefone' => $d->responsavel_telefone]:false),
+            ],
+        ];
+
+
+    }

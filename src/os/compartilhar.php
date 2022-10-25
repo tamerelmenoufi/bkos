@@ -4,12 +4,52 @@
     if($_POST['acao'] == 'compartilhar'){
         $q = "update os SET responsavel = '{$_POST['responsavel']}' where codigo = '{$_POST['os']}'";
         mysqli_query($con, $q);
-        $os = str_pad($_POST['os'] , 6 , '0' , STR_PAD_LEFT);
-        //Mensagem Wapp para o Gestor
-        SendWapp($_SESSION['BkOsLogin']->telefone, "A O.S. de Código #{$os} foi trasferida de {$_POST['nome_atual']} para {$_POST['nome']}");
-        //Mensagem Wapp para o novo colaborador
-        SendWapp($_POST['telefone'], "Olá  {$_POST['nome']}, a O.S. #{$os} foi direcionada para você. Acesse o endereço https://os.bkmanaus.com.br para mais informações.");
-        // exit();
+
+        $email = mysqli_affected_rows($con);
+
+        if($email){
+            $cod = $_POST['os'];
+            ///////////////////////////////////////////////////////
+            $html = file_get_contents("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/vendor/email/tamplates/os_update.php");
+            $html = ReplaceVar($html, $cod);
+            $contatos = sendContatos($cod);
+            $_SESSION['MailFotosInline'][] = 'https://os.bkmanaus.com.br/img/logo.png';
+
+            $dados = [
+                'from_name' => 'SP Sistema',
+                'from_email' => 'mailgun@moh1.com.br',
+                'subject' => 'Atualização O.S. #' . str_pad($cod , 5 , '0' , STR_PAD_LEFT),
+                'html' => $html,
+                // 'attachment' => [
+                //     './img_bk.png',
+                //     './cliente-mohatron.xls',
+                //     './formulario_prato_cheio.pdf',
+                //     'https://os.bkmanaus.com.br/img/logo.png',
+                // ],
+                'inline' => $_SESSION['MailFotosInline'],
+                // [
+                //     // './img_bk.png',
+                //     'https://os.bkmanaus.com.br/img/logo.png',
+                // ],
+                'to' => $contatos['to'],
+            ];
+
+            SendMail($dados);
+            ///////////////////////////////////////////////////////
+
+            $os = str_pad($_POST['os'] , 6 , '0' , STR_PAD_LEFT);
+            //Mensagem Wapp para o Gestor
+            $wapp = $contatos['wapp'];
+            for($i=0;$i<count($wapp);$i++){
+                SendWapp($wapp[$i]['telefone'], "A O.S. de Código #{$os} foi trasferida de {$_POST['nome_atual']} para {$_POST['nome']}. Acesse o endereço https://os.bkmanaus.com.br para mais informações.");
+            }
+
+
+        }
+
+
+
+
     }
 
     if($_POST['os']){

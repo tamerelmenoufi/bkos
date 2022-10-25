@@ -22,11 +22,13 @@
             mysqli_query($con, $query);
             $cod = $_POST['codigo'];
             $email = mysqli_affected_rows($con);
+            $WappMsg = ' recebe uma atualização em seus registros';
         }else{
             $query = "insert into os set data_cadastro = NOW(), {$attr}";
             mysqli_query($con, $query);
             $cod = mysqli_insert_id($con);
             $email = mysqli_affected_rows($con);
+            $WappMsg = ' acabe de ser registrada';
         }
 
         $retorno = [
@@ -38,6 +40,8 @@
             ///////////////////////////////////////////////////////
             $html = file_get_contents("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/vendor/email/tamplates/os_update.php");
             $html = ReplaceVar($html, $cod);
+
+            $contatos = sendContatos($cod);
 
             $_SESSION['MailFotosInline'][] = 'https://os.bkmanaus.com.br/img/logo.png';
 
@@ -57,14 +61,19 @@
                 //     // './img_bk.png',
                 //     'https://os.bkmanaus.com.br/img/logo.png',
                 // ],
-                'to' => [
-                    ['to_name' => 'Tamer Mohamed', 'to_email' => 'tamer.menoufi@gmail.com'],
-                    // ['to_name' => 'Tamer Elmenoufi', 'to_email' => 'tamer@mohatron.com.br'],
-                ]
+                'to' => $contatos['to'],
             ];
 
             SendMail($dados);
             ///////////////////////////////////////////////////////
+
+            $os = str_pad($cod , 6 , '0' , STR_PAD_LEFT);
+            //Mensagem Wapp para o Gestor
+            $wapp = $contatos['wapp'];
+            for($i=0;$i<count($wapp);$i++){
+                SendWapp($wapp[$i]['telefone'], "A O.S. de Código #{$os} {$WappMsg}. Acesse o endereço https://os.bkmanaus.com.br para mais informações.");
+            }
+
         }
 
         echo json_encode($retorno);
