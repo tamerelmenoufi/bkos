@@ -214,7 +214,6 @@
                 dataType:"json",
                 data: campos,
                 success: function (dados) {
-
                     // $.ajax({
                     //     url:"src/os/index.php",
                     //     type:"POST",
@@ -223,7 +222,6 @@
                     //         $(".tab-pane").html(dados);
                     //     }
                     // });
-
                 }
             })
 
