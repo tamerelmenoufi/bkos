@@ -2,9 +2,59 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
 
+
+    function Alertas($cod_os, $msg){
+
+        global $_SESSION;
+        $cod = $cod_os;
+        ///////////////////////////////////////////////////////
+        $html = file_get_contents("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/vendor/email/tamplates/os_update.php");
+        $html = ReplaceVar($html, $cod);
+        $contatos = sendContatos($cod);
+
+        $_SESSION['MailFotosInline'][] = 'https://os.bkmanaus.com.br/img/logo.png';
+
+        $dados = [
+            'from_name' => 'SP Sistema',
+            'from_email' => 'mailgun@moh1.com.br',
+            'subject' => 'Atualização O.S. #' . str_pad($cod , 6 , '0' , STR_PAD_LEFT),
+            'html' => $html,
+            // 'attachment' => [
+            //     './img_bk.png',
+            //     './cliente-mohatron.xls',
+            //     './formulario_prato_cheio.pdf',
+            //     'https://os.bkmanaus.com.br/img/logo.png',
+            // ],
+            'inline' => $_SESSION['MailFotosInline'],
+            // [
+            //     // './img_bk.png',
+            //     'https://os.bkmanaus.com.br/img/logo.png',
+            // ],
+            'to' => $contatos['to'],
+        ];
+
+        SendMail($dados);
+        ///////////////////////////////////////////////////////
+
+        $os = str_pad($cod_os , 6 , '0' , STR_PAD_LEFT);
+        //Mensagem Wapp para o Gestor
+        $wapp = $contatos['wapp'];
+        for($i=0;$i<count($wapp);$i++){
+            SendWapp($wapp[$i]['telefone'], "A O.S. de Código #{$os} foi {$msg}. Acesse o endereço https://os.bkmanaus.com.br para mais informações.");
+        }
+
+    }
+
+
     if($_POST['acao'] == 'data_finalizacao'){
-        echo $q = "update os set data_finalizacao = '{$_POST['data_finalizacao']}' where codigo = '{$_POST['cod']}'";
+        $q = "update os set data_finalizacao = '{$_POST['data_finalizacao']}' where codigo = '{$_POST['cod']}'";
         mysqli_query($con, $q);
+
+        $email = mysqli_affected_rows($con);
+        if($email){
+            Alertas($_POST['cod'], ' foi marcada como finalizada');
+        }
+
         exit();
     }
 
@@ -48,52 +98,10 @@
                 'msg' => 'Imagem Cadastrada com sucesso!',
             ];
 
-
             $email = mysqli_affected_rows($con);
-
             if($email){
-                $cod = $_POST['cod_os'];
-                ///////////////////////////////////////////////////////
-                $html = file_get_contents("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/vendor/email/tamplates/os_update.php");
-                $html = ReplaceVar($html, $cod);
-                $contatos = sendContatos($cod);
-
-                $_SESSION['MailFotosInline'][] = 'https://os.bkmanaus.com.br/img/logo.png';
-
-                $dados = [
-                    'from_name' => 'SP Sistema',
-                    'from_email' => 'mailgun@moh1.com.br',
-                    'subject' => 'Atualização O.S. #' . str_pad($cod , 5 , '0' , STR_PAD_LEFT),
-                    'html' => $html,
-                    // 'attachment' => [
-                    //     './img_bk.png',
-                    //     './cliente-mohatron.xls',
-                    //     './formulario_prato_cheio.pdf',
-                    //     'https://os.bkmanaus.com.br/img/logo.png',
-                    // ],
-                    'inline' => $_SESSION['MailFotosInline'],
-                    // [
-                    //     // './img_bk.png',
-                    //     'https://os.bkmanaus.com.br/img/logo.png',
-                    // ],
-                    'to' => $contatos['to'],
-                ];
-
-                SendMail($dados);
-                ///////////////////////////////////////////////////////
-
-                $os = str_pad($_POST['cod_os'] , 6 , '0' , STR_PAD_LEFT);
-                //Mensagem Wapp para o Gestor
-                $wapp = $contatos['wapp'];
-                for($i=0;$i<count($wapp);$i++){
-                    SendWapp($wapp[$i]['telefone'], "A O.S. de Código #{$os} foi atualizada com registro de imagens. Acesse o endereço https://os.bkmanaus.com.br para mais informações.");
-                }
-
+                Alertas($_POST['cod_os'], ' atualizada com registro de imagens');
             }
-
-
-
-
 
         }else{
             $retorno = [
