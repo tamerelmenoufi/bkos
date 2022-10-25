@@ -159,6 +159,7 @@
         $p1 = stripos($html, '{{os_fotos}}');
         $p2 = (strripos($html, '{{os_fotos}}') - $p1);
         $fotos = substr($html, $p1, $p2);
+        $xxxx = substr($html, 0, $p1 - 1).substr($html,$p1 + 12, $p2);
         $html = str_replace($fotos,'{{os_fotos}}',$html);
         $fotos = str_replace('{{os_fotos}}', false, $fotos);
 
@@ -187,7 +188,7 @@
             $html = str_replace('{{os_fotos}}',false,$html);
         }
 
-        return $html;
+        return $html."\n\n\n\n\n\n\n".$xxxx;
     }
 
 
@@ -210,8 +211,8 @@
 
 
         $to = [
-                ['to_name' => 'Silvio Pedrosa', 'to_email' => 'diretoria@spgrupo.com'],
-                ['to_name' => 'Mariane Sousa Amazonas', 'to_email' => 'mariane@spgrupo.com'],
+                // ['to_name' => 'Silvio Pedrosa', 'to_email' => 'diretoria@spgrupo.com'],
+                // ['to_name' => 'Mariane Sousa Amazonas', 'to_email' => 'mariane@spgrupo.com'],
                 ['to_name' => 'Tamer Mohamed', 'to_email' => 'tamer.menoufi@gmail.com'],
                 (($d->executor and $d->executor_email)?['to_name' => $d->executor, 'to_email' => $d->executor_email]:false),
                 (($d->responsavel and $d->responsavel_email)?['to_name' => $d->responsavel, 'to_email' => $d->responsavel_email]:false),
@@ -219,8 +220,8 @@
         $to = array_filter($to);
 
         $wapp = [
-                ['nome' => 'Silvio Pedrosa', 'telefone' => '92988020814'],
-                ['nome' => 'Mariane Sousa Amazonas', 'telefone' => '92988474010'],
+                // ['nome' => 'Silvio Pedrosa', 'telefone' => '92988020814'],
+                // ['nome' => 'Mariane Sousa Amazonas', 'telefone' => '92988474010'],
                 ['nome' => 'Tamer Mohamed', 'telefone' => '92991886570'],
                 (($d->executor and $d->executor_telefone)?['nome' => $d->executor, 'telefone' => $d->executor_telefone]:false),
                 (($d->responsavel and $d->responsavel_telefone)?['nome' => $d->responsavel, 'telefone' => $d->responsavel_telefone]:false),
