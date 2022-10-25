@@ -165,7 +165,7 @@
             <!-- <input type="hidden" name="vinculo" id="vinculo" value="<?=$em->codigo?>"> -->
             <input type="hidden" name="empresa" id="empresa" value="<?=(($d->empresa)?:$_SESSION['empresa'])?>">
             <!-- <input type="hidden" name="empresa_responsavel" id="empresa_responsavel" value="<?=$em->empresa_responsavel?>"> -->
-            <input type="hidden" name="responsavel" id="responsavel" value="<?=(($d->responsavel)?:$_SESSION['BkOsLogin']->codigo)?><?=$d->responsavel?>">
+            <input type="hidden" name="responsavel" id="responsavel" value="<?=(($d->responsavel)?:$_SESSION['BkOsLogin']->codigo)?>">
             <button
                 salvar
                 class="btn btn-primary"
