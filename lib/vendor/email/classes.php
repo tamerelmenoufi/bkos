@@ -159,7 +159,7 @@
         $p1 = stripos($html, '{{os_fotos}}');
         $p2 = (strripos($html, '{{os_fotos}}') - $p1);
         $fotos = substr($html, $p1, $p2);
-        $html = substr($html, 0, $p1 - 1).substr($html,$p2, strlen($html));
+        $html = substr($html, 0, $p1 - 1).substr($html,($p2 + $p1), strlen($html));
         $html = str_replace($fotos,'{{os_fotos}}',$html);
         $fotos = str_replace('{{os_fotos}}', false, $fotos);
 
