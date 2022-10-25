@@ -88,7 +88,7 @@
         $d = mysqli_fetch_object($result);
     }
 
-
+    print_r(sendContatos($d->codigo))
 ?>
 <style>
     .Topo<?=$md5?> {
