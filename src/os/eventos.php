@@ -52,7 +52,7 @@
 
         if($email){
             $cod = $_POST['cod_os'];
-            Alertas($cod_os, ' foi marcada como finalizada');
+            Alertas($cod, ' foi marcada como finalizada');
         }
 
         exit();
@@ -80,7 +80,7 @@
 
             if($email){
                 $cod = $_POST['cod_os'];
-                Alertas($cod_os, ' atualizada com registro de eventos');
+                Alertas($cod, ' atualizada com registro de eventos');
             }
 
 
