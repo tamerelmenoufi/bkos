@@ -192,6 +192,8 @@
 
 
     function sendContatos($cod){
+        global $con;
+
         $query = "select a.*,
                         b.nome as executor,
                         b.telefone as executor_telefone,
