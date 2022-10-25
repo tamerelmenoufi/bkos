@@ -222,6 +222,7 @@
                     //         $(".tab-pane").html(dados);
                     //     }
                     // });
+                    Carregando('none');
                 }
             })
 
