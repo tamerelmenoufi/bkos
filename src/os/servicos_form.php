@@ -214,14 +214,15 @@
                 dataType:"json",
                 data: campos,
                 success: function (dados) {
-                    $.ajax({
-                        url:"src/os/index.php",
-                        type:"POST",
-                        success:function(dados){
-                            // $("#paginaHome").html(dados);
-                            $(".tab-pane").html(dados);
-                        }
-                    });
+
+                    // $.ajax({
+                    //     url:"src/os/index.php",
+                    //     type:"POST",
+                    //     success:function(dados){
+                    //         // $("#paginaHome").html(dados);
+                    //         $(".tab-pane").html(dados);
+                    //     }
+                    // });
 
                 }
             })
