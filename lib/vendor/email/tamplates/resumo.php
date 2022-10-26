@@ -58,11 +58,12 @@
             justify-content: space-between;
         }
         .placas div{
-            width:33%;
+            width:30%;
             text-align: center;
             font-size: 15px;
             color:#fff;
             padding:20px;
+            border-radius:5px;
         }
         th{
             text-align:left;
@@ -95,7 +96,7 @@
                         <b>100</b><br>OS Pendentes
                     </div>
                      <div style="background-color:green">
-                        <b>156</b><br>OS Concluídas
+                        <b>56</b><br>OS Concluídas
                     </div>
                 </div>
 
