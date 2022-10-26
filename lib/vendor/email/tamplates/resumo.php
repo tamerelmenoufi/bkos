@@ -89,16 +89,13 @@
 
                 <div class="placas">
                     <div style="background-color:blue">
-                        156
-                        <p>Total de OS</p>
+                        156<br>Total de OS
                     </div>
                     <div style="background-color:red">
-                        100
-                        <p>OS Pendentes</p>
+                        100<br>OS Pendentes
                     </div>
                      <div style="background-color:green">
-                        156
-                        <p>OS Concluídas</p>
+                        156<br>OS Concluídas
                     </div>
                 </div>
 
