@@ -21,13 +21,13 @@
 
     // echo $result;
 
-    // $contatos = sendContatos($cod);
+    $contatos = sendContatos(0);
 
-    $to = [['to_name' => 'Tamer Mohamed', 'to_email' => 'tamer.menoufi@gmail.com']];
+    // $to = [['to_name' => 'Tamer Mohamed', 'to_email' => 'tamer.menoufi@gmail.com']];
 
-    $contatos = [
-        'to' => $to
-    ];
+    // $contatos = [
+    //     'to' => $to
+    // ];
 
     $_SESSION['MailFotosInline'] = [];
     $_SESSION['MailFotosInline'][] = 'https://os.bkmanaus.com.br/img/logo.png';
