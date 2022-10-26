@@ -2,4 +2,6 @@
 
     $dados = file("tamplates/resumo.php");
 
-    echo $dados;
+    foreach($dados as $i => $v){
+        echo $v;
+    }
