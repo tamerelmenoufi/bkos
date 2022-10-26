@@ -17,3 +17,35 @@
 
 
     echo $result;
+
+    // $contatos = sendContatos($cod);
+
+    $to = ['to_name' => 'Tamer Mohamed', 'to_email' => 'tamer.menoufi@gmail.com'];
+
+    $contatos = [
+        'to' => $to,
+    ];
+
+    $_SESSION['MailFotosInline'][] = 'https://os.bkmanaus.com.br/img/logo.png';
+
+    $dados = [
+        'from_name' => 'SP Sistema',
+        'from_email' => 'mailgun@moh1.com.br',
+        'subject' => 'Resumo da Situação das O.S.',
+        'html' => $result,
+        // 'attachment' => [
+        //     './img_bk.png',
+        //     './cliente-mohatron.xls',
+        //     './formulario_prato_cheio.pdf',
+        //     'https://os.bkmanaus.com.br/img/logo.png',
+        // ],
+        'inline' => $_SESSION['MailFotosInline'],
+        // [
+        //     // './img_bk.png',
+        //     'https://os.bkmanaus.com.br/img/logo.png',
+        // ],
+        'to' => $contatos['to'],
+    ];
+
+    SendMail($dados);
+    ///////////////////////////////////////////////////////
