@@ -24,8 +24,8 @@
             color:#a1a1a1;
             padding:0px;
             margin:0;
-            margin-bottom:5px;
-            margin-top:10px;
+            padding-bottom:5px;
+            padding-top:10px;
         }
         .item div{
             width:100%;
