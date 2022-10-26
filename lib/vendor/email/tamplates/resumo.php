@@ -58,7 +58,10 @@
             font-size: 30px;
         }
         th{
-            text-align:right;
+            text-align:left;
+        }
+        td{
+            padding:5px;
         }
     </style>
 </head>
@@ -116,7 +119,7 @@
                             $i=0;
                             while($p = mysqli_fetch_object($r)){
                             ?>
-                            <tr style="background-color:<?=(($i%2 == 0)?'#ffffff':'#a1a1a1')?>">
+                            <tr style="background-color:<?=(($i%2 == 0)?'#ffffff':'#eee')?>">
                                 <td><?=($p->data_cadastro_br)?></td>
                                 <td><?=$p->dias?> dia(s)</td>
                                 <td><?=$p->quantidade?></td>
