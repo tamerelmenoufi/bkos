@@ -49,6 +49,6 @@
         // ],
         'to' => $contatos['to'],
     ];
-
-    print_r(SendMail($dados));
+    print_r($dados);
+    // print_r(SendMail($dados));
     ///////////////////////////////////////////////////////
