@@ -15,7 +15,7 @@
             color:#333;
         }
         .item span{
-            font-size:10px;
+            font-size:25px;
             color:#a1a1a1;
             padding:0px;
             margin:0;
