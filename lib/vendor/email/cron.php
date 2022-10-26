@@ -23,7 +23,7 @@
 
     // $contatos = sendContatos($cod);
 
-    $to = ['to_name' => 'Tamer Mohamed', 'to_email' => 'tamer.menoufi@gmail.com'];
+    $to = [['to_name' => 'Tamer Mohamed', 'to_email' => 'tamer.menoufi@gmail.com']];
 
     $contatos = [
         'to' => $to
