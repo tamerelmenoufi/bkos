@@ -59,7 +59,6 @@
         }
         .placas div{
             width:33%;
-            height:100px;
             text-align: center;
             font-size: 15px;
             color:#fff;
