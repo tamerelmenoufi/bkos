@@ -87,16 +87,16 @@
         <tr>
             <td colspan="2" style="width:600px; padding:20px;">
 
-                <div style="display: flex; justify-content: space-between;">
-                    <div>
+                <div class="placas">
+                    <div style="background-color:blue">
                         156
                         <p>Total de OS</p>
                     </div>
-                    <div>
+                    <div style="background-color:red">
                         100
                         <p>OS Pendentes</p>
                     </div>
-                     <div>
+                     <div style="background-color:green">
                         156
                         <p>OS Concluídas</p>
                     </div>
