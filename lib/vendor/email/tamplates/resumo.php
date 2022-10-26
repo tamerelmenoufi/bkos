@@ -101,13 +101,13 @@
 
                 <div class="placas">
                     <div style="background-color:blue">
-                        <b><?=$d->os_geral?></b><br>Total de OS
+                        <b><?=$d->os_geral?></b><br>Total de O.S.
                     </div>
                     <div style="background-color:red">
-                        <b><?=$d->os_pendentes?></b><br>OS Pendentes
+                        <b><?=$d->os_pendentes?></b><br>O.S. Pendentes
                     </div>
                      <div style="background-color:green">
-                        <b><?=$d->os_concluidadas?></b><br>OS Concluídas
+                        <b><?=$d->os_concluidadas?></b><br>O.S. Concluídas
                     </div>
                 </div>
 
