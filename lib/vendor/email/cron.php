@@ -29,6 +29,7 @@
         'to' => $to
     ];
 
+    $_SESSION['MailFotosInline'] = [];
     $_SESSION['MailFotosInline'][] = 'https://os.bkmanaus.com.br/img/logo.png';
 
     $dados = [
