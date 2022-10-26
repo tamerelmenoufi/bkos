@@ -100,6 +100,10 @@
                     </div>
                 </div>
 
+
+
+
+
                 <div class="item">
                     <span>Visão Geral</span>
                     <hr>
@@ -137,6 +141,255 @@
                         </table>
                     </div>
                 </div>
+
+
+
+
+
+
+                <div class="item">
+                    <span>Pendências Por Responsável</span>
+                    <hr>
+                    <div>
+                        <table cellspacing="0" cellpadding="0" width="100%">
+                            <tr>
+                                <th>Responsável</th>
+                                <th>Quantidade</th>
+                            </tr>
+                            <?php
+                            $q = "SELECT
+
+                            a.*,
+                            b.titulo as tipo,
+                            c.razao_social as empresa,
+                            concat(
+                                        d.nome,', ',
+                                        d.rua,', ',
+                                        d.numero,', ',
+                                        d.bairro,', ',
+                                        d.cidade,', ',
+                                        d.estado,', ',
+                                        d.cep,', ',
+                                        d.complemento
+                                    ) as empresa_endereco,
+                                IF(e.nome != '',e.nome,'INDEFINIDO') as responsavel_nome,
+                                IF(f.nome != '',f.nome,'INDEFINIDO') as executor_nome,
+                                count(*) as quantidade
+
+                    from os a
+
+                        left join os_tipos b on a.tipo = b.codigo
+                        left join empresas c on a.empresa = c.codigo
+                        left join empresas_enderecos d on a.empresa_endereco = d.codigo
+                        left join colaboradores e on a.responsavel = e.codigo
+                        left join colaboradores f on a.executor = f.codigo
+
+                    WHERE a.data_finalizacao = 0 group by e.codigo order by quantidade desc";
+
+                            $r = mysqli_query($con, $q);
+                            $i=0;
+                            while($p = mysqli_fetch_object($r)){
+                            ?>
+                            <tr style="background-color:<?=(($i%2 == 0)?'#ffffff':'#eee')?>">
+                                <td><?=($p->responsavel_nome)?></td>
+                                <td><?=$p->quantidade?> (O.S.)</td>
+                            </tr>
+                            <?php
+                            $i++;
+                            }
+                            ?>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="item">
+                    <span>Pendências Por Executor</span>
+                    <hr>
+                    <div>
+                        <table cellspacing="0" cellpadding="0" width="100%">
+                            <tr>
+                                <th>Executor</th>
+                                <th>Quantidade</th>
+                            </tr>
+                            <?php
+                            $q = "SELECT
+
+                            a.*,
+                            b.titulo as tipo,
+                            c.razao_social as empresa,
+                            concat(
+                                        d.nome,', ',
+                                        d.rua,', ',
+                                        d.numero,', ',
+                                        d.bairro,', ',
+                                        d.cidade,', ',
+                                        d.estado,', ',
+                                        d.cep,', ',
+                                        d.complemento
+                                    ) as empresa_endereco,
+                                IF(e.nome != '',e.nome,'INDEFINIDO') as responsavel_nome,
+                                IF(f.nome != '',f.nome,'INDEFINIDO') as executor_nome,
+                                count(*) as quantidade
+
+                    from os a
+
+                        left join os_tipos b on a.tipo = b.codigo
+                        left join empresas c on a.empresa = c.codigo
+                        left join empresas_enderecos d on a.empresa_endereco = d.codigo
+                        left join colaboradores e on a.responsavel = e.codigo
+                        left join colaboradores f on a.executor = f.codigo
+
+                    WHERE a.data_finalizacao = 0 group by f.codigo order by quantidade desc";
+
+                            $r = mysqli_query($con, $q);
+                            $i=0;
+                            while($p = mysqli_fetch_object($r)){
+                            ?>
+                            <tr style="background-color:<?=(($i%2 == 0)?'#ffffff':'#eee')?>">
+                                <td><?=($p->executor_nome)?></td>
+                                <td><?=$p->quantidade?> (O.S.)</td>
+                            </tr>
+                            <?php
+                            $i++;
+                            }
+                            ?>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+                <div class="item">
+                    <span>Pendências Por Tipo</span>
+                    <hr>
+                    <div>
+                        <table cellspacing="0" cellpadding="0" width="100%">
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Quantidade</th>
+                            </tr>
+                            <?php
+                            $q = "SELECT
+
+                            a.*,
+                            b.titulo as tipo_nome,
+                            c.razao_social as empresa,
+                            concat(
+                                        d.nome,', ',
+                                        d.rua,', ',
+                                        d.numero,', ',
+                                        d.bairro,', ',
+                                        d.cidade,', ',
+                                        d.estado,', ',
+                                        d.cep,', ',
+                                        d.complemento
+                                    ) as empresa_endereco,
+                                IF(e.nome != '',e.nome,'INDEFINIDO') as responsavel,
+                                IF(f.nome != '',f.nome,'INDEFINIDO') as executor,
+                                count(*) as quantidade
+
+                    from os a
+
+                        left join os_tipos b on a.tipo = b.codigo
+                        left join empresas c on a.empresa = c.codigo
+                        left join empresas_enderecos d on a.empresa_endereco = d.codigo
+                        left join colaboradores e on a.responsavel = e.codigo
+                        left join colaboradores f on a.executor = f.codigo
+
+                    WHERE a.data_finalizacao = 0 group by b.codigo order by quantidade desc";
+
+                            $r = mysqli_query($con, $q);
+                            $i=0;
+                            while($p = mysqli_fetch_object($r)){
+                            ?>
+                            <tr style="background-color:<?=(($i%2 == 0)?'#ffffff':'#eee')?>">
+                                <td><?=($p->tipo_nome)?></td>
+                                <td><?=$p->quantidade?> (O.S.)</td>
+                            </tr>
+                            <?php
+                            $i++;
+                            }
+                            ?>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="item">
+                    <span>Pendências Por Loja</span>
+                    <hr>
+                    <div>
+                        <table cellspacing="0" cellpadding="0" width="100%">
+                            <tr>
+                                <th>Loja</th>
+                                <th>Quantidade</th>
+                            </tr>
+                            <?php
+                            $q = "SELECT
+
+                            a.*,
+                            b.titulo as tipo_nome,
+                            c.razao_social as empresa_nome,
+                            concat(
+                                        d.nome,', ',
+                                        d.rua,', ',
+                                        d.numero,', ',
+                                        d.bairro,', ',
+                                        d.cidade,', ',
+                                        d.estado,', ',
+                                        d.cep,', ',
+                                        d.complemento
+                                    ) as empresa_endereco,
+                                IF(e.nome != '',e.nome,'INDEFINIDO') as responsavel,
+                                IF(f.nome != '',f.nome,'INDEFINIDO') as executor,
+                                count(*) as quantidade
+
+                    from os a
+
+                        left join os_tipos b on a.tipo = b.codigo
+                        left join empresas c on a.empresa = c.codigo
+                        left join empresas_enderecos d on a.empresa_endereco = d.codigo
+                        left join colaboradores e on a.responsavel = e.codigo
+                        left join colaboradores f on a.executor = f.codigo
+
+                    WHERE a.data_finalizacao = 0 group by c.codigo order by quantidade desc";
+
+                            $r = mysqli_query($con, $q);
+                            $i=0;
+                            while($p = mysqli_fetch_object($r)){
+                            ?>
+                            <tr style="background-color:<?=(($i%2 == 0)?'#ffffff':'#eee')?>">
+                                <td><?=($p->empresa_nome)?></td>
+                                <td><?=$p->quantidade?> (O.S.)</td>
+                            </tr>
+                            <?php
+                            $i++;
+                            }
+                            ?>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
 
             </td>
         </tr>

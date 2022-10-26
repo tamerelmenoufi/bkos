@@ -46,7 +46,7 @@ while($p = mysqli_fetch_object($r)){
         <tr>
             <td>
                 <?=($p->executor_nome)?><br>
-                <span style="font-size:10px; color:#a1a1a1;"><?=($p->responsavel_nome)?></span>
+                <span style="font-size:10px; color:#a1a1a1;"><?=($p->executor_nome)?></span>
             </td>
             <td>
                 <div class="progress">
