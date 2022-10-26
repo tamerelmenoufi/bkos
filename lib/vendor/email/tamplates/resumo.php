@@ -104,6 +104,7 @@
 
                 <div class="item">
                     <span>Visão Geral</span>
+                    <hr>
                     <div>
                         <table cellspacing="0" cellpadding="0" width="100%">
                             <tr>
