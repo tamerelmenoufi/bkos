@@ -20,10 +20,12 @@
             color:#333;
         }
         .item span{
-            font-size:25px;
+            font-size:20px;
             color:#a1a1a1;
             padding:0px;
             margin:0;
+            margin-bottom:5px;
+            margin-top:10px;
         }
         .item div{
             width:100%;
@@ -127,7 +129,7 @@
                             <tr style="background-color:<?=(($i%2 == 0)?'#ffffff':'#eee')?>">
                                 <td><?=($p->data_cadastro_br)?></td>
                                 <td><?=$p->dias?> dia(s)</td>
-                                <td><?=$p->quantidade?></td>
+                                <td><?=$p->quantidade?> (O.S.)</td>
                             </tr>
                             <?php
                             $i++;
