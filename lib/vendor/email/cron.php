@@ -1,5 +1,8 @@
 <?php
 
+    include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
+
+
     $postdata = http_build_query(
         array(
             'acao' => 'resumo', // Receivers phonei
