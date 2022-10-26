@@ -57,6 +57,9 @@
             line-height: 75px;
             font-size: 30px;
         }
+        th{
+            text-align:right;
+        }
     </style>
 </head>
 <body>
@@ -119,6 +122,7 @@
                                 <td><?=$p->quantidade?></td>
                             </tr>
                             <?php
+                            $i++;
                             }
                             ?>
                         </table>
