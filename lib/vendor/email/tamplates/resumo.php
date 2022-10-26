@@ -94,9 +94,9 @@
                     <div>
                         <table cellspacing="0" cellpadding="0" width="100%">
                             <tr>
-                                <td>Data</td>
-                                <td>Dias em atraso</td>
-                                <td>Quantidade</td>
+                                <th>Data</th>
+                                <th>Dias em atraso</th>
+                                <th>Quantidade</th>
                             </tr>
                             <?php
                             $q = "SELECT
@@ -110,9 +110,10 @@
                             WHERE a.data_finalizacao = 0 group by dias desc";
 
                             $r = mysqli_query($con, $q);
+                            $i=0;
                             while($p = mysqli_fetch_object($r)){
                             ?>
-                            <tr>
+                            <tr style="background-color:<?=(($i%2 == 0)?'#ffffff':'#a1a1a1')?>">
                                 <td><?=($p->data_cadastro_br)?></td>
                                 <td><?=$p->dias?> dia(s)</td>
                                 <td><?=$p->quantidade?></td>
