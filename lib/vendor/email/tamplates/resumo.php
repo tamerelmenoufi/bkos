@@ -61,8 +61,8 @@
             width:33%;
             height:100px;
             text-align: center;
-            line-height: 75px;
-            font-size: 30px;
+            font-size: 20px;
+            color:#fff;
         }
         th{
             text-align:left;
