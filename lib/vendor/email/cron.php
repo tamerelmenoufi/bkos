@@ -30,13 +30,13 @@
     ];
 
     $_SESSION['MailFotosInline'] = [];
-    // $_SESSION['MailFotosInline'][] = 'https://os.bkmanaus.com.br/img/logo.png';
+    $_SESSION['MailFotosInline'][] = 'https://os.bkmanaus.com.br/img/logo.png';
 
     $dados = [
         'from_name' => 'SP Sistema',
         'from_email' => 'mailgun@moh1.com.br',
         'subject' => 'Resumo da Situação das O.S.',
-        'html' => "<p>Olá mundo</p>",
+        'html' => $result,
         // 'attachment' => [
         //     './img_bk.png',
         //     './cliente-mohatron.xls',
@@ -48,7 +48,7 @@
         //     // './img_bk.png',
         //     'https://os.bkmanaus.com.br/img/logo.png',
         // ],
-        'to' => $contatos['to'],
+        'to' => $contatos['to']
     ];
     // print_r($dados);
     print_r(SendMail($dados));
