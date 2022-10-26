@@ -19,7 +19,7 @@
             font-size:12px;
             color:#333;
         }
-        .item span{
+        .item p{
             font-size:20px;
             color:#a1a1a1;
             padding:0px;
@@ -105,7 +105,7 @@
 
 
                 <div class="item">
-                    <span>Visão Geral</span>
+                    <p>Visão Geral</p>
                     <hr>
                     <div>
                         <table cellspacing="0" cellpadding="0" width="100%">
@@ -148,7 +148,7 @@
 
 
                 <div class="item">
-                    <span>Pendências Por Responsável</span>
+                    <p>Pendências Por Responsável</p>
                     <hr>
                     <div>
                         <table cellspacing="0" cellpadding="0" width="100%">
@@ -210,7 +210,7 @@
 
 
                 <div class="item">
-                    <span>Pendências Por Executor</span>
+                    <p>Pendências Por Executor</p>
                     <hr>
                     <div>
                         <table cellspacing="0" cellpadding="0" width="100%">
@@ -268,7 +268,7 @@
 
 
                 <div class="item">
-                    <span>Pendências Por Tipo</span>
+                    <p>Pendências Por Tipo</p>
                     <hr>
                     <div>
                         <table cellspacing="0" cellpadding="0" width="100%">
@@ -329,7 +329,7 @@
 
 
                 <div class="item">
-                    <span>Pendências Por Loja</span>
+                    <p>Pendências Por Loja</p>
                     <hr>
                     <div>
                         <table cellspacing="0" cellpadding="0" width="100%">
