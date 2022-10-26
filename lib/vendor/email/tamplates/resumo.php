@@ -8,6 +8,7 @@
         body{
             font-family:'verdana';
             font-size:12px;
+            color:#333;
         }
         .item{
             width:100%;
