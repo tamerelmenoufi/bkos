@@ -19,7 +19,7 @@
     $result = file_get_contents('https://os.bkmanaus.com.br/lib/vendor/email/tamplates/resumo.php', false, $context);
 
 
-    echo $result;
+    // echo $result;
 
     // $contatos = sendContatos($cod);
 
@@ -50,5 +50,5 @@
         'to' => $contatos['to'],
     ];
 
-    SendMail($dados);
+    print_r(SendMail($dados));
     ///////////////////////////////////////////////////////
