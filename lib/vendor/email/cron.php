@@ -30,7 +30,7 @@
     ];
 
     $_SESSION['MailFotosInline'] = [];
-    $_SESSION['MailFotosInline'][] = 'https://os.bkmanaus.com.br/img/logo.png';
+    // $_SESSION['MailFotosInline'][] = 'https://os.bkmanaus.com.br/img/logo.png';
 
     $dados = [
         'from_name' => 'SP Sistema',
