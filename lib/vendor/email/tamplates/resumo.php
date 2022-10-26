@@ -58,7 +58,7 @@
             justify-content: space-between;
         }
         .placas div{
-            width:30%;
+            width:20%;
             text-align: center;
             font-size: 15px;
             color:#fff;
