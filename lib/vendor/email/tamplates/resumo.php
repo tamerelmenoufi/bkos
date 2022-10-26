@@ -5,6 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <style>
+        body{
+            font-family:'verdana';
+            font-size:12px;
+        }
         .item{
             width:100%;
             padding:0px;
