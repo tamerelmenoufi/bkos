@@ -88,15 +88,26 @@
         <tr>
             <td colspan="2" style="width:600px; padding:20px;">
 
+
+                <?php
+                $query = "SELECT
+                    (select count(*) from os) as os_geral,
+                    (select count(*) from os where data_finalizacao > 0 ) as os_concluidadas,
+                    (select count(*) from os where data_finalizacao = 0 ) as os_pendentes
+                ";
+                $result = mysqli_query($con, $query);
+                $d = mysqli_fetch_object($result);
+                ?>
+
                 <div class="placas">
                     <div style="background-color:blue">
-                        <b>156</b><br>Total de OS
+                        <b><?=$d->os_geral?></b><br>Total de OS
                     </div>
                     <div style="background-color:red">
-                        <b>100</b><br>OS Pendentes
+                        <b><?=$d->os_pendentes?></b><br>OS Pendentes
                     </div>
                      <div style="background-color:green">
-                        <b>56</b><br>OS Concluídas
+                        <b><?=$d->os_concluidadas?></b><br>OS Concluídas
                     </div>
                 </div>
 
