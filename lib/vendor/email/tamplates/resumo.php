@@ -61,8 +61,9 @@
             width:33%;
             height:100px;
             text-align: center;
-            font-size: 20px;
+            font-size: 15px;
             color:#fff;
+            padding:20px;
         }
         th{
             text-align:left;
