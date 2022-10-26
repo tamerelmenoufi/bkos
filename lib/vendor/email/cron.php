@@ -36,7 +36,7 @@
         'from_name' => 'SP Sistema',
         'from_email' => 'mailgun@moh1.com.br',
         'subject' => 'Resumo da Situação das O.S.',
-        'html' => $result,
+        'html' => "<p>Olá mundo</p>",
         // 'attachment' => [
         //     './img_bk.png',
         //     './cliente-mohatron.xls',
