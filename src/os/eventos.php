@@ -44,6 +44,12 @@
 
     }
 
+    if($_POST['acao'] == 'muda_executor'){
+        $q = "update os set executor = '{$_POST['executor']}' where codigo = '{$_POST['os']}'";
+        mysqli_query($con, $q);
+    }
+
+
     if($_POST['acao'] == 'data_finalizacao'){
         $q = "update os set data_finalizacao = '{$_POST['data_finalizacao']}' where codigo = '{$_POST['cod']}'";
         mysqli_query($con, $q);
@@ -190,6 +196,21 @@
                 <b>Executor</b>: <?=$d->executor?><br>
                 <?=$d->data_cadastro?><br>
             </p>
+            <div class="form-floating mb-3">
+                <select class="form-select" id="executor">
+                    <option value="">::Selecione::</option>
+                    <?php
+                    $q = "select * from colaboradores where situacao = '1' order by nome";
+                    $r = mysqli_query($con, $q);
+                    while($e = mysqli_fetch_object($r)){
+                    ?>
+                    <option value="<?=$e->codigo?>" <?=(($e->codigo == $d->executor)?'selected':false)?>><?=$e->nome?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+                <label for="executor">Executor da Solicitação</label>
+            </div>
         </div>
     </div>
 </div>
@@ -288,6 +309,27 @@
                 Carregando('none');
                 $(".ListarRegistros").html(dados);
             }
+        });
+
+        $("#executor").change(function(){
+            executor = $(this).val();
+            os = '<?=$_POST['os']?>';
+            Carregando();
+            $.ajax({
+                url:"src/os/eventos.php",
+                type:"POST",
+                data:{
+                    os,
+                    executor,
+                    acao:'muda_executor'
+                },
+                success:function(dados){
+                    Carregando('none');
+                    $(".LateralDireita").html(dados);
+                }
+            });
+
+
         });
 
         $("button[SalvarRegistro]").click(function(){
