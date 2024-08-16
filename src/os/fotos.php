@@ -248,24 +248,23 @@
             <p><?=$d->descricao?></p>
             <p style="font-size:10px; color:#a1a1a1">
                 <b>Executor</b>: <?=$d->executor_nome?><br>
-                <div class="form-floating mb-3">
-                    <select class="form-select" id="executor">
-                        <option value="">::Selecione::</option>
-                        <?php
-                        $q = "select * from colaboradores where situacao = '1' order by nome";
-                        $r = mysqli_query($con, $q);
-                        while($e = mysqli_fetch_object($r)){
-                        ?>
-                        <option value="<?=$e->codigo?>" <?=(($e->codigo == $d->executor)?'selected':false)?>><?=$e->nome?></option>
-                        <?php
-                        }
-                        ?>
-                    </select>
-                    <label for="executor">Executor da Solicitação</label>
-                </div>
-
-                <?=$d->data_cadastro?><br>
+                <?=$d->data_cadastro?><br>                
             </p>
+            <div class="form-floating mb-3">
+                <select class="form-select" id="executor">
+                    <option value="">::Selecione::</option>
+                    <?php
+                    $q = "select * from colaboradores where situacao = '1' order by nome";
+                    $r = mysqli_query($con, $q);
+                    while($e = mysqli_fetch_object($r)){
+                    ?>
+                    <option value="<?=$e->codigo?>" <?=(($e->codigo == $d->executor)?'selected':false)?>><?=$e->nome?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+                <label for="executor">Executor da Solicitação</label>
+            </div>
         </div>
     </div>
 </div>
