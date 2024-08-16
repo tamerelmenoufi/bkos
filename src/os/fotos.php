@@ -119,7 +119,7 @@
             a.*,
             if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
             b.razao_social as nome_empresa,
-            c.nome as executor,
+            c.nome as executor_nome,
             if(a.data_finalizacao > 0,'checked','') as data_finalizacao
         from os a
         left join empresas b on a.empresa = b.codigo
@@ -242,7 +242,23 @@
             <h5><?=$d->titulo?></h5>
             <p><?=$d->descricao?></p>
             <p style="font-size:10px; color:#a1a1a1">
-                <b>Executor</b>: <?=$d->executor?><br>
+                <b>Executor</b>: <?=$d->executor_nome?><br>
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="executor">
+                        <option value="">::Selecione::</option>
+                        <?php
+                        $q = "select * from colaboradores where situacao = '1' order by nome";
+                        $r = mysqli_query($con, $q);
+                        while($e = mysqli_fetch_object($r)){
+                        ?>
+                        <option value="<?=$e->codigo?>" <?=(($e->codigo == $d->executor)?'selected':false)?>><?=$e->nome?></option>
+                        <?php
+                        }
+                        ?>
+                    </select>
+                    <label for="executor">Executor da Solicitação</label>
+                </div>
+
                 <?=$d->data_cadastro?><br>
             </p>
         </div>
@@ -343,6 +359,27 @@
         // }).mouseout(function(){
         //     $(".Apagar span").css("opacity","0");
         // });
+
+        $("#executor").change(function(){
+            executor = $(this).val();
+            os = '<?=$_POST['os']?>';
+            Carregando();
+            $.ajax({
+                url:"src/os/fotos.php",
+                type:"POST",
+                data:{
+                    os,
+                    executor
+                },
+                success:function(dados){
+                    Carregando('none');
+                    //$(".LateralDireita").html(dados);
+                    $(".tab-pane").html(dados);
+                }
+            });
+
+
+        });
 
         $(".Apagar span").click(function(){
 
