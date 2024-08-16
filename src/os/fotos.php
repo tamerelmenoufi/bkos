@@ -45,6 +45,11 @@
 
     }
 
+    if($_POST['acao'] == 'musa_executor'){
+        $q = "update os set executor = '{$_POST['executor']}' where codigo = '{$_POST['os']}'";
+        mysqli_query($con, $q);
+    }
+
 
     if($_POST['acao'] == 'data_finalizacao'){
         $q = "update os set data_finalizacao = '{$_POST['data_finalizacao']}' where codigo = '{$_POST['cod']}'";
@@ -369,12 +374,12 @@
                 type:"POST",
                 data:{
                     os,
-                    executor
+                    executor,
+                    acao:'muda_executor'
                 },
                 success:function(dados){
                     Carregando('none');
                     $(".LateralDireita").html(dados);
-                    //$(".tab-pane").html(dados);
                 }
             });
 
