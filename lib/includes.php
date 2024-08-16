@@ -6,4 +6,4 @@
     $con = AppConnect('bkos');
     $md5 = md5(date("YmdHis"));
 
-    echo $local = $_SERVER['PHP_SELF'];
+    //echo $local = $_SERVER['PHP_SELF'];
