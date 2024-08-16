@@ -45,7 +45,7 @@
 
     }
 
-    if($_POST['acao'] == 'musa_executor'){
+    if($_POST['acao'] == 'muda_executor'){
         $q = "update os set executor = '{$_POST['executor']}' where codigo = '{$_POST['os']}'";
         mysqli_query($con, $q);
     }
