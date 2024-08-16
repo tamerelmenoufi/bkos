@@ -373,8 +373,8 @@
                 },
                 success:function(dados){
                     Carregando('none');
-                    //$(".LateralDireita").html(dados);
-                    $(".tab-pane").html(dados);
+                    $(".LateralDireita").html(dados);
+                    //$(".tab-pane").html(dados);
                 }
             });
 
