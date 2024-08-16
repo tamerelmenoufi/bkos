@@ -107,7 +107,7 @@
             a.*,
             if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
             b.razao_social as nome_empresa,
-            c.nome as executor,
+            c.nome as executor_nome,
             if(a.data_finalizacao > 0,'checked','') as data_finalizacao
         from os a
         left join empresas b on a.empresa = b.codigo
@@ -193,7 +193,7 @@
             <h5><?=$d->titulo?></h5>
             <p><?=$d->descricao?></p>
             <p style="font-size:10px; color:#a1a1a1">
-                <b>Executor</b>: <?=$d->executor?><br>
+                <b>Executor</b>: <?=$d->executor_nome?><br>
                 <?=$d->data_cadastro?><br>
             </p>
             <div class="form-floating mb-3">
