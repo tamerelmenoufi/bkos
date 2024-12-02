@@ -25,7 +25,8 @@
     function SendMail($dados){
 
 
-        $url = "http://email.mohatron.com/send.php";
+        //$url = "http://email.mohatron.com/send.php";
+        $url = "http://24.199.119.71/email/send.php";
         // Make a POST request
         $options = stream_context_create(['http' => [
                 'method'  => 'POST',
