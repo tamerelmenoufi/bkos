@@ -18,6 +18,15 @@
 
     <div class="row mb-1">
       <div class="col">
+        <a url="src/relatorios/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
+          <i class="fa-solid fa-clipboard-list"></i> Dashboard
+        </a>
+      </div>
+    </div>
+
+
+    <div class="row mb-1">
+      <div class="col">
         <a url="src/home/dashboard/index.php" class="text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">
           <i class="fa-solid fa-clipboard-list"></i> Dashboard
         </a>
