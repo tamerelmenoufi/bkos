@@ -4,3 +4,10 @@
 <div class="m-3">
     <h1>Relatórios</h1>
 </div>
+
+<script>
+    $(function(){
+        Carregando('none');
+        
+    })
+</script>
