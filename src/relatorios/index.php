@@ -24,7 +24,7 @@
 
     if($_SESSION['situacao'] == 'p'){
         $where .= " and data_finalizacao = 0";
-    }else if($_SESSION['situacao'] == 'p'){
+    }else if($_SESSION['situacao'] == 'c'){
         $where .= " and data_finalizacao > 0";
     }
 
