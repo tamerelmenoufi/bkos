@@ -34,6 +34,7 @@
 <table class="table table-hover">
     <thead>
         <tr>
+            <th>#</th>
             <th>Título</th>
             <th>Descrição</th>
             <th>tipo</th>
@@ -49,9 +50,11 @@
 <?php
     $query = "select * from os where 1 {$where}";
     $result = mysqli_query($con, $query);
+    $i = 1;
     while($d = mysqli_fetch_object($result)){
 ?>
         <tr>
+            <td><?=$i?></td>
             <td><?=$d->titulo?></td>
             <td><?=$d->descricao?></td>
             <td><?=$d->tipo?></td>
@@ -62,6 +65,7 @@
             <td><?=$d->data_finalizacao?></td>
         </tr>
 <?php
+    $i++;
     }
 ?>   
     </tbody>
