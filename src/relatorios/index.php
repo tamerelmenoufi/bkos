@@ -19,6 +19,8 @@
     }elseif($_SESSION['data_inicio'] and $_SESSION['data_fim']){
         $where = " and a.data_cadastro between '{$_SESSION['data_inicio']} 00:00:00' and '{$_SESSION['data_fim']} 23:59:59'";
     }else{
+        $_SESSION['data_inicio'] = date("Y-m-d");
+        $_SESSION['data_fim'] = date("Y-m-d");
         $where = " and a.data_cadastro between '".date("Y-m-d")." 00:00:00' and '".date("Y-m-d")." 23:59:59'";
     }
 
