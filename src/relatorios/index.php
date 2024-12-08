@@ -42,7 +42,7 @@
             <option value="c" <?=(($_SESSION['situacao'] == 'c')?'selected':false)?>>Concluídas</option>
         </select>
         <button type="button" filtrar class="btn btn-outline-secondary">Buscar</button>
-        <button type="button" limpar class="btn btn-outline-danger">Buscar</button>
+        <button type="button" limpar class="btn btn-outline-danger">Limpar</button>
     </div>
 </div>
 <table class="table table-hover">
