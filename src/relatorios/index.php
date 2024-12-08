@@ -64,7 +64,20 @@
     <tbody>
 
 <?php
-    $query = "select a.*, b.titulo as tipo_nome, c.razao_social, d.nome as responsavel_nome, e.nome as executor_nome from os a left join os_tipos b on a.tipo = b.codigo left join empresas c on a.empresa = c.codigo left join colaboradores d on a.responsavel = d.codigo left join colaboradores e on a.executor = e.codigo where 1 {$where}";
+    $query = "select 
+                    a.*, 
+                    b.titulo as tipo_nome, 
+                    c.razao_social, 
+                    d.nome as responsavel_nome, 
+                    e.nome as executor_nome 
+                from os a 
+                     left join os_tipos b on a.tipo = b.codigo 
+                     left join empresas c on a.empresa = c.codigo 
+                     left join colaboradores d on a.responsavel = d.codigo 
+                     left join colaboradores e on a.executor = e.codigo 
+                where 1 {$where} 
+                order by e.nome asc, a.data_finalizacao desc
+                ";
     $result = mysqli_query($con, $query);
     $i = 1;
     while($d = mysqli_fetch_object($result)){
