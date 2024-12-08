@@ -13,19 +13,19 @@
     }
 
     if($_SESSION['data_inicio'] and !$_SESSION['data_fim']){
-        $where = " and data_cadastro like '%{$_SESSION['data_inicio']}%'";
+        $where = " and a.data_cadastro like '%{$_SESSION['data_inicio']}%'";
     }elseif(!$_SESSION['data_inicio'] and $_SESSION['data_fim']){
-        $where = " and data_cadastro like '%{$_SESSION['data_fim']}%'";
+        $where = " and a.data_cadastro like '%{$_SESSION['data_fim']}%'";
     }elseif($_SESSION['data_inicio'] and $_SESSION['data_fim']){
-        $where = " and data_cadastro between '{$_SESSION['data_inicio']} 00:00:00' and '{$_SESSION['data_fim']} 23:59:59'";
+        $where = " and a.data_cadastro between '{$_SESSION['data_inicio']} 00:00:00' and '{$_SESSION['data_fim']} 23:59:59'";
     }else{
-        $where = " and data_cadastro between '".date("Y-m-d")." 00:00:00' and '".date("Y-m-d")." 23:59:59'";
+        $where = " and a.data_cadastro between '".date("Y-m-d")." 00:00:00' and '".date("Y-m-d")." 23:59:59'";
     }
 
     if($_SESSION['situacao'] == 'p'){
-        $where .= " and data_finalizacao = 0";
+        $where .= " and a.data_finalizacao = 0";
     }else if($_SESSION['situacao'] == 'c'){
-        $where .= " and data_finalizacao > 0";
+        $where .= " and a.data_finalizacao > 0";
     }
 
 ?>
@@ -49,7 +49,7 @@
         <tr>
             <th>#</th>
             <th>Título</th>
-            <th>Descrição</th>
+            <!-- <th>Descrição</th> -->
             <th>tipo</th>
             <th>Empresa</th>
             <th>Responsável</th>
@@ -61,7 +61,7 @@
     <tbody>
 
 <?php
-    $query = "select * from os where 1 {$where}";
+    $query = "select a.*, b.titulo as tipo_nome, c.razao_social, d.nome as responsavel_nome, e.nome as executor_nome from os a left join os_tipos b on a.tipo = b.codigo left join empresas c on a.empresa = c.codigo left join colaboradores d on a.responsavel = d.codigo left join colaboradores e on a.executor = e.codigo where 1 {$where}";
     $result = mysqli_query($con, $query);
     $i = 1;
     while($d = mysqli_fetch_object($result)){
@@ -69,13 +69,13 @@
         <tr>
             <td><?=$i?></td>
             <td><?=$d->titulo?></td>
-            <td><?=$d->descricao?></td>
-            <td><?=$d->tipo?></td>
-            <td><?=$d->empresa?></td>
-            <td><?=$d->responsavel?></td>
-            <td><?=$d->executor?></td>
-            <td><?=$d->data_cadastro?></td>
-            <td><?=$d->data_finalizacao?></td>
+            <!-- <td><?=$d->descricao?></td> -->
+            <td><?=$d->tipo_nome?></td>
+            <td><?=$d->reazao_social?></td>
+            <td><?=$d->responsavel_nome?></td>
+            <td><?=$d->executor_nome?></td>
+            <td><?=dataBr($d->data_cadastro)?></td>
+            <td><?=dataBr($d->data_finalizacao)?></td>
         </tr>
 <?php
     $i++;
