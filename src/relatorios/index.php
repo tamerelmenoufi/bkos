@@ -10,6 +10,16 @@
         $_SESSION['data_fim'] = false;
     }
 
+    if($_SESSION['data_inicio'] and !$_SESSION['data_fim']){
+        $where = " and data_cadastro like '%{$_SESSION['data_inicio']}%'";
+    }elseif(!$_SESSION['data_inicio'] and $_SESSION['data_fim']){
+        $where = " and data_cadastro like '%{$_SESSION['data_fim']}%'";
+    }elseif($_SESSION['data_inicio'] and $_SESSION['data_fim']){
+        $where = " and data_cadastro between '{$_SESSION['data_inicio']} 00:00:00' and '{$_SESSION['data_fim']} 23:59:59'";
+    }else{
+        $where = " and data_cadastro between '".date("Y-m-d")." 00:00:00' and '".date("Y-m-d")." 23:59:59'";
+    }
+
 ?>
 <div class="m-3">
     <h1>Ordem de Serviço em atraso</h1>
