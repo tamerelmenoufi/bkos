@@ -35,26 +35,12 @@
     <thead>
         <tr>
             <th>Título</th>
-        </tr>
-        <tr>
             <th>Descrição</th>
-        </tr>
-        <tr>
             <th>tipo</th>
-        </tr>
-        <tr>
             <th>Empresa</th>
-        </tr>
-        <tr>
             <th>Responsável</th>
-        </tr>
-        <tr>
             <th>Executor</th>
-        </tr>
-        <tr>
             <th>Data Cadastro</th>
-        </tr>
-        <tr>
             <th>Data Finalização</th>
         </tr>
     </thead>
@@ -62,31 +48,17 @@
 
 <?php
     $query = "select * from os where 1 {$where}";
-    $result = mysqli_query($query);
+    $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 ?>
         <tr>
             <td><?=$d->titulo?></td>
-        </tr>
-        <tr>
             <td><?=$d->descricao?></td>
-        </tr>
-        <tr>
             <td><?=$d->tipo?></td>
-        </tr>
-        <tr>
             <td><?=$d->empresa?></td>
-        </tr>
-        <tr>
             <td><?=$d->responsavel?></td>
-        </tr>
-        <tr>
             <td><?=$d->executor?></td>
-        </tr>
-        <tr>
             <td><?=$d->data_cadastro?></td>
-        </tr>
-        <tr>
             <td><?=$d->data_finalizacao?></td>
         </tr>
 <?php
