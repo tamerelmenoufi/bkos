@@ -30,7 +30,7 @@
 
 ?>
 <div class="m-3">
-    <h1>Ordem de Serviço em atraso</h1>
+    <h1>Ordem de Serviço</h1>
     <div class="input-group mb-3">
         <label class="input-group-text" for="data_inicio">Buscar entre</label>
         <input type="date" data_inicio class="form-control" id="data_inicio" value="<?=$_SESSION['data_inicio']?>" >
