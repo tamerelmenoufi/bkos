@@ -51,6 +51,7 @@
     <thead>
         <tr>
             <th>#</th>
+            <th>Ordem</th>
             <th>Título</th>
             <!-- <th>Descrição</th> -->
             <th>tipo</th>
@@ -84,6 +85,7 @@
 ?>
         <tr>
             <td><?=$i?></td>
+            <td>#<?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?></td>
             <td><?=$d->titulo?></td>
             <!-- <td><?=$d->descricao?></td> -->
             <td><?=$d->tipo_nome?></td>
