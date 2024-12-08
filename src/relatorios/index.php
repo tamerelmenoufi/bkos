@@ -73,9 +73,9 @@
             <td><?=$d->tipo_nome?></td>
             <td><?=$d->reazao_social?></td>
             <td><?=$d->responsavel_nome?></td>
-            <td><?=$d->executor_nome?></td>
+            <td><?=(($d->executor_nome)?:"<span class='text-danger'>Não Identificado</span>")?></td>
             <td><?=dataBr($d->data_cadastro)?></td>
-            <td><?=dataBr($d->data_finalizacao)?></td>
+            <td><?=((dataBr($d->data_finalizacao))?:"<span class='text-danger'>Não Identificado</span>")?></td>
         </tr>
 <?php
     $i++;
