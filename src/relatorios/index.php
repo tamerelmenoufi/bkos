@@ -75,7 +75,7 @@
         $("button[filtrar]").click(function(){
             data_inicio = $("input[data_inicio]").val();
             data_fim = $("input[data_fim]").val();
-            if(!data_inicio || !data_fim){
+            if(!data_inicio && !data_fim){
                 $.alert('Digite pelo menos uma data!');
                 return;
             }
