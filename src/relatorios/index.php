@@ -4,10 +4,12 @@
 
     if($_POST['data_inicio']) $_SESSION['data_inicio'] = $_POST['data_inicio'];
     if($_POST['data_fim']) $_SESSION['data_fim'] = $_POST['data_fim'];
+    if($_POST['situacao']) $_SESSION['situacao'] = $_POST['situacao'];
 
     if($_POST['acao'] == 'limpar'){
         $_SESSION['data_inicio'] = false;
         $_SESSION['data_fim'] = false;
+        $_SESSION['situacao'] = false;
     }
 
     if($_SESSION['data_inicio'] and !$_SESSION['data_fim']){
@@ -20,14 +22,25 @@
         $where = " and data_cadastro between '".date("Y-m-d")." 00:00:00' and '".date("Y-m-d")." 23:59:59'";
     }
 
+    if($_SESSION['situacao'] == 'p'){
+        $where .= " and data_finalizacao = 0";
+    }else if($_SESSION['situacao'] == 'p'){
+        $where .= " and data_finalizacao > 0";
+    }
+
 ?>
 <div class="m-3">
     <h1>Ordem de Serviço em atraso</h1>
     <div class="input-group mb-3">
-        <label class="input-group-text" for="inputGroupSelect01">Buscar entre</label>
-        <input type="date" data_inicio class="form-control" value="<?=$_SESSION['data_inicio']?>" >
-        <label class="input-group-text" for="inputGroupSelect01">e</label>
-        <input type="date" data_fim class="form-control" value="<?=$_SESSION['data_fim']?>">
+        <label class="input-group-text" for="data_inicio">Buscar entre</label>
+        <input type="date" data_inicio class="form-control" id="data_inicio" value="<?=$_SESSION['data_inicio']?>" >
+        <label class="input-group-text" for="data_fim">e</label>
+        <input type="date" data_fim class="form-control" id="data_fim" value="<?=$_SESSION['data_fim']?>">
+        <select class="form-select" id="situacao">
+            <option value="t">Todos</option>
+            <option value="p" <?=(($_SESSION['situacao'] == 'p')?'selected':false)?>>Pendentes</option>
+            <option value="c" <?=(($_SESSION['situacao'] == 'c')?'selected':false)?>>Concluídas</option>
+        </select>
         <button type="button" filtrar class="btn btn-outline-secondary">Buscar</button>
     </div>
 </div>
@@ -79,6 +92,7 @@
         $("button[filtrar]").click(function(){
             data_inicio = $("input[data_inicio]").val();
             data_fim = $("input[data_fim]").val();
+            situacao = $("#situacao").val();
             if(!data_inicio && !data_fim){
                 $.alert('Digite pelo menos uma data!');
                 return;
@@ -87,7 +101,8 @@
                 type:"POST",
                 data:{
                     data_inicio,
-                    data_fim
+                    data_fim,
+                    situacao
                 },
                 url:"src/relatorios/index.php",
                 success:function(dados){
