@@ -31,6 +31,11 @@
     }
 
 ?>
+<style>
+    .relatorio th, .relatorio td{
+        font-size:10px;
+    }
+</style>
 <div class="m-3">
     <h1>Ordem de Serviço</h1>
     <div class="input-group mb-3">
@@ -47,7 +52,7 @@
         <button type="button" limpar class="btn btn-outline-danger">Limpar</button>
     </div>
 </div>
-<table class="table table-hover">
+<table class="table table-hover relatorio">
     <thead>
         <tr>
             <th>#</th>
