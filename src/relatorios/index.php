@@ -89,7 +89,7 @@
             <td><?=$d->titulo?></td>
             <!-- <td><?=$d->descricao?></td> -->
             <td><?=$d->tipo_nome?></td>
-            <td><?=$d->reazao_social?></td>
+            <td><?=$d->razao_social?></td>
             <td><?=$d->responsavel_nome?></td>
             <td><?=(($d->executor_nome)?:"<span class='text-danger'>Não Identificado</span>")?></td>
             <td><?=dataBr($d->data_cadastro)?></td>
