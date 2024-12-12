@@ -74,7 +74,7 @@
       <div class="row">
 
         <div class="col-md-3 mb-3">
-          <button class="btn btn-warning btn-block acessos" opc="os-empresas">
+          <button class="btn btn-warning btn-block acessos" opc="empresas">
             <h2><?=$d->empresas?></h2>
             <span>Empresas</span>
             <div>
@@ -86,7 +86,7 @@
         </div>
 
         <div class="col-md-3 mb-3">
-          <button class="btn btn-warning btn-block acessos" opc="os-colaboradores">
+          <button class="btn btn-warning btn-block acessos" opc="colaboradores">
             <h2><?=$d->colaboradores?></h2>
             <span>Colaboradores</span>
             <div>
@@ -98,7 +98,7 @@
         </div>
 
         <div class="col-md-3 mb-3">
-          <button class="btn btn-warning btn-block acessos" opc="os-gestores">
+          <button class="btn btn-warning btn-block acessos" opc="gestores">
             <h2><?=$d->gestores?></h2>
             <span>Gestores</span>
             <div>
@@ -110,7 +110,7 @@
         </div>
 
         <div class="col-md-3 mb-3">
-          <button class="btn btn-warning btn-block acessos" opc="os-administradores">
+          <button class="btn btn-warning btn-block acessos" opc="administradores">
             <h2><?=$d->administradores?></h2>
             <span>Administradores</span>
             <div>
