@@ -17,7 +17,7 @@
 </style>
 <div class="relatorio-body">
 <div class="m-3">
-    <h2>Colaboradores Cadastrados</h2>
+    <h2>Gestores Cadastrados</h2>
     <table class="table table-hover">
         <thead>
             <tr>
