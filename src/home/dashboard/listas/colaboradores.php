@@ -49,7 +49,7 @@
                 <td><?=dataBr($d->data_cadastro)?></td>
                 <td><?=(($d->cria_os)?'Sim':'Não')?></td>
                 <td><?=(($d->adm)?'Sim':'Não')?></td>
-                <td><?=(($d->adm)?'Ativo':'Bloqueado')?></td>
+                <td><?=(($d->situacao)?'Ativo':'Bloqueado')?></td>
             </tr>
 <?php
     }
