@@ -50,13 +50,7 @@
         <input type="date" data_inicio class="form-control" id="data_inicio" value="<?=$_SESSION['data_inicio']?>" >
         <label class="input-group-text" for="data_fim">e</label>
         <input type="date" data_fim class="form-control" id="data_fim" value="<?=$_SESSION['data_fim']?>">
-        <label class="input-group-text" for="situacao">Situação</label>
 
-        <select class="form-select" id="situacao">
-            <option value="t">Todos</option>
-            <option value="p" <?=(($_SESSION['situacao'] == 'p')?'selected':false)?>>Pendentes</option>
-            <option value="c" <?=(($_SESSION['situacao'] == 'c')?'selected':false)?>>Concluídas</option>
-        </select>
         <label class="input-group-text" for="empresa">Empresa</label>
         <select class="form-select" id="empresa">
             <option value="t">Todos</option>
@@ -70,7 +64,14 @@
             }
             ?>
         </select>
-
+        
+        <label class="input-group-text" for="situacao">Situação</label>
+        <select class="form-select" id="situacao">
+            <option value="t">Todos</option>
+            <option value="p" <?=(($_SESSION['situacao'] == 'p')?'selected':false)?>>Pendentes</option>
+            <option value="c" <?=(($_SESSION['situacao'] == 'c')?'selected':false)?>>Concluídas</option>
+        </select>
+        
         <button type="button" filtrar class="btn btn-outline-secondary">Buscar</button>
         <button type="button" limpar class="btn btn-outline-danger">Limpar</button>
     </div>
