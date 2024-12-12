@@ -5,6 +5,7 @@
     if($_POST['data_inicio']) $_SESSION['data_inicio'] = $_POST['data_inicio'];
     if($_POST['data_fim']) $_SESSION['data_fim'] = $_POST['data_fim'];
     if($_POST['situacao']) $_SESSION['situacao'] = $_POST['situacao'];
+    if($_POST['empresa']) $_SESSION['empresa'] = $_POST['empresa'];
 
     if($_POST['acao'] == 'limpar'){
         $_SESSION['data_inicio'] = false;
@@ -30,6 +31,12 @@
         $where .= " and a.data_finalizacao > 0";
     }
 
+    if($_SESSION['empresa'] == 't'){
+        
+    }else if($_SESSION['empresa']){
+        $where .= " and a.razao_social = '{$_SESSION['empresa']}'";
+    }
+
 ?>
 <style>
     .relatorio th, .relatorio td{
@@ -43,11 +50,27 @@
         <input type="date" data_inicio class="form-control" id="data_inicio" value="<?=$_SESSION['data_inicio']?>" >
         <label class="input-group-text" for="data_fim">e</label>
         <input type="date" data_fim class="form-control" id="data_fim" value="<?=$_SESSION['data_fim']?>">
+        <label class="input-group-text" for="situacao">Situação</label>
+
         <select class="form-select" id="situacao">
             <option value="t">Todos</option>
             <option value="p" <?=(($_SESSION['situacao'] == 'p')?'selected':false)?>>Pendentes</option>
             <option value="c" <?=(($_SESSION['situacao'] == 'c')?'selected':false)?>>Concluídas</option>
         </select>
+        <label class="input-group-text" for="empresa">Empresa</label>
+        <select class="form-select" id="empresa">
+            <option value="t">Todos</option>
+            <?php
+            $q = "select * from empresas order by razao_social asc";
+            $r = mysqli_query($con, $q);
+            while($s = mysqli_fetch_object($r)){
+            ?>
+            <option value="<?=$s->codigo?>" <?=(($_SESSION['empresa'] == $s->codigo)?'selected':false)?>><?=$s->razao_social?></option>
+            <?php
+            }
+            ?>
+        </select>
+
         <button type="button" filtrar class="btn btn-outline-secondary">Buscar</button>
         <button type="button" limpar class="btn btn-outline-danger">Limpar</button>
     </div>
