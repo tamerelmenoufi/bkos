@@ -2,7 +2,7 @@
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
     // echo "Aqui é conteúde de ".$_POST['opc'];
 
-    $query = "select * from colaboradores order by situacao desc, nome asc";
+    $query = "select * from colaboradores where cria_os != '1' order by situacao desc, nome asc";
     $result = mysqli_query($con, $query);
 ?>
 <style>
