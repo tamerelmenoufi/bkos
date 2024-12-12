@@ -5,6 +5,17 @@
     $query = "select * from colaboradores order by situacao desc, nome asc";
     $result = mysqli_query($con, $query);
 ?>
+<style>
+    .relatorio-body{
+        position:fixed;
+        top:80px;
+        left:0;
+        right:0;
+        bottom:0;
+        overflow:auto;
+    }
+</style>
+<div class="relatorio-body">
 <div class="m-3">
     <h2>Colaboradores Cadastrados</h2>
     <table class="table table-hover">
@@ -45,4 +56,5 @@
 ?>
         </tbody>
     </table>
+</div>
 </div>
