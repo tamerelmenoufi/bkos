@@ -33,7 +33,7 @@
 ?>
 <style>
     .relatorio th, .relatorio td{
-        font-size:10px;
+        font-size:12px;
     }
 </style>
 <div class="m-3">
