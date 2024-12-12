@@ -34,7 +34,7 @@
     if($_SESSION['empresa'] == 't'){
         
     }else if($_SESSION['empresa']){
-        $where .= " and a.razao_social = '{$_SESSION['empresa']}'";
+        $where .= " and a.empresa = '{$_SESSION['empresa']}'";
     }
 
 ?>
@@ -93,7 +93,7 @@
     <tbody>
 
 <?php
-    echo $query = "select 
+    $query = "select 
                     a.*, 
                     b.titulo as tipo_nome, 
                     c.razao_social, 
