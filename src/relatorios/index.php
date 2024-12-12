@@ -139,6 +139,7 @@
             data_inicio = $("input[data_inicio]").val();
             data_fim = $("input[data_fim]").val();
             situacao = $("#situacao").val();
+            empresa = $("#empresa").val();
             if(!data_inicio && !data_fim){
                 $.alert('Digite pelo menos uma data!');
                 return;
@@ -148,6 +149,7 @@
                 data:{
                     data_inicio,
                     data_fim,
+                    empresa,
                     situacao
                 },
                 url:"src/relatorios/index.php",
