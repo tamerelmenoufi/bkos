@@ -8,12 +8,20 @@
         $fotos = [];
         while($d = mysqli_fetch_object($result)){
             $fotos[] = $d->foto;
-            if(is_file("os/fotos/{$_POST['excluir']}/{$d->foto}")){
-                echo "<p><img src='src/os/fotos/{$_POST['excluir']}/{$d->foto}' width='100' /></p>";
+            if(is_file("fotos/{$_POST['excluir']}/{$d->foto}")){
+                unlink("fotos/{$_POST['excluir']}/{$d->foto}");
+                //echo "<p><img src='src/os/fotos/{$_POST['excluir']}/{$d->foto}' width='100' /></p>";
             }
         }
         
         $query = "delete from os where codigo = '{$_POST['excluir']}'";
+        mysqli_query($con, $query);
+
+        $query = "delete from os_fotos where cod_os = '{$_POST['excluir']}'";
+        mysqli_query($con, $query);
+
+        $query = "delete from os_registros where cod_os = '{$_POST['excluir']}'";
+        mysqli_query($con, $query);
 
 
     }
