@@ -6,11 +6,13 @@
     if($_POST['data_fim']) $_SESSION['data_fim'] = $_POST['data_fim'];
     if($_POST['situacao']) $_SESSION['situacao'] = $_POST['situacao'];
     if($_POST['empresa']) $_SESSION['empresa'] = $_POST['empresa'];
+    if($_POST['executor']) $_SESSION['executor'] = $_POST['executor'];
 
     if($_POST['acao'] == 'limpar'){
         $_SESSION['data_inicio'] = false;
         $_SESSION['data_fim'] = false;
         $_SESSION['situacao'] = false;
+        $_SESSION['executor'] = false;
     }
 
     if($_SESSION['data_inicio'] and !$_SESSION['data_fim']){
@@ -37,6 +39,12 @@
         $where .= " and a.empresa = '{$_SESSION['empresa']}'";
     }
 
+    if($_SESSION['executor'] == 't'){
+        
+    }else if($_SESSION['executor']){
+        $where .= " and a.executor = '{$_SESSION['executor']}'";
+    }
+
 ?>
 <style>
     .relatorio th, .relatorio td{
@@ -60,6 +68,20 @@
             while($s = mysqli_fetch_object($r)){
             ?>
             <option value="<?=$s->codigo?>" <?=(($_SESSION['empresa'] == $s->codigo)?'selected':false)?>><?=$s->razao_social?></option>
+            <?php
+            }
+            ?>
+        </select>
+
+        <label class="input-group-text" for="empresa">Executor</label>
+        <select class="form-select" id="empresa">
+            <option value="t">Todos</option>
+            <?php
+            $q = "select * from colaboradores order by nome asc where situacao = '1'";
+            $r = mysqli_query($con, $q);
+            while($s = mysqli_fetch_object($r)){
+            ?>
+            <option value="<?=$s->codigo?>" <?=(($_SESSION['executor'] == $s->codigo)?'selected':false)?>><?=$s->nome?> (<?=$s->cpf?>)</option>
             <?php
             }
             ?>
@@ -141,6 +163,7 @@
             data_fim = $("input[data_fim]").val();
             situacao = $("#situacao").val();
             empresa = $("#empresa").val();
+            executor = $("#executor").val();
             if(!data_inicio && !data_fim){
                 $.alert('Digite pelo menos uma data!');
                 return;
@@ -151,7 +174,8 @@
                     data_inicio,
                     data_fim,
                     empresa,
-                    situacao
+                    situacao,
+                    executor
                 },
                 url:"src/relatorios/index.php",
                 success:function(dados){
