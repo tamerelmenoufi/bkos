@@ -8,7 +8,7 @@
         $fotos = [];
         while($d = mysqli_fetch_object($result)){
             $fotos[] = $d->foto;
-            if(is_file("fotos/{$_POST['excluir']}/{$d->foto}")){
+            if(is_file("os/fotos/{$_POST['excluir']}/{$d->foto}")){
                 echo "<p><img src='src/os/fotos/{$_POST['excluir']}/{$d->foto}' width='100' /></p>";
             }
         }
