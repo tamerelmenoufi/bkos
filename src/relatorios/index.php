@@ -12,6 +12,7 @@
         $_SESSION['data_inicio'] = false;
         $_SESSION['data_fim'] = false;
         $_SESSION['situacao'] = false;
+        $_SESSION['empresa'] = false;
         $_SESSION['executor'] = false;
     }
 
