@@ -300,7 +300,7 @@ while($d = mysqli_fetch_object($result)){
 
             $.confirm({
                 title:"Excluir Ordem de Serviço",
-                content:"Deseja realmente excluir a Ordem de Serviço?<b><b>Esta operação é irreversível!",
+                content:"Deseja realmente excluir a Ordem de Serviço?<br><br><b>Esta operação é irreversível!</b>",
                 buttons:{
                     'Não':function(){
 
