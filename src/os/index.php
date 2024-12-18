@@ -3,7 +3,15 @@
 
     if($_POST['excluir']){
 
-        echo $query = "delete from os where codigo = '{$_POST['excluir']}'";
+        $query = "SELECT * FROM `os_fotos` where cod_os = '{$_POST['excluir']}'";
+        $result = mysqli_query($con, $query);
+        $fotos = [];
+        while($d = mysqli_fetch_object($result)){
+            $fotos[] = $d->foto;
+            echo "<p><img src='os/fotos/{$d->foto}' width='100' /></p>";
+        }
+        
+        $query = "delete from os where codigo = '{$_POST['excluir']}'";
 
 
     }
