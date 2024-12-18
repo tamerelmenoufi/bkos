@@ -1,6 +1,13 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
+    if($_POST['excluir']){
+
+        echo $query = "delete from os where codigo = '{$_POST['excluir']}'";
+
+
+    }
+
     $query = "select
                     a.*,
                     if(a.situacao = '1', 'Liberado', 'Bloqueado') as situacao,
@@ -81,6 +88,8 @@ while($d = mysqli_fetch_object($result)){
                 <li><hr class="dropdown-divider"></li>
                 <li os='<?=$d->codigo?>' url="src/os/compartilhar.php"><a class="dropdown-item" href="#">Compartilhar</a></li>
                 <li><a class="dropdown-item" href="src/os/relatorio/print.php?os=<?=$d->codigo?>" target="_blank">Relatório</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li excluir='<?=$d->codigo?>' url="src/os/index.php"><a class="dropdown-item" href="#">Excluir</a></li>
             </ul>
         </div>
 
@@ -282,6 +291,37 @@ while($d = mysqli_fetch_object($result)){
 
                 }
             });
+        });
+
+
+        $("li[excluir]").click(function(){
+            excluir = $(this).attr("excluir");
+            url = $(this).attr("url");
+
+            $.confirm({
+                title:"Excluir Ordem de Serviço",
+                content:"Deseja realmente excluir a Ordem de Serviço?<b><b>Esta operação é irreversível!",
+                buttons:{
+                    'Não':function(){
+
+                    },
+                    'Sim':function(){
+                        Carregando();
+                        $.ajax({
+                            url,
+                            type:"POST",
+                            data:{
+                                excluir,
+                            },
+                            success:function(dados){
+                                $(".tab-pane").html(dados);
+                            }
+                        });                        
+                    }
+                }
+            })
+
+
         });
 
 
