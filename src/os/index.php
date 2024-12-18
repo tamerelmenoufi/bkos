@@ -107,7 +107,7 @@ while($d = mysqli_fetch_object($result)){
                 <li os='<?=$d->codigo?>' url="src/os/compartilhar.php"><a class="dropdown-item" href="#">Compartilhar</a></li>
                 <li><a class="dropdown-item" href="src/os/relatorio/print.php?os=<?=$d->codigo?>" target="_blank">Relatório</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li excluir='<?=$d->codigo?>' url="src/os/index.php"><a class="dropdown-item" href="#">Excluir</a></li>
+                <li excluir='<?=$d->codigo?>' texto="#<?=str_pad($d->codigo , 6 , '0' , STR_PAD_LEFT)?>" url="src/os/index.php"><a class="dropdown-item" href="#">Excluir</a></li>
             </ul>
         </div>
 
@@ -314,11 +314,12 @@ while($d = mysqli_fetch_object($result)){
 
         $("li[excluir]").click(function(){
             excluir = $(this).attr("excluir");
+            texto = $(this).attr("texto");
             url = $(this).attr("url");
 
             $.confirm({
                 title:"Excluir Ordem de Serviço",
-                content:"Deseja realmente excluir a Ordem de Serviço?<br><br><b>Esta operação é irreversível!</b>",
+                content:`Deseja realmente excluir a Ordem de Serviço <b>${texto}</b>?<br><br><b>Esta operação é irreversível!</b>`,
                 buttons:{
                     'Não':function(){
 
