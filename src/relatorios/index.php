@@ -73,11 +73,11 @@
             ?>
         </select>
 
-        <label class="input-group-text" for="empresa">Executor</label>
-        <select class="form-select" id="empresa">
+        <label class="input-group-text" for="executor">Executor</label>
+        <select class="form-select" id="executor">
             <option value="t">Todos</option>
             <?php
-            $q = "select * from colaboradores order by nome asc where situacao = '1'";
+            $q = "select * from colaboradores where situacao = '1' order by nome asc";
             $r = mysqli_query($con, $q);
             while($s = mysqli_fetch_object($r)){
             ?>
