@@ -96,6 +96,7 @@
   $(function(){
     $("a[url]").click(function(){
       Carregando();
+      $(".LateralDireita").html("");
       url = $(this).attr("url");
       $.ajax({
         url,
