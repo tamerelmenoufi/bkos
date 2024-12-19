@@ -165,6 +165,8 @@
             situacao = $("#situacao").val();
             empresa = $("#empresa").val();
             executor = $("#executor").val();
+
+            console.log(executor);
             if(!data_inicio && !data_fim){
                 $.alert('Digite pelo menos uma data!');
                 return;
