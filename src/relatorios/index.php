@@ -117,7 +117,7 @@
     <tbody>
 
 <?php
-    $query = "select 
+    echo $query = "select 
                     a.*, 
                     b.titulo as tipo_nome, 
                     c.razao_social, 
