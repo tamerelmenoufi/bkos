@@ -1,7 +1,13 @@
 <?php
     include("{$_SERVER['DOCUMENT_ROOT']}/bkos/lib/includes.php");
 
-    switch($_POST['opc']){
+    if($_POST['data']) $_SESSION['data'] = $_POST['data'];
+
+    if(!$_SESSION['data']) $_SESSION['data'] = date("Y-m");
+
+    $opc = 'concluidas'; // $_POST['opc'];
+
+    switch($opc){
         case 'concluidas':{
             $query = "
                         select a.*,
@@ -29,7 +35,7 @@
                             left join colaboradores e on a.responsavel = e.codigo
                             left join colaboradores f on a.executor = f.codigo
 
-                        where a.data_finalizacao > 0";
+                        where a.data_finalizacao > 0 and a.data_finalizacao like '{$_SESSION['data']}%'";
             break;
         }
         case 'pendentes':{
@@ -148,8 +154,13 @@
 <div class="relatorio-body">
 
     <div class="d-flex flex-row-reverse m-3">
-        <input type="date" class="form-control" value="<?=$_POST['data']?>" />
+        <div class="input-group mb-3">
+            <label class="input-group-text">Selecione o mês de análise</label>
+            <input type="month" class="form-control data_relatorio" value="<?=$_SESSION['data']?>" />
+            <button class="btn btn-secondary selecionar" >Listar Relatórios</button>
+        </div>
     </div>
+        
 
 
 <?php
@@ -238,6 +249,34 @@
                 }
             });
         });
+
+
+
+        $(".selecionar").click(function(){
+            data = $(".data_relatorio").val();
+            if(!data){
+                $.alert('Favor selecione a data para consulta!');
+                return;
+            }
+
+            Carregando();
+            $.ajax({
+                url:`src/home/dashboard/listas/os-mapa.php`,
+                type:"POST",
+                data:{
+                    opc:'<?=$_POST['opc']?>',
+                    data
+                },
+                success:function(dados){
+
+                    $(".popupOs").css("display","block");
+                    $(".popupOs .dataOs").html(dados);
+                    $("body").css("overflow","hidden");
+                    Carregando('none');
+
+                }
+            })
+        })
 
 
         $(".voltar").click(function(){
