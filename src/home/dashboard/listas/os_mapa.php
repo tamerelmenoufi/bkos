@@ -167,11 +167,14 @@
     }
 
 
+
+
+
     .tabela-wrapper {
         top: 150px;
-        bottom:10px;
-        left:10px;
-        right: 10px;
+        bottom:0px;
+        left:20px;
+        right: 20px;
       overflow: auto;
       position: absolute;
       border: 1px solid #ccc;
@@ -236,7 +239,7 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 ?>
 
     <div class="tabela-wrapper">
-        <table class="table table-hover">
+        <table>
             <thead>
                 <tr>
                     <th>Empresas/Dias</th>
