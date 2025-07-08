@@ -160,6 +160,47 @@
             <button class="btn btn-secondary selecionar" >Listar Relatórios</button>
         </div>
     </div>
+
+
+    <?php
+// Variáveis de entrada (podem vir via GET ou POST)
+$mes = 3;     // Março
+$ano = 2025;  // Ano desejado
+
+// Último dia do mês
+$ultimoDia = cal_days_in_month(CAL_GREGORIAN, $mes, $ano);
+
+// Dias da semana em português (abreviado)
+$diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+
+// Cabeçalho da tabela
+echo "<table border='1' cellpadding='5' cellspacing='0'>";
+echo "<tr><th>Data</th><th>Dia da Semana</th></tr>";
+
+// Loop pelos dias do mês
+for ($dia = 1; $dia <= $ultimoDia; $dia++) {
+    $data = DateTime::createFromFormat('Y-n-j', "$ano-$mes-$dia");
+    $diaSemana = $diasSemana[$data->format('w')]; // 0 (Dom) a 6 (Sáb)
+    echo "<tr>";
+    echo "<td>" . $data->format('d/m/Y') . "</td>";
+    echo "<td>" . $diaSemana . "</td>";
+    echo "</tr>";
+}
+
+echo "</table>";
+
+?>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>        
+    </div>
+
         
 
 
