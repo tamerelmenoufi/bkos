@@ -163,35 +163,51 @@
 
 
 <?php
-$mes = 3;
-$ano = 2025;
+list($mes, $ano) = explode("-", $_SESSION['data']);
 
 $ultimoDia = (new DateTime("$ano-$mes-01"))->format('t');
 
 $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 
-echo "<table border='1' cellpadding='5' cellspacing='0'>";
-echo "<tr><th>Data</th><th>Dia da Semana</th></tr>";
-
-for ($dia = 1; $dia <= $ultimoDia; $dia++) {
-    $data = DateTime::createFromFormat('Y-n-j', "$ano-$mes-$dia");
-    $diaSemana = $diasSemana[$data->format('w')];
-    echo "<tr>";
-    echo "<td>" . $data->format('d/m/Y') . "</td>";
-    echo "<td>" . $diaSemana . "</td>";
-    echo "</tr>";
-}
-
-echo "</table>";
 ?>
 
     <div class="table-responsive">
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th></th>
+                    <th>Empresas/Dias</th>
+                <?php
+                    $q = "select * from empresas where situacao = '1' order by razao_social";
+                    $r = mysqli_query($con, $q);
+                    $nc = mysqli_num_rows($r);
+                    while($e = mysqli_fetch_object($r)){
+                ?>
+                    <th><?=$e->razao_social?></th>
+                <?php
+                    }
+                ?>
                 </tr>
             </thead>
+            <tbody>
+                <tr>
+                <?php
+                    for ($dia = 1; $dia <= $ultimoDia; $dia++) {
+                        $data = DateTime::createFromFormat('Y-n-j', "$ano-$mes-$dia");
+
+                        $diaSemana = $diasSemana[$data->format('w')];
+                ?>
+                    <td><?=$data?></td>
+                <?php
+                        for($i = 1; $i < $nc; $i++ ){
+
+                ?>
+                    <td>x</td>
+                <?php
+                        }
+                    }
+                ?>
+                <tr>
+            </tbody>
         </table>        
     </div>
 
