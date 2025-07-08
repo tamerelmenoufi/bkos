@@ -168,10 +168,12 @@
 
 
     .tabela-wrapper {
-      width: 100%;
-      max-height: 400px;
+        top: 150px;
+        bottom:10px;
+        left:10px;
+        right: 10px;
       overflow: auto;
-      position: relative;
+      position: absolute;
       border: 1px solid #ccc;
     }
 
