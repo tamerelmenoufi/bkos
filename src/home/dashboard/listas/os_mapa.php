@@ -286,7 +286,7 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                             <div class="card-header">
                                 <div class="d-flex justify-content-between">
                                     <span>Título: <?=$v['titulo']?></span>
-                                    <span><?=$v['data_finalizacao']?></span>
+                                    <span><?=dataBr($v['data_finalizacao'])?></span>
                                 </div>
                                 
                             </div>
