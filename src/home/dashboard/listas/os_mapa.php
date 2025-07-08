@@ -301,7 +301,7 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 <?php
 
 
-
+/*
 
     if($query){
         $result = mysqli_query($con, $query);
@@ -368,6 +368,7 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 <?php
         }
     }
+        //*/
 ?>
 </div>
 <script>
