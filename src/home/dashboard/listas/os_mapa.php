@@ -196,7 +196,7 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 
                         $diaSemana = $diasSemana[$data->format('w')];
                 ?>
-                    <td><?=$data?></td>
+                    <td><?=$data->format('d/m/Y')?></td>
                 <?php
                         for($i = 1; $i < $nc; $i++ ){
 
