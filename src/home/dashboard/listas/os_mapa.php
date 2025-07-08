@@ -312,7 +312,7 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                     </td>
                 <?php
                         }
-                        $total_mes =+ $total_dia;
+                        $total_mes = ($total_mes + $total_dia);
                 ?>
                     <td><?=$total_dia?></td>
                 </tr>
