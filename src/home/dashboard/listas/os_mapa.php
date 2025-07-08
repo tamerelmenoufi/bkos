@@ -11,8 +11,9 @@
         case 'concluidas':{
             $query = "
                         select a.*,
+                               date(a.data_finalizacao) as data,
                                b.titulo as tipo,
-                               c.razao_social as empresa,
+                               c.razao_social as empresa_nome,
                                concat(
                                         d.nome,', ',
                                         d.rua,', ',
@@ -41,8 +42,9 @@
         case 'pendentes':{
             $query = "
             select a.*,
+                   date(a.data_finalizacao) as data,
                    b.titulo as tipo,
-                   c.razao_social as empresa,
+                   c.razao_social as empresa_nome,
                    concat(
                             d.nome,', ',
                             d.rua,', ',
@@ -77,8 +79,9 @@
         case 'geral':{
             $query = "
             select a.*,
+                   date(a.data_finalizacao) as data,
                    IF(b.titulo != '' and b.titulo != null, b.titulo, 'INDEFINIDO') as tipo,
-                   c.razao_social as empresa,
+                   c.razao_social as empresa_nome,
                    concat(
                             d.nome,', ',
                             d.rua,', ',
@@ -113,8 +116,15 @@
      if($query){
         
         $result = mysqli_query($con, $query);
+        $retorno = [];
         while($d = mysqli_fetch_object($result)){
-
+            $retorno[$d->data][$d->empresa][] = [
+                'tipo' => $d->tipo,
+                'titulo' => $d->titulo,
+                'descricao' => $d->descricao,
+                'responsavel' => $d->responsavel,
+                'executor' => $d->executor
+            ];
         }
     }
 ?>
@@ -188,10 +198,17 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                 <?php
                     $q = "select * from empresas where situacao = '1' order by razao_social";
                     $r = mysqli_query($con, $q);
-                    $nc = mysqli_num_rows($r);
+                    
                     while($e = mysqli_fetch_object($r)){
+                        $nc[] = [
+                            'codigo' => $e->codigo,
+                            'razao_social' => $e->razao_social,
+                        ];
+                    }
+
+                    for($i=0;$i<count($nc); $i++){
                 ?>
-                    <th><?=$e->razao_social?></th>
+                    <th><?=$nc[$i]['razao_social']?></th>
                 <?php
                     }
                 ?>
@@ -207,10 +224,11 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                 <tr>
                     <td><?=$data->format('d/m/Y')?></td>
                 <?php
-                        for($i = 0; $i < $nc; $i++ ){
-
+                        for($i = 0; $i < count($nc); $i++ ){
                 ?>
-                    <td>x</td>
+                    <td>
+                        <?=$retorno[$data->format('Y-m-d')][$nc[$i]['codigo']]['titulo']?>
+                    </td>
                 <?php
                         }
                 ?>
@@ -230,7 +248,6 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 
 
 
-echo $query;
     if($query){
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
@@ -239,7 +256,7 @@ echo $query;
 
     <div class="card-body">
         <h5 class="card-title">O.S. #<?=str_pad($d->codigo , 5 , '0' , STR_PAD_LEFT)?> - <?=$d->titulo?> (<?=$d->tipo?>)</h5>
-        <h6 class="card-title"><?=$d->empresa?></h6>
+        <h6 class="card-title"><?=$d->empresa_nome?></h6>
         <h6 class="card-subtitle mb-2 text-muted">
             <?=$d->descricao?>
         </h6>
