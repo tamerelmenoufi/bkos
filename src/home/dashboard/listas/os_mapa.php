@@ -230,8 +230,12 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                         <!-- data = <?=$data->format('Y-m-d')?><br>
                         codigo empresa = <?=$nc[$i]['codigo']?><br> -->
                         <?php
-                            foreach($retorno[$data->format('Y-m-d')][$nc[$i]['codigo']] as $i1 => $v){
-                                echo $v."<br>";
+                            if($retorno[$data->format('Y-m-d')][$nc[$i]['codigo']]){
+                                foreach($retorno[$data->format('Y-m-d')][$nc[$i]['codigo']] as $i1 => $v){
+                                    echo $v['titulo']."<br>";
+                                    echo $v['descricao']."<br>";
+                                    echo $v['executor'];
+                                }
                             }
                         ?>
                     </td>
