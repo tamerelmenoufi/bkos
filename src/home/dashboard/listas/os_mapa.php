@@ -320,7 +320,7 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                     }
                 ?>
                 <tr>
-                    <td colspan="<?=(count($nc))?>" class="text-end">TOTAL DE OS</td>
+                    <td colspan="<?=(count($nc) + 1)?>" class="text-end">TOTAL DE OS</td>
                     <td>xxx<?=$total_mes?></td>
                 </tr>
             </tbody>
