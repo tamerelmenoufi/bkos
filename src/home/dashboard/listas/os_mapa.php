@@ -277,7 +277,7 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                 <?php
                         $total_dia = 0;
                         for($i = 0; $i < count($nc); $i++ ){
-                            $total_dia++;
+                            
                 ?>
                     <td>
                         <!-- data = <?=$data->format('Y-m-d')?><br>
@@ -285,6 +285,8 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                         <?php
                             if($retorno[$data->format('Y-m-d')][$nc[$i]['codigo']]){
                                 foreach($retorno[$data->format('Y-m-d')][$nc[$i]['codigo']] as $i1 => $v){
+
+                                    $total_dia++;
                         ?>
                         <div class="card m-3">
                             <div class="card-header">
@@ -312,7 +314,7 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                     </td>
                 <?php
                         }
-                        $total_mes = ($total_mes + $total_dia);
+                        $total_mes += $total_dia;
                 ?>
                     <td><?=$total_dia?></td>
                 </tr>
