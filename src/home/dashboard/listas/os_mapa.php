@@ -281,17 +281,17 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                             if($retorno[$data->format('Y-m-d')][$nc[$i]['codigo']]){
                                 foreach($retorno[$data->format('Y-m-d')][$nc[$i]['codigo']] as $i1 => $v){
                         ?>
-                        <div class="card text-center m-2">
+                        <div class="card m-3">
                             <div class="card-header">
-                                <?=$v['titulo']?>
+                                Título: <?=$v['titulo']?>
                             </div>
                             <div class="card-body">
                                 <!-- <h5 class="card-title">Special title treatment</h5> -->
-                                <p class="card-text"><?=$v['descricao']?></p>
+                                <p class="card-text">Descriução: <?=$v['descricao']?></p>
                                 <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
                             <div class="card-footer text-muted">
-                                <?=$v['executor']?>
+                                Executor: <?=$v['executor']?>
                             </div>
                         </div>
                         <?php
