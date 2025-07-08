@@ -111,7 +111,7 @@
 
 
      if($query){
-        echo $query;
+        
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
 
@@ -230,7 +230,7 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 
 
 
-
+echo $query;
     if($query){
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
