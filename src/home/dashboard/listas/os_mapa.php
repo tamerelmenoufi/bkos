@@ -254,17 +254,19 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                             'razao_social' => $e->razao_social,
                         ];
                     }
-
+                    
                     for($i=0;$i<count($nc); $i++){
                 ?>
                     <th><?=$nc[$i]['razao_social']?></th>
                 <?php
                     }
                 ?>
+                    <th>Total do Dia</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
+                    $total_mes = 0;
                     for ($dia = 1; $dia <= $ultimoDia; $dia++) {
                         $data = DateTime::createFromFormat('Y-n-j', "$ano-$mes-$dia");
 
@@ -273,7 +275,9 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                 <tr>
                     <td><?=$data->format('d/m/Y')?></td>
                 <?php
+                        $total_dia = 0;
                         for($i = 0; $i < count($nc); $i++ ){
+                            $total_dia++;
                 ?>
                     <td>
                         <!-- data = <?=$data->format('Y-m-d')?><br>
@@ -309,10 +313,16 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                 <?php
                         }
                 ?>
+                    <td><?=$total_dia?></td>
                 </tr>
                 <?php
+                    $total_mes += $total_dia;
                     }
                 ?>
+                <tr>
+                    <th colspan="<?=(count($nc) + 1)?>" class="text-end">TOTAL DE OS</th>
+                    <th><?=$total_mes?></th>
+                </tr>
             </tbody>
         </table>        
     </div>
