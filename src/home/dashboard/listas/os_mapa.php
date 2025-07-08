@@ -227,6 +227,8 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                         for($i = 0; $i < count($nc); $i++ ){
                 ?>
                     <td>
+                        data = <?=$data->format('Y-m-d')?><br>
+                        codigo empresa = <?=$nc[$i]['codigo']?><br>
                         <?=$retorno[$data->format('Y-m-d')][$nc[$i]['codigo']]['titulo']?>
                     </td>
                 <?php
