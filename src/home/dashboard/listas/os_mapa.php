@@ -123,7 +123,8 @@
                 'titulo' => $d->titulo,
                 'descricao' => $d->descricao,
                 'responsavel' => $d->responsavel,
-                'executor' => $d->executor
+                'executor' => $d->executor,
+                'data_finalizacao' => $d->data_finalizacao
             ];
         }
     }
@@ -283,7 +284,11 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                         ?>
                         <div class="card m-3">
                             <div class="card-header">
-                                Título: <?=$v['titulo']?>
+                                <div class="d-flex justify-content-between">
+                                    <span>Título: <?=$v['titulo']?></span>
+                                    <span><?=$v['data_finalizacao']?></span>
+                                </div>
+                                
                             </div>
                             <div class="card-body">
                                 <!-- <h5 class="card-title">Special title treatment</h5> -->
