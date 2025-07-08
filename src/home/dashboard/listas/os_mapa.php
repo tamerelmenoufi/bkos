@@ -261,7 +261,7 @@
 
             Carregando();
             $.ajax({
-                url:`src/home/dashboard/listas/os-mapa.php`,
+                url:`src/home/dashboard/listas/os_mapa.php`,
                 type:"POST",
                 data:{
                     opc:'<?=$_POST['opc']?>',
