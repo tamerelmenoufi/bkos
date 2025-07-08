@@ -165,8 +165,6 @@
 <?php
 list($ano, $mes) = explode("-", $_SESSION['data']);
 
-echo "$ano-$mes-01";
-
 $ultimoDia = (new DateTime("$ano-$mes-01"))->format('t');
 
 $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
