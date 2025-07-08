@@ -167,10 +167,6 @@
     }
 
 
-
-
-
-    <style>
     .tabela-wrapper {
       width: 100%;
       max-height: 400px;
@@ -212,7 +208,6 @@
     thead th:first-child {
       z-index: 3;
     }
-  </style>
 </style>
 <div class="barraTitulo">
     <h2 class="m-3"><button class="btn btn-primary btn-sm voltar">Ordem de Serviço Concluídos (Gestão dos registros)</button><?=$_POST['titulo']?></h2>
@@ -238,7 +233,7 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 
 ?>
 
-    <div class="table-responsive">
+    <div class="tabela-wrapper">
         <table class="table table-hover">
             <thead>
                 <tr>
