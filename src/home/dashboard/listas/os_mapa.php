@@ -165,6 +165,54 @@
         bottom:0;
         overflow:auto;
     }
+
+
+
+
+
+    <style>
+    .tabela-wrapper {
+      width: 100%;
+      max-height: 400px;
+      overflow: auto;
+      position: relative;
+      border: 1px solid #ccc;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 600px;
+    }
+
+    th, td {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      background: #fff;
+      white-space: nowrap;
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      background: #f2f2f2;
+      z-index: 2;
+    }
+
+    /* Primeira coluna */
+    th:first-child,
+    td:first-child {
+      position: sticky;
+      left: 0;
+      background: #f9f9f9;
+      z-index: 1;
+    }
+
+    /* Para evitar sobreposição do cabeçalho na primeira célula */
+    thead th:first-child {
+      z-index: 3;
+    }
+  </style>
 </style>
 <div class="barraTitulo">
     <h2 class="m-3"><button class="btn btn-primary btn-sm voltar">Ordem de Serviço Concluídos (Gestão dos registros)</button><?=$_POST['titulo']?></h2>
