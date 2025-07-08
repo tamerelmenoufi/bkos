@@ -312,15 +312,15 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                     </td>
                 <?php
                         }
+                        $total_mes += $total_dia;
                 ?>
                     <td><?=$total_dia?></td>
                 </tr>
                 <?php
-                    $total_mes += $total_dia;
                     }
                 ?>
                 <tr>
-                    <th colspan="<?=(count($nc) + 1)?>" class="text-end">TOTAL DE OS</th>
+                    <th colspan="<?=(count($nc))?>" class="text-end">TOTAL DE OS</th>
                     <th><?=$total_mes?></th>
                 </tr>
             </tbody>
