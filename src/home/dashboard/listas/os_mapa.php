@@ -286,9 +286,7 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                             <div class="card-header">
                                 <div class="d-flex justify-content-between">
                                     <span>Título: <?=$v['titulo']?></span>
-                                    <span><?=dataBr($v['data_finalizacao'])?></span>
-                                </div>
-                                
+                                </div>                                
                             </div>
                             <div class="card-body">
                                 <!-- <h5 class="card-title">Special title treatment</h5> -->
@@ -296,7 +294,11 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                                 <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
                             <div class="card-footer text-muted">
-                                Executor: <?=$v['executor']?>
+                                
+                                <div class="d-flex justify-content-between">
+                                    <span>Executor: <?=$v['executor']?></span>
+                                    <span><?=dataBr($v['data_finalizacao'])?></span>
+                                </div>
                             </div>
                         </div>
                         <?php
