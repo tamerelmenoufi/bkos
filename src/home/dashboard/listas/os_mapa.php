@@ -296,8 +296,8 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                             <div class="card-footer text-muted">
                                 
                                 <div class="d-flex justify-content-between">
-                                    <span>Executor: <?=$v['executor']?></span>
-                                    <span><?=dataBr($v['data_finalizacao'])?></span>
+                                    <div class="me-3">Executor: <?=$v['executor']?></div>
+                                    <div class="ms-3"><?=dataBr($v['data_finalizacao'])?></div>
                                 </div>
                             </div>
                         </div>
