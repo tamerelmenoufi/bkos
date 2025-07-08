@@ -189,13 +189,13 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                 </tr>
             </thead>
             <tbody>
-                <tr>
                 <?php
                     for ($dia = 1; $dia <= $ultimoDia; $dia++) {
                         $data = DateTime::createFromFormat('Y-n-j', "$ano-$mes-$dia");
 
                         $diaSemana = $diasSemana[$data->format('w')];
                 ?>
+                <tr>
                     <td><?=$data->format('d/m/Y')?></td>
                 <?php
                         for($i = 1; $i < $nc; $i++ ){
@@ -204,9 +204,11 @@ $diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
                     <td>x</td>
                 <?php
                         }
+                ?>
+                </tr>
+                <?php
                     }
                 ?>
-                <tr>
             </tbody>
         </table>        
     </div>
