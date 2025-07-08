@@ -146,6 +146,12 @@
 </div>
 
 <div class="relatorio-body">
+
+    <div class="d-flex flex-row-reverse m-3">
+        <input type="date" class="form-control" value="<?=$_POST['data']?>" />
+    </div>
+
+
 <?php
     if($query){
         $result = mysqli_query($con, $query);
