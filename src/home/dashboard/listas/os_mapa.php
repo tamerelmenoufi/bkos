@@ -142,9 +142,9 @@
     }
 </style>
 <div class="barraTitulo">
-    <h2 class="m-3"><?=$_POST['titulo']?></h2>
+    <h2 class="m-3"><button class="btn btn-primary btn-sm voltar">Ordem de Serviço Concluídos (Gestão dos registros)</button><?=$_POST['titulo']?></h2>
 </div>
-<button class="btn btn-primary btn-sm relatorio">Ordem de Serviço Concluídos (Gestão dos registros)</button>
+
 <div class="relatorio-body">
 <?php
     if($query){

@@ -234,7 +234,7 @@
         });
 
 
-        $(".voltar").click(function(){
+        $(".relatorio").click(function(){
             Carregando();
             $.ajax({
                 url:`src/home/dashboard/listas/os_mapa.php`,
