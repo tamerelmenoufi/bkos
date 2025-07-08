@@ -144,7 +144,7 @@
 <div class="barraTitulo">
     <h2 class="m-3"><?=$_POST['titulo']?></h2>
 </div>
-<button class="btn btn-primary btn-sm relatorio">Visualização relatório (mapa de produção)</button>
+<button class="btn btn-primary btn-sm relatorio">Ordem de Serviço Concluídos (Gestão dos registros)</button>
 <div class="relatorio-body">
 <?php
     if($query){
@@ -237,7 +237,7 @@
         $(".voltar").click(function(){
             Carregando();
             $.ajax({
-                url:`src/home/dashboard/listas/os_mapa.php`,
+                url:`src/home/dashboard/listas/os.php`,
                 type:"POST",
                 data:{
                     opc:'<?=$_POST['opc']?>',
@@ -252,5 +252,7 @@
                 }
             })
         })
+
+
     })
 </script>
