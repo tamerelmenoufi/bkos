@@ -163,7 +163,7 @@
 
 
 <?php
-list($mes, $ano) = explode("-", $_SESSION['data']);
+list($ano, $mes) = explode("-", $_SESSION['data']);
 
 $ultimoDia = (new DateTime("$ano-$mes-01"))->format('t');
 
